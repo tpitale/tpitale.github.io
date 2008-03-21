@@ -1,0 +1,57 @@
+---
+title: Legacy Databases with DataMapper
+subtitle: Something Old, Something New
+author: Tony Pitale
+layout: posts
+created_at: 2008-03-18 10:57:06.231695 -04:00
+filter:
+  - haml
+---
+#post
+  %h1= h(@page.title)
+  %h2= h(@page.subtitle)
+  %span.date= @page.created_at.strftime('%Y-%m-%d')
+  
+  %p
+    In my previous post I discussed my eventual discovery that 
+    = link_to("Ruby on Rails", "http://rubyonrails.org")
+    would not work for a new project I had begun. Thankfully, I was at the very
+    beginning of my work on said project and making a transition to a new path
+    was not the end of the world.
+  %p
+    As I mentioned, a helpful suggestion led me to investigate 
+    = link_to("Merb", "http://merbivore.com")
+    as a potential framework. Merb has the benefit of letting me use any of
+    three possible database ORMs. ActiveRecord is supported, as well as,
+    = link_to("DataMapper", "http://datamapper.org/")
+    and Sequel. Obviously, ActiveRecord did not work for me and so, I looked at
+    both DataMapper and Sequel. I found DataMapper to be more usable out of the
+    box and so I moved ahead using it. Sequel would have been another excellent
+    alternative but, I had to pick one and continue with my work.
+  %p
+    How did DataMapper solve my legacy database issues, you may ask. The answer
+    is that DataMapper provides all the same standard solutions that
+    ActiveRecord does but, it allows for keys to be text or any other type as
+    long as they are unique and not null. The sql requirements for a primary
+    key state that it must be unique and not null, there is no requirement for
+    type. There was one little issue with DataMapper in which the text fields
+    were being ignored because, in DataMapper, text fields are lazy. These
+    fields will not be loaded until they are requested by an application. This
+    led to a number of issues but, because DataMapper is so very easy to 
+    contribute to, I was able to make the necessary changes with much 
+    appreciation from the community.
+  %p
+    In terms of conventions, DataMapper has another nifty trick up its sleeve.
+    In DataMapper, when defining a column, you may use a different name for the
+    property and later define the actual column name from the database. I was
+    extremely enthused to find that I could change names from the database from
+    %code wc_shlfprce
+    to something like:
+    %code warm_case_shelf_price.
+    Though it was a longer name, in terms of legibility the latter is an
+    infinite improvement.
+  %p
+    And so, I work on, with Merb and DataMapper as my preferred tools, at least
+    for this particular project. Aside from this flexibility, DataMapper would 
+    normally adhere to the same specific conventions for a database as does 
+    ActiveRecord. Any new converts from Rails will likely feel right at home.

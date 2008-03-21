@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta content='text/html; charset=utf-8' http-equiv='Content-type' />
+    <meta content='Tony Pitale' name='author' />
+    <meta content='i/cbJtXe1ZDIZNta65CghwcRM/zFMRHIsbR9poU+uwU=' name='verify-v1' />
+    <title>Slicehost</title>
+    <link href='/favicon.ico' rel='shortcut icon' />
+    <!-- Site CSS -->
+    <link href='/css/base.css' media='screen, projection' rel='stylesheet' type='text/css' />
+  </head>
+  <body>
+    <div id='header'>
+      <div class='wrap'>
+        <div class='col'>
+          <a href='/'>
+            <img src='/images/logo.png' />
+          </a>
+        </div>
+        <div class='block'>
+          <ul>
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="/posts/">Blog Archive</a>
+            </li>
+          </ul>
+          <br class='clearleft' />
+        </div>
+      </div>
+    </div>
+    <div id='content'>
+      <div class='wrap'>
+        <div class='col'>
+          <h1>Blog</h1>
+        </div>
+        <div class='block'>
+          <div id='post'>
+            <h1>Slicehost</h1>
+            <h2>Getting it Right, Right Away</h2>
+            <span class='date'>2008-03-14</span>
+            <p>
+              At the recommendation of Patrick Reagan of Viget Labs I signed up for an
+              account with Slicehost. With a simple form for signup, I was quickly
+              filling in my credit card number. Before my credit card had been validated
+              by Slicehost, my slice was up and running.
+            </p>
+            <p>
+              I was not planning at the time to set up, or modify my new server. The draw
+              of the root password that had just been emailed to me overpowered any such
+              plans. I quickly discovered the fantastic tools made available by Slicehost
+              for the user. Within 2 minutes I had configured my DNS and within 5 minutes
+              I had compiled and installed Nginx, all thanks to the excellent help site.
+            </p>
+            <p>
+              Upon completing the initial "release" of this website the following
+              morning, I was completely up and running and I switched my TLD registration
+              to the Slicehost DNS hosts. If you do sign up for a Slicehost account I
+              would certainly appreciate a
+              <a href="https://manage.slicehost.com/customers/new?referrer=972292314">referral.</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type='text/javascript'>
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type='text/javascript'>
+      var pageTracker = _gat._getTracker("UA-3879168-1");
+      pageTracker._initData();
+      pageTracker._trackPageview();
+    </script>
+  </body>
+</html>

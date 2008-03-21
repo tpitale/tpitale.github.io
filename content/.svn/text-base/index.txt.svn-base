@@ -1,0 +1,122 @@
+---
+title:      t.pitale
+created_at: 2008-03-11 23:23:49.995233 -04:00
+dirty: true
+filter:
+  - haml
+---
+/ About
+#about
+  .wrap
+    .col
+      %h1
+        About
+    .block
+      %p
+        I am a recent graduate of Virginia Tech. I started with Ruby on Rails
+        in early 2006. Now, I am in love with Ruby, Merb, Rails, and the
+        development community surrounding these projects. I always strive to
+        learn, here is my place to share.
+/ Contact
+#contact
+  .wrap
+    .col
+      %h1
+        Contact
+    .block
+      #fast
+        %h1 Fast
+        = link_to("tpitale@gmail.com", "mailto:tpitale@gmail.com")
+        = link_to("tony.pitale@gmail.com", "mailto:tony.pitale@gmail.com")
+      #faster
+        %h1 Faster
+        %b AIM:
+        sicdev
+        %br/
+        %b IRC:
+        tpitale
+      #fastest
+        %h1 Fastest
+        (908)-309-8761
+      %br.clearleft/
+
+/ Latest Blog Post
+#blog
+  .wrap
+    .col
+      %h1
+        Blog
+      / List of Blog Posts
+      %ul
+        - posts = @pages.find(:limit => 5, :in_directory => 'posts', :sort_by => 'mtime', :reverse => true)
+        - posts.each do |post|
+          %li
+            = link_to_page(post) unless post.filename == 'index'
+    .block
+      / Latest Post
+      - posts = @pages.find(:limit => 5, :in_directory => 'posts', :sort_by => 'mtime', :reverse => true)
+      = posts.first.filename == 'index' ? posts[2].render : posts.first.render
+      
+      .allposts
+        = link_to("All", "/posts/")
+        or
+        = link_to("Feed", "/feed.xml")
+/ Portfolio Links, w/images, to my projects
+#portfolio
+  .wrap
+    .col
+      %h1
+        Portfolio
+    .block
+      = link_to("<img src='/images/s76.png' />", "http://www.spirit76wines.com")
+      = link_to("<img src='/images/ics-nj.png' />", "http://www.ics-nj.com")
+      = link_to("<img src='/images/focus.png' />", "#")
+      = link_to("<img src='/images/appuser.png' />", "#")
+      = link_to("<img src='/images/threeoseven.png' />", "#")
+      = link_to("<img src='/images/prv3.png' />", "#")
+      = link_to("<img src='/images/checkout.png' />", "#")
+      %br.clearleft/
+
+/ Worthy links to associate pages
+#links
+  .wrap
+    .col
+      %h1
+        Links
+    .block
+      #people
+        %h1 Personal Blogs
+        %ul
+          %li= link_to("Reinh", "http://reinh.com")
+          %li= link_to("Michael Ivey", "http://gweezlebur.com/")
+          %li= link_to("Adam French", "http://adam.speaksoutofturn.com/")
+          %li= link_to("Ezra Zygmuntowicz", "http://brainspl.at/")
+          %li= link_to("Yehuda Katz", "http://www.yehudakatz.com/")
+          %li= link_to("Patrick Reagan", "http://www.sneaq.net/")
+          %li= link_to("Paul Sadauskas", "http://www.theamazingrando.com/")
+      #companies
+        %h1 Company Blogs
+        %ul
+          %li= link_to("ICS", "http://ics-nj.com/blog/")
+          %li= link_to("37signals", "http://www.37signals.com/svn/")
+          %li= link_to("Viget", "http://www.viget.com/extend/")
+          %li= link_to("Engine Yard", "http://engineyard.com/blog")
+          %li= link_to("SliceHost", "http://blog.slicehost.com/")
+      #community
+        %h1 Community Sites
+        %ul
+          %li= link_to("Merb", "http://merbivore.com")
+          %li= link_to("DataMapper", "http://datamapper.org")
+          %li= link_to("jQuery", "http://jquery.com/")
+          %li= link_to("Rails", "http://www.rubyonrails.org/")
+      %br.clearleft/
+
+/ Sampling of flickr images
+#photos
+  .wrap
+    .col
+      %h1
+        Photos
+    .block
+      %script{:type=>"text/javascript", :src=>"http://www.flickr.com/badge_code_v2.gne?count=7&display=latest&size=s&layout=x&source=user_set&user=41783324%40N00&set=72157604108727991"}
+      %br.clearleft/

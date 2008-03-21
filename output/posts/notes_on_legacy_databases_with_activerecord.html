@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta content='text/html; charset=utf-8' http-equiv='Content-type' />
+    <meta content='Tony Pitale' name='author' />
+    <meta content='i/cbJtXe1ZDIZNta65CghwcRM/zFMRHIsbR9poU+uwU=' name='verify-v1' />
+    <title>Legacy Databases with ActiveRecord</title>
+    <link href='/favicon.ico' rel='shortcut icon' />
+    <!-- Site CSS -->
+    <link href='/css/base.css' media='screen, projection' rel='stylesheet' type='text/css' />
+  </head>
+  <body>
+    <div id='header'>
+      <div class='wrap'>
+        <div class='col'>
+          <a href='/'>
+            <img src='/images/logo.png' />
+          </a>
+        </div>
+        <div class='block'>
+          <ul>
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="/posts/">Blog Archive</a>
+            </li>
+          </ul>
+          <br class='clearleft' />
+        </div>
+      </div>
+    </div>
+    <div id='content'>
+      <div class='wrap'>
+        <div class='col'>
+          <h1>Blog</h1>
+        </div>
+        <div class='block'>
+          <div id='post'>
+            <h1>Legacy Databases with ActiveRecord</h1>
+            <h2>So Close, But Yet, So Far</h2>
+            <span class='date'>2008-03-17</span>
+            <p>
+              I loved working with Ruby on Rails, I still do. I bought books, I read
+              blogs, and I made a fair few sites (both personal and for clients). I
+              thought Ruby on Rails was the be-all, end-all for web development. I was
+              very wrong.
+            </p>
+            <p>
+              Ruby on Rails is fantastic. Especially when you create a new application
+              and design and create that web application with Rails, and its way, in
+              mind. However, if, like myself, you have to work with the database from
+              an application that originated nearly 20 years ago, you may hit some snags.
+              Just as I did.
+            </p>
+            <p>
+              The design of a database to be used with Ruby on Rails (specifically
+              ActiveRecord) must adhere to some very stringent "best" practices. These
+              are not always the absolute, best practices in design but, they provide
+              some fairly standard basic practices. One such example, though fairly
+              advanced comes with polymorphic associations. In defining the type in one
+              such association, ActiveRecord uses the class name of the type instead of
+              a secondary table listing all possible types. This breaks any possible use
+              of a foreign-key constraint.
+            </p>
+            <p>
+              Some basics in Ruby on Rails database design, which is often generated
+              without any specification from the developer (when using model generators),
+              include: tables are named the pluralized class name (e.g. User becomes
+              users), every table has an "id" field that is an auto-incremented integer,
+              and a foreign-key is tablename_id.
+            </p>
+            <p>
+              What must we do if we are using an existing database, and it does not
+              comply to these standards? I'll go through each instance of non-standard
+              database design from the existing database and show how ActiveRecord did
+              or did not handle the problem.
+            </p>
+            <p>
+              What to do if a Table is not Named after a Class? Easy. ActiveRecord
+              provides a simple method
+              <code>set_table_name</code>
+              that allows you to do just that. If the tables are named after a class but
+              are not pluralized, you can simply set the environment to not use the
+              pluralized versions.
+            </p>
+            <p>
+              What to do if a Table does not have Primary Key named 'id'? Easy, too.
+              Simply use
+              <code>set_primary_key</code>
+              to set the primary key. This does not, however, provide for a case in which
+              a table does not have a primary key (or otherwise usable unique key) in any
+              way, shape, or form. The simple answer is to add an 'id' field that is not
+              used by the legacy application. This is difficult or impossible to do if
+              you are not the person in control of the database. It is also difficult if,
+              like me, the database exists on hundreds of servers distributed around the
+              country. Making any change in this case is not a simple undertaking.
+            </p>
+            <p>
+              What to do if the Primary Key is not an auto-incremented integer field?
+              Here, we find the most difficult problem of all. ActiveRecord can ignore
+              the fact that you don't have auto-incremented values but, if your key is
+              not an integer ActiveRecord (as of this posting) hits the proverbial wall.
+              In the case of my legacy database, the primary keys were text fields, five
+              digits in length. This was a carry-over from an even older system in which
+              no relational database was involved.
+            </p>
+            <p>
+              My only options here became extremely complicated and were only possible
+              because I was using Postgresql (editable views). That was the end of the
+              road for this project and Ruby on Rails. Thankfully, a helpful suggestion
+              led me to use
+              <a href="http://merbivore.com">Merb</a>
+              for my framework and
+              <a href="http://datamapper.org">DataMapper</a>
+              for my database ORM. Watch for my next post in which I discuss the solutions
+              to these problems, and a few nice perks, found in Merb and DataMapper.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type='text/javascript'>
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type='text/javascript'>
+      var pageTracker = _gat._getTracker("UA-3879168-1");
+      pageTracker._initData();
+      pageTracker._trackPageview();
+    </script>
+  </body>
+</html>

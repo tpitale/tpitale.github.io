@@ -1,0 +1,249 @@
+/*CSS Reset
+==================================================*/
+body,div,
+p,pre,blockquote
+dl,dt,dd,
+ul,ol,li,
+h1,h2,h3,h4,h5,h6,
+form,fieldset,input,textarea,
+th,td {
+	margin:0;
+	padding:0;
+}
+
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+
+fieldset,img { 
+	border:0;
+}
+
+address,caption,cite,code,dfn,
+em,strong,th,var {
+	font-style:normal;
+	font-weight:normal;
+}
+
+ol,ul {
+	list-style:none;
+}
+
+caption,th {
+	text-align:left;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size:100%;
+	font-weight:normal;
+}
+
+q:before,q:after {
+	content:'';
+}
+
+abbr,acronym { 
+	border:0;
+}
+
+a {
+	color: #000000;
+	text-decoration: none;
+}
+
+.clearleft {
+	clear: left;
+}
+
+/* +Layout
+==================================================*/
+body {
+	font-size: 9pt;
+	background-color: #FFFFFF;
+	font-family: verdana, sans-serif;
+}
+
+b {
+	color: #999999;
+	font-weight: normal;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.wrap {
+	width: 800px;
+	margin: 0 auto;
+}
+
+.col {
+	float: left;
+	width: 150px;
+	text-align: right;
+}
+
+.col h1 {
+	color: #333333;
+	font-size: 150%;
+}
+
+.col ul li a {
+	margin: 2px 0;
+	display: block;
+	font-size: 85%;
+}
+
+.block {
+	margin-left: 150px;
+	padding-left: 20px;
+}
+
+.block h1 {
+	color: #666666;
+	font-size: 150%;
+}
+
+#header,
+#about,
+#contact,
+#blog,
+#portfolio,
+#links,
+#photos {
+	padding: 10px 0;
+	border-top: 1px solid #CCCCCC;
+	border-bottom: 1px solid #EEEEEE;
+	background: #FFFFFF url('/images/section_fade.png') repeat-x left top;
+}
+
+#header {
+	background-image: none;
+}
+
+#about,
+#blog,
+#links {
+}
+
+/* +Header
+==================================================*/
+#header ul {
+	/* align with TP in logo*/
+	padding-top: 18px;
+}
+
+#header ul li {
+	float: left;
+}
+
+#header ul li a {
+	display: block;
+	padding: 5px 20px 11px 0;
+}
+
+#header ul li a:hover {
+	text-decoration: none;
+	background: #FFFFFF url('/images/link_arrow.png') no-repeat left bottom;
+}
+
+/* +About
+==================================================*/
+#about p {
+	line-height: 1.4em;
+}
+
+/* +Contact
+==================================================*/
+#fast,
+#faster,
+#fastest {
+	width: 32%;
+	float: left;
+}
+
+#fast h1,
+#faster h1,
+#fastest h1 {
+	margin-bottom: 5px;
+}
+
+#contact {
+	line-height: 1.5em;
+}
+
+/* +Blog
+==================================================*/
+
+/* +Portfolio
+==================================================*/
+#portfolio a {
+	
+}
+
+#portfolio a img {
+	padding: 4px;
+	margin-bottom: 10px;
+	border: 1px solid #EEEEEE;
+}
+
+/* +Links
+==================================================*/
+#people,
+#companies,
+#community {
+	width: 32%;
+	float: left;
+}
+
+#links ul li {
+	margin-top: 5px;
+}
+
+/* +Photos
+==================================================*/
+div.flickr_badge_image {
+	float: left;
+	padding: 2px;
+	display: block;
+	margin-right: 7px;
+	border: 1px solid #EEEEEE;
+}
+
+
+/* +Post
+==================================================*/
+#post {
+	max-width: 800px;
+	margin: 5px auto 20px auto;
+}
+
+#post h2 {
+	color: #999999;
+	font-size: 115%;
+}
+
+#post span.date {
+	color: #CCCCCC;
+	font-size: 85%;
+}
+
+#post p {
+	margin: 10px 0 20px 0;
+	line-height: 1.4em;
+}
+
+#post p a {
+	font-weight: bold;
+}
+
+#post p code {
+	font-style: italic;
+	font-family: arial, sans-serif;
+}
+
+.allposts {
+	color: #666666;
+	font-size: 125%;
+}

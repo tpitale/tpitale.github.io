@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/t-pitale/!svn/ver/12/templates
+END
+_partial.erb
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/t-pitale/!svn/ver/3/templates/_partial.erb
+END
+page.erb
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/t-pitale/!svn/ver/3/templates/page.erb
+END
+atom_feed.erb
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/t-pitale/!svn/ver/1/templates/atom_feed.erb
+END
+post.erb
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/t-pitale/!svn/ver/12/templates/post.erb
+END

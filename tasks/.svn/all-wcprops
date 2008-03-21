@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/t-pitale/!svn/ver/9/tasks
+END
+setup.rb
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/t-pitale/!svn/ver/9/tasks/setup.rb
+END
+create.rake
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/t-pitale/!svn/ver/1/tasks/create.rake
+END
+validate.rake
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/t-pitale/!svn/ver/1/tasks/validate.rake
+END
+growl.rake
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/t-pitale/!svn/ver/1/tasks/growl.rake
+END
+deploy.rake
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/t-pitale/!svn/ver/1/tasks/deploy.rake
+END
+heel.rake
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/t-pitale/!svn/ver/1/tasks/heel.rake
+END

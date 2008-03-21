@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns='http://www.w3.org/2005/Atom'>
+  <title>t.pitale</title>
+  <link href='http://t.pitale.com/feed.xml' rel='self' />
+  <link href='http://t.pitale.com/' />
+  <id>http://t.pitale.com/</id>
+  <updated>2008-03-20T12:41:37-04:00</updated>
+  <author>
+    <name>Tony Pitale</name>
+    <email>tpitale@gmail.com</email>
+  </author>
+  <entry>
+    <id>
+      /posts/notes_on_legacy_databases_with_datamapper.html,Tue Mar 18 10:57:06 -0400 2008
+    </id>
+    <title>Legacy Databases with DataMapper</title>
+    <subtitle>Something Old, Something New</subtitle>
+    <link href='http://t.pitale.com/posts/notes_on_legacy_databases_with_datamapper.html' />
+    <updated>2008-03-18T10:57:06-04:00</updated>
+    <content type='html'>
+      &lt;div id='post'&gt;
+        &lt;h1&gt;Legacy Databases with DataMapper&lt;/h1&gt;
+        &lt;h2&gt;Something Old, Something New&lt;/h2&gt;
+        &lt;span class='date'&gt;2008-03-18&lt;/span&gt;
+        &lt;p&gt;
+          In my previous post I discussed my eventual discovery that
+          &lt;a href=&quot;http://rubyonrails.org&quot;&gt;Ruby on Rails&lt;/a&gt;
+          would not work for a new project I had begun. Thankfully, I was at the very
+          beginning of my work on said project and making a transition to a new path
+          was not the end of the world.
+        &lt;/p&gt;
+        &lt;p&gt;
+          As I mentioned, a helpful suggestion led me to investigate
+          &lt;a href=&quot;http://merbivore.com&quot;&gt;Merb&lt;/a&gt;
+          as a potential framework. Merb has the benefit of letting me use any of
+          three possible database ORMs. ActiveRecord is supported, as well as,
+          &lt;a href=&quot;http://datamapper.org/&quot;&gt;DataMapper&lt;/a&gt;
+          and Sequel. Obviously, ActiveRecord did not work for me and so, I looked at
+          both DataMapper and Sequel. I found DataMapper to be more usable out of the
+          box and so I moved ahead using it. Sequel would have been another excellent
+          alternative but, I had to pick one and continue with my work.
+        &lt;/p&gt;
+        &lt;p&gt;
+          How did DataMapper solve my legacy database issues, you may ask. The answer
+          is that DataMapper provides all the same standard solutions that
+          ActiveRecord does but, it allows for keys to be text or any other type as
+          long as they are unique and not null. The sql requirements for a primary
+          key state that it must be unique and not null, there is no requirement for
+          type. There was one little issue with DataMapper in which the text fields
+          were being ignored because, in DataMapper, text fields are lazy. These
+          fields will not be loaded until they are requested by an application. This
+          led to a number of issues but, because DataMapper is so very easy to
+          contribute to, I was able to make the necessary changes with much
+          appreciation from the community.
+        &lt;/p&gt;
+        &lt;p&gt;
+          In terms of conventions, DataMapper has another nifty trick up its sleeve.
+          In DataMapper, when defining a column, you may use a different name for the
+          property and later define the actual column name from the database. I was
+          extremely enthused to find that I could change names from the database from
+          &lt;code&gt;wc_shlfprce&lt;/code&gt;
+          to something like:
+          &lt;code&gt;warm_case_shelf_price.&lt;/code&gt;
+          Though it was a longer name, in terms of legibility the latter is an
+          infinite improvement.
+        &lt;/p&gt;
+        &lt;p&gt;
+          And so, I work on, with Merb and DataMapper as my preferred tools, at least
+          for this particular project. Aside from this flexibility, DataMapper would
+          normally adhere to the same specific conventions for a database as does
+          ActiveRecord. Any new converts from Rails will likely feel right at home.
+        &lt;/p&gt;
+      &lt;/div&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>
+      /posts/who_needs_mac_docking.html,Tue Mar 18 17:08:41 -0400 2008
+    </id>
+    <title>Imaginary Mac Dock</title>
+    <subtitle>If You Must, You Must</subtitle>
+    <link href='http://t.pitale.com/posts/who_needs_mac_docking.html' />
+    <updated>2008-03-18T17:08:41-04:00</updated>
+    <content type='html'>
+      &lt;div id='post'&gt;
+        &lt;h1&gt;Imaginary Mac Dock&lt;/h1&gt;
+        &lt;h2&gt;If You Must, You Must&lt;/h2&gt;
+        &lt;span class='date'&gt;2008-03-18&lt;/span&gt;
+        &lt;p&gt;
+          Some people like to come home and &quot;dock&quot; their laptops to a desktop-type
+          setup. There is no such thing for a Mac, not in the way that the Dell users
+          of the world might imagine it. However, there are two ways to accomplish
+          the same features. The first involves another Mac, the second does not.
+        &lt;/p&gt;
+        &lt;p&gt;
+          The first, and conceptually more complicated method relies upon two
+          features that Macs have had as long as I can remember using them. Upon
+          booting, a Mac (laptop or desktop) can act as an external hard drive case
+          for the drive inside. Simply holding down T will start this mode. Now, we
+          can plug this Mac into another and use this hard drive as the boot drive.
+          Simply hold down the Option key when booting the &quot;base&quot;, desktop Mac. The
+          desktop will boot the hard drive in the laptop. If you have an Intel Mac,
+          the computers can be connected with a USB cable or a Firewire cable. If you
+          are using a PowerPC Mac, a Firewire cable must be used.
+        &lt;/p&gt;
+        &lt;p&gt;
+          The second method is far more simplistic. Apple (and many other companies)
+          offer bluetooth keyboards and mice. Simply plug in an external monitor and
+          use the bluetooth built into most Macs for the keyboard and mouse. With one
+          physical cable you have essentially the same setup as all those &quot;dock&quot;
+          users.
+        &lt;/p&gt;
+        &lt;p&gt;
+          There are many reasons why a user might wish to do this but, the most
+          obvious reasoning includes a larger screen on a monitor, a full-sized
+          keyboard, and a more functional mouse (though I prefer the touchpad for
+          scrolling).
+        &lt;/p&gt;
+      &lt;/div&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>
+      /posts/notes_on_legacy_databases_with_activerecord.html,Mon Mar 17 10:57:12 -0400 2008
+    </id>
+    <title>Legacy Databases with ActiveRecord</title>
+    <subtitle>So Close, But Yet, So Far</subtitle>
+    <link href='http://t.pitale.com/posts/notes_on_legacy_databases_with_activerecord.html' />
+    <updated>2008-03-17T10:57:12-04:00</updated>
+    <content type='html'>
+      &lt;div id='post'&gt;
+        &lt;h1&gt;Legacy Databases with ActiveRecord&lt;/h1&gt;
+        &lt;h2&gt;So Close, But Yet, So Far&lt;/h2&gt;
+        &lt;span class='date'&gt;2008-03-17&lt;/span&gt;
+        &lt;p&gt;
+          I loved working with Ruby on Rails, I still do. I bought books, I read
+          blogs, and I made a fair few sites (both personal and for clients). I
+          thought Ruby on Rails was the be-all, end-all for web development. I was
+          very wrong.
+        &lt;/p&gt;
+        &lt;p&gt;
+          Ruby on Rails is fantastic. Especially when you create a new application
+          and design and create that web application with Rails, and its way, in
+          mind. However, if, like myself, you have to work with the database from
+          an application that originated nearly 20 years ago, you may hit some snags.
+          Just as I did.
+        &lt;/p&gt;
+        &lt;p&gt;
+          The design of a database to be used with Ruby on Rails (specifically
+          ActiveRecord) must adhere to some very stringent &quot;best&quot; practices. These
+          are not always the absolute, best practices in design but, they provide
+          some fairly standard basic practices. One such example, though fairly
+          advanced comes with polymorphic associations. In defining the type in one
+          such association, ActiveRecord uses the class name of the type instead of
+          a secondary table listing all possible types. This breaks any possible use
+          of a foreign-key constraint.
+        &lt;/p&gt;
+        &lt;p&gt;
+          Some basics in Ruby on Rails database design, which is often generated
+          without any specification from the developer (when using model generators),
+          include: tables are named the pluralized class name (e.g. User becomes
+          users), every table has an &quot;id&quot; field that is an auto-incremented integer,
+          and a foreign-key is tablename_id.
+        &lt;/p&gt;
+        &lt;p&gt;
+          What must we do if we are using an existing database, and it does not
+          comply to these standards? I'll go through each instance of non-standard
+          database design from the existing database and show how ActiveRecord did
+          or did not handle the problem.
+        &lt;/p&gt;
+        &lt;p&gt;
+          What to do if a Table is not Named after a Class? Easy. ActiveRecord
+          provides a simple method
+          &lt;code&gt;set_table_name&lt;/code&gt;
+          that allows you to do just that. If the tables are named after a class but
+          are not pluralized, you can simply set the environment to not use the
+          pluralized versions.
+        &lt;/p&gt;
+        &lt;p&gt;
+          What to do if a Table does not have Primary Key named 'id'? Easy, too.
+          Simply use
+          &lt;code&gt;set_primary_key&lt;/code&gt;
+          to set the primary key. This does not, however, provide for a case in which
+          a table does not have a primary key (or otherwise usable unique key) in any
+          way, shape, or form. The simple answer is to add an 'id' field that is not
+          used by the legacy application. This is difficult or impossible to do if
+          you are not the person in control of the database. It is also difficult if,
+          like me, the database exists on hundreds of servers distributed around the
+          country. Making any change in this case is not a simple undertaking.
+        &lt;/p&gt;
+        &lt;p&gt;
+          What to do if the Primary Key is not an auto-incremented integer field?
+          Here, we find the most difficult problem of all. ActiveRecord can ignore
+          the fact that you don't have auto-incremented values but, if your key is
+          not an integer ActiveRecord (as of this posting) hits the proverbial wall.
+          In the case of my legacy database, the primary keys were text fields, five
+          digits in length. This was a carry-over from an even older system in which
+          no relational database was involved.
+        &lt;/p&gt;
+        &lt;p&gt;
+          My only options here became extremely complicated and were only possible
+          because I was using Postgresql (editable views). That was the end of the
+          road for this project and Ruby on Rails. Thankfully, a helpful suggestion
+          led me to use
+          &lt;a href=&quot;http://merbivore.com&quot;&gt;Merb&lt;/a&gt;
+          for my framework and
+          &lt;a href=&quot;http://datamapper.org&quot;&gt;DataMapper&lt;/a&gt;
+          for my database ORM. Watch for my next post in which I discuss the solutions
+          to these problems, and a few nice perks, found in Merb and DataMapper.
+        &lt;/p&gt;
+      &lt;/div&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>
+      /posts/initial_experience_with_merb_and_datamapper.html,Wed Mar 12 20:16:47 -0400 2008
+    </id>
+    <title>Merb and DataMapper</title>
+    <subtitle>Initial Experience with Great Solutions</subtitle>
+    <link href='http://t.pitale.com/posts/initial_experience_with_merb_and_datamapper.html' />
+    <updated>2008-03-12T20:16:47-04:00</updated>
+    <content type='html'>
+      &lt;div id='post'&gt;
+        &lt;h1&gt;Merb and DataMapper&lt;/h1&gt;
+        &lt;h2&gt;Initial Experience with Great Solutions&lt;/h2&gt;
+        &lt;span class='date'&gt;2008-03-12&lt;/span&gt;
+        &lt;p&gt;
+          I started a new project using Ruby on Rails. Unfortunately, ActiveRecord
+          is so stringent in its requirements for database design that the legacy
+          database I was working with was unusable. I had to look elsewhere for
+          my ruby framework because using the legacy database was a primary
+          requirement. The existing application needs to continue operating for
+          many years to come. It serves its users very well.
+        &lt;/p&gt;
+        &lt;p&gt;
+          I turned to Merb for my solution. Database ORM agnosticism was the order
+          of the day. Merb does work with ActiveRecord but, since ActiveRecord did
+          not work with me, I chose to use DataMapper. Sequel was another
+          alternative. I prefer DataMapper (and merb, of course) for many reasons.
+        &lt;/p&gt;
+        &lt;p&gt;
+          The community surrounding Merb and DataMapper is excellent. Many of the
+          people that work on one project, work on the other. I began perusing the
+          Google groups for each project. I checked out their Rubyforge pages. I
+          read their websites and documentation. Most importantly, I participated
+          in conversations on irc chat (irc.freenode.net, #merb and #datamapper).
+          Then, I took the dive and it has been amazingly to easy to make the
+          switch from Rails to Merb and DataMapper.
+        &lt;/p&gt;
+        &lt;p&gt;
+          When I did happen to find something I wanted to change, a bug I wanted
+          to fix, or brand new feature I wanted to add, the process was cake. The
+          codebase is clean and well spec'd. In addition, both teams have well
+          defined guidelines and processes for contributing to the project. If you
+          are ever unable to find the answer to some question the IRC channels are
+          always full of the core members of the team along with many other very
+          experienced users. The IRC resource has been invaluable to me and since,
+          I hope I've been able to help a few new users myself.
+        &lt;/p&gt;
+        &lt;p&gt;
+          In terms of features both Merb and DataMapper are slightly behind the
+          features of Rails (and the many, many plugins) but, all of the core
+          requirements are there. Not only are the features in the core, they are
+          much better than the equivalent features in Rails. For example, you can
+          forget about ever having to write responds_to in every action you have
+          ever again. Merb has a method, provides, which defines the this behavior.
+        &lt;/p&gt;
+        &lt;p&gt;
+          My favorite feature in DataMapper, especially useful when working with a
+          legacy database, is the capability to rename a column for use in your own
+          model. For example, if the column in your database is named 'itm_mup' and
+          you would prefer it be called 'item_markup' in your application.
+        &lt;/p&gt;
+        &lt;p&gt;
+          Not only does Merb allow you to use one of the three most popular ORM's,
+          it allows you to use RSpec for testing, as well as, any javascript
+          library you would like. Adding to this flexibility, Merb brings back a
+          feature that was destroyed by Rails: lightweight components. Merb refers
+          to these as &quot;parts&quot;. Parts are called on by views to render extremely
+          modular subsets of functionality.
+        &lt;/p&gt;
+        &lt;p&gt;
+          All in all, any deficiencies are more than made up for by the community,
+          the codebase and ease of contribution, and the features of both Merb and
+          DataMapper.
+        &lt;/p&gt;
+      &lt;/div&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>
+      /posts/vision_online_now_focus.html,Tue Mar 11 23:49:29 -0400 2008
+    </id>
+    <title>Vision Online, Now Focus</title>
+    <subtitle>
+      The exciting tale of a Merb Application and branding
+    </subtitle>
+    <link href='http://t.pitale.com/posts/vision_online_now_focus.html' />
+    <updated>2008-03-11T23:49:29-04:00</updated>
+    <content type='html'>
+      &lt;div id='post'&gt;
+        &lt;h1&gt;Vision Online, Now Focus&lt;/h1&gt;
+        &lt;h2&gt;
+          The exciting tale of a Merb Application and branding
+        &lt;/h2&gt;
+        &lt;span class='date'&gt;2008-03-11&lt;/span&gt;
+        &lt;p&gt;
+          I have spent my free time, nights and weekends, working to create a new
+          version of Vision, online. For those that do not know, Vision is the
+          peerless, just-in-time, inventory control and point of sale system for the
+          retail liquor market.
+        &lt;/p&gt;
+        &lt;p&gt;
+          The project was originally titled Vision Online. That name is simple and
+          it works with all of the branding that ICS has already done. However, this
+          product heads out on its own and addresses a slightly new market. As such,
+          a new name was a must.
+        &lt;/p&gt;
+        &lt;p&gt;
+          Thanks to a stroke of genius by my associate Chris, we've switched to the
+          name Focus. The name is brilliant for three, important reasons. First,
+          the original product is named Vision and Focus is just that, a focusing of
+          the features and benefits of using Vision. Second, the use of this
+          product is intended to focus the users' inventory until it is as close as
+          possible to just-in-time. Lastly, a function of a person's literal vision
+          is the ability to focus. We are hoping that this reincarnation of Vision
+          will enable a user to focus on getting their inventory inline.
+        &lt;/p&gt;
+        &lt;p&gt;
+          Solidifying this branding was important for me, as a developer, because it
+          provides a northern star, a guiding light, to my goal. The meaning that
+          branding holds for a user is realized many times over, for me. It is an
+          important aspect of development, keeping the goals, ideals, and vision of
+          the product, in mind.
+        &lt;/p&gt;
+      &lt;/div&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>
+      /posts/slicehost_getting_it_right_right_away.html,Fri Mar 14 21:33:54 -0400 2008
+    </id>
+    <title>Slicehost</title>
+    <subtitle>Getting it Right, Right Away</subtitle>
+    <link href='http://t.pitale.com/posts/slicehost_getting_it_right_right_away.html' />
+    <updated>2008-03-14T21:33:54-04:00</updated>
+    <content type='html'>
+      &lt;div id='post'&gt;
+        &lt;h1&gt;Slicehost&lt;/h1&gt;
+        &lt;h2&gt;Getting it Right, Right Away&lt;/h2&gt;
+        &lt;span class='date'&gt;2008-03-14&lt;/span&gt;
+        &lt;p&gt;
+          At the recommendation of Patrick Reagan of Viget Labs I signed up for an
+          account with Slicehost. With a simple form for signup, I was quickly
+          filling in my credit card number. Before my credit card had been validated
+          by Slicehost, my slice was up and running.
+        &lt;/p&gt;
+        &lt;p&gt;
+          I was not planning at the time to set up, or modify my new server. The draw
+          of the root password that had just been emailed to me overpowered any such
+          plans. I quickly discovered the fantastic tools made available by Slicehost
+          for the user. Within 2 minutes I had configured my DNS and within 5 minutes
+          I had compiled and installed Nginx, all thanks to the excellent help site.
+        &lt;/p&gt;
+        &lt;p&gt;
+          Upon completing the initial &quot;release&quot; of this website the following
+          morning, I was completely up and running and I switched my TLD registration
+          to the Slicehost DNS hosts. If you do sign up for a Slicehost account I
+          would certainly appreciate a
+          &lt;a href=&quot;https://manage.slicehost.com/customers/new?referrer=972292314&quot;&gt;referral.&lt;/a&gt;
+        &lt;/p&gt;
+      &lt;/div&gt;
+    </content>
+  </entry>
+</feed>

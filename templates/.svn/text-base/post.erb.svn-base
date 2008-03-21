@@ -1,0 +1,16 @@
+---
+title: New Post
+subtitle: Hook, Line, and Sinker
+author: Tony Pitale
+created_at: <%= Time.now.to_y %>
+layout: posts
+filter:
+  - haml
+---
+#post
+  %h1= h(@page.title)
+  %h2= h(@page.subtitle)
+  %span.date= @page.created_at.strftime('%Y-%m-%d')
+  
+  %p
+    Post Content Goes Here

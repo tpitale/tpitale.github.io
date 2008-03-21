@@ -1,0 +1,374 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta content='text/html; charset=utf-8' http-equiv='Content-type' />
+    <meta name='author' />
+    <meta content='i/cbJtXe1ZDIZNta65CghwcRM/zFMRHIsbR9poU+uwU=' name='verify-v1' />
+    <title>t.pitale</title>
+    <link href='/favicon.ico' rel='shortcut icon' />
+    <!-- Site CSS -->
+    <link href='/css/base.css' media='screen, projection' rel='stylesheet' type='text/css' />
+  </head>
+  <body>
+    <div id='header'>
+      <div class='wrap'>
+        <div class='col'>
+          <a href='/'>
+            <img src='/images/logo.png' />
+          </a>
+        </div>
+        <div class='block'>
+          <ul>
+            <li>
+              <a href="/#about">About</a>
+            </li>
+            <li>
+              <a href="/#contact">Contact</a>
+            </li>
+            <li>
+              <a href="/#blog">Blog</a>
+            </li>
+            <li>
+              <a href="/#portfolio">Portfolio</a>
+            </li>
+            <li>
+              <a href="/#links">Links</a>
+            </li>
+            <li>
+              <a href="/#photos">Photos</a>
+            </li>
+          </ul>
+        </div>
+        <br class='clearleft' />
+      </div>
+    </div>
+    <div id='content'>
+      <!-- About -->
+      <div id='about'>
+        <div class='wrap'>
+          <div class='col'>
+            <h1>
+              About
+            </h1>
+          </div>
+          <div class='block'>
+            <p>
+              I am a recent graduate of Virginia Tech. I started with Ruby on Rails
+              in early 2006. Now, I am in love with Ruby, Merb, Rails, and the
+              development community surrounding these projects. I always strive to
+              learn, here is my place to share.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Contact -->
+      <div id='contact'>
+        <div class='wrap'>
+          <div class='col'>
+            <h1>
+              Contact
+            </h1>
+          </div>
+          <div class='block'>
+            <div id='fast'>
+              <h1>Fast</h1>
+              <a href="mailto:tpitale@gmail.com">tpitale@gmail.com</a>
+              <a href="mailto:tony.pitale@gmail.com">tony.pitale@gmail.com</a>
+            </div>
+            <div id='faster'>
+              <h1>Faster</h1>
+              <b>AIM:</b>
+              sicdev
+              <br />
+              <b>IRC:</b>
+              tpitale
+            </div>
+            <div id='fastest'>
+              <h1>Fastest</h1>
+              (908)-309-8761
+            </div>
+            <br class='clearleft' />
+          </div>
+        </div>
+      </div>
+      <!-- Latest Blog Post -->
+      <div id='blog'>
+        <div class='wrap'>
+          <div class='col'>
+            <h1>
+              Blog
+            </h1>
+            <!-- List of Blog Posts -->
+            <ul>
+              <li>
+<<<<<<< .mine
+<<<<<<< .mine
+=======
+                <a href="/posts/who_needs_mac_docking.html">Imaginary Mac Dock</a>
+=======
+                <a href="/posts/notes_on_legacy_databases_with_datamapper.html">Legacy Databases with DataMapper</a>
+>>>>>>> .r14
+              </li>
+              <li>
+<<<<<<< .mine
+>>>>>>> .r13
+                <a href="/posts/notes_on_legacy_databases_with_datamapper.html">Legacy Databases with DataMapper</a>
+=======
+                <a href="/posts/who_needs_mac_docking.html">Imaginary Mac Dock</a>
+>>>>>>> .r14
+              </li>
+              <li>
+                <a href="/posts/notes_on_legacy_databases_with_activerecord.html">Legacy Databases with ActiveRecord</a>
+              </li>
+              <li>
+                
+              </li>
+<<<<<<< .mine
+              <li>
+                
+              </li>
+=======
+              <li>
+                <a href="/posts/initial_experience_with_merb_and_datamapper.html">Merb and DataMapper</a>
+              </li>
+>>>>>>> .r13
+            </ul>
+          </div>
+          <div class='block'>
+            <!-- Latest Post -->
+            <div id='post'>
+<<<<<<< .mine
+<<<<<<< .mine
+              <h1>Vision Online, Now Focus</h1>
+              <h2>
+                The exciting tale of a Merb Application and branding
+              </h2>
+=======
+              <h1>Imaginary Mac Dock</h1>
+              <h2>If You Must, You Must</h2>
+=======
+              <h1>Legacy Databases with DataMapper</h1>
+              <h2>Something Old, Something New</h2>
+>>>>>>> .r14
+              <span class='date'>2008-03-18</span>
+>>>>>>> .r13
+              <p>
+<<<<<<< .mine
+<<<<<<< .mine
+                I have spent my free time, nights and weekends, working to create a new
+                version of Vision, online. For those that do not know Vision is the
+                peerless just-in-time, inventory control, and point of sale system for the
+                retail liquor market.
+=======
+                Some people like to come home and "dock" their laptops to a desktop-type
+                setup. There is no such thing for a Mac, not in the way that the Dell users
+                of the world might imagine it. However, there are two ways to accomplish
+                the same features. The first involves another Mac, the second does not.
+=======
+                In my previous post I discussed my eventual discovery that
+                <a href="http://rubyonrails.org">Ruby on Rails</a>
+                would not work for a new project I had begun. Thankfully, I was at the very
+                beginning of my work on said project and making a transition to a new path
+                was not the end of the world.
+>>>>>>> .r14
+>>>>>>> .r13
+              </p>
+              <p>
+<<<<<<< .mine
+<<<<<<< .mine
+                The project was originally titled Vision Online. That name is simple and
+                it works with all of the branding that ICS has already done. However, this
+                product heads out on its own and addresses a slightly new market. As such,
+                a new name was a must.
+=======
+                The first, and conceptually more complicated method relies upon two
+                features that Macs have had as long as I can remember using them. Upon
+                booting, a Mac (laptop or desktop) can act as an external hard drive case
+                for the drive inside. Simply holding down T will start this mode. Now, we
+                can plug this Mac into another and use this hard drive as the boot drive.
+                Simply hold down the Option key when booting the "base", desktop Mac. The
+                desktop will boot the hard drive in the laptop. If you have an Intel Mac,
+                the computers can be connected with a USB cable or a Firewire cable. If you
+                are using a PowerPC Mac, a Firewire cable must be used.
+=======
+                As I mentioned, a helpful suggestion led me to investigate
+                <a href="http://merbivore.com">Merb</a>
+                as a potential framework. Merb has the benefit of letting me use any of
+                three possible database ORMs. ActiveRecord is supported, as well as,
+                <a href="http://datamapper.org/">DataMapper</a>
+                and Sequel. Obviously, ActiveRecord did not work for me and so, I looked at
+                both DataMapper and Sequel. I found DataMapper to be more usable out of the
+                box and so I moved ahead using it. Sequel would have been another excellent
+                alternative but, I had to pick one and continue with my work.
+>>>>>>> .r14
+>>>>>>> .r13
+              </p>
+              <p>
+<<<<<<< .mine
+<<<<<<< .mine
+                Thanks to a stroke of genius by my associate Chris, we've switched to the
+                name Focus. The name is brilliant for three, important, reasons. First,
+                the original product is named Vision and Focus is just that, a focusing of
+                the features and benefits of using Vision. Second, the use of such a
+                product is intended to focus the users inventory until it is as close as
+                possible to just-in-time. Lastly, a function of Vision is the ability to
+                Focus.
+=======
+                The second method is far more simplistic. Apple (and many other companies)
+                offer bluetooth keyboards and mice. Simply plug in an external monitor and
+                use the bluetooth built into most Macs for the keyboard and mouse. With one
+                physical cable you have essentially the same setup as all those "dock"
+                users.
+=======
+                How did DataMapper solve my legacy database issues, you may ask. The answer
+                is that DataMapper provides all the same standard solutions that
+                ActiveRecord does but, it allows for keys to be text or any other type as
+                long as they are unique and not null. The sql requirements for a primary
+                key state that it must be unique and not null, there is no requirement for
+                type. There was one little issue with DataMapper in which the text fields
+                were being ignored because, in DataMapper, text fields are lazy. These
+                fields will not be loaded until they are requested by an application. This
+                led to a number of issues but, because DataMapper is so very easy to
+                contribute to, I was able to make the necessary changes with much
+                appreciation from the community.
+>>>>>>> .r14
+>>>>>>> .r13
+              </p>
+              <p>
+                In terms of conventions, DataMapper has another nifty trick up its sleeve.
+                In DataMapper, when defining a column, you may use a different name for the
+                property and later define the actual column name from the database. I was
+                extremely enthused to find that I could change names from the database from
+                <code>wc_shlfprce</code>
+                to something like:
+                <code>warm_case_shelf_price.</code>
+                Though it was a longer name, in terms of legibility the latter is an
+                infinite improvement.
+              </p>
+              <p>
+                And so, I work on, with Merb and DataMapper as my preferred tools, at least
+                for this particular project. Aside from this flexibility, DataMapper would
+                normally adhere to the same specific conventions for a database as does
+                ActiveRecord. Any new converts from Rails will likely feel right at home.
+              </p>
+            </div>
+            <div class='allposts'>
+              <a href="/posts/">All</a>
+              or
+              <a href="/feed.xml">Feed</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Portfolio Links, w/images, to my projects -->
+      <div id='portfolio'>
+        <div class='wrap'>
+          <div class='col'>
+            <h1>
+              Portfolio
+            </h1>
+          </div>
+          <div class='block'>
+            <a href="http://www.spirit76wines.com"><img src='/images/s76.png' /></a>
+            <a href="http://www.ics-nj.com"><img src='/images/ics-nj.png' /></a>
+            <a href="#"><img src='/images/focus.png' /></a>
+            <a href="#"><img src='/images/appuser.png' /></a>
+            <a href="#"><img src='/images/threeoseven.png' /></a>
+            <a href="#"><img src='/images/prv3.png' /></a>
+            <a href="#"><img src='/images/checkout.png' /></a>
+            <br class='clearleft' />
+          </div>
+        </div>
+      </div>
+      <!-- Worthy links to associate pages -->
+      <div id='links'>
+        <div class='wrap'>
+          <div class='col'>
+            <h1>
+              Links
+            </h1>
+          </div>
+          <div class='block'>
+            <div id='people'>
+              <h1>Personal Blogs</h1>
+              <ul>
+                <li><a href="http://reinh.com">Reinh</a></li>
+                <li><a href="http://gweezlebur.com/">Michael Ivey</a></li>
+                <li>
+                  <a href="http://adam.speaksoutofturn.com/">Adam French</a>
+                </li>
+                <li>
+                  <a href="http://brainspl.at/">Ezra Zygmuntowicz</a>
+                </li>
+                <li>
+                  <a href="http://www.yehudakatz.com/">Yehuda Katz</a>
+                </li>
+                <li><a href="http://www.sneaq.net/">Patrick Reagan</a></li>
+                <li>
+                  <a href="http://www.theamazingrando.com/">Paul Sadauskas</a>
+                </li>
+              </ul>
+            </div>
+            <div id='companies'>
+              <h1>Company Blogs</h1>
+              <ul>
+                <li><a href="http://ics-nj.com/blog/">ICS</a></li>
+                <li>
+                  <a href="http://www.37signals.com/svn/">37signals</a>
+                </li>
+                <li><a href="http://www.viget.com/extend/">Viget</a></li>
+                <li>
+                  <a href="http://engineyard.com/blog">Engine Yard</a>
+                </li>
+                <li><a href="http://blog.slicehost.com/">SliceHost</a></li>
+              </ul>
+            </div>
+            <div id='community'>
+              <h1>Community Sites</h1>
+              <ul>
+                <li><a href="http://merbivore.com">Merb</a></li>
+                <li><a href="http://datamapper.org">DataMapper</a></li>
+                <li><a href="http://jquery.com/">jQuery</a></li>
+                <li><a href="http://www.rubyonrails.org/">Rails</a></li>
+              </ul>
+            </div>
+            <br class='clearleft' />
+          </div>
+        </div>
+      </div>
+      <!-- Sampling of flickr images -->
+      <div id='photos'>
+        <div class='wrap'>
+          <div class='col'>
+            <h1>
+              Photos
+            </h1>
+          </div>
+          <div class='block'>
+            <script src='http://www.flickr.com/badge_code_v2.gne?count=7&display=latest&size=s&layout=x&source=user_set&user=41783324%40N00&set=72157604108727991' type='text/javascript'>
+            </script>
+            <br class='clearleft' />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type='text/javascript'>
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type='text/javascript'>
+      var pageTracker = _gat._getTracker("UA-3879168-1");
+      pageTracker._initData();
+      pageTracker._trackPageview();
+    </script>
+    <script src='/javascripts/jquery.js' type='text/javascript'>
+    </script>
+    <script src='/javascripts/jquery.scrollTo.js' type='text/javascript'>
+    </script>
+    <script src='/javascripts/jquery.localscroll.js' type='text/javascript'>
+    </script>
+    <script type='text/javascript'>
+      $(document).ready(function(){$("#header").localScroll();});
+    </script>
+  </body>
+</html>
