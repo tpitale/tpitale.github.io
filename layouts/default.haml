@@ -1,0 +1,54 @@
+---
+extension: html
+filter:    haml
+---
+!!!
+%html
+  %head
+    %meta{:"http-equiv" => "Content-type", :content => "text/html; charset=utf-8"}/
+    %meta{:"name" => "author", :content => @page.author}/
+    %meta{:name=>"verify-v1", :content=>"i/cbJtXe1ZDIZNta65CghwcRM/zFMRHIsbR9poU+uwU="}/
+    %title= @page.title unless @page.nil?
+    %link{:rel=>"shortcut icon", :href=>"/favicon.ico"}
+    %link{:rel=>"alternate", :type=>"application/rss+xml", :href=>"http://feeds.feedburner.com/tpitale", :title=>"Atom feed"}
+    
+    / Site CSS
+    %link{:rel=>"stylesheet", :href=>"/css/base.css", :type=>"text/css", :media=>"screen, projection"}/
+  %body
+    #header
+      .wrap
+        .col
+          %a{:href=>"/"}
+            %img{:src=>"/images/logo.png"}/
+        .block
+          %ul
+            %li
+              = link_to("About", "/#about")
+            %li
+              = link_to("Contact", "/#contact")
+            %li
+              = link_to("Blog", "/#blog")
+            %li
+              = link_to("Portfolio", "/#portfolio")
+            %li
+              = link_to("Links", "/#links")
+            %li
+              = link_to("Photos", "/#photos")
+        %br.clearleft/
+    #content
+      = @content
+
+    %script{:type=>"text/javascript", :src=>"/javascripts/jquery.js"}
+    %script{:type=>"text/javascript", :src=>"/javascripts/jquery.scrollTo.js"}
+    %script{:type=>"text/javascript", :src=>"/javascripts/jquery.localscroll.js"}
+    %script{:type=>"text/javascript"}
+      $(document).ready(function(){$("#header").localScroll();});
+      
+    / Google
+    %script{:type=>"text/javascript"}
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    %script{:type=>"text/javascript"}
+      var pageTracker = _gat._getTracker("UA-3879168-1");
+      pageTracker._initData();
+      pageTracker._trackPageview();

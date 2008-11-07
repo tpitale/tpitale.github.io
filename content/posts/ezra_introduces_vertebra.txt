@@ -1,0 +1,48 @@
+---
+title: Ezra Introduces Vertebra at RailsConf 2008
+subtitle: Configuration Through the Clouds
+author: Tony Pitale
+created_at: 2008-06-01 10:51:45.374671 -07:00
+layout: posts
+filter:
+  - haml
+---
+#post
+  %h1= h(@page.title)
+  %h2= h(@page.subtitle)
+  %span.date= @page.created_at.strftime('%Y-%m-%d')
+  
+  %p
+    Ezra Z.'s talk at RailsConf 2008 started out normally enough but, his first
+    point of order was to introduce Vertebra. Vertebra is similar in purpose to
+    Capistrano. Instead of using a linear interface such as SSH, Vertebra uses
+    XMPP (the protocol used in Jabber) to deal with thousands of concurrent
+    operations. For me, this is the most exciting announcement of RailsConf
+    not because I do much with cloud computing but, because I want to, and this
+    is just another piece of the puzzle. The whole process of XMPP providing
+    presence -- like jabber instant messaging -- and running on an Erlang
+    implementation of the jabber server that is hugely, horizontally scalable.
+  %p
+    It appears that you can use a jabber client or a command-line client to
+    interact with the system. All sorts of things are capable. The examples
+    Ezra gave included everything from requesting RAM and CPU statistics to
+    rebuilding systems. Map/Reduce type scatter/gather dispatch for discovery
+    and deployment is easily possible with the protocol in use.
+  %p
+    Ezra coined a new acronym today, CREST, which stands for cloud REST. Along
+    with this Ezra displayed an example that was built on Merb to show a Ruby
+    interaction with the cloud using RESTful processes. Resources have URLs,
+    just as they should.
+  %p
+    All in all, this process seems to be a platform that other cloud services
+    could be built upon. I can't wait to dig right in considering he demoed the
+    service running live.
+    
+%script{:type =>"text/javascript", :src=>"http://disqus.com/forums/tpitale/embed.js"}
+%noscript
+  %a{:href=>"http://tpitale.disqus.com/?url=ref"}
+    View the discussion thread.
+  %a{:href=>"http://disqus.com", :class=>"dsq-brlink"}
+    blog comments powered by 
+    %span{:class=>"logo-disqus"}
+      Disqus

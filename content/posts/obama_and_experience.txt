@@ -1,0 +1,76 @@
+---
+title: Barack Obama
+subtitle: Experience is Everything
+author: Tony Pitale
+created_at: 2008-04-06 20:46:17.756245 -04:00
+layout: posts
+filter:
+  - haml
+---
+#post
+  %h1= h(@page.title)
+  %h2= h(@page.subtitle)
+  %span.date= @page.created_at.strftime('%Y-%m-%d')
+  
+  %p
+    I won't often speak of politics. In fact, I would like this to be my one
+    and only post on the subject.
+    %b
+      I am a Barack Obama supporter.
+    The man says a lot of things, just as every other candidate has. However,
+    as I've learned, few can back it up. Yes, John McCain was a POW. That is
+    horrible but, has no bearing on his ability to be president. His health
+    should be of much greater concern. As for Hillary, she talks a whole lot.
+    A significant amount of hatred spews from her mouth. On top of that, many
+    claims that she makes are only true in the simplest sense. For example, she
+    speaks of how she has introduced legislation to improve healthcare and the
+    related industry and regulations. What she doesn't say is that very little
+    of her legislation passes or is even supported by her peers. Many of these
+    bills introduced speak very vaguely about "improving healthcare at sometime
+    in the future", without ever mentioning how or when.
+  %p
+    Something I have learned working in the IT/Software industry, in a very
+    short time, is that time does NOT equal experience. I know many a developer
+    that has worked for 20 years and has little more real experience than
+    another particular developer, one who had only been in the corporate world
+    for 2, maybe 3, years. It is the passion that drives us all. This passion
+    leads a person to find the experience because it is something they want.
+    For many, it is something that simply may or may not happen over time.
+  %p
+    If you want to understand just how passionate Barack Obama is, look at how
+    passionate his followers are. Barack Obama's passion drives others to be
+    just as passionate. This could also be seen in another characteristic of
+    Bill Clinton. As Chris Rock used to say in a show, "Bill Clinton is so
+    famous, someone else got famous just from sucking his dick!"
+  %p
+    Granted, passion isn't everything but, it drives a person to seek out the
+    many other characteristics that make an exceptional person. The traits and
+    abilities that a person must possess to be the president. Barack Obama has
+    these traits and abilities. He may not have been a POW but, he has the
+    necessary abilities at the most basic level to achieve anything he wants.
+    In addition, we must face the fact that nothing will ever prepare a person
+    truly for being one of the most powerful people in the world. So, we must
+    look to the building blocks.
+  %p
+    Another excellent measure of a person's character and merit is in the way
+    they communicate to the public. Barack Obama, and his campaign, do not
+    speak hatefully of any other person. Even when it is well deserved, honest
+    and would sometimes be necessary. This type of level-headed behavior is
+    precisely what the country needs, right now. Excitable behavior, lack of
+    quality information has gotten this country in way over its head in war,
+    death, debt, and built as a reputation that contrives an extreme level of
+    hatred from nearly every other country in the world.
+  %p
+    These are only a few of the multitude of "things" that are required to be
+    the president. No one person can ever speak of every quality necessary. My
+    only fear at this point is that something, someone, is going to screw it up
+    for the rest of the country.
+    
+%script{:type =>"text/javascript", :src=>"http://disqus.com/forums/tpitale/embed.js"}
+%noscript
+  %a{:href=>"http://tpitale.disqus.com/?url=ref"}
+    View the discussion thread.
+  %a{:href=>"http://disqus.com", :class=>"dsq-brlink"}
+    blog comments powered by 
+    %span{:class=>"logo-disqus"}
+      Disqus

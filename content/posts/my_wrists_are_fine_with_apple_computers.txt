@@ -1,0 +1,44 @@
+---
+title: Carpal Tunnel Syndrome
+subtitle: Or, the Lack Thereof
+author: Tony Pitale
+created_at: 2008-03-25 00:46:50.999737 -04:00
+layout: posts
+filter:
+  - haml
+---
+#post
+  %h1= h(@page.title)
+  %h2= h(@page.subtitle)
+  %span.date= @page.created_at.strftime('%Y-%m-%d')
+  
+  %p
+    How could I forget the voice of my high school typing teacher, constantly
+    nagging me to keep my wrists elevated above the keyboard in an horrific
+    and uncomfortable position. After all of these years I've never, ever
+    been able to accomplish any typing in this fashion. So, my wrists have
+    always rested comfortably, but precariously, upon whatever surface my
+    keyboard is resting upon. For many years, this surface would have been a
+    simple table or desk as I would type at a basic keyboard as I worked in
+    Windows. Luckily, for me, I have moved away from the Windows world. As
+    such, I am now solely reliant upon Apple's hardware creations.
+  %p
+    Yet, I have somehow come through unscathed. While an unlucky associate of
+    mine did not share the same luck and was required to undergo a simple,
+    preventive, surgery. After much (well, not that much) contemplation, the
+    only justification for this that I can arrive at is Apple's hardware. It is
+    so thin that, in the case of the latest wired and wireless keyboards from
+    Apple, it might as well be the desk. Therefore, the raised wrists position
+    is not a requirement. The same affect is accomplished when using a laptop.
+    However, this applies to all laptops. Now, looking back, I can recall a
+    pair of keyboards, from Logitech, that would also be thin enough to allow
+    a user to safely rest their wrists upon their computing surface.
+    
+%script{:type =>"text/javascript", :src=>"http://disqus.com/forums/tpitale/embed.js"}
+%noscript
+  %a{:href=>"http://tpitale.disqus.com/?url=ref"}
+    View the discussion thread.
+  %a{:href=>"http://disqus.com", :class=>"dsq-brlink"}
+    blog comments powered by 
+    %span{:class=>"logo-disqus"}
+      Disqus

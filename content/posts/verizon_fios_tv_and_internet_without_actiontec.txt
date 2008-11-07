@@ -1,0 +1,86 @@
+---
+title: Verizon Fios Internet & TV
+subtitle: Using Your Own Router, Not the Actiontec Router
+author: Tony Pitale
+created_at: 2008-07-08 09:31:33.371391 -04:00
+layout: posts
+filter:
+  - haml
+---
+#post
+  %h1= h(@page.title)
+  %h2= h(@page.subtitle)
+  %span.date= @page.created_at.strftime('%Y-%m-%d')
+  
+  %p
+    %h1 The basic steps are as follows:
+    %ol
+      %li Order Verizon Fios
+      %li
+        During installation have the installer turn on the ethernet port in the
+        MOCA, not the coax
+      %li Have the installer leave you with a "NIM"
+      %li Setup your router as you would have with any other ISP
+      %li Connect the "NIM" to your router
+      %li Connect the "NIM" to a coax port in your house
+      %li
+        Have the installer connect and activate your television set-top-boxes
+        (STB)
+  
+  %h3 Now for some explanation  
+  %p
+    I think ordering should be pretty self-explanatory. However, I have not
+    said anything about why a sane person would wish to do this instead of
+    letting the nice Verizon installer do their job. It's all in the hardware
+    Using the Actiontec router Verizon provides is fine, if you've never had a
+    wireless home network before. For the rest of us, being allowed to use our
+    own, existing, setup is not possible without the foreknowledge or the will
+    to fight for the information.
+
+  %h3 Onto the more technical stuff
+  %p
+    The MOCA is the box that is left outside of your house. Essentially, it
+    receives and interprets the signal. It takes the place of what we once
+    called a MODEM. In this box, there are multiple connections, one of which
+    is the standard ethernet port any Linksys, DLink, or Apple router knows and
+    loves. There is also a port that passes the network information over a coax
+    (short for coaxial) cable. This is the port left on by Verizon normally
+    because the Actiontec router (which, with a simple google search, one will
+    find is nearly worthless) is intended to work with it. Using the ethernet
+    port is required so that every other brand of standard router will operate.
+  %p
+    Next, we set up our router in much the same way it would be set up with a
+    DSL or Cable ISP. Verizon uses the standard, DHCP, to give your router an
+    IP address. At this point, assuming the internet has been activated by the
+    installer, you should be able to get on the internet at the wonderfully
+    blazing speeds that Fios provides.
+  %p
+    The last major step is asking the installer to give you a "NIM". I never
+    found out what "NIM" stood for, but it's purpose is clear. In order to
+    get access to the programming guide or to video-on-demand services your
+    STBs must have internet access, too. The "NIM" should have two ports. The
+    first is an ethernet port and the second is a coax connector. Can you guess
+    what to do? Plug an ethernet cable from your router into the "NIM" and plug
+    a coax cable into the other port. The final coax connection should be made
+    to any coax cable outlet in your home as they are all inter-connected. The
+    "NIM" acts as translator in place of the Actiontec router and provides
+    internet access for the STBs to use. The STBs do have ethernet ports (at
+    least the latest Motorola box Verizon provided) but internet access does
+    not appear to be the purpose, but rather, home network connection for
+    certain media-sharing capabilities (music, movies, pictures to the TV).
+  %p
+    At this point, the installer should be able to simply plug in all of your
+    STBs and activate them as needed through Verizon.
+  %p
+    Disclaimer: I am not a Verizon technician. If for some strange reason any
+    of these instructions mess up your system I take no responsibility as
+    these are only the methods that worked FOR ME. Your Mileage May Vary!
+    
+%script{:type =>"text/javascript", :src=>"http://disqus.com/forums/tpitale/embed.js"}
+%noscript
+  %a{:href=>"http://tpitale.disqus.com/?url=ref"}
+    View the discussion thread.
+  %a{:href=>"http://disqus.com", :class=>"dsq-brlink"}
+    blog comments powered by 
+    %span{:class=>"logo-disqus"}
+      Disqus
