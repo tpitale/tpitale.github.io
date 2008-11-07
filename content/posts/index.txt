@@ -14,4 +14,4 @@ filter:
     .block
       - posts = @pages.find(:limit => 10, :in_directory => 'posts', :sort_by => 'mtime', :reverse => true)
       - posts.each do |post|
-        = post.render unless post.filename == 'index'
+        = render(post) unless post.filename == 'index'

@@ -64,7 +64,7 @@ filter:
     .block
       / Latest Post
       - posts = @pages.find(:limit => 5, :in_directory => 'posts', :sort_by => 'mtime', :reverse => true)
-      = posts.first.filename == 'index' ? posts[2].render : posts.first.render
+      = posts.first.filename == 'index' ? render(posts[2]) : render(posts.first)
       
       .allposts
         = link_to("All", "/posts/")
