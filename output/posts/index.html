@@ -52,88 +52,36 @@
             </h1>
           </div>
           <div class='block'>
-            
             <div id='post'>
-              <h1>Legacy Databases with ActiveRecord</h1>
-              <h2>So Close, But Yet, So Far</h2>
-              <span class='date'>2008-03-17</span>
+              <h1>Three Games</h1>
+              <h2>In Three Weeks of Midnight Launches</h2>
+              <span class='date'>2008-11-06</span>
               <p>
-                I loved working with Ruby on Rails, I still do. I bought books, I read
-                blogs, and I made a fair few sites (both personal and for clients). I
-                thought Ruby on Rails was the be-all, end-all for web development. I was
-                very wrong.
+                The past three weeks (including tonight) have seen the launch of the three
+                biggest games of 2008. Two weeks ago was the launch of Fable 2, the much
+                anticipated sequel to an award winning, though short, game by the famed
+                Peter Molyneux. Much of the gameplay has been tweaked, the game is much
+                longer, and you have a friendly dog to aid your character. Though I am not
+                done with the game, my roommate (who is on his second time through) are
+                enjoying it thoroughly. Last week, Chris and I were lucky enough to attend
+                the launch of Bethesda's version of Fallout, number 3. I have spent more
+                time playing through Fallout 3 and, though I'm not done, I would say it is
+                more than worthy of a "Best Game of the Year" title.
               </p>
               <p>
-                Ruby on Rails is fantastic. Especially when you create a new application
-                and design and create that web application with Rails, and its way, in
-                mind. However, if, like myself, you have to work with the database from
-                an application that originated nearly 20 years ago, you may hit some snags.
-                Just as I did.
+                Lastly, tonight, I'll be waiting for Gears of War 2! The original Gears of
+                War was very probably my favorite game a short while ago. Aside from Halo 3
+                it was the primary reason that I purchased an Xbox 360 while in college. It
+                has won many, many awards in the past, and I expect it will win many, many
+                more in its second iteration.
               </p>
               <p>
-                The design of a database to be used with Ruby on Rails (specifically
-                ActiveRecord) must adhere to some very stringent "best" practices. These
-                are not always the absolute, best practices in design but, they provide
-                some fairly standard basic practices. One such example, though fairly
-                advanced comes with polymorphic associations. In defining the type in one
-                such association, ActiveRecord uses the class name of the type instead of
-                a secondary table listing all possible types. This breaks any possible use
-                of a foreign-key constraint.
-              </p>
-              <p>
-                Some basics in Ruby on Rails database design, which is often generated
-                without any specification from the developer (when using model generators),
-                include: tables are named the pluralized class name (e.g. User becomes
-                users), every table has an "id" field that is an auto-incremented integer,
-                and a foreign-key is tablename_id.
-              </p>
-              <p>
-                What must we do if we are using an existing database, and it does not
-                comply to these standards? I'll go through each instance of non-standard
-                database design from the existing database and show how ActiveRecord did
-                or did not handle the problem.
-              </p>
-              <p>
-                What to do if a Table is not Named after a Class? Easy. ActiveRecord
-                provides a simple method
-                <code>set_table_name</code>
-                that allows you to do just that. If the tables are named after a class but
-                are not pluralized, you can simply set the environment to not use the
-                pluralized versions.
-              </p>
-              <p>
-                What to do if a Table does not have Primary Key named 'id'? Easy, too.
-                Simply use
-                <code>set_primary_key</code>
-                to set the primary key. This does not, however, provide for a case in which
-                a table does not have a primary key (or otherwise usable unique key) in any
-                way, shape, or form. The simple answer is to add an 'id' field that is not
-                used by the legacy application. This is difficult or impossible to do if
-                you are not the person in control of the database. It is also difficult if,
-                like me, the database exists on hundreds of servers distributed around the
-                country. Making any change in this case is not a simple undertaking.
-              </p>
-              <p>
-                What to do if the Primary Key is not an auto-incremented integer field?
-                Here, we find the most difficult problem of all. ActiveRecord can ignore
-                the fact that you don't have auto-incremented values but, if your key is
-                not an integer ActiveRecord (as of this posting) hits the proverbial wall.
-                In the case of my legacy database, the primary keys were text fields, five
-                digits in length. This was a carry-over from an even older system in which
-                no relational database was involved.
-              </p>
-              <p>
-                My only options here became extremely complicated and were only possible
-                because I was using Postgresql (editable views). That was the end of the
-                road for this project and Ruby on Rails. Thankfully, a helpful suggestion
-                led me to use
-                <a href="http://merbivore.com">Merb</a>
-                for my framework and
-                <a href="http://datamapper.org">DataMapper</a>
-                for my database ORM. Watch for my next post in which I discuss the solutions
-                to these problems, and a few nice perks, found in Merb and DataMapper.
+                I hope, for the first time in my life, I can play through all of these
+                games to something that could be considered completion, if not to complete
+                all of the various achievements. If only there were more hours in the day!
               </p>
             </div>
+            <div id='disqus_thread'></div>
             <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
             <noscript>
               <a href='http://tpitale.disqus.com/?url=ref'>
@@ -146,37 +94,58 @@
                 </span>
               </a>
             </noscript>
+            
             <div id='post'>
-              <h1>Webby - Part 1</h1>
-              <h2>An Introduction to Webby</h2>
-              <span class='date'>2008-04-13</span>
+              <h1>Legacy Databases with DataMapper</h1>
+              <h2>Something Old, Something New</h2>
+              <span class='date'>2008-03-18</span>
               <p>
-                <a href="http://webby.rubyforge.org/">Webby</a>
-                is the best tool available on the web (especially for Ruby developers) to
-                manage the content on a website. When I say website I mean a general class
-                of website that has no dynamic content. Websites such as personal blogs are
-                ideal candidates for Webby as they only change when a new post is made.
-                Webby is essentially the lightest, most hackable CMS available.
+                In my previous post I discussed my eventual discovery that
+                <a href="http://rubyonrails.org">Ruby on Rails</a>
+                would not work for a new project I had begun. Thankfully, I was at the very
+                beginning of my work on said project and making a transition to a new path
+                was not the end of the world.
               </p>
               <p>
-                In my case, I needed a tool to create a website that was not database-
-                backed but, the content changed frequently enough to warrant a simple means
-                by which I could update and makes other changes. Having been working with
-                Ruby and the Rails/Merb frameworks, I wished I could have the rendering
-                abilities and helper methods of these frameworks. However, both require
-                massive resources in comparison to serving up static files. Therefore, both
-                were overkill with all of their abilities designed for web applications.
+                As I mentioned, a helpful suggestion led me to investigate
+                <a href="http://merbivore.com">Merb</a>
+                as a potential framework. Merb has the benefit of letting me use any of
+                three possible database ORMs. ActiveRecord is supported, as well as,
+                <a href="http://datamapper.org/">DataMapper</a>
+                and Sequel. Obviously, ActiveRecord did not work for me and so, I looked at
+                both DataMapper and Sequel. I found DataMapper to be more usable out of the
+                box and so I moved ahead using it. Sequel would have been another excellent
+                alternative but, I had to pick one and continue with my work.
               </p>
               <p>
-                In this ongoing series of posts I will do my best to cover Webby and some
-                of the features of Webby that are not fully covered in the tutorials. Also,
-                I would really love to help out anyone interested in Webby that is not sure
-                that Webby will meet their needs (and don't have time to dig into Webby
-                itself to find out).
+                How did DataMapper solve my legacy database issues, you may ask. The answer
+                is that DataMapper provides all the same standard solutions that
+                ActiveRecord does but, it allows for keys to be text or any other type as
+                long as they are unique and not null. The sql requirements for a primary
+                key state that it must be unique and not null, there is no requirement for
+                type. There was one little issue with DataMapper in which the text fields
+                were being ignored because, in DataMapper, text fields are lazy. These
+                fields will not be loaded until they are requested by an application. This
+                led to a number of issues but, because DataMapper is so very easy to
+                contribute to, I was able to make the necessary changes with much
+                appreciation from the community.
               </p>
-              <p class='next'>
-                Check back tomorrow for my next post in the series on some of the essential
-                features that I found in Webby, but not in the documentation.
+              <p>
+                In terms of conventions, DataMapper has another nifty trick up its sleeve.
+                In DataMapper, when defining a column, you may use a different name for the
+                property and later define the actual column name from the database. I was
+                extremely enthused to find that I could change names from the database from
+                <code>wc_shlfprce</code>
+                to something like:
+                <code>warm_case_shelf_price.</code>
+                Though it was a longer name, in terms of legibility the latter is an
+                infinite improvement.
+              </p>
+              <p>
+                And so, I work on, with Merb and DataMapper as my preferred tools, at least
+                for this particular project. Aside from this flexibility, DataMapper would
+                normally adhere to the same specific conventions for a database as does
+                ActiveRecord. Any new converts from Rails will likely feel right at home.
               </p>
             </div>
             <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
@@ -375,6 +344,53 @@
               </a>
             </noscript>
             <div id='post'>
+              <h1>Imaginary Mac Dock</h1>
+              <h2>If You Must, You Must</h2>
+              <span class='date'>2008-03-18</span>
+              <p>
+                Some people like to come home and "dock" their laptops to a desktop-type
+                setup. There is no such thing for a Mac, not in the way that the Dell users
+                of the world might imagine it. However, there are two ways to accomplish
+                the same features. The first involves another Mac, the second does not.
+              </p>
+              <p>
+                The first, and conceptually more complicated method relies upon two
+                features that Macs have had as long as I can remember using them. Upon
+                booting, a Mac (laptop or desktop) can act as an external hard drive case
+                for the drive inside. Simply holding down T will start this mode. Now, we
+                can plug this Mac into another and use this hard drive as the boot drive.
+                Simply hold down the Option key when booting the "base", desktop Mac. The
+                desktop will boot the hard drive in the laptop. If you have an Intel Mac,
+                the computers can be connected with a USB cable or a Firewire cable. If you
+                are using a PowerPC Mac, a Firewire cable must be used.
+              </p>
+              <p>
+                The second method is far more simplistic. Apple (and many other companies)
+                offer bluetooth keyboards and mice. Simply plug in an external monitor and
+                use the bluetooth built into most Macs for the keyboard and mouse. With one
+                physical cable you have essentially the same setup as all those "dock"
+                users.
+              </p>
+              <p>
+                There are many reasons why a user might wish to do this but, the most
+                obvious reasoning includes a larger screen on a monitor, a full-sized
+                keyboard, and a more functional mouse (though I prefer the touchpad for
+                scrolling).
+              </p>
+            </div>
+            <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
+            <noscript>
+              <a href='http://tpitale.disqus.com/?url=ref'>
+                View the discussion thread.
+              </a>
+              <a class='dsq-brlink' href='http://disqus.com'>
+                blog comments powered by
+                <span class='logo-disqus'>
+                  Disqus
+                </span>
+              </a>
+            </noscript>
+            <div id='post'>
               <h1>Beta Testing the Slicehost API</h1>
               <h2>A Foray into ActiveResource and DNS Records</h2>
               <span class='date'>2008-03-21</span>
@@ -527,71 +543,6 @@
                 the president. No one person can ever speak of every quality necessary. My
                 only fear at this point is that something, someone, is going to screw it up
                 for the rest of the country.
-              </p>
-            </div>
-            <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
-            <noscript>
-              <a href='http://tpitale.disqus.com/?url=ref'>
-                View the discussion thread.
-              </a>
-              <a class='dsq-brlink' href='http://disqus.com'>
-                blog comments powered by
-                <span class='logo-disqus'>
-                  Disqus
-                </span>
-              </a>
-            </noscript>
-            <div id='post'>
-              <h1>Legacy Databases with DataMapper</h1>
-              <h2>Something Old, Something New</h2>
-              <span class='date'>2008-03-18</span>
-              <p>
-                In my previous post I discussed my eventual discovery that
-                <a href="http://rubyonrails.org">Ruby on Rails</a>
-                would not work for a new project I had begun. Thankfully, I was at the very
-                beginning of my work on said project and making a transition to a new path
-                was not the end of the world.
-              </p>
-              <p>
-                As I mentioned, a helpful suggestion led me to investigate
-                <a href="http://merbivore.com">Merb</a>
-                as a potential framework. Merb has the benefit of letting me use any of
-                three possible database ORMs. ActiveRecord is supported, as well as,
-                <a href="http://datamapper.org/">DataMapper</a>
-                and Sequel. Obviously, ActiveRecord did not work for me and so, I looked at
-                both DataMapper and Sequel. I found DataMapper to be more usable out of the
-                box and so I moved ahead using it. Sequel would have been another excellent
-                alternative but, I had to pick one and continue with my work.
-              </p>
-              <p>
-                How did DataMapper solve my legacy database issues, you may ask. The answer
-                is that DataMapper provides all the same standard solutions that
-                ActiveRecord does but, it allows for keys to be text or any other type as
-                long as they are unique and not null. The sql requirements for a primary
-                key state that it must be unique and not null, there is no requirement for
-                type. There was one little issue with DataMapper in which the text fields
-                were being ignored because, in DataMapper, text fields are lazy. These
-                fields will not be loaded until they are requested by an application. This
-                led to a number of issues but, because DataMapper is so very easy to
-                contribute to, I was able to make the necessary changes with much
-                appreciation from the community.
-              </p>
-              <p>
-                In terms of conventions, DataMapper has another nifty trick up its sleeve.
-                In DataMapper, when defining a column, you may use a different name for the
-                property and later define the actual column name from the database. I was
-                extremely enthused to find that I could change names from the database from
-                <code>wc_shlfprce</code>
-                to something like:
-                <code>warm_case_shelf_price.</code>
-                Though it was a longer name, in terms of legibility the latter is an
-                infinite improvement.
-              </p>
-              <p>
-                And so, I work on, with Merb and DataMapper as my preferred tools, at least
-                for this particular project. Aside from this flexibility, DataMapper would
-                normally adhere to the same specific conventions for a database as does
-                ActiveRecord. Any new converts from Rails will likely feel right at home.
               </p>
             </div>
             <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>

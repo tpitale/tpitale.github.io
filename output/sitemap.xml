@@ -2,31 +2,31 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
   <url>
     <loc>http://t.pitale.com/</loc>
-    <lastmod>2008-11-06T21:32:08-05:00</lastmod>
+    <lastmod>2008-11-06T21:48:47-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://t.pitale.com/posts/</loc>
-    <lastmod>2008-11-06T21:32:08-05:00</lastmod>
+    <lastmod>2008-11-06T21:48:47-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://t.pitale.com/feed.xml</loc>
-    <lastmod>2008-11-06T21:32:08-05:00</lastmod>
+    <lastmod>2008-11-06T21:48:47-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>http://t.pitale.com/posts/notes_on_legacy_databases_with_activerecord.html</loc>
-    <lastmod>2008-03-17T10:57:12-04:00</lastmod>
+    <loc>http://t.pitale.com/posts/three-games-in-three-weeks-of-midnight-launches.html</loc>
+    <lastmod>2008-11-06T21:34:52-05:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://t.pitale.com/posts/webby_series_1.html</loc>
-    <lastmod>2008-04-13T01:21:10-04:00</lastmod>
+    <loc>http://t.pitale.com/posts/notes_on_legacy_databases_with_datamapper.html</loc>
+    <lastmod>2008-03-18T10:57:06-04:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
@@ -49,6 +49,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>http://t.pitale.com/posts/who_needs_mac_docking.html</loc>
+    <lastmod>2008-03-18T17:08:41-04:00</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>http://t.pitale.com/posts/testing_the_slicehost_api.html</loc>
     <lastmod>2008-03-21T18:29:50-04:00</lastmod>
     <changefreq>never</changefreq>
@@ -67,14 +73,14 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://t.pitale.com/posts/notes_on_legacy_databases_with_datamapper.html</loc>
-    <lastmod>2008-03-18T10:57:06-04:00</lastmod>
+    <loc>http://t.pitale.com/posts/webby_series_1.html</loc>
+    <lastmod>2008-04-13T01:21:10-04:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://t.pitale.com/posts/webby_series_2.html</loc>
-    <lastmod>2008-04-13T14:40:12-04:00</lastmod>
+    <loc>http://t.pitale.com/posts/notes_on_legacy_databases_with_activerecord.html</loc>
+    <lastmod>2008-03-17T10:57:12-04:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
@@ -97,8 +103,8 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://t.pitale.com/posts/who_needs_mac_docking.html</loc>
-    <lastmod>2008-03-18T17:08:41-04:00</lastmod>
+    <loc>http://t.pitale.com/posts/webby_series_2.html</loc>
+    <lastmod>2008-04-13T14:40:12-04:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
