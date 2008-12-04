@@ -2,21 +2,27 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
   <url>
     <loc>http://t.pitale.com/</loc>
-    <lastmod>2008-11-20T16:53:12-05:00</lastmod>
+    <lastmod>2008-12-04T14:29:12-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://t.pitale.com/posts/</loc>
-    <lastmod>2008-11-20T16:53:12-05:00</lastmod>
+    <lastmod>2008-12-04T14:29:12-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://t.pitale.com/feed.xml</loc>
-    <lastmod>2008-11-20T16:53:12-05:00</lastmod>
+    <lastmod>2008-12-04T14:29:12-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>http://t.pitale.com/posts/do-we-really-need-mobileme.html</loc>
+    <lastmod>2008-12-04T13:42:33-05:00</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://t.pitale.com/posts/three-games-in-three-weeks-of-midnight-launches.html</loc>
@@ -25,14 +31,8 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://t.pitale.com/posts/notes_on_legacy_databases_with_datamapper.html</loc>
-    <lastmod>2008-03-18T10:57:06-04:00</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://t.pitale.com/posts/vision_online_now_focus.html</loc>
-    <lastmod>2008-03-11T23:49:29-04:00</lastmod>
+    <loc>http://t.pitale.com/posts/notes_on_legacy_databases_with_activerecord.html</loc>
+    <lastmod>2008-03-17T10:57:12-04:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
@@ -49,8 +49,8 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://t.pitale.com/posts/who_needs_mac_docking.html</loc>
-    <lastmod>2008-03-18T17:08:41-04:00</lastmod>
+    <loc>http://t.pitale.com/posts/webby_series_1.html</loc>
+    <lastmod>2008-04-13T01:21:10-04:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
@@ -73,14 +73,14 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://t.pitale.com/posts/webby_series_1.html</loc>
-    <lastmod>2008-04-13T01:21:10-04:00</lastmod>
+    <loc>http://t.pitale.com/posts/notes_on_legacy_databases_with_datamapper.html</loc>
+    <lastmod>2008-03-18T10:57:06-04:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://t.pitale.com/posts/notes_on_legacy_databases_with_activerecord.html</loc>
-    <lastmod>2008-03-17T10:57:12-04:00</lastmod>
+    <loc>http://t.pitale.com/posts/vision_online_now_focus.html</loc>
+    <lastmod>2008-03-11T23:49:29-04:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
@@ -135,6 +135,12 @@
   <url>
     <loc>http://t.pitale.com/posts/ezra_announces_ey_express.html</loc>
     <lastmod>2008-06-01T14:19:29-04:00</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://t.pitale.com/posts/who_needs_mac_docking.html</loc>
+    <lastmod>2008-03-18T17:08:41-04:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>

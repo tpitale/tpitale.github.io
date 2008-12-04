@@ -1,0 +1,62 @@
+---
+title: Do We Really Need MobileMe?
+subtitle: Getting By On Google and Dropbox
+author: Tony Pitale
+created_at: 2008-12-04 13:42:33.800276 -05:00
+layout: posts
+filter:
+  - haml
+---
+#post
+  %h1= h(@page.title)
+  %h2= h(@page.subtitle)
+  %span.date= @page.created_at.strftime('%Y-%m-%d')
+  
+  %p
+    MobileMe is a pretty awesome service. However, having used it for at least
+    six months, I'm pretty well decided that it is not quite worth $100 a year.
+    In addition, Google has just released, officially, it's support for CalDAV
+    syncing between iCal and Google Calendar. Google's support of IMAP has also
+    grown strong over this time period. Last, the final important piece of the
+    puzzle is
+    = link_to "Dropbox", "http://www.getdropbox.com"
+    , which is now open for public beta and works very well.
+  %p
+    Setting up IMAP with google is simple and you can find directions
+    = link_to "here.", "http://mail.google.com/support/bin/answer.py?hl=en&answer=75725"
+  %p
+    Setting up Google's iCal support is almost as easy, especially with their
+    set-up tool. Directions can be found
+    = link_to "here.", "http://www.google.com/support/calendar/bin/answer.py?answer=99358#ical"
+  %p
+    The benefits of these combined services speak for themselves, but in any
+    case, I'll repeat them here. Dropbox serves to replace the need for iDisk
+    sharing since it works by synchronizing all of the files within given
+    directories between all of your computers. Dropbox is not only useable on
+    Mac OS X and Windows, it now works on Linux (Ubuntu only). CalDAV is also
+    completely cross-platform using a product from Mozilla,
+    = link_to "Sunbird.", "http://www.mozilla.org/projects/calendar/"
+    Of course, given my love of OS X, CalDAV works extremely well within iCal
+    on Leopard. Finally, email, being the most important of all, works on any
+    email client that supports IMAP (almost every client). Not only this but,
+    it magically syncs between all computers and my iPhone.
+  %p
+    There are a few remaining features that I don't consider to be critical to
+    the service because I don't use them or because there are other services
+    that have existed for some time to handle the feature. Photo sharing, for
+    example, is more than capably covered by Flickr. The greatest drawback, in
+    my opinion, of this piecemeal approach is the lack of a unified website for
+    when you are away from your computer. All-in-all, the MobileMe website is
+    not worth the  money and neither is MobileMe now, thanks to Google and
+    Dropbox.
+
+#disqus_thread
+
+%script{:type =>"text/javascript", :src=>"http://disqus.com/forums/tpitale/embed.js"}
+%noscript
+  %a{:href=>"http://tpitale.disqus.com/?url=ref"}
+    View the discussion thread.
+  %a{:href=>"http://disqus.com", :class=>"dsq-brlink"}
+    blog comments powered by 
+    %span{:class=>"logo-disqus"}
+      Disqus
