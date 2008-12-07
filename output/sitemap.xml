@@ -2,21 +2,27 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
   <url>
     <loc>http://t.pitale.com/</loc>
-    <lastmod>2008-12-04T14:29:12-05:00</lastmod>
+    <lastmod>2008-12-07T13:07:21-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://t.pitale.com/posts/</loc>
-    <lastmod>2008-12-04T14:29:12-05:00</lastmod>
+    <lastmod>2008-12-07T13:07:21-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://t.pitale.com/feed.xml</loc>
-    <lastmod>2008-12-04T14:29:12-05:00</lastmod>
+    <lastmod>2008-12-07T13:07:21-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>http://t.pitale.com/posts/i_normally_love_debian.html</loc>
+    <lastmod>2008-12-06T19:19:45-05:00</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://t.pitale.com/posts/do-we-really-need-mobileme.html</loc>
@@ -37,20 +43,14 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://t.pitale.com/posts/verizon_fios_tv_and_internet_without_actiontec.html</loc>
-    <lastmod>2008-07-08T09:31:33-04:00</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>http://t.pitale.com/posts/upcoming.html</loc>
     <lastmod>2008-05-27T22:11:10-04:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://t.pitale.com/posts/webby_series_1.html</loc>
-    <lastmod>2008-04-13T01:21:10-04:00</lastmod>
+    <loc>http://t.pitale.com/posts/vision_online_now_focus.html</loc>
+    <lastmod>2008-03-11T23:49:29-04:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
@@ -79,8 +79,8 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://t.pitale.com/posts/vision_online_now_focus.html</loc>
-    <lastmod>2008-03-11T23:49:29-04:00</lastmod>
+    <loc>http://t.pitale.com/posts/verizon_fios_tv_and_internet_without_actiontec.html</loc>
+    <lastmod>2008-07-08T09:31:33-04:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
@@ -103,14 +103,20 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://t.pitale.com/posts/webby_series_2.html</loc>
-    <lastmod>2008-04-13T14:40:12-04:00</lastmod>
+    <loc>http://t.pitale.com/posts/webby_series_1.html</loc>
+    <lastmod>2008-04-13T01:21:10-04:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://t.pitale.com/posts/i_prefer_widgets_over_apps_for_getting_things_done.html</loc>
     <lastmod>2008-07-10T09:29:22-04:00</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://t.pitale.com/posts/webby_series_2.html</loc>
+    <lastmod>2008-04-13T14:40:12-04:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>

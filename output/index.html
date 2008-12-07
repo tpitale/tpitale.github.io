@@ -111,6 +111,9 @@
             <!-- List of Blog Posts -->
             <ul>
               <li>
+                <a href="/posts/i_normally_love_debian.html">I Normally Love Debian</a>
+              </li>
+              <li>
                 <a href="/posts/do-we-really-need-mobileme.html">Do We Really Need MobileMe?</a>
               </li>
               <li>
@@ -123,13 +126,10 @@
                 <a href="/posts/notes_on_legacy_databases_with_activerecord.html">Legacy Databases with ActiveRecord</a>
               </li>
               <li>
-                <a href="/posts/verizon_fios_tv_and_internet_without_actiontec.html">Verizon Fios Internet &amp; TV</a>
-              </li>
-              <li>
                 <a href="/posts/upcoming.html">In the Coming Days</a>
               </li>
               <li>
-                <a href="/posts/webby_series_1.html">Webby - Part 1</a>
+                <a href="/posts/vision_online_now_focus.html">Vision Online, Now Focus</a>
               </li>
               <li>
                 <a href="/posts/testing_the_slicehost_api.html">Beta Testing the Slicehost API</a>
@@ -144,7 +144,7 @@
                 <a href="/posts/notes_on_legacy_databases_with_datamapper.html">Legacy Databases with DataMapper</a>
               </li>
               <li>
-                <a href="/posts/vision_online_now_focus.html">Vision Online, Now Focus</a>
+                <a href="/posts/verizon_fios_tv_and_internet_without_actiontec.html">Verizon Fios Internet &amp; TV</a>
               </li>
               <li>
                 <a href="/posts/my_wrists_are_fine_with_apple_computers.html">Carpal Tunnel Syndrome</a>
@@ -160,50 +160,54 @@
           <div class='block'>
             <!-- Latest Post -->
             <div id='post'>
-              <h1>Do We Really Need MobileMe?</h1>
-              <h2>Getting By On Google and Dropbox</h2>
-              <span class='date'>2008-12-04</span>
+              <h1>I Normally Love Debian</h1>
+              <h2>As An Application Developer, It Can Hurt</h2>
+              <span class='date'>2008-12-06</span>
               <p>
-                MobileMe is a pretty awesome service. However, having used it for at least
-                six months, I'm pretty well decided that it is not quite worth $100 a year.
-                In addition, Google has just released, officially, it's support for CalDAV
-                syncing between iCal and Google Calendar. Google's support of IMAP has also
-                grown strong over this time period. Last, the final important piece of the
-                puzzle is
-                <a href="http://www.getdropbox.com">Dropbox</a>
-                , which is now open for public beta and works very well.
+                For whatever reason, I needed to upgrade my apt-get-installed copy of
+                Postgresql from 8.1 to 8.3. Now, I can understand why, from a sysadmin
+                viewpoint, or from the maintainers view, 8.3 is not as stable as previous
+                versions. However, as a user, or as an application developer, 8.3 is a much
+                better option. It is also certainly reasonable to want to use the new stuff
+                available in a new version. Other system choices enable me to use the
+                software I want or need. I've been running 8.3 for months on Mac OS X.
               </p>
               <p>
-                Setting up IMAP with google is simple and you can find directions
-                <a href="http://mail.google.com/support/bin/answer.py?hl=en&amp;answer=75725">here.</a>
+                On Debian Etch it is generally a good idea to add the backports repository
+                to the list of sources for apt to use. This gave me the version of
+                Postgresql that I wished to use but, unfortunately, it fails to uninstall
+                all of the common libraries for the client and server, as well as the dev
+                library (libpq-dev) for the appropriate version. This failure in upgrading
+                is due to the ability of Postgres to run multiple versioned "clusters" at
+                the same time. I however, uninstalled (without doing --purge, my mistake)
+                version 8.1 and installed 8.3 and was not trying to run them together.
               </p>
               <p>
-                Setting up Google's iCal support is almost as easy, especially with their
-                set-up tool. Directions can be found
-                <a href="http://www.google.com/support/calendar/bin/answer.py?answer=99358#ical">here.</a>
+                The reason this caused problems for me was the native postgres gem for ruby
+                was compiling itself with the 8.1 headers and so, data_objects and dm-core
+                would refuse to connect to 8.3. Especially infuriating was that I could see
+                the server running and could connect with the psql client using the same
+                connection information I was providing to DataMapper.
               </p>
               <p>
-                The benefits of these combined services speak for themselves, but in any
-                case, I'll repeat them here. Dropbox serves to replace the need for iDisk
-                sharing since it works by synchronizing all of the files within given
-                directories between all of your computers. Dropbox is not only useable on
-                Mac OS X and Windows, it now works on Linux (Ubuntu only). CalDAV is also
-                completely cross-platform using a product from Mozilla,
-                <a href="http://www.mozilla.org/projects/calendar/">Sunbird.</a>
-                Of course, given my love of OS X, CalDAV works extremely well within iCal
-                on Leopard. Finally, email, being the most important of all, works on any
-                email client that supports IMAP (almost every client). Not only this but,
-                it magically syncs between all computers and my iPhone.
+                The solution was to uninstall everything postgresql related using apt and
+                the --purge flag. Taking special care to include libpq4 and libpq-dev in
+                that list. Uninstall the postgres gem, as well (and possibly data_objects
+                and dm-core).
               </p>
               <p>
-                There are a few remaining features that I don't consider to be critical to
-                the service because I don't use them or because there are other services
-                that have existed for some time to handle the feature. Photo sharing, for
-                example, is more than capably covered by Flickr. The greatest drawback, in
-                my opinion, of this piecemeal approach is the lack of a unified website for
-                when you are away from your computer. All-in-all, the MobileMe website is
-                not worth the  money and neither is MobileMe now, thanks to Google and
-                Dropbox.
+                Now add "deb http://www.backports.org/debian etch-backports main contrib
+                non-free" into /etc/apt/sources.list and do sudo apt-get update to pull the
+                list of packages. Now reinstall postgresql-8.3, libpq5, and libpq-dev and
+                be sure to pass the -t etch-backports option so that all the required libs
+                get pulled from that repository.
+              </p>
+              <p>
+                Finish up by reinstalling all the required gems and all should be well.
+                Note that my experience here is not typical, and in general, being strict
+                about package stability is generally a good cause. However, it is a very
+                useful to have backports available when needed and the packages there are
+                generally more stable than other random repositories.
               </p>
             </div>
             <div id='disqus_thread'></div>
