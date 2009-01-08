@@ -111,22 +111,22 @@
             <!-- List of Blog Posts -->
             <ul>
               <li>
+                <a href="/posts/new_site_for_ics_vision_winepos.html">New ICS Vision Site</a>
+              </li>
+              <li>
                 <a href="/posts/i_normally_love_debian.html">I Normally Love Debian</a>
               </li>
               <li>
                 <a href="/posts/do-we-really-need-mobileme.html">Do We Really Need MobileMe?</a>
               </li>
               <li>
-                
-              </li>
-              <li>
                 <a href="/posts/three-games-in-three-weeks-of-midnight-launches.html">Three Games</a>
               </li>
               <li>
-                <a href="/posts/notes_on_legacy_databases_with_activerecord.html">Legacy Databases with ActiveRecord</a>
+                
               </li>
               <li>
-                <a href="/posts/upcoming.html">In the Coming Days</a>
+                <a href="/posts/my_wrists_are_fine_with_apple_computers.html">Carpal Tunnel Syndrome</a>
               </li>
               <li>
                 <a href="/posts/vision_online_now_focus.html">Vision Online, Now Focus</a>
@@ -144,70 +144,45 @@
                 <a href="/posts/notes_on_legacy_databases_with_datamapper.html">Legacy Databases with DataMapper</a>
               </li>
               <li>
-                <a href="/posts/verizon_fios_tv_and_internet_without_actiontec.html">Verizon Fios Internet &amp; TV</a>
+                <a href="/posts/notes_on_legacy_databases_with_activerecord.html">Legacy Databases with ActiveRecord</a>
               </li>
               <li>
-                <a href="/posts/my_wrists_are_fine_with_apple_computers.html">Carpal Tunnel Syndrome</a>
+                <a href="/posts/webby_series_1.html">Webby - Part 1</a>
+              </li>
+              <li>
+                <a href="/posts/upcoming.html">In the Coming Days</a>
               </li>
               <li>
                 <a href="/posts/merb_is_not_rails_and_that_is_okay.html">Merb is Not Rails</a>
-              </li>
-              <li>
-                <a href="/posts/initial_experience_with_merb_and_datamapper.html">Merb and DataMapper</a>
               </li>
             </ul>
           </div>
           <div class='block'>
             <!-- Latest Post -->
             <div id='post'>
-              <h1>I Normally Love Debian</h1>
-              <h2>As An Application Developer, It Can Hurt</h2>
-              <span class='date'>2008-12-06</span>
+              <h1>New ICS Vision Site</h1>
+              <h2>winepos.com</h2>
+              <span class='date'>2009-01-07</span>
               <p>
-                For whatever reason, I needed to upgrade my apt-get-installed copy of
-                Postgresql from 8.1 to 8.3. Now, I can understand why, from a sysadmin
-                viewpoint, or from the maintainers view, 8.3 is not as stable as previous
-                versions. However, as a user, or as an application developer, 8.3 is a much
-                better option. It is also certainly reasonable to want to use the new stuff
-                available in a new version. Other system choices enable me to use the
-                software I want or need. I've been running 8.3 for months on Mac OS X.
+                After starting slowly about 6 months ago, I finally launched the new ICS
+                website for their lead product, Vision. The last major commit before launch
+                was on Sunday night and by the end of Monday most of the nameservers had
+                picked up the change. So go check out the site at
+                <a href="http://winepos.com">winepos.com</a>
               </p>
               <p>
-                On Debian Etch it is generally a good idea to add the backports repository
-                to the list of sources for apt to use. This gave me the version of
-                Postgresql that I wished to use but, unfortunately, it fails to uninstall
-                all of the common libraries for the client and server, as well as the dev
-                library (libpq-dev) for the appropriate version. This failure in upgrading
-                is due to the ability of Postgres to run multiple versioned "clusters" at
-                the same time. I however, uninstalled (without doing --purge, my mistake)
-                version 8.1 and installed 8.3 and was not trying to run them together.
+                For those that don't know, ICS is a software company founded 25 years ago
+                to serve the retail liquor industry, exclusively. Vision is the result of
+                all of their effort. Vision provides an amazing number of features and all
+                of the controls required for inventory management, ordering, tracking, and,
+                of course, point-of-sale.
               </p>
               <p>
-                The reason this caused problems for me was the native postgres gem for ruby
-                was compiling itself with the 8.1 headers and so, data_objects and dm-core
-                would refuse to connect to 8.3. Especially infuriating was that I could see
-                the server running and could connect with the psql client using the same
-                connection information I was providing to DataMapper.
-              </p>
-              <p>
-                The solution was to uninstall everything postgresql related using apt and
-                the --purge flag. Taking special care to include libpq4 and libpq-dev in
-                that list. Uninstall the postgres gem, as well (and possibly data_objects
-                and dm-core).
-              </p>
-              <p>
-                Now add "deb http://www.backports.org/debian etch-backports main contrib
-                non-free" into /etc/apt/sources.list and do sudo apt-get update to pull the
-                list of packages. Now reinstall postgresql-8.3, libpq5, and libpq-dev and
-                be sure to pass the -t etch-backports option so that all the required libs
-                get pulled from that repository.
-              </p>
-              <p>
-                Finish up by reinstalling all the required gems and all should be well.
-                Note that my experience here is not typical, and in general, being strict
-                about package stability is generally a good cause. However, it is a very
-                useful to have backports available when needed and the packages there are
-                generally more stable than other random repositories.
+                The new site is built with
+                <a href="webby.rubyforge.org">Webby</a>
+                <a href="http://github.com/TwP/webby/tree/master">(source on github)</a>
+                and is generated out to HTML. Javascript is handled using jQuery and a few
+                other plugins.
               </p>
             </div>
             <div id='disqus_thread'></div>

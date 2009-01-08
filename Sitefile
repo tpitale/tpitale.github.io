@@ -1,9 +1,9 @@
 SITE.host = 'pitale.com'
 SITE.remote_dir = '/var/www/t-pitale'
 
-task :default => :build
+task :default => :deploy
 
 desc 'deploy the site to the webserver'
-task :deploy => [:build, 'deploy:rsync']
+task :deploy => [:rebuild, 'deploy:ssh']
 
 # EOF

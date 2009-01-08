@@ -53,6 +53,45 @@
           </div>
           <div class='block'>
             <div id='post'>
+              <h1>New ICS Vision Site</h1>
+              <h2>winepos.com</h2>
+              <span class='date'>2009-01-07</span>
+              <p>
+                After starting slowly about 6 months ago, I finally launched the new ICS
+                website for their lead product, Vision. The last major commit before launch
+                was on Sunday night and by the end of Monday most of the nameservers had
+                picked up the change. So go check out the site at
+                <a href="http://winepos.com">winepos.com</a>
+              </p>
+              <p>
+                For those that don't know, ICS is a software company founded 25 years ago
+                to serve the retail liquor industry, exclusively. Vision is the result of
+                all of their effort. Vision provides an amazing number of features and all
+                of the controls required for inventory management, ordering, tracking, and,
+                of course, point-of-sale.
+              </p>
+              <p>
+                The new site is built with
+                <a href="webby.rubyforge.org">Webby</a>
+                <a href="http://github.com/TwP/webby/tree/master">(source on github)</a>
+                and is generated out to HTML. Javascript is handled using jQuery and a few
+                other plugins.
+              </p>
+            </div>
+            <div id='disqus_thread'></div>
+            <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
+            <noscript>
+              <a href='http://tpitale.disqus.com/?url=ref'>
+                View the discussion thread.
+              </a>
+              <a class='dsq-brlink' href='http://disqus.com'>
+                blog comments powered by
+                <span class='logo-disqus'>
+                  Disqus
+                </span>
+              </a>
+            </noscript>
+            <div id='post'>
               <h1>I Normally Love Debian</h1>
               <h2>As An Application Developer, It Can Hurt</h2>
               <span class='date'>2008-12-06</span>
@@ -176,7 +215,6 @@
                 </span>
               </a>
             </noscript>
-            
             <div id='post'>
               <h1>Three Games</h1>
               <h2>In Three Weeks of Midnight Launches</h2>
@@ -219,133 +257,33 @@
                 </span>
               </a>
             </noscript>
+            
             <div id='post'>
-              <h1>Legacy Databases with ActiveRecord</h1>
-              <h2>So Close, But Yet, So Far</h2>
-              <span class='date'>2008-03-17</span>
+              <h1>Carpal Tunnel Syndrome</h1>
+              <h2>Or, the Lack Thereof</h2>
+              <span class='date'>2008-03-25</span>
               <p>
-                I loved working with Ruby on Rails, I still do. I bought books, I read
-                blogs, and I made a fair few sites (both personal and for clients). I
-                thought Ruby on Rails was the be-all, end-all for web development. I was
-                very wrong.
+                How could I forget the voice of my high school typing teacher, constantly
+                nagging me to keep my wrists elevated above the keyboard in an horrific
+                and uncomfortable position. After all of these years I've never, ever
+                been able to accomplish any typing in this fashion. So, my wrists have
+                always rested comfortably, but precariously, upon whatever surface my
+                keyboard is resting upon. For many years, this surface would have been a
+                simple table or desk as I would type at a basic keyboard as I worked in
+                Windows. Luckily, for me, I have moved away from the Windows world. As
+                such, I am now solely reliant upon Apple's hardware creations.
               </p>
               <p>
-                Ruby on Rails is fantastic. Especially when you create a new application
-                and design and create that web application with Rails, and its way, in
-                mind. However, if, like myself, you have to work with the database from
-                an application that originated nearly 20 years ago, you may hit some snags.
-                Just as I did.
-              </p>
-              <p>
-                The design of a database to be used with Ruby on Rails (specifically
-                ActiveRecord) must adhere to some very stringent "best" practices. These
-                are not always the absolute, best practices in design but, they provide
-                some fairly standard basic practices. One such example, though fairly
-                advanced comes with polymorphic associations. In defining the type in one
-                such association, ActiveRecord uses the class name of the type instead of
-                a secondary table listing all possible types. This breaks any possible use
-                of a foreign-key constraint.
-              </p>
-              <p>
-                Some basics in Ruby on Rails database design, which is often generated
-                without any specification from the developer (when using model generators),
-                include: tables are named the pluralized class name (e.g. User becomes
-                users), every table has an "id" field that is an auto-incremented integer,
-                and a foreign-key is tablename_id.
-              </p>
-              <p>
-                What must we do if we are using an existing database, and it does not
-                comply to these standards? I'll go through each instance of non-standard
-                database design from the existing database and show how ActiveRecord did
-                or did not handle the problem.
-              </p>
-              <p>
-                What to do if a Table is not Named after a Class? Easy. ActiveRecord
-                provides a simple method
-                <code>set_table_name</code>
-                that allows you to do just that. If the tables are named after a class but
-                are not pluralized, you can simply set the environment to not use the
-                pluralized versions.
-              </p>
-              <p>
-                What to do if a Table does not have Primary Key named 'id'? Easy, too.
-                Simply use
-                <code>set_primary_key</code>
-                to set the primary key. This does not, however, provide for a case in which
-                a table does not have a primary key (or otherwise usable unique key) in any
-                way, shape, or form. The simple answer is to add an 'id' field that is not
-                used by the legacy application. This is difficult or impossible to do if
-                you are not the person in control of the database. It is also difficult if,
-                like me, the database exists on hundreds of servers distributed around the
-                country. Making any change in this case is not a simple undertaking.
-              </p>
-              <p>
-                What to do if the Primary Key is not an auto-incremented integer field?
-                Here, we find the most difficult problem of all. ActiveRecord can ignore
-                the fact that you don't have auto-incremented values but, if your key is
-                not an integer ActiveRecord (as of this posting) hits the proverbial wall.
-                In the case of my legacy database, the primary keys were text fields, five
-                digits in length. This was a carry-over from an even older system in which
-                no relational database was involved.
-              </p>
-              <p>
-                My only options here became extremely complicated and were only possible
-                because I was using Postgresql (editable views). That was the end of the
-                road for this project and Ruby on Rails. Thankfully, a helpful suggestion
-                led me to use
-                <a href="http://merbivore.com">Merb</a>
-                for my framework and
-                <a href="http://datamapper.org">DataMapper</a>
-                for my database ORM. Watch for my next post in which I discuss the solutions
-                to these problems, and a few nice perks, found in Merb and DataMapper.
-              </p>
-            </div>
-            <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
-            <noscript>
-              <a href='http://tpitale.disqus.com/?url=ref'>
-                View the discussion thread.
-              </a>
-              <a class='dsq-brlink' href='http://disqus.com'>
-                blog comments powered by
-                <span class='logo-disqus'>
-                  Disqus
-                </span>
-              </a>
-            </noscript>
-            <div id='post'>
-              <h1>In the Coming Days</h1>
-              <h2>So Much to Do</h2>
-              <span class='date'>2008-05-27</span>
-              <p>
-                The short story is:
-                <a href="http://www.viget.com">Viget</a>
-                is being extremely generous and is paying for me to travel to
-                <a href="http://en.oreilly.com/rails2008/public/content/home">RailsConf</a>
-                this year. Despite the fact that I have only been in their employ for three
-                whole weeks. I'm extremely happy working there and I only hope that I am
-                living up to their expectations of me.
-              </p>
-              <p>
-                I am excited to go to RailsConf for two reasons. First, I have never been
-                to a conference before, any conference, and I really expect to learn a lot
-                in the sessions I am enrolled in. Second, I may finally get to meet many of
-                the people I talk to on the irc chat rooms for Merb and DataMapper. People
-                like Yehuda Katz, Ezra Z., Adam French (who I think is going), and a
-                coworker from Viget South, Ben Scofield, who will be speaking, as well. All
-                in all I have extremely high hopes for this trip.
-              </p>
-              <p>
-                In other news, I've got draft copies of many, many blog posts. The problem
-                is trying to decide where they will be appropriate. Some are about the beta
-                for
-                <a href="http://www.getdropbox.com">Dropbox</a>
-                (my favorite service, at the moment), including some nifty tricks. Another
-                post is a followup to Getting Things Done with Mail and iCal combined with
-                a review of the GTD application, Things. On the
-                <a href="http://www.viget.com/extend/">Viget Extend blog</a>
-                , I've got some ideas for posts on topics ranging from Microsoft Exchange
-                calendar subscriptions in iCal to accessing the LDAP global address list
-                from Address Book.
+                Yet, I have somehow come through unscathed. While an unlucky associate of
+                mine did not share the same luck and was required to undergo a simple,
+                preventive, surgery. After much (well, not that much) contemplation, the
+                only justification for this that I can arrive at is Apple's hardware. It is
+                so thin that, in the case of the latest wired and wireless keyboards from
+                Apple, it might as well be the desk. Therefore, the raised wrists position
+                is not a requirement. The same affect is accomplished when using a laptop.
+                However, this applies to all laptops. Now, looking back, I can recall a
+                pair of keyboards, from Logitech, that would also be thin enough to allow
+                a user to safely rest their wrists upon their computing surface.
               </p>
             </div>
             <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>

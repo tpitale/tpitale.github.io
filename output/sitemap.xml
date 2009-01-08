@@ -2,21 +2,27 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
   <url>
     <loc>http://t.pitale.com/</loc>
-    <lastmod>2008-12-07T13:07:21-05:00</lastmod>
+    <lastmod>2009-01-08T00:09:07-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://t.pitale.com/posts/</loc>
-    <lastmod>2008-12-07T13:07:21-05:00</lastmod>
+    <lastmod>2009-01-08T00:09:07-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://t.pitale.com/feed.xml</loc>
-    <lastmod>2008-12-07T13:07:21-05:00</lastmod>
+    <lastmod>2009-01-08T00:09:07-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>http://t.pitale.com/posts/new_site_for_ics_vision_winepos.html</loc>
+    <lastmod>2009-01-07T23:17:04-05:00</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://t.pitale.com/posts/i_normally_love_debian.html</loc>
@@ -37,14 +43,8 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://t.pitale.com/posts/notes_on_legacy_databases_with_activerecord.html</loc>
-    <lastmod>2008-03-17T10:57:12-04:00</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://t.pitale.com/posts/upcoming.html</loc>
-    <lastmod>2008-05-27T22:11:10-04:00</lastmod>
+    <loc>http://t.pitale.com/posts/my_wrists_are_fine_with_apple_computers.html</loc>
+    <lastmod>2008-03-25T00:46:50-04:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
@@ -79,14 +79,20 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://t.pitale.com/posts/verizon_fios_tv_and_internet_without_actiontec.html</loc>
-    <lastmod>2008-07-08T09:31:33-04:00</lastmod>
+    <loc>http://t.pitale.com/posts/notes_on_legacy_databases_with_activerecord.html</loc>
+    <lastmod>2008-03-17T10:57:12-04:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://t.pitale.com/posts/my_wrists_are_fine_with_apple_computers.html</loc>
-    <lastmod>2008-03-25T00:46:50-04:00</lastmod>
+    <loc>http://t.pitale.com/posts/webby_series_1.html</loc>
+    <lastmod>2008-04-13T01:21:10-04:00</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://t.pitale.com/posts/upcoming.html</loc>
+    <lastmod>2008-05-27T22:11:10-04:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
@@ -103,8 +109,8 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://t.pitale.com/posts/webby_series_1.html</loc>
-    <lastmod>2008-04-13T01:21:10-04:00</lastmod>
+    <loc>http://t.pitale.com/posts/verizon_fios_tv_and_internet_without_actiontec.html</loc>
+    <lastmod>2008-07-08T09:31:33-04:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
