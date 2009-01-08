@@ -19,7 +19,7 @@ filter:
     %name Tony Pitale
     %email tpitale@gmail.com
     
-  - posts = @pages.find(:in_directory => 'posts', :sort_by => 'mtime', :reverse => true)
+  - posts = @pages.find(:limit => 20, :in_directory => 'posts', :sort_by => 'mtime', :reverse => true)
   - posts.each do |post|
     - next if post.filename == 'index'
     %entry
@@ -29,4 +29,4 @@ filter:
       %link{:href=>"http://t.pitale.com"+post.url}
       %updated= post.created_at.xmlschema
       %content{:type=>'html'}
-        = h(post.render) unless post.filename == 'index'
+        = h(render(post)) unless post.filename == 'index'
