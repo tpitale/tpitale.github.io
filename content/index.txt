@@ -9,7 +9,7 @@ filter:
 #about
   .wrap
     .col
-      %h1
+      %h2
         About
     .block
       %p
@@ -29,31 +29,31 @@ filter:
 #contact
   .wrap
     .col
-      %h1
+      %h2
         Contact
     .block
       #fast
-        %h1 Fast
+        %h3 Fast
         = link_to("tpitale@gmail.com", "mailto:tpitale@gmail.com")
         = link_to("tony.pitale@gmail.com", "mailto:tony.pitale@gmail.com")
         = link_to("tony.pitale@viget.com", "mailto:tony.pitale@viget.com")
       #faster
-        %h1 Faster
+        %h3 Faster
         %b AIM:
         sicdev
         %br/
         %b IRC:
         tpitale
       #fastest
-        %h1 Fastest
-        (908)-309-8761
+        %h3 Fastest
+        (571)-294-6561
       %br.clearleft/
 
 / Latest Blog Post
 #blog
   .wrap
     .col
-      %h1
+      %h2
         Blog
       / List of Blog Posts
       %ul
@@ -74,48 +74,54 @@ filter:
 #portfolio
   .wrap
     .col
-      %h1
+      %h2
         Portfolio
     .block
-      = link_to("<img src='/images/s76.png' />", "#")
-      = link_to("<img src='/images/ics-nj.png' />", "http://www.ics-nj.com")
-      = link_to("<img src='/images/focus.png' />", "#")
-      = link_to("<img src='/images/appuser.png' />", "#")
-      = link_to("<img src='/images/threeoseven.png' />", "#")
-      = link_to("<img src='/images/prv3.png' />", "#")
-      = link_to("<img src='/images/checkout.png' />", "#")
+      = link_to("<img src='/images/winepos.png' />", "http://www.winepos.com")
+      = link_to("<img src='/images/focus.png' />", "http://focusapp.com")
+      / = link_to("<img src='/images/appuser.png' />", "#")
+      / = link_to("<img src='/images/threeoseven.png' />", "#")
+      / = link_to("<img src='/images/prv3.png' />", "#")
+      / = link_to("<img src='/images/checkout.png' />", "#")
       %br.clearleft/
 
 / Worthy links to associate pages
 #links
   .wrap
     .col
-      %h1
+      %h2
         Links
     .block
       #people
-        %h1 Personal Blogs
+        %h3 Personal Blogs
         %ul
+          %li= link_to("Dr Nic", "http://drnicwilliams.com/")
+          %li= link_to("Yehuda Katz", "http://www.yehudakatz.com/")
+          %li= link_to("Ezra Zygmuntowicz", "http://brainspl.at/")
+          %li= link_to("Patrick Reagan", "http://www.sneaq.net/")
           %li= link_to("Reinh", "http://reinh.com")
           %li= link_to("Michael Ivey", "http://gweezlebur.com/")
           %li= link_to("Adam French", "http://adam.speaksoutofturn.com/")
-          %li= link_to("Ezra Zygmuntowicz", "http://brainspl.at/")
-          %li= link_to("Yehuda Katz", "http://www.yehudakatz.com/")
-          %li= link_to("Patrick Reagan", "http://www.sneaq.net/")
           %li= link_to("Paul Sadauskas", "http://www.theamazingrando.com/")
       #companies
-        %h1 Company Blogs
+        %h3 Company Blogs
         %ul
           %li= link_to("Viget", "http://www.viget.com/extend/")
-          %li= link_to("ICS", "http://ics-nj.com/blog/")
+          %li= link_to("ICS", "http://winepos.com/blog.html")
+          %li= link_to("Thoughbot", "http://giantrobots.thoughtbot.com/")
+          %li= link_to("Github", "http://github.com/blog")
           %li= link_to("37signals", "http://www.37signals.com/svn/")
           %li= link_to("Engine Yard", "http://engineyard.com/blog")
           %li= link_to("SliceHost", "http://blog.slicehost.com/")
+          %li= link_to("Hashrocket", "http://www.hashrocket.com/blog")
       #community
-        %h1 Community Sites
+        %h3 Other Sites
         %ul
+          %li= link_to("Pathfinder", "http://www.pathf.com/blogs/")
+          %li= link_to("RailSpikes", "http://railspikes.com/")
+          %li= link_to("Rails Tips", "http://railstips.org/")
+          %li= link_to("Err The Blog", "http://errtheblog.com/")
           %li= link_to("Merb", "http://merbivore.com")
-          %li= link_to("Merbunity", "http://merbunity.com/")
           %li= link_to("DataMapper", "http://datamapper.org")
           %li= link_to("jQuery", "http://jquery.com/")
           %li= link_to("Rails", "http://www.rubyonrails.org/")
@@ -125,7 +131,7 @@ filter:
 #photos
   .wrap
     .col
-      %h1
+      %h2
         Photos
     .block
       %script{:type=>"text/javascript", :src=>"http://www.flickr.com/badge_code_v2.gne?count=7&display=latest&size=s&layout=x&source=user_set&user=41783324%40N00&set=72157604108727991"}

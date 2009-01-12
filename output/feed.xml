@@ -4,11 +4,104 @@
   <link href='http://t.pitale.com/feed.xml' rel='self' />
   <link href='http://t.pitale.com/' />
   <id>http://t.pitale.com/</id>
-  <updated>2009-01-08T00:47:58-05:00</updated>
+  <updated>2009-01-12T14:56:35-05:00</updated>
   <author>
     <name>Tony Pitale</name>
     <email>tpitale@gmail.com</email>
   </author>
+  <entry>
+    <id>/posts/making_the_ics_winepos_website.html,Mon Jan 12 00:20:12 -0500 2009</id>
+    <title>Making the New ICS Website</title>
+    <subtitle>Thanks to Webby, Haml, and Ruby</subtitle>
+    <link href='http://t.pitale.com/posts/making_the_ics_winepos_website.html' />
+    <updated>2009-01-12T00:20:12-05:00</updated>
+    <content type='html'>
+      &lt;div id='post'&gt;
+        &lt;h1&gt;Making the New ICS Website&lt;/h1&gt;
+        &lt;h2&gt;Thanks to Webby, Haml, and Ruby&lt;/h2&gt;
+        &lt;span class='date'&gt;2009-01-12&lt;/span&gt;
+        &lt;p&gt;
+          Last week I posted on the new ICS website I launched at
+          &lt;a href=&quot;http://winepos.com&quot;&gt;winepos.com&lt;/a&gt;
+          which is built using the same little ruby gem as this site,
+          &lt;a href=&quot;http://github.com/TwP/webby/tree/master&quot;&gt;Webby.&lt;/a&gt;
+          This week, I'd like to go into a little more detail on some of the things
+          I did in creating their new site. Aside from what little design work I did
+          (admittedly not my strongest ability) I will simply be covering many of the
+          cool things you can do with Webby and a couple of tips and gotchas.
+        &lt;/p&gt;
+        &lt;p&gt;
+          The first step is obviously to create a new project. The webby-gen command
+          should handle things nicely. I used the 'website' template because that was
+          what I was building. From the basic project, I converted and modified all
+          of the files created (layout, templates) to use Haml and to fit with a very
+          basic structure that I was going to use.
+        &lt;/p&gt;
+        &lt;p&gt;
+          After the basic structure was in place, I created files for all of the site
+          pages I was going to need. I also created directories for the feature pages
+          and for the blog posts. At this point, I knew that I was going to be making
+          lots of blog posts and so I created a new template for a blog page. A tip
+          about templates, and pages in general: you can add any variables you would
+          like to the header section of page, and later sort a search on it. Also,
+          you can use Erb in a template and it will be interpreted when generating a
+          new page from the template. For example, in order to get a solid created_at
+          timestamp, I use Time.now.to_y inside an Erb tag.
+        &lt;/p&gt;
+        &lt;p&gt;
+          As I started to develop the site I discovered I was reusing pieces of
+          content more and more frequently. In Rails/Merb it's trivial to create a
+          partial snippet of content, and guess what, it's just as easy using Webby.
+          The only thing to make a note of is that partials are looked for in the
+          same path as a page being rendered. In order to share across different sub-
+          directories you must add a preceding forward slash. For example, this:
+          &lt;code&gt;
+            render :partial =&gt; &quot;/newsletter_form&quot;
+          &lt;/code&gt;
+          would search for a partial named '_newsletter_form.txt' in the root of the
+          content folder. Also note that a different partial can be rendered by a
+          layout calling partial from the different sub-directories. The default
+          layout could call use partial 'footer' and both the blog and the feature
+          folders could have that footer partial with different structure or content.
+        &lt;/p&gt;
+        &lt;p&gt;
+          The last thing I'll cover is making an atom feed from a set of pages. A
+          similar technique can be used to make an xml sitemap for Google and other
+          search engines. A feed is simply a page that has the extension set to xml
+          and the markup content of which results in valid xml for the required
+          specification. Be sure to set the layout to nil! As for the entries, I like
+          to have all of my posts available in the feed, so I use the symbol :all to
+          return all pages from find. For example:
+          &lt;code&gt;
+            @pages.find(:all, :in_directory =&gt; 'blog', :sort_by =&gt; 'created_at', :reverse =&gt; true)
+          &lt;/code&gt;
+          The alternative would be to set a limit of some sort, like this:
+          &lt;code&gt;
+            @pages.find(:limit =&gt; 20, :in_directory =&gt; 'blog', :sort_by =&gt; 'created_at', :reverse =&gt; true)
+          &lt;/code&gt;
+        &lt;/p&gt;
+        &lt;p&gt;
+          If you're looking to make a website that is going to be just HTML and you
+          don't want to run a webserver aside from Apache or Nginx, Webby is probably
+          the way to go. I certainly love it, and will continue to make static
+          websites using it.
+        &lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div id='disqus_thread'&gt;&lt;/div&gt;
+      &lt;script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'&gt;&lt;/script&gt;
+      &lt;noscript&gt;
+        &lt;a href='http://tpitale.disqus.com/?url=ref'&gt;
+          View the discussion thread.
+        &lt;/a&gt;
+        &lt;a class='dsq-brlink' href='http://disqus.com'&gt;
+          blog comments powered by
+          &lt;span class='logo-disqus'&gt;
+            Disqus
+          &lt;/span&gt;
+        &lt;/a&gt;
+      &lt;/noscript&gt;
+    </content>
+  </entry>
   <entry>
     <id>/posts/new_site_for_ics_vision_winepos.html,Wed Jan 07 23:17:04 -0500 2009</id>
     <title>New ICS Vision Site</title>
@@ -36,7 +129,7 @@
         &lt;/p&gt;
         &lt;p&gt;
           The new site is built with
-          &lt;a href=&quot;webby.rubyforge.org&quot;&gt;Webby&lt;/a&gt;
+          &lt;a href=&quot;http://webby.rubyforge.org&quot;&gt;Webby&lt;/a&gt;
           &lt;a href=&quot;http://github.com/TwP/webby/tree/master&quot;&gt;(source on github)&lt;/a&gt;
           and is generated out to HTML. Javascript is handled using jQuery and a few
           other plugins.
@@ -251,94 +344,48 @@
     </content>
   </entry>
   <entry>
-    <id>/posts/my_wrists_are_fine_with_apple_computers.html,Tue Mar 25 00:46:50 -0400 2008</id>
-    <title>Carpal Tunnel Syndrome</title>
-    <subtitle>Or, the Lack Thereof</subtitle>
-    <link href='http://t.pitale.com/posts/my_wrists_are_fine_with_apple_computers.html' />
-    <updated>2008-03-25T00:46:50-04:00</updated>
+    <id>/posts/merb_is_not_rails_and_that_is_okay.html,Thu May 29 18:33:54 -0400 2008</id>
+    <title>Merb is Not Rails</title>
+    <subtitle>And That is Okay</subtitle>
+    <link href='http://t.pitale.com/posts/merb_is_not_rails_and_that_is_okay.html' />
+    <updated>2008-05-29T18:33:54-04:00</updated>
     <content type='html'>
       &lt;div id='post'&gt;
-        &lt;h1&gt;Carpal Tunnel Syndrome&lt;/h1&gt;
-        &lt;h2&gt;Or, the Lack Thereof&lt;/h2&gt;
-        &lt;span class='date'&gt;2008-03-25&lt;/span&gt;
+        &lt;h1&gt;Merb is Not Rails&lt;/h1&gt;
+        &lt;h2&gt;And That is Okay&lt;/h2&gt;
+        &lt;span class='date'&gt;2008-05-29&lt;/span&gt;
         &lt;p&gt;
-          How could I forget the voice of my high school typing teacher, constantly
-          nagging me to keep my wrists elevated above the keyboard in an horrific
-          and uncomfortable position. After all of these years I've never, ever
-          been able to accomplish any typing in this fashion. So, my wrists have
-          always rested comfortably, but precariously, upon whatever surface my
-          keyboard is resting upon. For many years, this surface would have been a
-          simple table or desk as I would type at a basic keyboard as I worked in
-          Windows. Luckily, for me, I have moved away from the Windows world. As
-          such, I am now solely reliant upon Apple's hardware creations.
+          Merb is not Rails.
         &lt;/p&gt;
         &lt;p&gt;
-          Yet, I have somehow come through unscathed. While an unlucky associate of
-          mine did not share the same luck and was required to undergo a simple,
-          preventive, surgery. After much (well, not that much) contemplation, the
-          only justification for this that I can arrive at is Apple's hardware. It is
-          so thin that, in the case of the latest wired and wireless keyboards from
-          Apple, it might as well be the desk. Therefore, the raised wrists position
-          is not a requirement. The same affect is accomplished when using a laptop.
-          However, this applies to all laptops. Now, looking back, I can recall a
-          pair of keyboards, from Logitech, that would also be thin enough to allow
-          a user to safely rest their wrists upon their computing surface.
-        &lt;/p&gt;
-      &lt;/div&gt;
-      &lt;script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'&gt;&lt;/script&gt;
-      &lt;noscript&gt;
-        &lt;a href='http://tpitale.disqus.com/?url=ref'&gt;
-          View the discussion thread.
-        &lt;/a&gt;
-        &lt;a class='dsq-brlink' href='http://disqus.com'&gt;
-          blog comments powered by
-          &lt;span class='logo-disqus'&gt;
-            Disqus
-          &lt;/span&gt;
-        &lt;/a&gt;
-      &lt;/noscript&gt;
-    </content>
-  </entry>
-  <entry>
-    <id>/posts/vision_online_now_focus.html,Tue Mar 11 23:49:29 -0400 2008</id>
-    <title>Vision Online, Now Focus</title>
-    <subtitle>The exciting tale of a Merb Application and branding</subtitle>
-    <link href='http://t.pitale.com/posts/vision_online_now_focus.html' />
-    <updated>2008-03-11T23:49:29-04:00</updated>
-    <content type='html'>
-      &lt;div id='post'&gt;
-        &lt;h1&gt;Vision Online, Now Focus&lt;/h1&gt;
-        &lt;h2&gt;The exciting tale of a Merb Application and branding&lt;/h2&gt;
-        &lt;span class='date'&gt;2008-03-11&lt;/span&gt;
-        &lt;p&gt;
-          I have spent my free time, nights and weekends, working to create a new
-          version of Vision, online. For those that do not know, Vision is the
-          peerless, just-in-time, inventory control and point of sale system for the
-          retail liquor market.
+          If that statement isn't simple enough for you let me, like
+          &lt;a href=&quot;http://brainspl.at/articles/2008/05/21/does-it-have-to-be-a-competition-between-rails-and-merb&quot;&gt;Ezra&lt;/a&gt;
+          and
+          &lt;a href=&quot;http://yehudakatz.com/2008/05/21/cant-we-all-just-get-along/&quot;&gt;Yehuda&lt;/a&gt;
+          , explain why Merb is not Rails, why this is good for both Merb and Rails,
+          and where this will lead both projects in the future.
         &lt;/p&gt;
         &lt;p&gt;
-          The project was originally titled Vision Online. That name is simple and
-          it works with all of the branding that
-          &lt;a href=&quot;http://www.ics-nj.com&quot;&gt;ICS&lt;/a&gt;
-          has already done. However, this product heads out on its own and addresses
-          a slightly new market. As such, a new name was a must.
+          Ezra laid out the simple fact that there is no competition between Rails
+          and Merb. This comes down to “scratching different itches”. Yehuda’s post
+          reiterated this and added a few more important “why”s. Yehuda’s main point
+          is in the goal of “hackability” of Merb as a framework in comparison to the
+          “get-up-and-go” goal in Rails. Each serves a purpose. Merb’s goal is one
+          that served as my impetus for seeking out a Rails alternative. I still use
+          Rails because in many cases the “get-up-and-go” route is exactly what I
+          need. Rails should stick to its guns, philosophically just as Merb should.
         &lt;/p&gt;
         &lt;p&gt;
-          Thanks to a stroke of genius by my associate Chris, we've switched to the
-          name Focus. The name is brilliant for three, important, reasons. First,
-          the original product is named Vision and Focus is just that, a focusing of
-          the features and benefits of using Vision. Second, the use of this
-          product is intended to focus the users' inventory until it is as close as
-          possible to just-in-time. Lastly, a function of a person's literal vision
-          is the ability to focus. We are hoping that this reincarnation of Vision
-          will enable a user to focus on getting their inventory in line and online.
+          Yehuda’s second great point is that those that work on Merb often work on
+          Rails and wish to see the experimental developments in Merb move into Rails.
+          His example of note is the “provides” api (which many, many Merb people
+          love). In the future I hope that Merb as a testbed for Rails continues with
+          a bit more stability in Merb, perhaps.
         &lt;/p&gt;
         &lt;p&gt;
-          Solidifying this branding was important for me, as a developer, because it
-          provides a northern star, a guiding light, to my goal. The meaning that
-          branding holds for a user is realized many times over, for me. It is an
-          important aspect of development, keeping the goals, ideals, and vision of
-          the product, in mind.
+          At the moment I need to bring more stability to my own install of Merb. I
+          have continually worked with the latest and greatest Merb because of my
+          need to stay on the cutting edge with DataMapper.
         &lt;/p&gt;
       &lt;/div&gt;
       &lt;script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'&gt;&lt;/script&gt;
@@ -726,6 +773,208 @@
     </content>
   </entry>
   <entry>
+    <id>/posts/vision_online_now_focus.html,Tue Mar 11 23:49:29 -0400 2008</id>
+    <title>Vision Online, Now Focus</title>
+    <subtitle>The exciting tale of a Merb Application and branding</subtitle>
+    <link href='http://t.pitale.com/posts/vision_online_now_focus.html' />
+    <updated>2008-03-11T23:49:29-04:00</updated>
+    <content type='html'>
+      &lt;div id='post'&gt;
+        &lt;h1&gt;Vision Online, Now Focus&lt;/h1&gt;
+        &lt;h2&gt;The exciting tale of a Merb Application and branding&lt;/h2&gt;
+        &lt;span class='date'&gt;2008-03-11&lt;/span&gt;
+        &lt;p&gt;
+          I have spent my free time, nights and weekends, working to create a new
+          version of Vision, online. For those that do not know, Vision is the
+          peerless, just-in-time, inventory control and point of sale system for the
+          retail liquor market.
+        &lt;/p&gt;
+        &lt;p&gt;
+          The project was originally titled Vision Online. That name is simple and
+          it works with all of the branding that
+          &lt;a href=&quot;http://www.ics-nj.com&quot;&gt;ICS&lt;/a&gt;
+          has already done. However, this product heads out on its own and addresses
+          a slightly new market. As such, a new name was a must.
+        &lt;/p&gt;
+        &lt;p&gt;
+          Thanks to a stroke of genius by my associate Chris, we've switched to the
+          name Focus. The name is brilliant for three, important, reasons. First,
+          the original product is named Vision and Focus is just that, a focusing of
+          the features and benefits of using Vision. Second, the use of this
+          product is intended to focus the users' inventory until it is as close as
+          possible to just-in-time. Lastly, a function of a person's literal vision
+          is the ability to focus. We are hoping that this reincarnation of Vision
+          will enable a user to focus on getting their inventory in line and online.
+        &lt;/p&gt;
+        &lt;p&gt;
+          Solidifying this branding was important for me, as a developer, because it
+          provides a northern star, a guiding light, to my goal. The meaning that
+          branding holds for a user is realized many times over, for me. It is an
+          important aspect of development, keeping the goals, ideals, and vision of
+          the product, in mind.
+        &lt;/p&gt;
+      &lt;/div&gt;
+      &lt;script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'&gt;&lt;/script&gt;
+      &lt;noscript&gt;
+        &lt;a href='http://tpitale.disqus.com/?url=ref'&gt;
+          View the discussion thread.
+        &lt;/a&gt;
+        &lt;a class='dsq-brlink' href='http://disqus.com'&gt;
+          blog comments powered by
+          &lt;span class='logo-disqus'&gt;
+            Disqus
+          &lt;/span&gt;
+        &lt;/a&gt;
+      &lt;/noscript&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>/posts/my_wrists_are_fine_with_apple_computers.html,Tue Mar 25 00:46:50 -0400 2008</id>
+    <title>Carpal Tunnel Syndrome</title>
+    <subtitle>Or, the Lack Thereof</subtitle>
+    <link href='http://t.pitale.com/posts/my_wrists_are_fine_with_apple_computers.html' />
+    <updated>2008-03-25T00:46:50-04:00</updated>
+    <content type='html'>
+      &lt;div id='post'&gt;
+        &lt;h1&gt;Carpal Tunnel Syndrome&lt;/h1&gt;
+        &lt;h2&gt;Or, the Lack Thereof&lt;/h2&gt;
+        &lt;span class='date'&gt;2008-03-25&lt;/span&gt;
+        &lt;p&gt;
+          How could I forget the voice of my high school typing teacher, constantly
+          nagging me to keep my wrists elevated above the keyboard in an horrific
+          and uncomfortable position. After all of these years I've never, ever
+          been able to accomplish any typing in this fashion. So, my wrists have
+          always rested comfortably, but precariously, upon whatever surface my
+          keyboard is resting upon. For many years, this surface would have been a
+          simple table or desk as I would type at a basic keyboard as I worked in
+          Windows. Luckily, for me, I have moved away from the Windows world. As
+          such, I am now solely reliant upon Apple's hardware creations.
+        &lt;/p&gt;
+        &lt;p&gt;
+          Yet, I have somehow come through unscathed. While an unlucky associate of
+          mine did not share the same luck and was required to undergo a simple,
+          preventive, surgery. After much (well, not that much) contemplation, the
+          only justification for this that I can arrive at is Apple's hardware. It is
+          so thin that, in the case of the latest wired and wireless keyboards from
+          Apple, it might as well be the desk. Therefore, the raised wrists position
+          is not a requirement. The same affect is accomplished when using a laptop.
+          However, this applies to all laptops. Now, looking back, I can recall a
+          pair of keyboards, from Logitech, that would also be thin enough to allow
+          a user to safely rest their wrists upon their computing surface.
+        &lt;/p&gt;
+      &lt;/div&gt;
+      &lt;script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'&gt;&lt;/script&gt;
+      &lt;noscript&gt;
+        &lt;a href='http://tpitale.disqus.com/?url=ref'&gt;
+          View the discussion thread.
+        &lt;/a&gt;
+        &lt;a class='dsq-brlink' href='http://disqus.com'&gt;
+          blog comments powered by
+          &lt;span class='logo-disqus'&gt;
+            Disqus
+          &lt;/span&gt;
+        &lt;/a&gt;
+      &lt;/noscript&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>/posts/verizon_fios_tv_and_internet_without_actiontec.html,Tue Jul 08 09:31:33 -0400 2008</id>
+    <title>Verizon Fios Internet & TV</title>
+    <subtitle>Using Your Own Router, Not the Actiontec Router</subtitle>
+    <link href='http://t.pitale.com/posts/verizon_fios_tv_and_internet_without_actiontec.html' />
+    <updated>2008-07-08T09:31:33-04:00</updated>
+    <content type='html'>
+      &lt;div id='post'&gt;
+        &lt;h1&gt;Verizon Fios Internet &amp;amp; TV&lt;/h1&gt;
+        &lt;h2&gt;Using Your Own Router, Not the Actiontec Router&lt;/h2&gt;
+        &lt;span class='date'&gt;2008-07-08&lt;/span&gt;
+        &lt;p&gt;
+          &lt;h1&gt;The basic steps are as follows:&lt;/h1&gt;
+          &lt;ol&gt;
+            &lt;li&gt;Order Verizon Fios&lt;/li&gt;
+            &lt;li&gt;
+              During installation have the installer turn on the ethernet port in the
+              MOCA, not the coax
+            &lt;/li&gt;
+            &lt;li&gt;Have the installer leave you with a &quot;NIM&quot;&lt;/li&gt;
+            &lt;li&gt;Setup your router as you would have with any other ISP&lt;/li&gt;
+            &lt;li&gt;Connect the &quot;NIM&quot; to your router&lt;/li&gt;
+            &lt;li&gt;Connect the &quot;NIM&quot; to a coax port in your house&lt;/li&gt;
+            &lt;li&gt;
+              Have the installer connect and activate your television set-top-boxes
+              (STB)
+            &lt;/li&gt;
+          &lt;/ol&gt;
+        &lt;/p&gt;
+        &lt;h3&gt;Now for some explanation&lt;/h3&gt;
+        &lt;p&gt;
+          I think ordering should be pretty self-explanatory. However, I have not
+          said anything about why a sane person would wish to do this instead of
+          letting the nice Verizon installer do their job. It's all in the hardware
+          Using the Actiontec router Verizon provides is fine, if you've never had a
+          wireless home network before. For the rest of us, being allowed to use our
+          own, existing, setup is not possible without the foreknowledge or the will
+          to fight for the information.
+        &lt;/p&gt;
+        &lt;h3&gt;Onto the more technical stuff&lt;/h3&gt;
+        &lt;p&gt;
+          The MOCA is the box that is left outside of your house. Essentially, it
+          receives and interprets the signal. It takes the place of what we once
+          called a MODEM. In this box, there are multiple connections, one of which
+          is the standard ethernet port any Linksys, DLink, or Apple router knows and
+          loves. There is also a port that passes the network information over a coax
+          (short for coaxial) cable. This is the port left on by Verizon normally
+          because the Actiontec router (which, with a simple google search, one will
+          find is nearly worthless) is intended to work with it. Using the ethernet
+          port is required so that every other brand of standard router will operate.
+        &lt;/p&gt;
+        &lt;p&gt;
+          Next, we set up our router in much the same way it would be set up with a
+          DSL or Cable ISP. Verizon uses the standard, DHCP, to give your router an
+          IP address. At this point, assuming the internet has been activated by the
+          installer, you should be able to get on the internet at the wonderfully
+          blazing speeds that Fios provides.
+        &lt;/p&gt;
+        &lt;p&gt;
+          The last major step is asking the installer to give you a &quot;NIM&quot;. I never
+          found out what &quot;NIM&quot; stood for, but it's purpose is clear. In order to
+          get access to the programming guide or to video-on-demand services your
+          STBs must have internet access, too. The &quot;NIM&quot; should have two ports. The
+          first is an ethernet port and the second is a coax connector. Can you guess
+          what to do? Plug an ethernet cable from your router into the &quot;NIM&quot; and plug
+          a coax cable into the other port. The final coax connection should be made
+          to any coax cable outlet in your home as they are all inter-connected. The
+          &quot;NIM&quot; acts as translator in place of the Actiontec router and provides
+          internet access for the STBs to use. The STBs do have ethernet ports (at
+          least the latest Motorola box Verizon provided) but internet access does
+          not appear to be the purpose, but rather, home network connection for
+          certain media-sharing capabilities (music, movies, pictures to the TV).
+        &lt;/p&gt;
+        &lt;p&gt;
+          At this point, the installer should be able to simply plug in all of your
+          STBs and activate them as needed through Verizon.
+        &lt;/p&gt;
+        &lt;p&gt;
+          Disclaimer: I am not a Verizon technician. If for some strange reason any
+          of these instructions mess up your system I take no responsibility as
+          these are only the methods that worked FOR ME. Your Mileage May Vary!
+        &lt;/p&gt;
+      &lt;/div&gt;
+      &lt;script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'&gt;&lt;/script&gt;
+      &lt;noscript&gt;
+        &lt;a href='http://tpitale.disqus.com/?url=ref'&gt;
+          View the discussion thread.
+        &lt;/a&gt;
+        &lt;a class='dsq-brlink' href='http://disqus.com'&gt;
+          blog comments powered by
+          &lt;span class='logo-disqus'&gt;
+            Disqus
+          &lt;/span&gt;
+        &lt;/a&gt;
+      &lt;/noscript&gt;
+    </content>
+  </entry>
+  <entry>
     <id>/posts/webby_series_1.html,Sun Apr 13 01:21:10 -0400 2008</id>
     <title>Webby - Part 1</title>
     <subtitle>An Introduction to Webby</subtitle>
@@ -763,122 +1012,6 @@
         &lt;p class='next'&gt;
           Check back tomorrow for my next post in the series on some of the essential
           features that I found in Webby, but not in the documentation.
-        &lt;/p&gt;
-      &lt;/div&gt;
-      &lt;script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'&gt;&lt;/script&gt;
-      &lt;noscript&gt;
-        &lt;a href='http://tpitale.disqus.com/?url=ref'&gt;
-          View the discussion thread.
-        &lt;/a&gt;
-        &lt;a class='dsq-brlink' href='http://disqus.com'&gt;
-          blog comments powered by
-          &lt;span class='logo-disqus'&gt;
-            Disqus
-          &lt;/span&gt;
-        &lt;/a&gt;
-      &lt;/noscript&gt;
-    </content>
-  </entry>
-  <entry>
-    <id>/posts/upcoming.html,Tue May 27 22:11:10 -0400 2008</id>
-    <title>In the Coming Days</title>
-    <subtitle>So Much to Do</subtitle>
-    <link href='http://t.pitale.com/posts/upcoming.html' />
-    <updated>2008-05-27T22:11:10-04:00</updated>
-    <content type='html'>
-      &lt;div id='post'&gt;
-        &lt;h1&gt;In the Coming Days&lt;/h1&gt;
-        &lt;h2&gt;So Much to Do&lt;/h2&gt;
-        &lt;span class='date'&gt;2008-05-27&lt;/span&gt;
-        &lt;p&gt;
-          The short story is:
-          &lt;a href=&quot;http://www.viget.com&quot;&gt;Viget&lt;/a&gt;
-          is being extremely generous and is paying for me to travel to
-          &lt;a href=&quot;http://en.oreilly.com/rails2008/public/content/home&quot;&gt;RailsConf&lt;/a&gt;
-          this year. Despite the fact that I have only been in their employ for three
-          whole weeks. I'm extremely happy working there and I only hope that I am
-          living up to their expectations of me.
-        &lt;/p&gt;
-        &lt;p&gt;
-          I am excited to go to RailsConf for two reasons. First, I have never been
-          to a conference before, any conference, and I really expect to learn a lot
-          in the sessions I am enrolled in. Second, I may finally get to meet many of
-          the people I talk to on the irc chat rooms for Merb and DataMapper. People
-          like Yehuda Katz, Ezra Z., Adam French (who I think is going), and a
-          coworker from Viget South, Ben Scofield, who will be speaking, as well. All
-          in all I have extremely high hopes for this trip.
-        &lt;/p&gt;
-        &lt;p&gt;
-          In other news, I've got draft copies of many, many blog posts. The problem
-          is trying to decide where they will be appropriate. Some are about the beta
-          for
-          &lt;a href=&quot;http://www.getdropbox.com&quot;&gt;Dropbox&lt;/a&gt;
-          (my favorite service, at the moment), including some nifty tricks. Another
-          post is a followup to Getting Things Done with Mail and iCal combined with
-          a review of the GTD application, Things. On the
-          &lt;a href=&quot;http://www.viget.com/extend/&quot;&gt;Viget Extend blog&lt;/a&gt;
-          , I've got some ideas for posts on topics ranging from Microsoft Exchange
-          calendar subscriptions in iCal to accessing the LDAP global address list
-          from Address Book.
-        &lt;/p&gt;
-      &lt;/div&gt;
-      &lt;script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'&gt;&lt;/script&gt;
-      &lt;noscript&gt;
-        &lt;a href='http://tpitale.disqus.com/?url=ref'&gt;
-          View the discussion thread.
-        &lt;/a&gt;
-        &lt;a class='dsq-brlink' href='http://disqus.com'&gt;
-          blog comments powered by
-          &lt;span class='logo-disqus'&gt;
-            Disqus
-          &lt;/span&gt;
-        &lt;/a&gt;
-      &lt;/noscript&gt;
-    </content>
-  </entry>
-  <entry>
-    <id>/posts/merb_is_not_rails_and_that_is_okay.html,Thu May 29 18:33:54 -0400 2008</id>
-    <title>Merb is Not Rails</title>
-    <subtitle>And That is Okay</subtitle>
-    <link href='http://t.pitale.com/posts/merb_is_not_rails_and_that_is_okay.html' />
-    <updated>2008-05-29T18:33:54-04:00</updated>
-    <content type='html'>
-      &lt;div id='post'&gt;
-        &lt;h1&gt;Merb is Not Rails&lt;/h1&gt;
-        &lt;h2&gt;And That is Okay&lt;/h2&gt;
-        &lt;span class='date'&gt;2008-05-29&lt;/span&gt;
-        &lt;p&gt;
-          Merb is not Rails.
-        &lt;/p&gt;
-        &lt;p&gt;
-          If that statement isn't simple enough for you let me, like
-          &lt;a href=&quot;http://brainspl.at/articles/2008/05/21/does-it-have-to-be-a-competition-between-rails-and-merb&quot;&gt;Ezra&lt;/a&gt;
-          and
-          &lt;a href=&quot;http://yehudakatz.com/2008/05/21/cant-we-all-just-get-along/&quot;&gt;Yehuda&lt;/a&gt;
-          , explain why Merb is not Rails, why this is good for both Merb and Rails,
-          and where this will lead both projects in the future.
-        &lt;/p&gt;
-        &lt;p&gt;
-          Ezra laid out the simple fact that there is no competition between Rails
-          and Merb. This comes down to “scratching different itches”. Yehuda’s post
-          reiterated this and added a few more important “why”s. Yehuda’s main point
-          is in the goal of “hackability” of Merb as a framework in comparison to the
-          “get-up-and-go” goal in Rails. Each serves a purpose. Merb’s goal is one
-          that served as my impetus for seeking out a Rails alternative. I still use
-          Rails because in many cases the “get-up-and-go” route is exactly what I
-          need. Rails should stick to its guns, philosophically just as Merb should.
-        &lt;/p&gt;
-        &lt;p&gt;
-          Yehuda’s second great point is that those that work on Merb often work on
-          Rails and wish to see the experimental developments in Merb move into Rails.
-          His example of note is the “provides” api (which many, many Merb people
-          love). In the future I hope that Merb as a testbed for Rails continues with
-          a bit more stability in Merb, perhaps.
-        &lt;/p&gt;
-        &lt;p&gt;
-          At the moment I need to bring more stability to my own install of Merb. I
-          have continually worked with the latest and greatest Merb because of my
-          need to stay on the cutting edge with DataMapper.
         &lt;/p&gt;
       &lt;/div&gt;
       &lt;script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'&gt;&lt;/script&gt;
@@ -982,86 +1115,46 @@
     </content>
   </entry>
   <entry>
-    <id>/posts/verizon_fios_tv_and_internet_without_actiontec.html,Tue Jul 08 09:31:33 -0400 2008</id>
-    <title>Verizon Fios Internet & TV</title>
-    <subtitle>Using Your Own Router, Not the Actiontec Router</subtitle>
-    <link href='http://t.pitale.com/posts/verizon_fios_tv_and_internet_without_actiontec.html' />
-    <updated>2008-07-08T09:31:33-04:00</updated>
+    <id>/posts/upcoming.html,Tue May 27 22:11:10 -0400 2008</id>
+    <title>In the Coming Days</title>
+    <subtitle>So Much to Do</subtitle>
+    <link href='http://t.pitale.com/posts/upcoming.html' />
+    <updated>2008-05-27T22:11:10-04:00</updated>
     <content type='html'>
       &lt;div id='post'&gt;
-        &lt;h1&gt;Verizon Fios Internet &amp;amp; TV&lt;/h1&gt;
-        &lt;h2&gt;Using Your Own Router, Not the Actiontec Router&lt;/h2&gt;
-        &lt;span class='date'&gt;2008-07-08&lt;/span&gt;
+        &lt;h1&gt;In the Coming Days&lt;/h1&gt;
+        &lt;h2&gt;So Much to Do&lt;/h2&gt;
+        &lt;span class='date'&gt;2008-05-27&lt;/span&gt;
         &lt;p&gt;
-          &lt;h1&gt;The basic steps are as follows:&lt;/h1&gt;
-          &lt;ol&gt;
-            &lt;li&gt;Order Verizon Fios&lt;/li&gt;
-            &lt;li&gt;
-              During installation have the installer turn on the ethernet port in the
-              MOCA, not the coax
-            &lt;/li&gt;
-            &lt;li&gt;Have the installer leave you with a &quot;NIM&quot;&lt;/li&gt;
-            &lt;li&gt;Setup your router as you would have with any other ISP&lt;/li&gt;
-            &lt;li&gt;Connect the &quot;NIM&quot; to your router&lt;/li&gt;
-            &lt;li&gt;Connect the &quot;NIM&quot; to a coax port in your house&lt;/li&gt;
-            &lt;li&gt;
-              Have the installer connect and activate your television set-top-boxes
-              (STB)
-            &lt;/li&gt;
-          &lt;/ol&gt;
-        &lt;/p&gt;
-        &lt;h3&gt;Now for some explanation&lt;/h3&gt;
-        &lt;p&gt;
-          I think ordering should be pretty self-explanatory. However, I have not
-          said anything about why a sane person would wish to do this instead of
-          letting the nice Verizon installer do their job. It's all in the hardware
-          Using the Actiontec router Verizon provides is fine, if you've never had a
-          wireless home network before. For the rest of us, being allowed to use our
-          own, existing, setup is not possible without the foreknowledge or the will
-          to fight for the information.
-        &lt;/p&gt;
-        &lt;h3&gt;Onto the more technical stuff&lt;/h3&gt;
-        &lt;p&gt;
-          The MOCA is the box that is left outside of your house. Essentially, it
-          receives and interprets the signal. It takes the place of what we once
-          called a MODEM. In this box, there are multiple connections, one of which
-          is the standard ethernet port any Linksys, DLink, or Apple router knows and
-          loves. There is also a port that passes the network information over a coax
-          (short for coaxial) cable. This is the port left on by Verizon normally
-          because the Actiontec router (which, with a simple google search, one will
-          find is nearly worthless) is intended to work with it. Using the ethernet
-          port is required so that every other brand of standard router will operate.
+          The short story is:
+          &lt;a href=&quot;http://www.viget.com&quot;&gt;Viget&lt;/a&gt;
+          is being extremely generous and is paying for me to travel to
+          &lt;a href=&quot;http://en.oreilly.com/rails2008/public/content/home&quot;&gt;RailsConf&lt;/a&gt;
+          this year. Despite the fact that I have only been in their employ for three
+          whole weeks. I'm extremely happy working there and I only hope that I am
+          living up to their expectations of me.
         &lt;/p&gt;
         &lt;p&gt;
-          Next, we set up our router in much the same way it would be set up with a
-          DSL or Cable ISP. Verizon uses the standard, DHCP, to give your router an
-          IP address. At this point, assuming the internet has been activated by the
-          installer, you should be able to get on the internet at the wonderfully
-          blazing speeds that Fios provides.
+          I am excited to go to RailsConf for two reasons. First, I have never been
+          to a conference before, any conference, and I really expect to learn a lot
+          in the sessions I am enrolled in. Second, I may finally get to meet many of
+          the people I talk to on the irc chat rooms for Merb and DataMapper. People
+          like Yehuda Katz, Ezra Z., Adam French (who I think is going), and a
+          coworker from Viget South, Ben Scofield, who will be speaking, as well. All
+          in all I have extremely high hopes for this trip.
         &lt;/p&gt;
         &lt;p&gt;
-          The last major step is asking the installer to give you a &quot;NIM&quot;. I never
-          found out what &quot;NIM&quot; stood for, but it's purpose is clear. In order to
-          get access to the programming guide or to video-on-demand services your
-          STBs must have internet access, too. The &quot;NIM&quot; should have two ports. The
-          first is an ethernet port and the second is a coax connector. Can you guess
-          what to do? Plug an ethernet cable from your router into the &quot;NIM&quot; and plug
-          a coax cable into the other port. The final coax connection should be made
-          to any coax cable outlet in your home as they are all inter-connected. The
-          &quot;NIM&quot; acts as translator in place of the Actiontec router and provides
-          internet access for the STBs to use. The STBs do have ethernet ports (at
-          least the latest Motorola box Verizon provided) but internet access does
-          not appear to be the purpose, but rather, home network connection for
-          certain media-sharing capabilities (music, movies, pictures to the TV).
-        &lt;/p&gt;
-        &lt;p&gt;
-          At this point, the installer should be able to simply plug in all of your
-          STBs and activate them as needed through Verizon.
-        &lt;/p&gt;
-        &lt;p&gt;
-          Disclaimer: I am not a Verizon technician. If for some strange reason any
-          of these instructions mess up your system I take no responsibility as
-          these are only the methods that worked FOR ME. Your Mileage May Vary!
+          In other news, I've got draft copies of many, many blog posts. The problem
+          is trying to decide where they will be appropriate. Some are about the beta
+          for
+          &lt;a href=&quot;http://www.getdropbox.com&quot;&gt;Dropbox&lt;/a&gt;
+          (my favorite service, at the moment), including some nifty tricks. Another
+          post is a followup to Getting Things Done with Mail and iCal combined with
+          a review of the GTD application, Things. On the
+          &lt;a href=&quot;http://www.viget.com/extend/&quot;&gt;Viget Extend blog&lt;/a&gt;
+          , I've got some ideas for posts on topics ranging from Microsoft Exchange
+          calendar subscriptions in iCal to accessing the LDAP global address list
+          from Address Book.
         &lt;/p&gt;
       &lt;/div&gt;
       &lt;script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'&gt;&lt;/script&gt;
@@ -1229,87 +1322,6 @@
         &lt;p class='next'&gt;
           Next time I'll talk about extending these essential features, making Webby
           an extremely powerful tool.
-        &lt;/p&gt;
-      &lt;/div&gt;
-      &lt;script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'&gt;&lt;/script&gt;
-      &lt;noscript&gt;
-        &lt;a href='http://tpitale.disqus.com/?url=ref'&gt;
-          View the discussion thread.
-        &lt;/a&gt;
-        &lt;a class='dsq-brlink' href='http://disqus.com'&gt;
-          blog comments powered by
-          &lt;span class='logo-disqus'&gt;
-            Disqus
-          &lt;/span&gt;
-        &lt;/a&gt;
-      &lt;/noscript&gt;
-    </content>
-  </entry>
-  <entry>
-    <id>/posts/getting_things_done_with_more_than_mail.html,Wed Jun 04 09:27:02 -0400 2008</id>
-    <title>Getting Things Done</title>
-    <subtitle>With More Than Mail</subtitle>
-    <link href='http://t.pitale.com/posts/getting_things_done_with_more_than_mail.html' />
-    <updated>2008-06-04T09:27:02-04:00</updated>
-    <content type='html'>
-      &lt;div id='post'&gt;
-        &lt;h1&gt;Getting Things Done&lt;/h1&gt;
-        &lt;h2&gt;With More Than Mail&lt;/h2&gt;
-        &lt;span class='date'&gt;2008-06-04&lt;/span&gt;
-        &lt;p&gt;
-          Getting things done apps are over-complicated to-do lists, in my mind. As I
-          said in a previous post, I enjoy using iCal/Mail To-dos for three reasons.
-          Speed, simplicity, and I already have one of those applications open
-          already. However, I was evolving and growing in my workflow. I needed to
-          find a few more features in my to-do tracking. Some original ideas included
-          &quot;archiving&quot; instead of deleting completed to-dos and a better way to
-          display the information, if only in showing which is the next to-do in
-          different orders. Sorting to-dos in Mail is fairly simple, and iCal is even
-          worse.
-        &lt;/p&gt;
-        &lt;p&gt;
-          Between
-          &lt;a href=&quot;http://tuaw.com&quot;&gt;TUAW&lt;/a&gt;
-          and
-          &lt;a href=&quot;http://macapper.com/&quot;&gt;MacApper&lt;/a&gt;
-          I was able to select two applications to try. The first is called
-          &lt;a href=&quot;http://www.culturedcode.com/things/&quot;&gt;Things&lt;/a&gt;
-          and is a full-blown application. Things has a fantastic user-interface, a
-          great feature-set, and is under constant development. At the same time, I
-          did not use all of the features the application already had. Things is
-          still new software. As such, some of the polish is missing at this time
-          but, it is still very usable and very beautiful. The largest negative
-          point for me is that Things is an application unto itself. I already have
-          plenty of windows open and I do not wish to find myself spending more time
-          tracking my to-dos than actually doing them. This is a very minor issue and
-          one that I will likely live with as my needs evolve further. Lastly, the
-          price is a little steep at nearly $50.
-        &lt;/p&gt;
-        &lt;p&gt;
-          The second application is called
-          &lt;a href=&quot;http://www.dejumble.com/&quot;&gt;Dejumble.&lt;/a&gt;
-          Unlike Things, Dejumble lives in the menubar only. Although I don’t like to
-          clutter my menubar the ease of access is phenomenal and instantaneous. The
-          feature set is not as complete as Things but, given my needs, that is just
-          fine. The application and interface have a few flaws. First, the included
-          themes are all beautiful except when the description font is impossible to
-          see. Second, the search box would be extremely handy if it did something.
-          When I first tried to search I typed in a word I knew was in the
-          descriptions of a few to-dos and waited for a live search. Nothing happened
-          so I hit enter. Unexpectedly, this created a new to-do using the form just
-          below the search. Deleting this new to-do required I open iCal or Mail and,
-          the delete would not remove itself in Dejumble’s list. Lastly, a to-do with
-          none of the fields filled in should not be made a to-do without a warning
-          message or some other notification.
-        &lt;/p&gt;
-        &lt;p&gt;
-          Neither of these applications scratches the itch completely but, both are
-          close enough that they may warrant use. I will probably use Dejumble for
-          the trial period, monitor the improvements made and then make a decision.
-          I am absolutely certain that Things has or will have all that I need but, I
-          don’t want to spend $50 without a need. I am thankful for Leopard because
-          without its features, none of these applications would be as useful. As
-          always, Mail still gets the job done.
         &lt;/p&gt;
       &lt;/div&gt;
       &lt;script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'&gt;&lt;/script&gt;

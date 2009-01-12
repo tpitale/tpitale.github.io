@@ -26,7 +26,7 @@ filter:
     of course, point-of-sale.
   %p
     The new site is built with
-    = link_to 'Webby', 'webby.rubyforge.org'
+    = link_to 'Webby', 'http://webby.rubyforge.org'
     = link_to '(source on github)', 'http://github.com/TwP/webby/tree/master'
     and is generated out to HTML. Javascript is handled using jQuery and a few
     other plugins.

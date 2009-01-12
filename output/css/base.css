@@ -84,7 +84,7 @@ a:hover {
 	text-align: right;
 }
 
-.col h1 {
+.col h2 {
 	color: #333333;
 	font-size: 150%;
 }
@@ -101,9 +101,10 @@ a:hover {
 }
 
 .block h1 {
-	color: #666666;
-	font-size: 150%;
+  color: #666666;
+  font-size: 150%;
 }
+
 
 #header,
 #about,
@@ -163,9 +164,10 @@ a:hover {
 	float: left;
 }
 
-#fast h1,
-#faster h1,
-#fastest h1 {
+#fast h3,
+#faster h3,
+#fastest h3 {
+  font-size: 125%;
 	margin-bottom: 5px;
 }
 
@@ -178,9 +180,7 @@ a:hover {
 
 /* +Portfolio
 ==================================================*/
-#portfolio a {
-	
-}
+#portfolio a {}
 
 #portfolio a img {
 	padding: 4px;
@@ -197,6 +197,12 @@ a:hover {
 	float: left;
 }
 
+#people h3,
+#companies h3,
+#community h3 {
+  font-size: 125%;
+}
+
 #links ul li {
 	margin-top: 5px;
 }
@@ -210,7 +216,6 @@ div.flickr_badge_image {
 	margin-right: 7px;
 	border: 1px solid #EEEEEE;
 }
-
 
 /* +Post
 ==================================================*/

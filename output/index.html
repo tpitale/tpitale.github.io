@@ -48,9 +48,9 @@
       <div id='about'>
         <div class='wrap'>
           <div class='col'>
-            <h1>
+            <h2>
               About
-            </h1>
+            </h2>
           </div>
           <div class='block'>
             <p>
@@ -74,19 +74,19 @@
       <div id='contact'>
         <div class='wrap'>
           <div class='col'>
-            <h1>
+            <h2>
               Contact
-            </h1>
+            </h2>
           </div>
           <div class='block'>
             <div id='fast'>
-              <h1>Fast</h1>
+              <h3>Fast</h3>
               <a href="mailto:tpitale@gmail.com">tpitale@gmail.com</a>
               <a href="mailto:tony.pitale@gmail.com">tony.pitale@gmail.com</a>
               <a href="mailto:tony.pitale@viget.com">tony.pitale@viget.com</a>
             </div>
             <div id='faster'>
-              <h1>Faster</h1>
+              <h3>Faster</h3>
               <b>AIM:</b>
               sicdev
               <br />
@@ -94,8 +94,8 @@
               tpitale
             </div>
             <div id='fastest'>
-              <h1>Fastest</h1>
-              (908)-309-8761
+              <h3>Fastest</h3>
+              (571)-294-6561
             </div>
             <br class='clearleft' />
           </div>
@@ -105,11 +105,14 @@
       <div id='blog'>
         <div class='wrap'>
           <div class='col'>
-            <h1>
+            <h2>
               Blog
-            </h1>
+            </h2>
             <!-- List of Blog Posts -->
             <ul>
+              <li>
+                <a href="/posts/making_the_ics_winepos_website.html">Making the New ICS Website</a>
+              </li>
               <li>
                 <a href="/posts/new_site_for_ics_vision_winepos.html">New ICS Vision Site</a>
               </li>
@@ -126,10 +129,7 @@
                 
               </li>
               <li>
-                <a href="/posts/my_wrists_are_fine_with_apple_computers.html">Carpal Tunnel Syndrome</a>
-              </li>
-              <li>
-                <a href="/posts/vision_online_now_focus.html">Vision Online, Now Focus</a>
+                <a href="/posts/merb_is_not_rails_and_that_is_okay.html">Merb is Not Rails</a>
               </li>
               <li>
                 <a href="/posts/testing_the_slicehost_api.html">Beta Testing the Slicehost API</a>
@@ -147,42 +147,87 @@
                 <a href="/posts/notes_on_legacy_databases_with_activerecord.html">Legacy Databases with ActiveRecord</a>
               </li>
               <li>
-                <a href="/posts/webby_series_1.html">Webby - Part 1</a>
+                <a href="/posts/vision_online_now_focus.html">Vision Online, Now Focus</a>
               </li>
               <li>
-                <a href="/posts/upcoming.html">In the Coming Days</a>
+                <a href="/posts/my_wrists_are_fine_with_apple_computers.html">Carpal Tunnel Syndrome</a>
               </li>
               <li>
-                <a href="/posts/merb_is_not_rails_and_that_is_okay.html">Merb is Not Rails</a>
+                <a href="/posts/verizon_fios_tv_and_internet_without_actiontec.html">Verizon Fios Internet &amp; TV</a>
               </li>
             </ul>
           </div>
           <div class='block'>
             <!-- Latest Post -->
             <div id='post'>
-              <h1>New ICS Vision Site</h1>
-              <h2>winepos.com</h2>
-              <span class='date'>2009-01-07</span>
+              <h1>Making the New ICS Website</h1>
+              <h2>Thanks to Webby, Haml, and Ruby</h2>
+              <span class='date'>2009-01-12</span>
               <p>
-                After starting slowly about 6 months ago, I finally launched the new ICS
-                website for their lead product, Vision. The last major commit before launch
-                was on Sunday night and by the end of Monday most of the nameservers had
-                picked up the change. So go check out the site at
+                Last week I posted on the new ICS website I launched at
                 <a href="http://winepos.com">winepos.com</a>
+                which is built using the same little ruby gem as this site,
+                <a href="http://github.com/TwP/webby/tree/master">Webby.</a>
+                This week, I'd like to go into a little more detail on some of the things
+                I did in creating their new site. Aside from what little design work I did
+                (admittedly not my strongest ability) I will simply be covering many of the
+                cool things you can do with Webby and a couple of tips and gotchas.
               </p>
               <p>
-                For those that don't know, ICS is a software company founded 25 years ago
-                to serve the retail liquor industry, exclusively. Vision is the result of
-                all of their effort. Vision provides an amazing number of features and all
-                of the controls required for inventory management, ordering, tracking, and,
-                of course, point-of-sale.
+                The first step is obviously to create a new project. The webby-gen command
+                should handle things nicely. I used the 'website' template because that was
+                what I was building. From the basic project, I converted and modified all
+                of the files created (layout, templates) to use Haml and to fit with a very
+                basic structure that I was going to use.
               </p>
               <p>
-                The new site is built with
-                <a href="webby.rubyforge.org">Webby</a>
-                <a href="http://github.com/TwP/webby/tree/master">(source on github)</a>
-                and is generated out to HTML. Javascript is handled using jQuery and a few
-                other plugins.
+                After the basic structure was in place, I created files for all of the site
+                pages I was going to need. I also created directories for the feature pages
+                and for the blog posts. At this point, I knew that I was going to be making
+                lots of blog posts and so I created a new template for a blog page. A tip
+                about templates, and pages in general: you can add any variables you would
+                like to the header section of page, and later sort a search on it. Also,
+                you can use Erb in a template and it will be interpreted when generating a
+                new page from the template. For example, in order to get a solid created_at
+                timestamp, I use Time.now.to_y inside an Erb tag.
+              </p>
+              <p>
+                As I started to develop the site I discovered I was reusing pieces of
+                content more and more frequently. In Rails/Merb it's trivial to create a
+                partial snippet of content, and guess what, it's just as easy using Webby.
+                The only thing to make a note of is that partials are looked for in the
+                same path as a page being rendered. In order to share across different sub-
+                directories you must add a preceding forward slash. For example, this:
+                <code>
+                  render :partial => "/newsletter_form"
+                </code>
+                would search for a partial named '_newsletter_form.txt' in the root of the
+                content folder. Also note that a different partial can be rendered by a
+                layout calling partial from the different sub-directories. The default
+                layout could call use partial 'footer' and both the blog and the feature
+                folders could have that footer partial with different structure or content.
+              </p>
+              <p>
+                The last thing I'll cover is making an atom feed from a set of pages. A
+                similar technique can be used to make an xml sitemap for Google and other
+                search engines. A feed is simply a page that has the extension set to xml
+                and the markup content of which results in valid xml for the required
+                specification. Be sure to set the layout to nil! As for the entries, I like
+                to have all of my posts available in the feed, so I use the symbol :all to
+                return all pages from find. For example:
+                <code>
+                  @pages.find(:all, :in_directory => 'blog', :sort_by => 'created_at', :reverse => true)
+                </code>
+                The alternative would be to set a limit of some sort, like this:
+                <code>
+                  @pages.find(:limit => 20, :in_directory => 'blog', :sort_by => 'created_at', :reverse => true)
+                </code>
+              </p>
+              <p>
+                If you're looking to make a website that is going to be just HTML and you
+                don't want to run a webserver aside from Apache or Nginx, Webby is probably
+                the way to go. I certainly love it, and will continue to make static
+                websites using it.
               </p>
             </div>
             <div id='disqus_thread'></div>
@@ -210,18 +255,17 @@
       <div id='portfolio'>
         <div class='wrap'>
           <div class='col'>
-            <h1>
+            <h2>
               Portfolio
-            </h1>
+            </h2>
           </div>
           <div class='block'>
-            <a href="#"><img src='/images/s76.png' /></a>
-            <a href="http://www.ics-nj.com"><img src='/images/ics-nj.png' /></a>
-            <a href="#"><img src='/images/focus.png' /></a>
-            <a href="#"><img src='/images/appuser.png' /></a>
-            <a href="#"><img src='/images/threeoseven.png' /></a>
-            <a href="#"><img src='/images/prv3.png' /></a>
-            <a href="#"><img src='/images/checkout.png' /></a>
+            <a href="http://www.winepos.com"><img src='/images/winepos.png' /></a>
+            <a href="http://focusapp.com"><img src='/images/focus.png' /></a>
+            <!-- = link_to("<img src='/images/appuser.png' />", "#") -->
+            <!-- = link_to("<img src='/images/threeoseven.png' />", "#") -->
+            <!-- = link_to("<img src='/images/prv3.png' />", "#") -->
+            <!-- = link_to("<img src='/images/checkout.png' />", "#") -->
             <br class='clearleft' />
           </div>
         </div>
@@ -230,38 +274,45 @@
       <div id='links'>
         <div class='wrap'>
           <div class='col'>
-            <h1>
+            <h2>
               Links
-            </h1>
+            </h2>
           </div>
           <div class='block'>
             <div id='people'>
-              <h1>Personal Blogs</h1>
+              <h3>Personal Blogs</h3>
               <ul>
+                <li><a href="http://drnicwilliams.com/">Dr Nic</a></li>
+                <li><a href="http://www.yehudakatz.com/">Yehuda Katz</a></li>
+                <li><a href="http://brainspl.at/">Ezra Zygmuntowicz</a></li>
+                <li><a href="http://www.sneaq.net/">Patrick Reagan</a></li>
                 <li><a href="http://reinh.com">Reinh</a></li>
                 <li><a href="http://gweezlebur.com/">Michael Ivey</a></li>
                 <li><a href="http://adam.speaksoutofturn.com/">Adam French</a></li>
-                <li><a href="http://brainspl.at/">Ezra Zygmuntowicz</a></li>
-                <li><a href="http://www.yehudakatz.com/">Yehuda Katz</a></li>
-                <li><a href="http://www.sneaq.net/">Patrick Reagan</a></li>
                 <li><a href="http://www.theamazingrando.com/">Paul Sadauskas</a></li>
               </ul>
             </div>
             <div id='companies'>
-              <h1>Company Blogs</h1>
+              <h3>Company Blogs</h3>
               <ul>
                 <li><a href="http://www.viget.com/extend/">Viget</a></li>
-                <li><a href="http://ics-nj.com/blog/">ICS</a></li>
+                <li><a href="http://winepos.com/blog.html">ICS</a></li>
+                <li><a href="http://giantrobots.thoughtbot.com/">Thoughbot</a></li>
+                <li><a href="http://github.com/blog">Github</a></li>
                 <li><a href="http://www.37signals.com/svn/">37signals</a></li>
                 <li><a href="http://engineyard.com/blog">Engine Yard</a></li>
                 <li><a href="http://blog.slicehost.com/">SliceHost</a></li>
+                <li><a href="http://www.hashrocket.com/blog">Hashrocket</a></li>
               </ul>
             </div>
             <div id='community'>
-              <h1>Community Sites</h1>
+              <h3>Other Sites</h3>
               <ul>
+                <li><a href="http://www.pathf.com/blogs/">Pathfinder</a></li>
+                <li><a href="http://railspikes.com/">RailSpikes</a></li>
+                <li><a href="http://railstips.org/">Rails Tips</a></li>
+                <li><a href="http://errtheblog.com/">Err The Blog</a></li>
                 <li><a href="http://merbivore.com">Merb</a></li>
-                <li><a href="http://merbunity.com/">Merbunity</a></li>
                 <li><a href="http://datamapper.org">DataMapper</a></li>
                 <li><a href="http://jquery.com/">jQuery</a></li>
                 <li><a href="http://www.rubyonrails.org/">Rails</a></li>
@@ -275,9 +326,9 @@
       <div id='photos'>
         <div class='wrap'>
           <div class='col'>
-            <h1>
+            <h2>
               Photos
-            </h1>
+            </h2>
           </div>
           <div class='block'>
             <script src='http://www.flickr.com/badge_code_v2.gne?count=7&amp;display=latest&amp;size=s&amp;layout=x&amp;source=user_set&amp;user=41783324%40N00&amp;set=72157604108727991' type='text/javascript'></script>

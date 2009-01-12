@@ -1,0 +1,83 @@
+---
+title: Making the New ICS Website
+subtitle: Thanks to Webby, Haml, and Ruby
+author: Tony Pitale
+created_at: 2009-01-12 00:20:12.678860 -05:00
+layout: posts
+filter:
+  - haml
+---
+#post
+  %h1= h(@page.title)
+  %h2= h(@page.subtitle)
+  %span.date= @page.created_at.strftime('%Y-%m-%d')
+  
+  %p
+    Last week I posted on the new ICS website I launched at
+    = link_to 'winepos.com', 'http://winepos.com'
+    which is built using the same little ruby gem as this site,
+    = link_to 'Webby.', 'http://github.com/TwP/webby/tree/master'
+    This week, I'd like to go into a little more detail on some of the things
+    I did in creating their new site. Aside from what little design work I did
+    (admittedly not my strongest ability) I will simply be covering many of the
+    cool things you can do with Webby and a couple of tips and gotchas.
+  %p
+    The first step is obviously to create a new project. The webby-gen command
+    should handle things nicely. I used the 'website' template because that was
+    what I was building. From the basic project, I converted and modified all
+    of the files created (layout, templates) to use Haml and to fit with a very
+    basic structure that I was going to use.
+  %p
+    After the basic structure was in place, I created files for all of the site
+    pages I was going to need. I also created directories for the feature pages
+    and for the blog posts. At this point, I knew that I was going to be making
+    lots of blog posts and so I created a new template for a blog page. A tip
+    about templates, and pages in general: you can add any variables you would
+    like to the header section of page, and later sort a search on it. Also,
+    you can use Erb in a template and it will be interpreted when generating a
+    new page from the template. For example, in order to get a solid created_at
+    timestamp, I use Time.now.to_y inside an Erb tag.
+  %p
+    As I started to develop the site I discovered I was reusing pieces of
+    content more and more frequently. In Rails/Merb it's trivial to create a
+    partial snippet of content, and guess what, it's just as easy using Webby.
+    The only thing to make a note of is that partials are looked for in the
+    same path as a page being rendered. In order to share across different sub-
+    directories you must add a preceding forward slash. For example, this:
+    %code
+      render :partial => "/newsletter_form"
+    would search for a partial named '_newsletter_form.txt' in the root of the
+    content folder. Also note that a different partial can be rendered by a
+    layout calling partial from the different sub-directories. The default
+    layout could call use partial 'footer' and both the blog and the feature
+    folders could have that footer partial with different structure or content.
+  %p
+    The last thing I'll cover is making an atom feed from a set of pages. A
+    similar technique can be used to make an xml sitemap for Google and other
+    search engines. A feed is simply a page that has the extension set to xml
+    and the markup content of which results in valid xml for the required
+    specification. Be sure to set the layout to nil! As for the entries, I like
+    to have all of my posts available in the feed, so I use the symbol :all to
+    return all pages from find. For example:
+    %code
+      @pages.find(:all, :in_directory => 'blog', :sort_by => 'created_at', :reverse => true)
+    The alternative would be to set a limit of some sort, like this:
+    %code
+      @pages.find(:limit => 20, :in_directory => 'blog', :sort_by => 'created_at', :reverse => true)
+
+  %p
+    If you're looking to make a website that is going to be just HTML and you
+    don't want to run a webserver aside from Apache or Nginx, Webby is probably
+    the way to go. I certainly love it, and will continue to make static
+    websites using it.
+
+#disqus_thread
+
+%script{:type =>"text/javascript", :src=>"http://disqus.com/forums/tpitale/embed.js"}
+%noscript
+  %a{:href=>"http://tpitale.disqus.com/?url=ref"}
+    View the discussion thread.
+  %a{:href=>"http://disqus.com", :class=>"dsq-brlink"}
+    blog comments powered by 
+    %span{:class=>"logo-disqus"}
+      Disqus
