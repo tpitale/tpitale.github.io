@@ -111,6 +111,9 @@
             <!-- List of Blog Posts -->
             <ul>
               <li>
+                <a href="/posts/postgresql_part_1_benefits_for_web_application_development.html">PostgreSQL Part 1</a>
+              </li>
+              <li>
                 <a href="/posts/making_the_ics_winepos_website.html">Making the New ICS Website</a>
               </li>
               <li>
@@ -132,10 +135,10 @@
                 <a href="/posts/merb_is_not_rails_and_that_is_okay.html">Merb is Not Rails</a>
               </li>
               <li>
-                <a href="/posts/testing_the_slicehost_api.html">Beta Testing the Slicehost API</a>
+                <a href="/posts/slicehost_getting_it_right_right_away.html">Slicehost</a>
               </li>
               <li>
-                <a href="/posts/slicehost_getting_it_right_right_away.html">Slicehost</a>
+                <a href="/posts/verizon_fios_tv_and_internet_without_actiontec.html">Verizon Fios Internet &amp; TV</a>
               </li>
               <li>
                 <a href="/posts/obama_and_experience.html">Barack Obama</a>
@@ -152,82 +155,83 @@
               <li>
                 <a href="/posts/my_wrists_are_fine_with_apple_computers.html">Carpal Tunnel Syndrome</a>
               </li>
-              <li>
-                <a href="/posts/verizon_fios_tv_and_internet_without_actiontec.html">Verizon Fios Internet &amp; TV</a>
-              </li>
             </ul>
           </div>
           <div class='block'>
             <!-- Latest Post -->
             <div id='post'>
-              <h1>Making the New ICS Website</h1>
-              <h2>Thanks to Webby, Haml, and Ruby</h2>
-              <span class='date'>2009-01-12</span>
+              <h1>PostgreSQL Part 1</h1>
+              <h2>Benefits for Web Application Development</h2>
+              <span class='date'>2009-01-26</span>
               <p>
-                Last week I posted on the new ICS website I launched at
-                <a href="http://winepos.com">winepos.com</a>
-                which is built using the same little ruby gem as this site,
-                <a href="http://github.com/TwP/webby/tree/master">Webby.</a>
-                This week, I'd like to go into a little more detail on some of the things
-                I did in creating their new site. Aside from what little design work I did
-                (admittedly not my strongest ability) I will simply be covering many of the
-                cool things you can do with Webby and a couple of tips and gotchas.
+                Most of my days are filled developing with Ruby in frameworks (mostly
+                Rails). I use a large array of industry standard tools in doing so and my
+                favorite of all, and the one most often overlooked, is the database. Of the
+                databases I've worked with, researched, or been witness to,
+                <a href="http://postgresql.org">PostgreSQL</a>
+                is my database of choice. In a series of posts I'd like to cover the
+                reasons I have for this love of mine, some cool things you can do with it,
+                and associated links that I think you might find useful. This first part
+                will cover some potential benefits one might find in using PostgreSQL in
+                web application development, of all places.
+              </p>
+              <h3>Benefits with (insert Ruby Framework here)</h3>
+              <p>
+                Rails with ActiveRecord or Merb with DataMapper are all (with limited
+                exception) designed to be database agnostic. Furthermore, they are intended
+                to abstract away much of the tedium normally associated with dealing in any
+                database. As a result, there is very little direct performance or feature-
+                related benefit to be found by simply using PostgreSQL over say, MySQL.
               </p>
               <p>
-                The first step is obviously to create a new project. The webby-gen command
-                should handle things nicely. I used the 'website' template because that was
-                what I was building. From the basic project, I converted and modified all
-                of the files created (layout, templates) to use Haml and to fit with a very
-                basic structure that I was going to use.
+                However, there exist a number of plugins and gems that enhance the features
+                normally provided by our framework of choice. A few, in no particular order:
+                <a href="http://github.com/maxim/sexy_pg_constraints/tree/master">sexy_pg_constraints,</a>
+                <a href="http://github.com/pka/acts_as_tsearch/tree/master">acts_as_tsearch,</a>
+                <a href="http://github.com/dylanz/tsearchable/tree/master">tsearchable,</a>
+                <a href="http://github.com/aeden/rails_sql_views/tree/master">rails_sql_views,</a>
+                and
+                <a href="http://github.com/fesplugas/simplified_fk/tree/master">simplified_fk.</a>
               </p>
               <p>
-                After the basic structure was in place, I created files for all of the site
-                pages I was going to need. I also created directories for the feature pages
-                and for the blog posts. At this point, I knew that I was going to be making
-                lots of blog posts and so I created a new template for a blog page. A tip
-                about templates, and pages in general: you can add any variables you would
-                like to the header section of page, and later sort a search on it. Also,
-                you can use Erb in a template and it will be interpreted when generating a
-                new page from the template. For example, in order to get a solid created_at
-                timestamp, I use Time.now.to_y inside an Erb tag.
+                Maybe then, the benefits are performance related. Unfortunately, neither I,
+                nor anyone else (so far), have reliable benchmarks on this. From everything
+                I've seen, statistics are done by fans or gurus of one side or another and
+                rarely does someone exist who is talented with all the databases being
+                compared. Even if some such person existed, where does one set the baseline?
+                All of the databases that anyone would want to use have performance tweaks
+                that can be performed at a varied level of difficulty. So, who knows? In my
+                opinion, whether a database is fast enough or faster than a competitor is
+                entirely dependent on the situation and the needs of the problem to be
+                solved.
+              </p>
+              <h3>Features</h3>
+              <ul>
+                <li>Triggers (on both statement and row changes)</li>
+                <li>Rules</li>
+                <li>Constraints</li>
+                <li>Partitioning</li>
+                <li>Extremely advanced selects, Views</li>
+                <li>Full procedural languages including: ruby, tcl, perl, python, sql</li>
+                <li>Security (basic, ident, kerberos, pam, ldap, and more)</li>
+                <li>Large Copy</li>
+                <li>Built-in Full Text Search</li>
+                <li>Extensive datatype collection, custom types</li>
+              </ul>
+              <p>
+                If you don't need any of these features there are still many reasons to
+                consider using PostgreSQL. Some examples: fantastic documentation for every
+                production version, broad user community, stability, and in certain cases,
+                performance. There's always the little things: bash completion, command
+                line tools for creation/deletion of users and databases, libraries for GIS,
+                every version is completely open source, performance tuning in PostgreSQL
+                <a href="http://www.varlena.com/GeneralBits/Tidbits/perf.html">is unbelievably flexible for the situation and data in use.</a>
               </p>
               <p>
-                As I started to develop the site I discovered I was reusing pieces of
-                content more and more frequently. In Rails/Merb it's trivial to create a
-                partial snippet of content, and guess what, it's just as easy using Webby.
-                The only thing to make a note of is that partials are looked for in the
-                same path as a page being rendered. In order to share across different sub-
-                directories you must add a preceding forward slash. For example, this:
-                <code>
-                  render :partial => "/newsletter_form"
-                </code>
-                would search for a partial named '_newsletter_form.txt' in the root of the
-                content folder. Also note that a different partial can be rendered by a
-                layout calling partial from the different sub-directories. The default
-                layout could call use partial 'footer' and both the blog and the feature
-                folders could have that footer partial with different structure or content.
-              </p>
-              <p>
-                The last thing I'll cover is making an atom feed from a set of pages. A
-                similar technique can be used to make an xml sitemap for Google and other
-                search engines. A feed is simply a page that has the extension set to xml
-                and the markup content of which results in valid xml for the required
-                specification. Be sure to set the layout to nil! As for the entries, I like
-                to have all of my posts available in the feed, so I use the symbol :all to
-                return all pages from find. For example:
-                <code>
-                  @pages.find(:all, :in_directory => 'blog', :sort_by => 'created_at', :reverse => true)
-                </code>
-                The alternative would be to set a limit of some sort, like this:
-                <code>
-                  @pages.find(:limit => 20, :in_directory => 'blog', :sort_by => 'created_at', :reverse => true)
-                </code>
-              </p>
-              <p>
-                If you're looking to make a website that is going to be just HTML and you
-                don't want to run a webserver aside from Apache or Nginx, Webby is probably
-                the way to go. I certainly love it, and will continue to make static
-                websites using it.
+                Now that I've gotten all that off of my chest, I hope you are at least
+                intrigued. I know I have yet to share anything of real value but, fear not,
+                as I will be back soon with real examples of usage and some other more
+                useful information.
               </p>
             </div>
             <div id='disqus_thread'></div>

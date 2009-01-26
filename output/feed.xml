@@ -4,11 +4,108 @@
   <link href='http://t.pitale.com/feed.xml' rel='self' />
   <link href='http://t.pitale.com/' />
   <id>http://t.pitale.com/</id>
-  <updated>2009-01-12T14:56:35-05:00</updated>
+  <updated>2009-01-26T02:59:40-05:00</updated>
   <author>
     <name>Tony Pitale</name>
     <email>tpitale@gmail.com</email>
   </author>
+  <entry>
+    <id>/posts/postgresql_part_1_benefits_for_web_application_development.html,Mon Jan 26 02:11:30 -0500 2009</id>
+    <title>PostgreSQL Part 1</title>
+    <subtitle>Benefits for Web Application Development</subtitle>
+    <link href='http://t.pitale.com/posts/postgresql_part_1_benefits_for_web_application_development.html' />
+    <updated>2009-01-26T02:11:30-05:00</updated>
+    <content type='html'>
+      &lt;div id='post'&gt;
+        &lt;h1&gt;PostgreSQL Part 1&lt;/h1&gt;
+        &lt;h2&gt;Benefits for Web Application Development&lt;/h2&gt;
+        &lt;span class='date'&gt;2009-01-26&lt;/span&gt;
+        &lt;p&gt;
+          Most of my days are filled developing with Ruby in frameworks (mostly
+          Rails). I use a large array of industry standard tools in doing so and my
+          favorite of all, and the one most often overlooked, is the database. Of the
+          databases I've worked with, researched, or been witness to,
+          &lt;a href=&quot;http://postgresql.org&quot;&gt;PostgreSQL&lt;/a&gt;
+          is my database of choice. In a series of posts I'd like to cover the
+          reasons I have for this love of mine, some cool things you can do with it,
+          and associated links that I think you might find useful. This first part
+          will cover some potential benefits one might find in using PostgreSQL in
+          web application development, of all places.
+        &lt;/p&gt;
+        &lt;h3&gt;Benefits with (insert Ruby Framework here)&lt;/h3&gt;
+        &lt;p&gt;
+          Rails with ActiveRecord or Merb with DataMapper are all (with limited
+          exception) designed to be database agnostic. Furthermore, they are intended
+          to abstract away much of the tedium normally associated with dealing in any
+          database. As a result, there is very little direct performance or feature-
+          related benefit to be found by simply using PostgreSQL over say, MySQL.
+        &lt;/p&gt;
+        &lt;p&gt;
+          However, there exist a number of plugins and gems that enhance the features
+          normally provided by our framework of choice. A few, in no particular order:
+          &lt;a href=&quot;http://github.com/maxim/sexy_pg_constraints/tree/master&quot;&gt;sexy_pg_constraints,&lt;/a&gt;
+          &lt;a href=&quot;http://github.com/pka/acts_as_tsearch/tree/master&quot;&gt;acts_as_tsearch,&lt;/a&gt;
+          &lt;a href=&quot;http://github.com/dylanz/tsearchable/tree/master&quot;&gt;tsearchable,&lt;/a&gt;
+          &lt;a href=&quot;http://github.com/aeden/rails_sql_views/tree/master&quot;&gt;rails_sql_views,&lt;/a&gt;
+          and
+          &lt;a href=&quot;http://github.com/fesplugas/simplified_fk/tree/master&quot;&gt;simplified_fk.&lt;/a&gt;
+        &lt;/p&gt;
+        &lt;p&gt;
+          Maybe then, the benefits are performance related. Unfortunately, neither I,
+          nor anyone else (so far), have reliable benchmarks on this. From everything
+          I've seen, statistics are done by fans or gurus of one side or another and
+          rarely does someone exist who is talented with all the databases being
+          compared. Even if some such person existed, where does one set the baseline?
+          All of the databases that anyone would want to use have performance tweaks
+          that can be performed at a varied level of difficulty. So, who knows? In my
+          opinion, whether a database is fast enough or faster than a competitor is
+          entirely dependent on the situation and the needs of the problem to be
+          solved.
+        &lt;/p&gt;
+        &lt;h3&gt;Features&lt;/h3&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Triggers (on both statement and row changes)&lt;/li&gt;
+          &lt;li&gt;Rules&lt;/li&gt;
+          &lt;li&gt;Constraints&lt;/li&gt;
+          &lt;li&gt;Partitioning&lt;/li&gt;
+          &lt;li&gt;Extremely advanced selects, Views&lt;/li&gt;
+          &lt;li&gt;Full procedural languages including: ruby, tcl, perl, python, sql&lt;/li&gt;
+          &lt;li&gt;Security (basic, ident, kerberos, pam, ldap, and more)&lt;/li&gt;
+          &lt;li&gt;Large Copy&lt;/li&gt;
+          &lt;li&gt;Built-in Full Text Search&lt;/li&gt;
+          &lt;li&gt;Extensive datatype collection, custom types&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;p&gt;
+          If you don't need any of these features there are still many reasons to
+          consider using PostgreSQL. Some examples: fantastic documentation for every
+          production version, broad user community, stability, and in certain cases,
+          performance. There's always the little things: bash completion, command
+          line tools for creation/deletion of users and databases, libraries for GIS,
+          every version is completely open source, performance tuning in PostgreSQL
+          &lt;a href=&quot;http://www.varlena.com/GeneralBits/Tidbits/perf.html&quot;&gt;is unbelievably flexible for the situation and data in use.&lt;/a&gt;
+        &lt;/p&gt;
+        &lt;p&gt;
+          Now that I've gotten all that off of my chest, I hope you are at least
+          intrigued. I know I have yet to share anything of real value but, fear not,
+          as I will be back soon with real examples of usage and some other more
+          useful information.
+        &lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div id='disqus_thread'&gt;&lt;/div&gt;
+      &lt;script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'&gt;&lt;/script&gt;
+      &lt;noscript&gt;
+        &lt;a href='http://tpitale.disqus.com/?url=ref'&gt;
+          View the discussion thread.
+        &lt;/a&gt;
+        &lt;a class='dsq-brlink' href='http://disqus.com'&gt;
+          blog comments powered by
+          &lt;span class='logo-disqus'&gt;
+            Disqus
+          &lt;/span&gt;
+        &lt;/a&gt;
+      &lt;/noscript&gt;
+    </content>
+  </entry>
   <entry>
     <id>/posts/making_the_ics_winepos_website.html,Mon Jan 12 00:20:12 -0500 2009</id>
     <title>Making the New ICS Website</title>
@@ -403,68 +500,6 @@
     </content>
   </entry>
   <entry>
-    <id>/posts/testing_the_slicehost_api.html,Fri Mar 21 18:29:50 -0400 2008</id>
-    <title>Beta Testing the Slicehost API</title>
-    <subtitle>A Foray into ActiveResource and DNS Records</subtitle>
-    <link href='http://t.pitale.com/posts/testing_the_slicehost_api.html' />
-    <updated>2008-03-21T18:29:50-04:00</updated>
-    <content type='html'>
-      &lt;div id='post'&gt;
-        &lt;h1&gt;Beta Testing the Slicehost API&lt;/h1&gt;
-        &lt;h2&gt;A Foray into ActiveResource and DNS Records&lt;/h2&gt;
-        &lt;span class='date'&gt;2008-03-21&lt;/span&gt;
-        &lt;p&gt;
-          I was fortunate enough to join slicehost this past week. It is a fantastic
-          service, possibly the best VPS I've encountered. While perusing their forum
-          as I am want to do from time to time, I noticed a new post by a slicehost
-          employee requesting beta-testers (a favorite phrase of mine) for their new
-          API. I've used ActiveResource in the past and I thought it would be worth a
-          shot.
-        &lt;/p&gt;
-        &lt;p&gt;
-          I threw in my hat on the forum and was summarily rewarded with an email
-          from a slicehost employee. I was given an API key and some documentation
-          with examples in Ruby and Python. Given my ActiveResource experience I
-          immediately went to work with their example. It was a breeze and one that
-          I am delighted to say any Rubyist would be able to complete.
-        &lt;/p&gt;
-        &lt;p&gt;
-          I completed the example, messed around a bit more, and then I retired for
-          the evening. The next day I received a short questionnaire which I
-          dutifully filled out and returned. My tinkering was not over, however. Oh,
-          no. The next free chance I had, I dove right in. Given the access the beta
-          provided I could create only two things off the top of my head. The first,
-          a dynamic-dns-type updater. The second, a monitor of system status.
-        &lt;/p&gt;
-        &lt;p&gt;
-          So far, I have only completed the dynamic dns updater. It is crude but, it
-          provides the basic functionality required. It allows you to provide a
-          Zone and a Record, as well as, the IP address to use when updating the
-          record. If you do not provide an IP address, the current external IP of
-          your location will be used.
-        &lt;/p&gt;
-        &lt;p&gt;
-          The point of all this is I can have a domain name pointing to my home IP.
-          If my provider changes my IP for whatever reason, the script, run by cron
-          on a regular basis will tell slicehost, my DNS provider, that my home IP
-          address has changed within a reasonable amount of time.
-        &lt;/p&gt;
-      &lt;/div&gt;
-      &lt;script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'&gt;&lt;/script&gt;
-      &lt;noscript&gt;
-        &lt;a href='http://tpitale.disqus.com/?url=ref'&gt;
-          View the discussion thread.
-        &lt;/a&gt;
-        &lt;a class='dsq-brlink' href='http://disqus.com'&gt;
-          blog comments powered by
-          &lt;span class='logo-disqus'&gt;
-            Disqus
-          &lt;/span&gt;
-        &lt;/a&gt;
-      &lt;/noscript&gt;
-    </content>
-  </entry>
-  <entry>
     <id>/posts/slicehost_getting_it_right_right_away.html,Fri Mar 14 21:33:54 -0400 2008</id>
     <title>Slicehost</title>
     <subtitle>Getting it Right, Right Away</subtitle>
@@ -494,6 +529,103 @@
           to the Slicehost DNS hosts. If you do sign up for a Slicehost account I
           would certainly appreciate a
           &lt;a href=&quot;https://manage.slicehost.com/customers/new?referrer=972292314&quot;&gt;referral.&lt;/a&gt;
+        &lt;/p&gt;
+      &lt;/div&gt;
+      &lt;script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'&gt;&lt;/script&gt;
+      &lt;noscript&gt;
+        &lt;a href='http://tpitale.disqus.com/?url=ref'&gt;
+          View the discussion thread.
+        &lt;/a&gt;
+        &lt;a class='dsq-brlink' href='http://disqus.com'&gt;
+          blog comments powered by
+          &lt;span class='logo-disqus'&gt;
+            Disqus
+          &lt;/span&gt;
+        &lt;/a&gt;
+      &lt;/noscript&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>/posts/verizon_fios_tv_and_internet_without_actiontec.html,Tue Jul 08 09:31:33 -0400 2008</id>
+    <title>Verizon Fios Internet & TV</title>
+    <subtitle>Using Your Own Router, Not the Actiontec Router</subtitle>
+    <link href='http://t.pitale.com/posts/verizon_fios_tv_and_internet_without_actiontec.html' />
+    <updated>2008-07-08T09:31:33-04:00</updated>
+    <content type='html'>
+      &lt;div id='post'&gt;
+        &lt;h1&gt;Verizon Fios Internet &amp;amp; TV&lt;/h1&gt;
+        &lt;h2&gt;Using Your Own Router, Not the Actiontec Router&lt;/h2&gt;
+        &lt;span class='date'&gt;2008-07-08&lt;/span&gt;
+        &lt;p&gt;
+          &lt;h1&gt;The basic steps are as follows:&lt;/h1&gt;
+          &lt;ol&gt;
+            &lt;li&gt;Order Verizon Fios&lt;/li&gt;
+            &lt;li&gt;
+              During installation have the installer turn on the ethernet port in the
+              MOCA, not the coax
+            &lt;/li&gt;
+            &lt;li&gt;Have the installer leave you with a &quot;NIM&quot;&lt;/li&gt;
+            &lt;li&gt;Setup your router as you would have with any other ISP&lt;/li&gt;
+            &lt;li&gt;Connect the &quot;NIM&quot; to your router&lt;/li&gt;
+            &lt;li&gt;Connect the &quot;NIM&quot; to a coax port in your house&lt;/li&gt;
+            &lt;li&gt;
+              Have the installer connect and activate your television set-top-boxes
+              (STB)
+            &lt;/li&gt;
+          &lt;/ol&gt;
+        &lt;/p&gt;
+        &lt;h3&gt;Now for some explanation&lt;/h3&gt;
+        &lt;p&gt;
+          I think ordering should be pretty self-explanatory. However, I have not
+          said anything about why a sane person would wish to do this instead of
+          letting the nice Verizon installer do their job. It's all in the hardware
+          Using the Actiontec router Verizon provides is fine, if you've never had a
+          wireless home network before. For the rest of us, being allowed to use our
+          own, existing, setup is not possible without the foreknowledge or the will
+          to fight for the information.
+        &lt;/p&gt;
+        &lt;h3&gt;Onto the more technical stuff&lt;/h3&gt;
+        &lt;p&gt;
+          The MOCA is the box that is left outside of your house. Essentially, it
+          receives and interprets the signal. It takes the place of what we once
+          called a MODEM. In this box, there are multiple connections, one of which
+          is the standard ethernet port any Linksys, DLink, or Apple router knows and
+          loves. There is also a port that passes the network information over a coax
+          (short for coaxial) cable. This is the port left on by Verizon normally
+          because the Actiontec router (which, with a simple google search, one will
+          find is nearly worthless) is intended to work with it. Using the ethernet
+          port is required so that every other brand of standard router will operate.
+        &lt;/p&gt;
+        &lt;p&gt;
+          Next, we set up our router in much the same way it would be set up with a
+          DSL or Cable ISP. Verizon uses the standard, DHCP, to give your router an
+          IP address. At this point, assuming the internet has been activated by the
+          installer, you should be able to get on the internet at the wonderfully
+          blazing speeds that Fios provides.
+        &lt;/p&gt;
+        &lt;p&gt;
+          The last major step is asking the installer to give you a &quot;NIM&quot;. I never
+          found out what &quot;NIM&quot; stood for, but it's purpose is clear. In order to
+          get access to the programming guide or to video-on-demand services your
+          STBs must have internet access, too. The &quot;NIM&quot; should have two ports. The
+          first is an ethernet port and the second is a coax connector. Can you guess
+          what to do? Plug an ethernet cable from your router into the &quot;NIM&quot; and plug
+          a coax cable into the other port. The final coax connection should be made
+          to any coax cable outlet in your home as they are all inter-connected. The
+          &quot;NIM&quot; acts as translator in place of the Actiontec router and provides
+          internet access for the STBs to use. The STBs do have ethernet ports (at
+          least the latest Motorola box Verizon provided) but internet access does
+          not appear to be the purpose, but rather, home network connection for
+          certain media-sharing capabilities (music, movies, pictures to the TV).
+        &lt;/p&gt;
+        &lt;p&gt;
+          At this point, the installer should be able to simply plug in all of your
+          STBs and activate them as needed through Verizon.
+        &lt;/p&gt;
+        &lt;p&gt;
+          Disclaimer: I am not a Verizon technician. If for some strange reason any
+          of these instructions mess up your system I take no responsibility as
+          these are only the methods that worked FOR ME. Your Mileage May Vary!
         &lt;/p&gt;
       &lt;/div&gt;
       &lt;script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'&gt;&lt;/script&gt;
@@ -878,86 +1010,51 @@
     </content>
   </entry>
   <entry>
-    <id>/posts/verizon_fios_tv_and_internet_without_actiontec.html,Tue Jul 08 09:31:33 -0400 2008</id>
-    <title>Verizon Fios Internet & TV</title>
-    <subtitle>Using Your Own Router, Not the Actiontec Router</subtitle>
-    <link href='http://t.pitale.com/posts/verizon_fios_tv_and_internet_without_actiontec.html' />
-    <updated>2008-07-08T09:31:33-04:00</updated>
+    <id>/posts/testing_the_slicehost_api.html,Fri Mar 21 18:29:50 -0400 2008</id>
+    <title>Beta Testing the Slicehost API</title>
+    <subtitle>A Foray into ActiveResource and DNS Records</subtitle>
+    <link href='http://t.pitale.com/posts/testing_the_slicehost_api.html' />
+    <updated>2008-03-21T18:29:50-04:00</updated>
     <content type='html'>
       &lt;div id='post'&gt;
-        &lt;h1&gt;Verizon Fios Internet &amp;amp; TV&lt;/h1&gt;
-        &lt;h2&gt;Using Your Own Router, Not the Actiontec Router&lt;/h2&gt;
-        &lt;span class='date'&gt;2008-07-08&lt;/span&gt;
+        &lt;h1&gt;Beta Testing the Slicehost API&lt;/h1&gt;
+        &lt;h2&gt;A Foray into ActiveResource and DNS Records&lt;/h2&gt;
+        &lt;span class='date'&gt;2008-03-21&lt;/span&gt;
         &lt;p&gt;
-          &lt;h1&gt;The basic steps are as follows:&lt;/h1&gt;
-          &lt;ol&gt;
-            &lt;li&gt;Order Verizon Fios&lt;/li&gt;
-            &lt;li&gt;
-              During installation have the installer turn on the ethernet port in the
-              MOCA, not the coax
-            &lt;/li&gt;
-            &lt;li&gt;Have the installer leave you with a &quot;NIM&quot;&lt;/li&gt;
-            &lt;li&gt;Setup your router as you would have with any other ISP&lt;/li&gt;
-            &lt;li&gt;Connect the &quot;NIM&quot; to your router&lt;/li&gt;
-            &lt;li&gt;Connect the &quot;NIM&quot; to a coax port in your house&lt;/li&gt;
-            &lt;li&gt;
-              Have the installer connect and activate your television set-top-boxes
-              (STB)
-            &lt;/li&gt;
-          &lt;/ol&gt;
-        &lt;/p&gt;
-        &lt;h3&gt;Now for some explanation&lt;/h3&gt;
-        &lt;p&gt;
-          I think ordering should be pretty self-explanatory. However, I have not
-          said anything about why a sane person would wish to do this instead of
-          letting the nice Verizon installer do their job. It's all in the hardware
-          Using the Actiontec router Verizon provides is fine, if you've never had a
-          wireless home network before. For the rest of us, being allowed to use our
-          own, existing, setup is not possible without the foreknowledge or the will
-          to fight for the information.
-        &lt;/p&gt;
-        &lt;h3&gt;Onto the more technical stuff&lt;/h3&gt;
-        &lt;p&gt;
-          The MOCA is the box that is left outside of your house. Essentially, it
-          receives and interprets the signal. It takes the place of what we once
-          called a MODEM. In this box, there are multiple connections, one of which
-          is the standard ethernet port any Linksys, DLink, or Apple router knows and
-          loves. There is also a port that passes the network information over a coax
-          (short for coaxial) cable. This is the port left on by Verizon normally
-          because the Actiontec router (which, with a simple google search, one will
-          find is nearly worthless) is intended to work with it. Using the ethernet
-          port is required so that every other brand of standard router will operate.
+          I was fortunate enough to join slicehost this past week. It is a fantastic
+          service, possibly the best VPS I've encountered. While perusing their forum
+          as I am want to do from time to time, I noticed a new post by a slicehost
+          employee requesting beta-testers (a favorite phrase of mine) for their new
+          API. I've used ActiveResource in the past and I thought it would be worth a
+          shot.
         &lt;/p&gt;
         &lt;p&gt;
-          Next, we set up our router in much the same way it would be set up with a
-          DSL or Cable ISP. Verizon uses the standard, DHCP, to give your router an
-          IP address. At this point, assuming the internet has been activated by the
-          installer, you should be able to get on the internet at the wonderfully
-          blazing speeds that Fios provides.
+          I threw in my hat on the forum and was summarily rewarded with an email
+          from a slicehost employee. I was given an API key and some documentation
+          with examples in Ruby and Python. Given my ActiveResource experience I
+          immediately went to work with their example. It was a breeze and one that
+          I am delighted to say any Rubyist would be able to complete.
         &lt;/p&gt;
         &lt;p&gt;
-          The last major step is asking the installer to give you a &quot;NIM&quot;. I never
-          found out what &quot;NIM&quot; stood for, but it's purpose is clear. In order to
-          get access to the programming guide or to video-on-demand services your
-          STBs must have internet access, too. The &quot;NIM&quot; should have two ports. The
-          first is an ethernet port and the second is a coax connector. Can you guess
-          what to do? Plug an ethernet cable from your router into the &quot;NIM&quot; and plug
-          a coax cable into the other port. The final coax connection should be made
-          to any coax cable outlet in your home as they are all inter-connected. The
-          &quot;NIM&quot; acts as translator in place of the Actiontec router and provides
-          internet access for the STBs to use. The STBs do have ethernet ports (at
-          least the latest Motorola box Verizon provided) but internet access does
-          not appear to be the purpose, but rather, home network connection for
-          certain media-sharing capabilities (music, movies, pictures to the TV).
+          I completed the example, messed around a bit more, and then I retired for
+          the evening. The next day I received a short questionnaire which I
+          dutifully filled out and returned. My tinkering was not over, however. Oh,
+          no. The next free chance I had, I dove right in. Given the access the beta
+          provided I could create only two things off the top of my head. The first,
+          a dynamic-dns-type updater. The second, a monitor of system status.
         &lt;/p&gt;
         &lt;p&gt;
-          At this point, the installer should be able to simply plug in all of your
-          STBs and activate them as needed through Verizon.
+          So far, I have only completed the dynamic dns updater. It is crude but, it
+          provides the basic functionality required. It allows you to provide a
+          Zone and a Record, as well as, the IP address to use when updating the
+          record. If you do not provide an IP address, the current external IP of
+          your location will be used.
         &lt;/p&gt;
         &lt;p&gt;
-          Disclaimer: I am not a Verizon technician. If for some strange reason any
-          of these instructions mess up your system I take no responsibility as
-          these are only the methods that worked FOR ME. Your Mileage May Vary!
+          The point of all this is I can have a domain name pointing to my home IP.
+          If my provider changes my IP for whatever reason, the script, run by cron
+          on a regular basis will tell slicehost, my DNS provider, that my home IP
+          address has changed within a reasonable amount of time.
         &lt;/p&gt;
       &lt;/div&gt;
       &lt;script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'&gt;&lt;/script&gt;
@@ -1216,112 +1313,6 @@
           organize my buckets as calendars that accurately represent my life. Around
           these calendars I create groups that mimic the major focuses, life and
           work. Perfect!
-        &lt;/p&gt;
-      &lt;/div&gt;
-      &lt;script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'&gt;&lt;/script&gt;
-      &lt;noscript&gt;
-        &lt;a href='http://tpitale.disqus.com/?url=ref'&gt;
-          View the discussion thread.
-        &lt;/a&gt;
-        &lt;a class='dsq-brlink' href='http://disqus.com'&gt;
-          blog comments powered by
-          &lt;span class='logo-disqus'&gt;
-            Disqus
-          &lt;/span&gt;
-        &lt;/a&gt;
-      &lt;/noscript&gt;
-    </content>
-  </entry>
-  <entry>
-    <id>/posts/webby_series_2.html,Sun Apr 13 14:40:12 -0400 2008</id>
-    <title>Webby - Part 2</title>
-    <subtitle>Essential Features</subtitle>
-    <link href='http://t.pitale.com/posts/webby_series_2.html' />
-    <updated>2008-04-13T14:40:12-04:00</updated>
-    <content type='html'>
-      &lt;div id='post'&gt;
-        &lt;h1&gt;Webby - Part 2&lt;/h1&gt;
-        &lt;h2&gt;Essential Features&lt;/h2&gt;
-        &lt;span class='date'&gt;2008-04-13&lt;/span&gt;
-        &lt;p&gt;
-          In my first post (
-          &lt;a href=&quot;/posts/webby_series_1.html&quot;&gt;Webby - Part 1&lt;/a&gt;
-          ) I gave a basic description of
-          &lt;a href=&quot;http://webby.rubyforge.org/&quot;&gt;Webby,&lt;/a&gt;
-          a ultra-lightweight content management tool. In this post, I intend to
-          cover the most essential features of Webby, starting with the creation of a
-          new project and an overview of the rake tasks. From there I'll cover some
-          of the helper methods that come with Webby.
-        &lt;/p&gt;
-        &lt;h3&gt;What is Webby Doing?&lt;/h3&gt;
-        &lt;p&gt;
-          Webby is useful because it allows the use of Ruby code as well as helpers,
-          layouts, partials, filters (more on that later), and templates. From this
-          Webby will create the file structure and html (or xml, atom, rss, etc.).
-          This, seems to be done, in a very basic sense, by &quot;running&quot; the Ruby
-          through one time and saving the files created. This is similar to what a
-          page cache would do but, it is done manually due to the infrequency of an
-          update.
-        &lt;/p&gt;
-        &lt;h3&gt;Install Webby&lt;/h3&gt;
-        &lt;p&gt;
-          First, in order to use Webby you have to install it. Thankfully, there is a
-          gem, making this step very simple. Open the Terminal application (or what
-          you would normally use to install a gem) and install Webby (with any
-          dependencies).
-          &lt;code&gt;sudo gem install webby&lt;/code&gt;
-        &lt;/p&gt;
-        &lt;h3&gt;Optional Installs&lt;/h3&gt;
-        &lt;p&gt;
-          Personally, I like using Haml, so I installed that already. Webby is able
-          to use a series of &quot;filters&quot; to make use of Haml, Sass, Textile, Markdown,
-          and by default, erb. On top of the filters available to transform text,
-          Webby has support for CodeRay and UltraViolet syntax highlighting.
-        &lt;/p&gt;
-        &lt;h3&gt;Create a Project&lt;/h3&gt;
-        &lt;p&gt;
-          Onto creating a project. Webby comes with a command, webby. We use this and
-          the name of our project in one command and Webby will create the structure
-          for the project, in the current location in the filesystem. To view the
-          full list of options for the webby command, add the -h/--help flag (Hint:
-          there aren't many).
-          &lt;code&gt;webby your_project_name_here&lt;/code&gt;
-        &lt;/p&gt;
-        &lt;h3&gt;Rake Tasks&lt;/h3&gt;
-        &lt;p&gt;
-          Many Ruby developers are experienced using Rake. Change to the project
-          directory in Terminal and try this.
-          &lt;code&gt;rake -T&lt;/code&gt;
-          The most frequently used tasks (for me, at least) are:
-          &lt;code&gt;
-            rake create:whatever
-            &lt;br /&gt;
-            rake autobuild
-            &lt;br /&gt;
-            rake deploy:however
-          &lt;/code&gt;
-          &lt;span&gt;
-            The create task is provided a type of document to create (from a template).
-            By default these include a page, a partial, or an atom feed. I will discuss
-            adding to these templates in my next post.
-          &lt;/span&gt;
-          &lt;span&gt;
-            The autobuild tasks starts the included heel webserver and builds the files
-            whenever it detects a &quot;dirty&quot; or changed file. This is very handy in
-            development because you can instantly check your changes in a browser.
-          &lt;/span&gt;
-          &lt;span&gt;
-            Finally, the deploy task. Using either rsync or ssh, Webby will deploy the
-            output files to your designated webserver.
-          &lt;/span&gt;
-        &lt;/p&gt;
-        &lt;p&gt;
-          Until next time you should read the
-          &lt;a href=&quot;http://webby.rubyforge.org/tutorial/&quot;&gt;official tutorial from Webby.&lt;/a&gt;
-        &lt;/p&gt;
-        &lt;p class='next'&gt;
-          Next time I'll talk about extending these essential features, making Webby
-          an extremely powerful tool.
         &lt;/p&gt;
       &lt;/div&gt;
       &lt;script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'&gt;&lt;/script&gt;

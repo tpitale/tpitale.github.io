@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta content='text/html; charset=utf-8' http-equiv='Content-type' />
+    <meta content='Tony Pitale' name='author' />
+    <meta content='i/cbJtXe1ZDIZNta65CghwcRM/zFMRHIsbR9poU+uwU=' name='verify-v1' />
+    <title>PostgreSQL Part 1</title>
+    <link href='/favicon.ico' rel='shortcut icon' />
+    <link href='http://feeds.feedburner.com/tpitale' rel='alternate' title='Atom feed' type='application/rss+xml' />
+    <!-- Site CSS -->
+    <link href='/css/base.css' media='screen, projection' rel='stylesheet' type='text/css' />
+  </head>
+  <body>
+    <div id='header'>
+      <div class='wrap'>
+        <div class='col'>
+          <a href='/'>
+            <img src='/images/logo.png' />
+          </a>
+        </div>
+        <div class='block'>
+          <ul>
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="/posts/">Blog Archive</a>
+            </li>
+          </ul>
+          <br class='clearleft' />
+        </div>
+      </div>
+    </div>
+    <div id='content'>
+      <div class='wrap'>
+        <div class='col'>
+          <h2>Blog</h2>
+        </div>
+        <div class='block'>
+          <div id='post'>
+            <h1>PostgreSQL Part 1</h1>
+            <h2>Benefits for Web Application Development</h2>
+            <span class='date'>2009-01-26</span>
+            <p>
+              Most of my days are filled developing with Ruby in frameworks (mostly
+              Rails). I use a large array of industry standard tools in doing so and my
+              favorite of all, and the one most often overlooked, is the database. Of the
+              databases I've worked with, researched, or been witness to,
+              <a href="http://postgresql.org">PostgreSQL</a>
+              is my database of choice. In a series of posts I'd like to cover the
+              reasons I have for this love of mine, some cool things you can do with it,
+              and associated links that I think you might find useful. This first part
+              will cover some potential benefits one might find in using PostgreSQL in
+              web application development, of all places.
+            </p>
+            <h3>Benefits with (insert Ruby Framework here)</h3>
+            <p>
+              Rails with ActiveRecord or Merb with DataMapper are all (with limited
+              exception) designed to be database agnostic. Furthermore, they are intended
+              to abstract away much of the tedium normally associated with dealing in any
+              database. As a result, there is very little direct performance or feature-
+              related benefit to be found by simply using PostgreSQL over say, MySQL.
+            </p>
+            <p>
+              However, there exist a number of plugins and gems that enhance the features
+              normally provided by our framework of choice. A few, in no particular order:
+              <a href="http://github.com/maxim/sexy_pg_constraints/tree/master">sexy_pg_constraints,</a>
+              <a href="http://github.com/pka/acts_as_tsearch/tree/master">acts_as_tsearch,</a>
+              <a href="http://github.com/dylanz/tsearchable/tree/master">tsearchable,</a>
+              <a href="http://github.com/aeden/rails_sql_views/tree/master">rails_sql_views,</a>
+              and
+              <a href="http://github.com/fesplugas/simplified_fk/tree/master">simplified_fk.</a>
+            </p>
+            <p>
+              Maybe then, the benefits are performance related. Unfortunately, neither I,
+              nor anyone else (so far), have reliable benchmarks on this. From everything
+              I've seen, statistics are done by fans or gurus of one side or another and
+              rarely does someone exist who is talented with all the databases being
+              compared. Even if some such person existed, where does one set the baseline?
+              All of the databases that anyone would want to use have performance tweaks
+              that can be performed at a varied level of difficulty. So, who knows? In my
+              opinion, whether a database is fast enough or faster than a competitor is
+              entirely dependent on the situation and the needs of the problem to be
+              solved.
+            </p>
+            <h3>Features</h3>
+            <ul>
+              <li>Triggers (on both statement and row changes)</li>
+              <li>Rules</li>
+              <li>Constraints</li>
+              <li>Partitioning</li>
+              <li>Extremely advanced selects, Views</li>
+              <li>Full procedural languages including: ruby, tcl, perl, python, sql</li>
+              <li>Security (basic, ident, kerberos, pam, ldap, and more)</li>
+              <li>Large Copy</li>
+              <li>Built-in Full Text Search</li>
+              <li>Extensive datatype collection, custom types</li>
+            </ul>
+            <p>
+              If you don't need any of these features there are still many reasons to
+              consider using PostgreSQL. Some examples: fantastic documentation for every
+              production version, broad user community, stability, and in certain cases,
+              performance. There's always the little things: bash completion, command
+              line tools for creation/deletion of users and databases, libraries for GIS,
+              every version is completely open source, performance tuning in PostgreSQL
+              <a href="http://www.varlena.com/GeneralBits/Tidbits/perf.html">is unbelievably flexible for the situation and data in use.</a>
+            </p>
+            <p>
+              Now that I've gotten all that off of my chest, I hope you are at least
+              intrigued. I know I have yet to share anything of real value but, fear not,
+              as I will be back soon with real examples of usage and some other more
+              useful information.
+            </p>
+          </div>
+          <div id='disqus_thread'></div>
+          <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
+          <noscript>
+            <a href='http://tpitale.disqus.com/?url=ref'>
+              View the discussion thread.
+            </a>
+            <a class='dsq-brlink' href='http://disqus.com'>
+              blog comments powered by
+              <span class='logo-disqus'>
+                Disqus
+              </span>
+            </a>
+          </noscript>
+        </div>
+      </div>
+    </div>
+    <!-- Google -->
+    <script type='text/javascript'>
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type='text/javascript'>
+      var pageTracker = _gat._getTracker("UA-3879168-1");
+      pageTracker._initData();
+      pageTracker._trackPageview();
+    </script>
+  </body>
+</html>

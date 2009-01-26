@@ -274,6 +274,14 @@ div.flickr_badge_image {
 	font-family: monospace;
 }
 
+#post ul {
+  margin: 10px 5px; 
+}
+
+#post ul li {
+  margin: 2px 0;
+}
+
 .allposts {
 	color: #666666;
 	font-size: 125%;

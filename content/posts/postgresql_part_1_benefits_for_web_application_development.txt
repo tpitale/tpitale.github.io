@@ -1,0 +1,88 @@
+---
+title: PostgreSQL Part 1
+subtitle: Benefits for Web Application Development
+author: Tony Pitale
+created_at: 2009-01-26 02:11:30.339755 -05:00
+layout: posts
+filter:
+  - haml
+---
+#post
+  %h1= h(@page.title)
+  %h2= h(@page.subtitle)
+  %span.date= @page.created_at.strftime('%Y-%m-%d')
+  
+  %p
+    Most of my days are filled developing with Ruby in frameworks (mostly
+    Rails). I use a large array of industry standard tools in doing so and my
+    favorite of all, and the one most often overlooked, is the database. Of the
+    databases I've worked with, researched, or been witness to,
+    = link_to 'PostgreSQL', 'http://postgresql.org'
+    is my database of choice. In a series of posts I'd like to cover the
+    reasons I have for this love of mine, some cool things you can do with it,
+    and associated links that I think you might find useful. This first part
+    will cover some potential benefits one might find in using PostgreSQL in
+    web application development, of all places.
+  %h3 Benefits with (insert Ruby Framework here)
+  %p
+    Rails with ActiveRecord or Merb with DataMapper are all (with limited
+    exception) designed to be database agnostic. Furthermore, they are intended
+    to abstract away much of the tedium normally associated with dealing in any
+    database. As a result, there is very little direct performance or feature-
+    related benefit to be found by simply using PostgreSQL over say, MySQL.
+  %p
+    However, there exist a number of plugins and gems that enhance the features
+    normally provided by our framework of choice. A few, in no particular order:
+    = link_to 'sexy_pg_constraints,', 'http://github.com/maxim/sexy_pg_constraints/tree/master'
+    = link_to 'acts_as_tsearch,', 'http://github.com/pka/acts_as_tsearch/tree/master'
+    = link_to 'tsearchable,', 'http://github.com/dylanz/tsearchable/tree/master'
+    = link_to 'rails_sql_views,', 'http://github.com/aeden/rails_sql_views/tree/master'
+    and
+    = link_to 'simplified_fk.', 'http://github.com/fesplugas/simplified_fk/tree/master'
+  %p
+    Maybe then, the benefits are performance related. Unfortunately, neither I,
+    nor anyone else (so far), have reliable benchmarks on this. From everything
+    I've seen, statistics are done by fans or gurus of one side or another and
+    rarely does someone exist who is talented with all the databases being
+    compared. Even if some such person existed, where does one set the baseline?
+    All of the databases that anyone would want to use have performance tweaks
+    that can be performed at a varied level of difficulty. So, who knows? In my
+    opinion, whether a database is fast enough or faster than a competitor is
+    entirely dependent on the situation and the needs of the problem to be
+    solved.
+  %h3 Features
+  %ul
+    %li Triggers (on both statement and row changes)
+    %li Rules
+    %li Constraints
+    %li Partitioning
+    %li Extremely advanced selects, Views
+    %li Full procedural languages including: ruby, tcl, perl, python, sql
+    %li Security (basic, ident, kerberos, pam, ldap, and more)
+    %li Large Copy
+    %li Built-in Full Text Search
+    %li Extensive datatype collection, custom types
+  %p
+    If you don't need any of these features there are still many reasons to
+    consider using PostgreSQL. Some examples: fantastic documentation for every
+    production version, broad user community, stability, and in certain cases,
+    performance. There's always the little things: bash completion, command
+    line tools for creation/deletion of users and databases, libraries for GIS,
+    every version is completely open source, performance tuning in PostgreSQL
+    = link_to 'is unbelievably flexible for the situation and data in use.', 'http://www.varlena.com/GeneralBits/Tidbits/perf.html'
+  %p
+    Now that I've gotten all that off of my chest, I hope you are at least
+    intrigued. I know I have yet to share anything of real value but, fear not,
+    as I will be back soon with real examples of usage and some other more
+    useful information.
+    
+#disqus_thread
+
+%script{:type =>"text/javascript", :src=>"http://disqus.com/forums/tpitale/embed.js"}
+%noscript
+  %a{:href=>"http://tpitale.disqus.com/?url=ref"}
+    View the discussion thread.
+  %a{:href=>"http://disqus.com", :class=>"dsq-brlink"}
+    blog comments powered by 
+    %span{:class=>"logo-disqus"}
+      Disqus
