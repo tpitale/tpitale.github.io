@@ -111,6 +111,9 @@
             <!-- List of Blog Posts -->
             <ul>
               <li>
+                <a href="/posts/merb_and_subdomains_with_nginx_balancing.html">Merb and Subdomains with Nginx</a>
+              </li>
+              <li>
                 <a href="/posts/postgresql_part_1_benefits_for_web_application_development.html">PostgreSQL Part 1</a>
               </li>
               <li>
@@ -132,13 +135,10 @@
                 
               </li>
               <li>
-                <a href="/posts/merb_is_not_rails_and_that_is_okay.html">Merb is Not Rails</a>
+                <a href="/posts/vision_online_now_focus.html">Vision Online, Now Focus</a>
               </li>
               <li>
-                <a href="/posts/slicehost_getting_it_right_right_away.html">Slicehost</a>
-              </li>
-              <li>
-                <a href="/posts/verizon_fios_tv_and_internet_without_actiontec.html">Verizon Fios Internet &amp; TV</a>
+                <a href="/posts/upcoming.html">In the Coming Days</a>
               </li>
               <li>
                 <a href="/posts/obama_and_experience.html">Barack Obama</a>
@@ -150,7 +150,7 @@
                 <a href="/posts/notes_on_legacy_databases_with_activerecord.html">Legacy Databases with ActiveRecord</a>
               </li>
               <li>
-                <a href="/posts/vision_online_now_focus.html">Vision Online, Now Focus</a>
+                <a href="/posts/verizon_fios_tv_and_internet_without_actiontec.html">Verizon Fios Internet &amp; TV</a>
               </li>
               <li>
                 <a href="/posts/my_wrists_are_fine_with_apple_computers.html">Carpal Tunnel Syndrome</a>
@@ -160,78 +160,38 @@
           <div class='block'>
             <!-- Latest Post -->
             <div id='post'>
-              <h1>PostgreSQL Part 1</h1>
-              <h2>Benefits for Web Application Development</h2>
-              <span class='date'>2009-01-26</span>
+              <h1>Merb and Subdomains with Nginx</h1>
+              <h2>Quick Lessons Learned</h2>
+              <span class='date'>2009-02-03</span>
               <p>
-                Most of my days are filled developing with Ruby in frameworks (mostly
-                Rails). I use a large array of industry standard tools in doing so and my
-                favorite of all, and the one most often overlooked, is the database. Of the
-                databases I've worked with, researched, or been witness to,
-                <a href="http://postgresql.org">PostgreSQL</a>
-                is my database of choice. In a series of posts I'd like to cover the
-                reasons I have for this love of mine, some cool things you can do with it,
-                and associated links that I think you might find useful. This first part
-                will cover some potential benefits one might find in using PostgreSQL in
-                web application development, of all places.
-              </p>
-              <h3>Benefits with (insert Ruby Framework here)</h3>
-              <p>
-                Rails with ActiveRecord or Merb with DataMapper are all (with limited
-                exception) designed to be database agnostic. Furthermore, they are intended
-                to abstract away much of the tedium normally associated with dealing in any
-                database. As a result, there is very little direct performance or feature-
-                related benefit to be found by simply using PostgreSQL over say, MySQL.
+                I encountered two issues and learned two quick lessons when deploying a Merb
+                application I have been working on. Aside from the fact that you can use
+                <code>
+                  request.subdomains
+                </code>
+                to get an array of subdomains, you must do two little things to get this to
+                play nice when your application is deployed upstream on Nginx (and likely
+                apache, too) as well as handling the same situation in local development.
               </p>
               <p>
-                However, there exist a number of plugins and gems that enhance the features
-                normally provided by our framework of choice. A few, in no particular order:
-                <a href="http://github.com/maxim/sexy_pg_constraints/tree/master">sexy_pg_constraints,</a>
-                <a href="http://github.com/pka/acts_as_tsearch/tree/master">acts_as_tsearch,</a>
-                <a href="http://github.com/dylanz/tsearchable/tree/master">tsearchable,</a>
-                <a href="http://github.com/aeden/rails_sql_views/tree/master">rails_sql_views,</a>
-                and
-                <a href="http://github.com/fesplugas/simplified_fk/tree/master">simplified_fk.</a>
+                First, in your Nginx configuration file be sure to set the proper header for
+                host, otherwise the host that Merb will see is the name you give to the upstream
+                section of your configuration. To pass this information on correctly, do this:
+                <code>
+                  proxy_set_header  Host	 $host;
+                </code>
+                inside the "location" block for your application's root.
               </p>
               <p>
-                Maybe then, the benefits are performance related. Unfortunately, neither I,
-                nor anyone else (so far), have reliable benchmarks on this. From everything
-                I've seen, statistics are done by fans or gurus of one side or another and
-                rarely does someone exist who is talented with all the databases being
-                compared. Even if some such person existed, where does one set the baseline?
-                All of the databases that anyone would want to use have performance tweaks
-                that can be performed at a varied level of difficulty. So, who knows? In my
-                opinion, whether a database is fast enough or faster than a competitor is
-                entirely dependent on the situation and the needs of the problem to be
-                solved.
-              </p>
-              <h3>Features</h3>
-              <ul>
-                <li>Triggers (on both statement and row changes)</li>
-                <li>Rules</li>
-                <li>Constraints</li>
-                <li>Partitioning</li>
-                <li>Extremely advanced selects, Views</li>
-                <li>Full procedural languages including: ruby, tcl, perl, python, sql</li>
-                <li>Security (basic, ident, kerberos, pam, ldap, and more)</li>
-                <li>Large Copy</li>
-                <li>Built-in Full Text Search</li>
-                <li>Extensive datatype collection, custom types</li>
-              </ul>
-              <p>
-                If you don't need any of these features there are still many reasons to
-                consider using PostgreSQL. Some examples: fantastic documentation for every
-                production version, broad user community, stability, and in certain cases,
-                performance. There's always the little things: bash completion, command
-                line tools for creation/deletion of users and databases, libraries for GIS,
-                every version is completely open source, performance tuning in PostgreSQL
-                <a href="http://www.varlena.com/GeneralBits/Tidbits/perf.html">is unbelievably flexible for the situation and data in use.</a>
+                Second, in order to get the right subdomains, Merb expects you are using a
+                TLD or top-level-domain, such as example.com. If you, like me, are using a
+                local hostname, such as localhost, you aren't going to get anything when
+                you ask for subdomains. So, in /etc/hosts I simply set up a domain pointing
+                to 127.0.0.1 for a place I know I'll never go.
               </p>
               <p>
-                Now that I've gotten all that off of my chest, I hope you are at least
-                intrigued. I know I have yet to share anything of real value but, fear not,
-                as I will be back soon with real examples of usage and some other more
-                useful information.
+                I hope these two little tips will help you to avoid some of the trouble I
+                had to deal with, even if it was only 5 minutes of my time, or yours.
               </p>
             </div>
             <div id='disqus_thread'></div>

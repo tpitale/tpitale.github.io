@@ -1,0 +1,49 @@
+---
+title: Merb and Subdomains with Nginx
+subtitle: Quick Lessons Learned
+author: Tony Pitale
+created_at: 2009-02-03 22:06:18.454455 -05:00
+layout: posts
+filter:
+  - haml
+---
+#post
+  %h1= h(@page.title)
+  %h2= h(@page.subtitle)
+  %span.date= @page.created_at.strftime('%Y-%m-%d')
+  
+  %p
+    I encountered two issues and learned two quick lessons when deploying a Merb
+    application I have been working on. Aside from the fact that you can use
+    %code
+      request.subdomains
+    to get an array of subdomains, you must do two little things to get this to
+    play nice when your application is deployed upstream on Nginx (and likely
+    apache, too) as well as handling the same situation in local development.
+  %p
+    First, in your Nginx configuration file be sure to set the proper header for
+    host, otherwise the host that Merb will see is the name you give to the upstream
+    section of your configuration. To pass this information on correctly, do this:
+    %code
+      proxy_set_header  Host	 $host;
+    inside the "location" block for your application's root.
+  %p
+    Second, in order to get the right subdomains, Merb expects you are using a
+    TLD or top-level-domain, such as example.com. If you, like me, are using a
+    local hostname, such as localhost, you aren't going to get anything when 
+    you ask for subdomains. So, in /etc/hosts I simply set up a domain pointing
+    to 127.0.0.1 for a place I know I'll never go.
+  %p
+    I hope these two little tips will help you to avoid some of the trouble I
+    had to deal with, even if it was only 5 minutes of my time, or yours.
+    
+#disqus_thread
+
+%script{:type =>"text/javascript", :src=>"http://disqus.com/forums/tpitale/embed.js"}
+%noscript
+  %a{:href=>"http://tpitale.disqus.com/?url=ref"}
+    View the discussion thread.
+  %a{:href=>"http://disqus.com", :class=>"dsq-brlink"}
+    blog comments powered by 
+    %span{:class=>"logo-disqus"}
+      Disqus

@@ -2,21 +2,27 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
   <url>
     <loc>http://t.pitale.com/</loc>
-    <lastmod>2009-01-26T02:59:40-05:00</lastmod>
+    <lastmod>2009-02-03T22:18:26-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://t.pitale.com/posts/</loc>
-    <lastmod>2009-01-26T02:59:40-05:00</lastmod>
+    <lastmod>2009-02-03T22:18:26-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://t.pitale.com/feed.xml</loc>
-    <lastmod>2009-01-26T02:59:40-05:00</lastmod>
+    <lastmod>2009-02-03T22:18:26-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>http://t.pitale.com/posts/merb_and_subdomains_with_nginx_balancing.html</loc>
+    <lastmod>2009-02-03T22:06:18-05:00</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://t.pitale.com/posts/postgresql_part_1_benefits_for_web_application_development.html</loc>
@@ -55,20 +61,14 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://t.pitale.com/posts/merb_is_not_rails_and_that_is_okay.html</loc>
-    <lastmod>2008-05-29T18:33:54-04:00</lastmod>
+    <loc>http://t.pitale.com/posts/vision_online_now_focus.html</loc>
+    <lastmod>2008-03-11T23:49:29-04:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://t.pitale.com/posts/slicehost_getting_it_right_right_away.html</loc>
-    <lastmod>2008-03-14T21:33:54-04:00</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://t.pitale.com/posts/verizon_fios_tv_and_internet_without_actiontec.html</loc>
-    <lastmod>2008-07-08T09:31:33-04:00</lastmod>
+    <loc>http://t.pitale.com/posts/upcoming.html</loc>
+    <lastmod>2008-05-27T22:11:10-04:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
@@ -91,8 +91,8 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://t.pitale.com/posts/vision_online_now_focus.html</loc>
-    <lastmod>2008-03-11T23:49:29-04:00</lastmod>
+    <loc>http://t.pitale.com/posts/verizon_fios_tv_and_internet_without_actiontec.html</loc>
+    <lastmod>2008-07-08T09:31:33-04:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
@@ -103,8 +103,14 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://t.pitale.com/posts/testing_the_slicehost_api.html</loc>
-    <lastmod>2008-03-21T18:29:50-04:00</lastmod>
+    <loc>http://t.pitale.com/posts/merb_is_not_rails_and_that_is_okay.html</loc>
+    <lastmod>2008-05-29T18:33:54-04:00</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://t.pitale.com/posts/slicehost_getting_it_right_right_away.html</loc>
+    <lastmod>2008-03-14T21:33:54-04:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
@@ -121,8 +127,8 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://t.pitale.com/posts/upcoming.html</loc>
-    <lastmod>2008-05-27T22:11:10-04:00</lastmod>
+    <loc>http://t.pitale.com/posts/testing_the_slicehost_api.html</loc>
+    <lastmod>2008-03-21T18:29:50-04:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>

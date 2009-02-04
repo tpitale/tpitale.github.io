@@ -4,11 +4,68 @@
   <link href='http://t.pitale.com/feed.xml' rel='self' />
   <link href='http://t.pitale.com/' />
   <id>http://t.pitale.com/</id>
-  <updated>2009-01-26T02:59:40-05:00</updated>
+  <updated>2009-02-03T22:18:26-05:00</updated>
   <author>
     <name>Tony Pitale</name>
     <email>tpitale@gmail.com</email>
   </author>
+  <entry>
+    <id>/posts/merb_and_subdomains_with_nginx_balancing.html,Tue Feb 03 22:06:18 -0500 2009</id>
+    <title>Merb and Subdomains with Nginx</title>
+    <subtitle>Quick Lessons Learned</subtitle>
+    <link href='http://t.pitale.com/posts/merb_and_subdomains_with_nginx_balancing.html' />
+    <updated>2009-02-03T22:06:18-05:00</updated>
+    <content type='html'>
+      &lt;div id='post'&gt;
+        &lt;h1&gt;Merb and Subdomains with Nginx&lt;/h1&gt;
+        &lt;h2&gt;Quick Lessons Learned&lt;/h2&gt;
+        &lt;span class='date'&gt;2009-02-03&lt;/span&gt;
+        &lt;p&gt;
+          I encountered two issues and learned two quick lessons when deploying a Merb
+          application I have been working on. Aside from the fact that you can use
+          &lt;code&gt;
+            request.subdomains
+          &lt;/code&gt;
+          to get an array of subdomains, you must do two little things to get this to
+          play nice when your application is deployed upstream on Nginx (and likely
+          apache, too) as well as handling the same situation in local development.
+        &lt;/p&gt;
+        &lt;p&gt;
+          First, in your Nginx configuration file be sure to set the proper header for
+          host, otherwise the host that Merb will see is the name you give to the upstream
+          section of your configuration. To pass this information on correctly, do this:
+          &lt;code&gt;
+            proxy_set_header  Host	 $host;
+          &lt;/code&gt;
+          inside the &quot;location&quot; block for your application's root.
+        &lt;/p&gt;
+        &lt;p&gt;
+          Second, in order to get the right subdomains, Merb expects you are using a
+          TLD or top-level-domain, such as example.com. If you, like me, are using a
+          local hostname, such as localhost, you aren't going to get anything when
+          you ask for subdomains. So, in /etc/hosts I simply set up a domain pointing
+          to 127.0.0.1 for a place I know I'll never go.
+        &lt;/p&gt;
+        &lt;p&gt;
+          I hope these two little tips will help you to avoid some of the trouble I
+          had to deal with, even if it was only 5 minutes of my time, or yours.
+        &lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div id='disqus_thread'&gt;&lt;/div&gt;
+      &lt;script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'&gt;&lt;/script&gt;
+      &lt;noscript&gt;
+        &lt;a href='http://tpitale.disqus.com/?url=ref'&gt;
+          View the discussion thread.
+        &lt;/a&gt;
+        &lt;a class='dsq-brlink' href='http://disqus.com'&gt;
+          blog comments powered by
+          &lt;span class='logo-disqus'&gt;
+            Disqus
+          &lt;/span&gt;
+        &lt;/a&gt;
+      &lt;/noscript&gt;
+    </content>
+  </entry>
   <entry>
     <id>/posts/postgresql_part_1_benefits_for_web_application_development.html,Mon Jan 26 02:11:30 -0500 2009</id>
     <title>PostgreSQL Part 1</title>
@@ -441,48 +498,45 @@
     </content>
   </entry>
   <entry>
-    <id>/posts/merb_is_not_rails_and_that_is_okay.html,Thu May 29 18:33:54 -0400 2008</id>
-    <title>Merb is Not Rails</title>
-    <subtitle>And That is Okay</subtitle>
-    <link href='http://t.pitale.com/posts/merb_is_not_rails_and_that_is_okay.html' />
-    <updated>2008-05-29T18:33:54-04:00</updated>
+    <id>/posts/vision_online_now_focus.html,Tue Mar 11 23:49:29 -0400 2008</id>
+    <title>Vision Online, Now Focus</title>
+    <subtitle>The exciting tale of a Merb Application and branding</subtitle>
+    <link href='http://t.pitale.com/posts/vision_online_now_focus.html' />
+    <updated>2008-03-11T23:49:29-04:00</updated>
     <content type='html'>
       &lt;div id='post'&gt;
-        &lt;h1&gt;Merb is Not Rails&lt;/h1&gt;
-        &lt;h2&gt;And That is Okay&lt;/h2&gt;
-        &lt;span class='date'&gt;2008-05-29&lt;/span&gt;
+        &lt;h1&gt;Vision Online, Now Focus&lt;/h1&gt;
+        &lt;h2&gt;The exciting tale of a Merb Application and branding&lt;/h2&gt;
+        &lt;span class='date'&gt;2008-03-11&lt;/span&gt;
         &lt;p&gt;
-          Merb is not Rails.
+          I have spent my free time, nights and weekends, working to create a new
+          version of Vision, online. For those that do not know, Vision is the
+          peerless, just-in-time, inventory control and point of sale system for the
+          retail liquor market.
         &lt;/p&gt;
         &lt;p&gt;
-          If that statement isn't simple enough for you let me, like
-          &lt;a href=&quot;http://brainspl.at/articles/2008/05/21/does-it-have-to-be-a-competition-between-rails-and-merb&quot;&gt;Ezra&lt;/a&gt;
-          and
-          &lt;a href=&quot;http://yehudakatz.com/2008/05/21/cant-we-all-just-get-along/&quot;&gt;Yehuda&lt;/a&gt;
-          , explain why Merb is not Rails, why this is good for both Merb and Rails,
-          and where this will lead both projects in the future.
+          The project was originally titled Vision Online. That name is simple and
+          it works with all of the branding that
+          &lt;a href=&quot;http://www.ics-nj.com&quot;&gt;ICS&lt;/a&gt;
+          has already done. However, this product heads out on its own and addresses
+          a slightly new market. As such, a new name was a must.
         &lt;/p&gt;
         &lt;p&gt;
-          Ezra laid out the simple fact that there is no competition between Rails
-          and Merb. This comes down to “scratching different itches”. Yehuda’s post
-          reiterated this and added a few more important “why”s. Yehuda’s main point
-          is in the goal of “hackability” of Merb as a framework in comparison to the
-          “get-up-and-go” goal in Rails. Each serves a purpose. Merb’s goal is one
-          that served as my impetus for seeking out a Rails alternative. I still use
-          Rails because in many cases the “get-up-and-go” route is exactly what I
-          need. Rails should stick to its guns, philosophically just as Merb should.
+          Thanks to a stroke of genius by my associate Chris, we've switched to the
+          name Focus. The name is brilliant for three, important, reasons. First,
+          the original product is named Vision and Focus is just that, a focusing of
+          the features and benefits of using Vision. Second, the use of this
+          product is intended to focus the users' inventory until it is as close as
+          possible to just-in-time. Lastly, a function of a person's literal vision
+          is the ability to focus. We are hoping that this reincarnation of Vision
+          will enable a user to focus on getting their inventory in line and online.
         &lt;/p&gt;
         &lt;p&gt;
-          Yehuda’s second great point is that those that work on Merb often work on
-          Rails and wish to see the experimental developments in Merb move into Rails.
-          His example of note is the “provides” api (which many, many Merb people
-          love). In the future I hope that Merb as a testbed for Rails continues with
-          a bit more stability in Merb, perhaps.
-        &lt;/p&gt;
-        &lt;p&gt;
-          At the moment I need to bring more stability to my own install of Merb. I
-          have continually worked with the latest and greatest Merb because of my
-          need to stay on the cutting edge with DataMapper.
+          Solidifying this branding was important for me, as a developer, because it
+          provides a northern star, a guiding light, to my goal. The meaning that
+          branding holds for a user is realized many times over, for me. It is an
+          important aspect of development, keeping the goals, ideals, and vision of
+          the product, in mind.
         &lt;/p&gt;
       &lt;/div&gt;
       &lt;script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'&gt;&lt;/script&gt;
@@ -500,132 +554,46 @@
     </content>
   </entry>
   <entry>
-    <id>/posts/slicehost_getting_it_right_right_away.html,Fri Mar 14 21:33:54 -0400 2008</id>
-    <title>Slicehost</title>
-    <subtitle>Getting it Right, Right Away</subtitle>
-    <link href='http://t.pitale.com/posts/slicehost_getting_it_right_right_away.html' />
-    <updated>2008-03-14T21:33:54-04:00</updated>
+    <id>/posts/upcoming.html,Tue May 27 22:11:10 -0400 2008</id>
+    <title>In the Coming Days</title>
+    <subtitle>So Much to Do</subtitle>
+    <link href='http://t.pitale.com/posts/upcoming.html' />
+    <updated>2008-05-27T22:11:10-04:00</updated>
     <content type='html'>
       &lt;div id='post'&gt;
-        &lt;h1&gt;Slicehost&lt;/h1&gt;
-        &lt;h2&gt;Getting it Right, Right Away&lt;/h2&gt;
-        &lt;span class='date'&gt;2008-03-14&lt;/span&gt;
+        &lt;h1&gt;In the Coming Days&lt;/h1&gt;
+        &lt;h2&gt;So Much to Do&lt;/h2&gt;
+        &lt;span class='date'&gt;2008-05-27&lt;/span&gt;
         &lt;p&gt;
-          At the recommendation of Patrick Reagan of Viget Labs I signed up for an
-          account with Slicehost. With a simple form for signup, I was quickly
-          filling in my credit card number. Before my credit card had been validated
-          by Slicehost, my slice was up and running.
+          The short story is:
+          &lt;a href=&quot;http://www.viget.com&quot;&gt;Viget&lt;/a&gt;
+          is being extremely generous and is paying for me to travel to
+          &lt;a href=&quot;http://en.oreilly.com/rails2008/public/content/home&quot;&gt;RailsConf&lt;/a&gt;
+          this year. Despite the fact that I have only been in their employ for three
+          whole weeks. I'm extremely happy working there and I only hope that I am
+          living up to their expectations of me.
         &lt;/p&gt;
         &lt;p&gt;
-          I was not planning at the time to set up, or modify my new server. The draw
-          of the root password that had just been emailed to me overpowered any such
-          plans. I quickly discovered the fantastic tools made available by Slicehost
-          for the user. Within 2 minutes I had configured my DNS and within 5 minutes
-          I had compiled and installed Nginx, all thanks to the excellent help site.
+          I am excited to go to RailsConf for two reasons. First, I have never been
+          to a conference before, any conference, and I really expect to learn a lot
+          in the sessions I am enrolled in. Second, I may finally get to meet many of
+          the people I talk to on the irc chat rooms for Merb and DataMapper. People
+          like Yehuda Katz, Ezra Z., Adam French (who I think is going), and a
+          coworker from Viget South, Ben Scofield, who will be speaking, as well. All
+          in all I have extremely high hopes for this trip.
         &lt;/p&gt;
         &lt;p&gt;
-          Upon completing the initial &quot;release&quot; of this website the following
-          morning, I was completely up and running and I switched my TLD registration
-          to the Slicehost DNS hosts. If you do sign up for a Slicehost account I
-          would certainly appreciate a
-          &lt;a href=&quot;https://manage.slicehost.com/customers/new?referrer=972292314&quot;&gt;referral.&lt;/a&gt;
-        &lt;/p&gt;
-      &lt;/div&gt;
-      &lt;script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'&gt;&lt;/script&gt;
-      &lt;noscript&gt;
-        &lt;a href='http://tpitale.disqus.com/?url=ref'&gt;
-          View the discussion thread.
-        &lt;/a&gt;
-        &lt;a class='dsq-brlink' href='http://disqus.com'&gt;
-          blog comments powered by
-          &lt;span class='logo-disqus'&gt;
-            Disqus
-          &lt;/span&gt;
-        &lt;/a&gt;
-      &lt;/noscript&gt;
-    </content>
-  </entry>
-  <entry>
-    <id>/posts/verizon_fios_tv_and_internet_without_actiontec.html,Tue Jul 08 09:31:33 -0400 2008</id>
-    <title>Verizon Fios Internet & TV</title>
-    <subtitle>Using Your Own Router, Not the Actiontec Router</subtitle>
-    <link href='http://t.pitale.com/posts/verizon_fios_tv_and_internet_without_actiontec.html' />
-    <updated>2008-07-08T09:31:33-04:00</updated>
-    <content type='html'>
-      &lt;div id='post'&gt;
-        &lt;h1&gt;Verizon Fios Internet &amp;amp; TV&lt;/h1&gt;
-        &lt;h2&gt;Using Your Own Router, Not the Actiontec Router&lt;/h2&gt;
-        &lt;span class='date'&gt;2008-07-08&lt;/span&gt;
-        &lt;p&gt;
-          &lt;h1&gt;The basic steps are as follows:&lt;/h1&gt;
-          &lt;ol&gt;
-            &lt;li&gt;Order Verizon Fios&lt;/li&gt;
-            &lt;li&gt;
-              During installation have the installer turn on the ethernet port in the
-              MOCA, not the coax
-            &lt;/li&gt;
-            &lt;li&gt;Have the installer leave you with a &quot;NIM&quot;&lt;/li&gt;
-            &lt;li&gt;Setup your router as you would have with any other ISP&lt;/li&gt;
-            &lt;li&gt;Connect the &quot;NIM&quot; to your router&lt;/li&gt;
-            &lt;li&gt;Connect the &quot;NIM&quot; to a coax port in your house&lt;/li&gt;
-            &lt;li&gt;
-              Have the installer connect and activate your television set-top-boxes
-              (STB)
-            &lt;/li&gt;
-          &lt;/ol&gt;
-        &lt;/p&gt;
-        &lt;h3&gt;Now for some explanation&lt;/h3&gt;
-        &lt;p&gt;
-          I think ordering should be pretty self-explanatory. However, I have not
-          said anything about why a sane person would wish to do this instead of
-          letting the nice Verizon installer do their job. It's all in the hardware
-          Using the Actiontec router Verizon provides is fine, if you've never had a
-          wireless home network before. For the rest of us, being allowed to use our
-          own, existing, setup is not possible without the foreknowledge or the will
-          to fight for the information.
-        &lt;/p&gt;
-        &lt;h3&gt;Onto the more technical stuff&lt;/h3&gt;
-        &lt;p&gt;
-          The MOCA is the box that is left outside of your house. Essentially, it
-          receives and interprets the signal. It takes the place of what we once
-          called a MODEM. In this box, there are multiple connections, one of which
-          is the standard ethernet port any Linksys, DLink, or Apple router knows and
-          loves. There is also a port that passes the network information over a coax
-          (short for coaxial) cable. This is the port left on by Verizon normally
-          because the Actiontec router (which, with a simple google search, one will
-          find is nearly worthless) is intended to work with it. Using the ethernet
-          port is required so that every other brand of standard router will operate.
-        &lt;/p&gt;
-        &lt;p&gt;
-          Next, we set up our router in much the same way it would be set up with a
-          DSL or Cable ISP. Verizon uses the standard, DHCP, to give your router an
-          IP address. At this point, assuming the internet has been activated by the
-          installer, you should be able to get on the internet at the wonderfully
-          blazing speeds that Fios provides.
-        &lt;/p&gt;
-        &lt;p&gt;
-          The last major step is asking the installer to give you a &quot;NIM&quot;. I never
-          found out what &quot;NIM&quot; stood for, but it's purpose is clear. In order to
-          get access to the programming guide or to video-on-demand services your
-          STBs must have internet access, too. The &quot;NIM&quot; should have two ports. The
-          first is an ethernet port and the second is a coax connector. Can you guess
-          what to do? Plug an ethernet cable from your router into the &quot;NIM&quot; and plug
-          a coax cable into the other port. The final coax connection should be made
-          to any coax cable outlet in your home as they are all inter-connected. The
-          &quot;NIM&quot; acts as translator in place of the Actiontec router and provides
-          internet access for the STBs to use. The STBs do have ethernet ports (at
-          least the latest Motorola box Verizon provided) but internet access does
-          not appear to be the purpose, but rather, home network connection for
-          certain media-sharing capabilities (music, movies, pictures to the TV).
-        &lt;/p&gt;
-        &lt;p&gt;
-          At this point, the installer should be able to simply plug in all of your
-          STBs and activate them as needed through Verizon.
-        &lt;/p&gt;
-        &lt;p&gt;
-          Disclaimer: I am not a Verizon technician. If for some strange reason any
-          of these instructions mess up your system I take no responsibility as
-          these are only the methods that worked FOR ME. Your Mileage May Vary!
+          In other news, I've got draft copies of many, many blog posts. The problem
+          is trying to decide where they will be appropriate. Some are about the beta
+          for
+          &lt;a href=&quot;http://www.getdropbox.com&quot;&gt;Dropbox&lt;/a&gt;
+          (my favorite service, at the moment), including some nifty tricks. Another
+          post is a followup to Getting Things Done with Mail and iCal combined with
+          a review of the GTD application, Things. On the
+          &lt;a href=&quot;http://www.viget.com/extend/&quot;&gt;Viget Extend blog&lt;/a&gt;
+          , I've got some ideas for posts on topics ranging from Microsoft Exchange
+          calendar subscriptions in iCal to accessing the LDAP global address list
+          from Address Book.
         &lt;/p&gt;
       &lt;/div&gt;
       &lt;script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'&gt;&lt;/script&gt;
@@ -905,45 +873,86 @@
     </content>
   </entry>
   <entry>
-    <id>/posts/vision_online_now_focus.html,Tue Mar 11 23:49:29 -0400 2008</id>
-    <title>Vision Online, Now Focus</title>
-    <subtitle>The exciting tale of a Merb Application and branding</subtitle>
-    <link href='http://t.pitale.com/posts/vision_online_now_focus.html' />
-    <updated>2008-03-11T23:49:29-04:00</updated>
+    <id>/posts/verizon_fios_tv_and_internet_without_actiontec.html,Tue Jul 08 09:31:33 -0400 2008</id>
+    <title>Verizon Fios Internet & TV</title>
+    <subtitle>Using Your Own Router, Not the Actiontec Router</subtitle>
+    <link href='http://t.pitale.com/posts/verizon_fios_tv_and_internet_without_actiontec.html' />
+    <updated>2008-07-08T09:31:33-04:00</updated>
     <content type='html'>
       &lt;div id='post'&gt;
-        &lt;h1&gt;Vision Online, Now Focus&lt;/h1&gt;
-        &lt;h2&gt;The exciting tale of a Merb Application and branding&lt;/h2&gt;
-        &lt;span class='date'&gt;2008-03-11&lt;/span&gt;
+        &lt;h1&gt;Verizon Fios Internet &amp;amp; TV&lt;/h1&gt;
+        &lt;h2&gt;Using Your Own Router, Not the Actiontec Router&lt;/h2&gt;
+        &lt;span class='date'&gt;2008-07-08&lt;/span&gt;
         &lt;p&gt;
-          I have spent my free time, nights and weekends, working to create a new
-          version of Vision, online. For those that do not know, Vision is the
-          peerless, just-in-time, inventory control and point of sale system for the
-          retail liquor market.
+          &lt;h1&gt;The basic steps are as follows:&lt;/h1&gt;
+          &lt;ol&gt;
+            &lt;li&gt;Order Verizon Fios&lt;/li&gt;
+            &lt;li&gt;
+              During installation have the installer turn on the ethernet port in the
+              MOCA, not the coax
+            &lt;/li&gt;
+            &lt;li&gt;Have the installer leave you with a &quot;NIM&quot;&lt;/li&gt;
+            &lt;li&gt;Setup your router as you would have with any other ISP&lt;/li&gt;
+            &lt;li&gt;Connect the &quot;NIM&quot; to your router&lt;/li&gt;
+            &lt;li&gt;Connect the &quot;NIM&quot; to a coax port in your house&lt;/li&gt;
+            &lt;li&gt;
+              Have the installer connect and activate your television set-top-boxes
+              (STB)
+            &lt;/li&gt;
+          &lt;/ol&gt;
+        &lt;/p&gt;
+        &lt;h3&gt;Now for some explanation&lt;/h3&gt;
+        &lt;p&gt;
+          I think ordering should be pretty self-explanatory. However, I have not
+          said anything about why a sane person would wish to do this instead of
+          letting the nice Verizon installer do their job. It's all in the hardware
+          Using the Actiontec router Verizon provides is fine, if you've never had a
+          wireless home network before. For the rest of us, being allowed to use our
+          own, existing, setup is not possible without the foreknowledge or the will
+          to fight for the information.
+        &lt;/p&gt;
+        &lt;h3&gt;Onto the more technical stuff&lt;/h3&gt;
+        &lt;p&gt;
+          The MOCA is the box that is left outside of your house. Essentially, it
+          receives and interprets the signal. It takes the place of what we once
+          called a MODEM. In this box, there are multiple connections, one of which
+          is the standard ethernet port any Linksys, DLink, or Apple router knows and
+          loves. There is also a port that passes the network information over a coax
+          (short for coaxial) cable. This is the port left on by Verizon normally
+          because the Actiontec router (which, with a simple google search, one will
+          find is nearly worthless) is intended to work with it. Using the ethernet
+          port is required so that every other brand of standard router will operate.
         &lt;/p&gt;
         &lt;p&gt;
-          The project was originally titled Vision Online. That name is simple and
-          it works with all of the branding that
-          &lt;a href=&quot;http://www.ics-nj.com&quot;&gt;ICS&lt;/a&gt;
-          has already done. However, this product heads out on its own and addresses
-          a slightly new market. As such, a new name was a must.
+          Next, we set up our router in much the same way it would be set up with a
+          DSL or Cable ISP. Verizon uses the standard, DHCP, to give your router an
+          IP address. At this point, assuming the internet has been activated by the
+          installer, you should be able to get on the internet at the wonderfully
+          blazing speeds that Fios provides.
         &lt;/p&gt;
         &lt;p&gt;
-          Thanks to a stroke of genius by my associate Chris, we've switched to the
-          name Focus. The name is brilliant for three, important, reasons. First,
-          the original product is named Vision and Focus is just that, a focusing of
-          the features and benefits of using Vision. Second, the use of this
-          product is intended to focus the users' inventory until it is as close as
-          possible to just-in-time. Lastly, a function of a person's literal vision
-          is the ability to focus. We are hoping that this reincarnation of Vision
-          will enable a user to focus on getting their inventory in line and online.
+          The last major step is asking the installer to give you a &quot;NIM&quot;. I never
+          found out what &quot;NIM&quot; stood for, but it's purpose is clear. In order to
+          get access to the programming guide or to video-on-demand services your
+          STBs must have internet access, too. The &quot;NIM&quot; should have two ports. The
+          first is an ethernet port and the second is a coax connector. Can you guess
+          what to do? Plug an ethernet cable from your router into the &quot;NIM&quot; and plug
+          a coax cable into the other port. The final coax connection should be made
+          to any coax cable outlet in your home as they are all inter-connected. The
+          &quot;NIM&quot; acts as translator in place of the Actiontec router and provides
+          internet access for the STBs to use. The STBs do have ethernet ports (at
+          least the latest Motorola box Verizon provided) but internet access does
+          not appear to be the purpose, but rather, home network connection for
+          certain media-sharing capabilities (music, movies, pictures to the TV).
         &lt;/p&gt;
         &lt;p&gt;
-          Solidifying this branding was important for me, as a developer, because it
-          provides a northern star, a guiding light, to my goal. The meaning that
-          branding holds for a user is realized many times over, for me. It is an
-          important aspect of development, keeping the goals, ideals, and vision of
-          the product, in mind.
+          At this point, the installer should be able to simply plug in all of your
+          STBs and activate them as needed through Verizon.
+        &lt;/p&gt;
+        &lt;p&gt;
+          Disclaimer: I am not a Verizon technician. If for some strange reason any
+          of these instructions mess up your system I take no responsibility as
+          these are only the methods that worked FOR ME. Your Mileage May Vary!
         &lt;/p&gt;
       &lt;/div&gt;
       &lt;script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'&gt;&lt;/script&gt;
@@ -1010,51 +1019,94 @@
     </content>
   </entry>
   <entry>
-    <id>/posts/testing_the_slicehost_api.html,Fri Mar 21 18:29:50 -0400 2008</id>
-    <title>Beta Testing the Slicehost API</title>
-    <subtitle>A Foray into ActiveResource and DNS Records</subtitle>
-    <link href='http://t.pitale.com/posts/testing_the_slicehost_api.html' />
-    <updated>2008-03-21T18:29:50-04:00</updated>
+    <id>/posts/merb_is_not_rails_and_that_is_okay.html,Thu May 29 18:33:54 -0400 2008</id>
+    <title>Merb is Not Rails</title>
+    <subtitle>And That is Okay</subtitle>
+    <link href='http://t.pitale.com/posts/merb_is_not_rails_and_that_is_okay.html' />
+    <updated>2008-05-29T18:33:54-04:00</updated>
     <content type='html'>
       &lt;div id='post'&gt;
-        &lt;h1&gt;Beta Testing the Slicehost API&lt;/h1&gt;
-        &lt;h2&gt;A Foray into ActiveResource and DNS Records&lt;/h2&gt;
-        &lt;span class='date'&gt;2008-03-21&lt;/span&gt;
+        &lt;h1&gt;Merb is Not Rails&lt;/h1&gt;
+        &lt;h2&gt;And That is Okay&lt;/h2&gt;
+        &lt;span class='date'&gt;2008-05-29&lt;/span&gt;
         &lt;p&gt;
-          I was fortunate enough to join slicehost this past week. It is a fantastic
-          service, possibly the best VPS I've encountered. While perusing their forum
-          as I am want to do from time to time, I noticed a new post by a slicehost
-          employee requesting beta-testers (a favorite phrase of mine) for their new
-          API. I've used ActiveResource in the past and I thought it would be worth a
-          shot.
+          Merb is not Rails.
         &lt;/p&gt;
         &lt;p&gt;
-          I threw in my hat on the forum and was summarily rewarded with an email
-          from a slicehost employee. I was given an API key and some documentation
-          with examples in Ruby and Python. Given my ActiveResource experience I
-          immediately went to work with their example. It was a breeze and one that
-          I am delighted to say any Rubyist would be able to complete.
+          If that statement isn't simple enough for you let me, like
+          &lt;a href=&quot;http://brainspl.at/articles/2008/05/21/does-it-have-to-be-a-competition-between-rails-and-merb&quot;&gt;Ezra&lt;/a&gt;
+          and
+          &lt;a href=&quot;http://yehudakatz.com/2008/05/21/cant-we-all-just-get-along/&quot;&gt;Yehuda&lt;/a&gt;
+          , explain why Merb is not Rails, why this is good for both Merb and Rails,
+          and where this will lead both projects in the future.
         &lt;/p&gt;
         &lt;p&gt;
-          I completed the example, messed around a bit more, and then I retired for
-          the evening. The next day I received a short questionnaire which I
-          dutifully filled out and returned. My tinkering was not over, however. Oh,
-          no. The next free chance I had, I dove right in. Given the access the beta
-          provided I could create only two things off the top of my head. The first,
-          a dynamic-dns-type updater. The second, a monitor of system status.
+          Ezra laid out the simple fact that there is no competition between Rails
+          and Merb. This comes down to “scratching different itches”. Yehuda’s post
+          reiterated this and added a few more important “why”s. Yehuda’s main point
+          is in the goal of “hackability” of Merb as a framework in comparison to the
+          “get-up-and-go” goal in Rails. Each serves a purpose. Merb’s goal is one
+          that served as my impetus for seeking out a Rails alternative. I still use
+          Rails because in many cases the “get-up-and-go” route is exactly what I
+          need. Rails should stick to its guns, philosophically just as Merb should.
         &lt;/p&gt;
         &lt;p&gt;
-          So far, I have only completed the dynamic dns updater. It is crude but, it
-          provides the basic functionality required. It allows you to provide a
-          Zone and a Record, as well as, the IP address to use when updating the
-          record. If you do not provide an IP address, the current external IP of
-          your location will be used.
+          Yehuda’s second great point is that those that work on Merb often work on
+          Rails and wish to see the experimental developments in Merb move into Rails.
+          His example of note is the “provides” api (which many, many Merb people
+          love). In the future I hope that Merb as a testbed for Rails continues with
+          a bit more stability in Merb, perhaps.
         &lt;/p&gt;
         &lt;p&gt;
-          The point of all this is I can have a domain name pointing to my home IP.
-          If my provider changes my IP for whatever reason, the script, run by cron
-          on a regular basis will tell slicehost, my DNS provider, that my home IP
-          address has changed within a reasonable amount of time.
+          At the moment I need to bring more stability to my own install of Merb. I
+          have continually worked with the latest and greatest Merb because of my
+          need to stay on the cutting edge with DataMapper.
+        &lt;/p&gt;
+      &lt;/div&gt;
+      &lt;script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'&gt;&lt;/script&gt;
+      &lt;noscript&gt;
+        &lt;a href='http://tpitale.disqus.com/?url=ref'&gt;
+          View the discussion thread.
+        &lt;/a&gt;
+        &lt;a class='dsq-brlink' href='http://disqus.com'&gt;
+          blog comments powered by
+          &lt;span class='logo-disqus'&gt;
+            Disqus
+          &lt;/span&gt;
+        &lt;/a&gt;
+      &lt;/noscript&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>/posts/slicehost_getting_it_right_right_away.html,Fri Mar 14 21:33:54 -0400 2008</id>
+    <title>Slicehost</title>
+    <subtitle>Getting it Right, Right Away</subtitle>
+    <link href='http://t.pitale.com/posts/slicehost_getting_it_right_right_away.html' />
+    <updated>2008-03-14T21:33:54-04:00</updated>
+    <content type='html'>
+      &lt;div id='post'&gt;
+        &lt;h1&gt;Slicehost&lt;/h1&gt;
+        &lt;h2&gt;Getting it Right, Right Away&lt;/h2&gt;
+        &lt;span class='date'&gt;2008-03-14&lt;/span&gt;
+        &lt;p&gt;
+          At the recommendation of Patrick Reagan of Viget Labs I signed up for an
+          account with Slicehost. With a simple form for signup, I was quickly
+          filling in my credit card number. Before my credit card had been validated
+          by Slicehost, my slice was up and running.
+        &lt;/p&gt;
+        &lt;p&gt;
+          I was not planning at the time to set up, or modify my new server. The draw
+          of the root password that had just been emailed to me overpowered any such
+          plans. I quickly discovered the fantastic tools made available by Slicehost
+          for the user. Within 2 minutes I had configured my DNS and within 5 minutes
+          I had compiled and installed Nginx, all thanks to the excellent help site.
+        &lt;/p&gt;
+        &lt;p&gt;
+          Upon completing the initial &quot;release&quot; of this website the following
+          morning, I was completely up and running and I switched my TLD registration
+          to the Slicehost DNS hosts. If you do sign up for a Slicehost account I
+          would certainly appreciate a
+          &lt;a href=&quot;https://manage.slicehost.com/customers/new?referrer=972292314&quot;&gt;referral.&lt;/a&gt;
         &lt;/p&gt;
       &lt;/div&gt;
       &lt;script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'&gt;&lt;/script&gt;
@@ -1212,107 +1264,51 @@
     </content>
   </entry>
   <entry>
-    <id>/posts/upcoming.html,Tue May 27 22:11:10 -0400 2008</id>
-    <title>In the Coming Days</title>
-    <subtitle>So Much to Do</subtitle>
-    <link href='http://t.pitale.com/posts/upcoming.html' />
-    <updated>2008-05-27T22:11:10-04:00</updated>
+    <id>/posts/testing_the_slicehost_api.html,Fri Mar 21 18:29:50 -0400 2008</id>
+    <title>Beta Testing the Slicehost API</title>
+    <subtitle>A Foray into ActiveResource and DNS Records</subtitle>
+    <link href='http://t.pitale.com/posts/testing_the_slicehost_api.html' />
+    <updated>2008-03-21T18:29:50-04:00</updated>
     <content type='html'>
       &lt;div id='post'&gt;
-        &lt;h1&gt;In the Coming Days&lt;/h1&gt;
-        &lt;h2&gt;So Much to Do&lt;/h2&gt;
-        &lt;span class='date'&gt;2008-05-27&lt;/span&gt;
+        &lt;h1&gt;Beta Testing the Slicehost API&lt;/h1&gt;
+        &lt;h2&gt;A Foray into ActiveResource and DNS Records&lt;/h2&gt;
+        &lt;span class='date'&gt;2008-03-21&lt;/span&gt;
         &lt;p&gt;
-          The short story is:
-          &lt;a href=&quot;http://www.viget.com&quot;&gt;Viget&lt;/a&gt;
-          is being extremely generous and is paying for me to travel to
-          &lt;a href=&quot;http://en.oreilly.com/rails2008/public/content/home&quot;&gt;RailsConf&lt;/a&gt;
-          this year. Despite the fact that I have only been in their employ for three
-          whole weeks. I'm extremely happy working there and I only hope that I am
-          living up to their expectations of me.
+          I was fortunate enough to join slicehost this past week. It is a fantastic
+          service, possibly the best VPS I've encountered. While perusing their forum
+          as I am want to do from time to time, I noticed a new post by a slicehost
+          employee requesting beta-testers (a favorite phrase of mine) for their new
+          API. I've used ActiveResource in the past and I thought it would be worth a
+          shot.
         &lt;/p&gt;
         &lt;p&gt;
-          I am excited to go to RailsConf for two reasons. First, I have never been
-          to a conference before, any conference, and I really expect to learn a lot
-          in the sessions I am enrolled in. Second, I may finally get to meet many of
-          the people I talk to on the irc chat rooms for Merb and DataMapper. People
-          like Yehuda Katz, Ezra Z., Adam French (who I think is going), and a
-          coworker from Viget South, Ben Scofield, who will be speaking, as well. All
-          in all I have extremely high hopes for this trip.
+          I threw in my hat on the forum and was summarily rewarded with an email
+          from a slicehost employee. I was given an API key and some documentation
+          with examples in Ruby and Python. Given my ActiveResource experience I
+          immediately went to work with their example. It was a breeze and one that
+          I am delighted to say any Rubyist would be able to complete.
         &lt;/p&gt;
         &lt;p&gt;
-          In other news, I've got draft copies of many, many blog posts. The problem
-          is trying to decide where they will be appropriate. Some are about the beta
-          for
-          &lt;a href=&quot;http://www.getdropbox.com&quot;&gt;Dropbox&lt;/a&gt;
-          (my favorite service, at the moment), including some nifty tricks. Another
-          post is a followup to Getting Things Done with Mail and iCal combined with
-          a review of the GTD application, Things. On the
-          &lt;a href=&quot;http://www.viget.com/extend/&quot;&gt;Viget Extend blog&lt;/a&gt;
-          , I've got some ideas for posts on topics ranging from Microsoft Exchange
-          calendar subscriptions in iCal to accessing the LDAP global address list
-          from Address Book.
-        &lt;/p&gt;
-      &lt;/div&gt;
-      &lt;script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'&gt;&lt;/script&gt;
-      &lt;noscript&gt;
-        &lt;a href='http://tpitale.disqus.com/?url=ref'&gt;
-          View the discussion thread.
-        &lt;/a&gt;
-        &lt;a class='dsq-brlink' href='http://disqus.com'&gt;
-          blog comments powered by
-          &lt;span class='logo-disqus'&gt;
-            Disqus
-          &lt;/span&gt;
-        &lt;/a&gt;
-      &lt;/noscript&gt;
-    </content>
-  </entry>
-  <entry>
-    <id>/posts/i_prefer_widgets_over_apps_for_getting_things_done.html,Thu Jul 10 09:29:22 -0400 2008</id>
-    <title>Stopped Using Things</title>
-    <subtitle>Because iSlayer is Awesome</subtitle>
-    <link href='http://t.pitale.com/posts/i_prefer_widgets_over_apps_for_getting_things_done.html' />
-    <updated>2008-07-10T09:29:22-04:00</updated>
-    <content type='html'>
-      &lt;div id='post'&gt;
-        &lt;h1&gt;Stopped Using Things&lt;/h1&gt;
-        &lt;h2&gt;Because iSlayer is Awesome&lt;/h2&gt;
-        &lt;span class='date'&gt;2008-07-10&lt;/span&gt;
-        &lt;p&gt;
-          I posted awhile back about my attempts at using
-          &lt;a href=&quot;http://www.culturedcode.com/things/&quot;&gt;Things&lt;/a&gt;
-          for my GTD needs. While Cultured Code has made an amazing application,
-          even in beta, I was finding myself with features I didn't want and missing
-          some features I did want.
+          I completed the example, messed around a bit more, and then I retired for
+          the evening. The next day I received a short questionnaire which I
+          dutifully filled out and returned. My tinkering was not over, however. Oh,
+          no. The next free chance I had, I dove right in. Given the access the beta
+          provided I could create only two things off the top of my head. The first,
+          a dynamic-dns-type updater. The second, a monitor of system status.
         &lt;/p&gt;
         &lt;p&gt;
-          As such, I've learned to make due using a fine combination of iCal and Mail
-          for to do lists. Now, with the addition of something
-          &lt;a href=&quot;http://www.islayer.com/index.php?op=item&amp;amp;id=64&quot;&gt;new from the fine developers at iSlayer&lt;/a&gt;
-          I have a wonderful little widget that lets me integrate perfectly into
-          this system I've got going. Organized is the name of the new widget and I
-          think it fits precisely. Now, I don't have to leave Mail or iCal running
-          for all the times that I'm on my Mac (which is a lot).
+          So far, I have only completed the dynamic dns updater. It is crude but, it
+          provides the basic functionality required. It allows you to provide a
+          Zone and a Record, as well as, the IP address to use when updating the
+          record. If you do not provide an IP address, the current external IP of
+          your location will be used.
         &lt;/p&gt;
         &lt;p&gt;
-          Organized is beautifully crafted, as all iSlayer widgets and products that
-          I have encountered. As you can see from the screenshots on the web page
-          Organized is dominated by the calendar at the top, which is just how I like
-          it. Beneath are four tabs: clocks, notes, events, and to dos. I do not
-          often use the notes and I have yet to have a real use for clocks. However,
-          having events present (with which you can see events in the coming days)
-          has been extremely useful for getting my head around an ever more populous
-          calendar.
-        &lt;/p&gt;
-        &lt;p&gt;
-          The last tab, to dos, is the tab I use most. Mostly because it adds such a
-          simple, quick, and perfectly powerful list. While at the same time, those
-          to dos work their way back into the rest of my system, for when I do have
-          Mail or iCal open, I like to have access to those to dos. I've learned to
-          organize my buckets as calendars that accurately represent my life. Around
-          these calendars I create groups that mimic the major focuses, life and
-          work. Perfect!
+          The point of all this is I can have a domain name pointing to my home IP.
+          If my provider changes my IP for whatever reason, the script, run by cron
+          on a regular basis will tell slicehost, my DNS provider, that my home IP
+          address has changed within a reasonable amount of time.
         &lt;/p&gt;
       &lt;/div&gt;
       &lt;script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'&gt;&lt;/script&gt;
