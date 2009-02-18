@@ -2,16 +2,10 @@
 title: t.pitale blog
 created_at: 2008-03-9 23:23:49.995233 -04:00
 dirty: true
-layout: default
+layout: posts
 filter:
   - haml
 ---
-#blog
-  .wrap
-    .col
-      %h1
-        Blog
-    .block
-      - posts = @pages.find(:limit => 10, :in_directory => 'posts', :sort_by => 'mtime', :reverse => true)
-      - posts.each do |post|
-        = render(post) unless post.filename == 'index'
+- posts = @pages.find(:all, :in_directory => 'posts', :sort_by => 'mtime', :reverse => true)
+- posts.each do |post|
+  = render(post) unless post.filename == 'index'

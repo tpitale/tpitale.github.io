@@ -11,116 +11,34 @@
     <link href='/css/base.css' media='screen, projection' rel='stylesheet' type='text/css' />
   </head>
   <body>
-    <div id='header'>
-      <div class='wrap'>
-        <div class='col'>
-          <a href='/'>
-            <img src='/images/logo.png' />
-          </a>
-        </div>
-        <div class='block'>
-          <ul>
-            <li>
-              <a href="/#about">About</a>
-            </li>
-            <li>
-              <a href="/#contact">Contact</a>
-            </li>
-            <li>
-              <a href="/#blog">Blog</a>
-            </li>
-            <li>
-              <a href="/#portfolio">Portfolio</a>
-            </li>
-            <li>
-              <a href="/#links">Links</a>
-            </li>
-            <li>
-              <a href="/#photos">Photos</a>
-            </li>
-          </ul>
-        </div>
-        <br class='clearleft' />
-      </div>
-    </div>
+    <div id='header'></div>
     <div id='content'>
-      <!-- About -->
-      <div id='about'>
-        <div class='wrap'>
-          <div class='col'>
-            <h2>
-              About
-            </h2>
-          </div>
-          <div class='block'>
-            <p>
-              I am a recent graduate of
-              <a href="http://www.virginiatech.com">Virginia Tech.</a>
-              I started with Ruby on Rails in early 2006. Now, I am in love with
-              Ruby, Merb, Rails, and the development community surrounding these
-              projects. I always strive to learn, here is my place to share.
-            </p>
-            <br />
-            <p>
-              I am currently in the employ of
-              <a href="http://www.viget.com">Viget Labs</a>
-              as a web developer doing Ruby development. I hope to do great things
-              here.
-            </p>
-          </div>
-        </div>
-      </div>
-      <!-- Contact -->
-      <div id='contact'>
-        <div class='wrap'>
-          <div class='col'>
-            <h2>
-              Contact
-            </h2>
-          </div>
-          <div class='block'>
-            <div id='fast'>
-              <h3>Fast</h3>
-              <a href="mailto:tpitale@gmail.com">tpitale@gmail.com</a>
-              <a href="mailto:tony.pitale@gmail.com">tony.pitale@gmail.com</a>
-              <a href="mailto:tony.pitale@viget.com">tony.pitale@viget.com</a>
-            </div>
-            <div id='faster'>
-              <h3>Faster</h3>
-              <b>AIM:</b>
-              sicdev
-              <br />
-              <b>IRC:</b>
-              tpitale
-            </div>
-            <div id='fastest'>
-              <h3>Fastest</h3>
-              (571)-294-6561
-            </div>
-            <br class='clearleft' />
-          </div>
-        </div>
-      </div>
       <!-- Latest Blog Post -->
       <div id='blog'>
         <div class='wrap'>
           <div class='col'>
-            <h2>
-              Blog
-            </h2>
             <!-- List of Blog Posts -->
             <ul>
               <li>
                 <a href="/posts/merb_and_subdomains_with_nginx_balancing.html">Merb and Subdomains with Nginx</a>
               </li>
               <li>
+                <a href="/posts/verizon_fios_tv_and_internet_without_actiontec.html">Verizon Fios Internet &amp; TV</a>
+              </li>
+              <li>
+                
+              </li>
+              <li>
+                <a href="/posts/three-games-in-three-weeks-of-midnight-launches.html">Three Games</a>
+              </li>
+              <li>
                 <a href="/posts/postgresql_part_1_benefits_for_web_application_development.html">PostgreSQL Part 1</a>
               </li>
               <li>
-                <a href="/posts/making_the_ics_winepos_website.html">Making the New ICS Website</a>
+                <a href="/posts/new_site_for_ics_vision_winepos.html">New ICS Vision Site</a>
               </li>
               <li>
-                <a href="/posts/new_site_for_ics_vision_winepos.html">New ICS Vision Site</a>
+                <a href="/posts/making_the_ics_winepos_website.html">Making the New ICS Website</a>
               </li>
               <li>
                 <a href="/posts/i_normally_love_debian.html">I Normally Love Debian</a>
@@ -129,16 +47,13 @@
                 <a href="/posts/do-we-really-need-mobileme.html">Do We Really Need MobileMe?</a>
               </li>
               <li>
-                <a href="/posts/three-games-in-three-weeks-of-midnight-launches.html">Three Games</a>
-              </li>
-              <li>
-                
+                <a href="/posts/notes_on_legacy_databases_with_activerecord.html">Legacy Databases with ActiveRecord</a>
               </li>
               <li>
                 <a href="/posts/vision_online_now_focus.html">Vision Online, Now Focus</a>
               </li>
               <li>
-                <a href="/posts/upcoming.html">In the Coming Days</a>
+                <a href="/posts/getting_things_done_with_more_than_mail.html">Getting Things Done</a>
               </li>
               <li>
                 <a href="/posts/obama_and_experience.html">Barack Obama</a>
@@ -147,13 +62,7 @@
                 <a href="/posts/notes_on_legacy_databases_with_datamapper.html">Legacy Databases with DataMapper</a>
               </li>
               <li>
-                <a href="/posts/notes_on_legacy_databases_with_activerecord.html">Legacy Databases with ActiveRecord</a>
-              </li>
-              <li>
-                <a href="/posts/verizon_fios_tv_and_internet_without_actiontec.html">Verizon Fios Internet &amp; TV</a>
-              </li>
-              <li>
-                <a href="/posts/my_wrists_are_fine_with_apple_computers.html">Carpal Tunnel Syndrome</a>
+                <a href="/posts/merb_is_not_rails_and_that_is_okay.html">Merb is Not Rails</a>
               </li>
             </ul>
           </div>
@@ -193,8 +102,8 @@
                 I hope these two little tips will help you to avoid some of the trouble I
                 had to deal with, even if it was only 5 minutes of my time, or yours.
               </p>
+              <div id='disqus_thread'></div>
             </div>
-            <div id='disqus_thread'></div>
             <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
             <noscript>
               <a href='http://tpitale.disqus.com/?url=ref'>
@@ -215,14 +124,19 @@
           </div>
         </div>
       </div>
-      <!-- Portfolio Links, w/images, to my projects -->
-      <div id='portfolio'>
+      <!-- Sampling of flickr images -->
+      <div id='photos'>
         <div class='wrap'>
-          <div class='col'>
-            <h2>
-              Portfolio
-            </h2>
-          </div>
+          <script src='http://www.flickr.com/badge_code_v2.gne?count=10&amp;display=random&amp;size=s&amp;layout=x&amp;source=user_set&amp;user=41783324%40N00&amp;set=72157604108727991' type='text/javascript'></script>
+          <script src='http://www.flickr.com/badge_code_v2.gne?count=10&amp;display=random&amp;size=s&amp;layout=x&amp;source=user_set&amp;user=41783324%40N00&amp;set=72157602176622405' type='text/javascript'></script>
+          <script src='http://www.flickr.com/badge_code_v2.gne?count=10&amp;display=latest&amp;size=s&amp;layout=x&amp;source=user_set&amp;user=41783324%40N00&amp;set=72157600262586911' type='text/javascript'></script>
+          <br class='clearleft' />
+        </div>
+      </div>
+      <!-- Portfolio Links, w/images, to my projects -->
+      <div id='projects'>
+        <div class='wrap'>
+          <div class='col'></div>
           <div class='block'>
             <a href="http://www.winepos.com"><img src='/images/winepos.png' /></a>
             <a href="http://focusapp.com"><img src='/images/focus.png' /></a>
@@ -234,76 +148,112 @@
           </div>
         </div>
       </div>
-      <!-- Worthy links to associate pages -->
-      <div id='links'>
+      <!-- / Worthy links to associate pages -->
+      <!-- #links -->
+      <!-- .wrap -->
+      <!-- .col -->
+      <!-- %h2 -->
+      <!-- Links -->
+      <!-- .block -->
+      <!-- #people -->
+      <!-- %h3 Personal Blogs -->
+      <!-- %ul -->
+      <!-- %li= link_to("Dr Nic", "http://drnicwilliams.com/") -->
+      <!-- %li= link_to("Yehuda Katz", "http://www.yehudakatz.com/") -->
+      <!-- %li= link_to("Ezra Zygmuntowicz", "http://brainspl.at/") -->
+      <!-- %li= link_to("Patrick Reagan", "http://www.sneaq.net/") -->
+      <!-- %li= link_to("Reinh", "http://reinh.com") -->
+      <!-- %li= link_to("Michael Ivey", "http://gweezlebur.com/") -->
+      <!-- %li= link_to("Adam French", "http://adam.speaksoutofturn.com/") -->
+      <!-- %li= link_to("Paul Sadauskas", "http://www.theamazingrando.com/") -->
+      <!-- #companies -->
+      <!-- %h3 Company Blogs -->
+      <!-- %ul -->
+      <!-- %li= link_to("Viget", "http://www.viget.com/extend/") -->
+      <!-- %li= link_to("ICS", "http://winepos.com/blog.html") -->
+      <!-- %li= link_to("Thoughbot", "http://giantrobots.thoughtbot.com/") -->
+      <!-- %li= link_to("Github", "http://github.com/blog") -->
+      <!-- %li= link_to("37signals", "http://www.37signals.com/svn/") -->
+      <!-- %li= link_to("Engine Yard", "http://engineyard.com/blog") -->
+      <!-- %li= link_to("SliceHost", "http://blog.slicehost.com/") -->
+      <!-- %li= link_to("Hashrocket", "http://www.hashrocket.com/blog") -->
+      <!-- #community -->
+      <!-- %h3 Other Sites -->
+      <!-- %ul -->
+      <!-- %li= link_to("Pathfinder", "http://www.pathf.com/blogs/") -->
+      <!-- %li= link_to("RailSpikes", "http://railspikes.com/") -->
+      <!-- %li= link_to("Rails Tips", "http://railstips.org/") -->
+      <!-- %li= link_to("Err The Blog", "http://errtheblog.com/") -->
+      <!-- %li= link_to("Merb", "http://merbivore.com") -->
+      <!-- %li= link_to("DataMapper", "http://datamapper.org") -->
+      <!-- %li= link_to("jQuery", "http://jquery.com/") -->
+      <!-- %li= link_to("Rails", "http://www.rubyonrails.org/") -->
+      <!-- %br.clearleft/ -->
+      <!-- About -->
+      <!-- #about -->
+      <!-- .wrap -->
+      <!-- .col -->
+      <!-- %h2 -->
+      <!-- About -->
+      <!-- .block -->
+      <!-- %p -->
+      <!-- I am a recent graduate of -->
+      <!-- = link_to "Virginia Tech.", "http://www.virginiatech.com" -->
+      <!-- I started with Ruby on Rails in early 2006. Now, I am in love with -->
+      <!-- Ruby, Merb, Rails, and the development community surrounding these -->
+      <!-- projects. I always strive to learn, here is my place to share. -->
+      <!-- %br/ -->
+      <!-- %p -->
+      <!-- I am currently in the employ of -->
+      <!-- = link_to "Viget Labs", "http://www.viget.com" -->
+      <!-- as a web developer doing Ruby development. I hope to do great things -->
+      <!-- here. -->
+      <!-- 
+      -->
+      <!-- / Contact -->
+      <!-- #contact -->
+      <!-- .wrap -->
+      <!-- .col -->
+      <!-- %h2 -->
+      <!-- Contact -->
+      <!-- .block -->
+      <!-- #fast -->
+      <!-- %h3 Fast -->
+      <!-- = link_to("tpitale@gmail.com", "mailto:tpitale@gmail.com") -->
+      <!-- = link_to("tony.pitale@gmail.com", "mailto:tony.pitale@gmail.com") -->
+      <!-- = link_to("tony.pitale@viget.com", "mailto:tony.pitale@viget.com") -->
+      <!-- #faster -->
+      <!-- %h3 Faster -->
+      <!-- %b AIM: -->
+      <!-- sicdev -->
+      <!-- %br/ -->
+      <!-- %b IRC: -->
+      <!-- tpitale -->
+      <!-- #fastest -->
+      <!-- %h3 Fastest -->
+      <!-- (571)-294-6561 -->
+      <!-- %br.clearleft/ -->
+      <div id='footer'>
         <div class='wrap'>
-          <div class='col'>
-            <h2>
-              Links
-            </h2>
-          </div>
-          <div class='block'>
-            <div id='people'>
-              <h3>Personal Blogs</h3>
-              <ul>
-                <li><a href="http://drnicwilliams.com/">Dr Nic</a></li>
-                <li><a href="http://www.yehudakatz.com/">Yehuda Katz</a></li>
-                <li><a href="http://brainspl.at/">Ezra Zygmuntowicz</a></li>
-                <li><a href="http://www.sneaq.net/">Patrick Reagan</a></li>
-                <li><a href="http://reinh.com">Reinh</a></li>
-                <li><a href="http://gweezlebur.com/">Michael Ivey</a></li>
-                <li><a href="http://adam.speaksoutofturn.com/">Adam French</a></li>
-                <li><a href="http://www.theamazingrando.com/">Paul Sadauskas</a></li>
-              </ul>
-            </div>
-            <div id='companies'>
-              <h3>Company Blogs</h3>
-              <ul>
-                <li><a href="http://www.viget.com/extend/">Viget</a></li>
-                <li><a href="http://winepos.com/blog.html">ICS</a></li>
-                <li><a href="http://giantrobots.thoughtbot.com/">Thoughbot</a></li>
-                <li><a href="http://github.com/blog">Github</a></li>
-                <li><a href="http://www.37signals.com/svn/">37signals</a></li>
-                <li><a href="http://engineyard.com/blog">Engine Yard</a></li>
-                <li><a href="http://blog.slicehost.com/">SliceHost</a></li>
-                <li><a href="http://www.hashrocket.com/blog">Hashrocket</a></li>
-              </ul>
-            </div>
-            <div id='community'>
-              <h3>Other Sites</h3>
-              <ul>
-                <li><a href="http://www.pathf.com/blogs/">Pathfinder</a></li>
-                <li><a href="http://railspikes.com/">RailSpikes</a></li>
-                <li><a href="http://railstips.org/">Rails Tips</a></li>
-                <li><a href="http://errtheblog.com/">Err The Blog</a></li>
-                <li><a href="http://merbivore.com">Merb</a></li>
-                <li><a href="http://datamapper.org">DataMapper</a></li>
-                <li><a href="http://jquery.com/">jQuery</a></li>
-                <li><a href="http://www.rubyonrails.org/">Rails</a></li>
-              </ul>
-            </div>
-            <br class='clearleft' />
-          </div>
-        </div>
-      </div>
-      <!-- Sampling of flickr images -->
-      <div id='photos'>
-        <div class='wrap'>
-          <div class='col'>
-            <h2>
-              Photos
-            </h2>
-          </div>
-          <div class='block'>
-            <script src='http://www.flickr.com/badge_code_v2.gne?count=7&amp;display=latest&amp;size=s&amp;layout=x&amp;source=user_set&amp;user=41783324%40N00&amp;set=72157604108727991' type='text/javascript'></script>
-            <br class='clearleft' />
-          </div>
+          <p class='about'>
+            I've been called many things:
+            <a href="http://www.github.com/tpitale">Developer,</a>
+            <a href="http://www.vt.edu">Hokie,</a>
+            <a href="http://www.viget.com">Viget Lab Rat,</a>
+            <a href="http://www.flickr.com/photos/thatdbeme/">Photographer</a>
+            and some other names, too gruesome to repeat.
+          </p>
+          <p class='copyright'>
+            © 2009
+            <a href="mailto:tpitale@gmail.com">Tony Pitale</a>
+          </p>
         </div>
       </div>
     </div>
     <script src='/javascripts/jquery.js' type='text/javascript'></script>
     <script src='/javascripts/jquery.scrollTo.js' type='text/javascript'></script>
     <script src='/javascripts/jquery.localscroll.js' type='text/javascript'></script>
+    <script src='/javascripts/jcarousellite.js' type='text/javascript'></script>
     <script type='text/javascript'>
       $(document).ready(function(){$("#header").localScroll();});
     </script>

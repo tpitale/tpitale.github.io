@@ -34,7 +34,7 @@ filter:
     games to something that could be considered completion, if not to complete
     all of the various achievements. If only there were more hours in the day!
 
-#disqus_thread
+  #disqus_thread
 
 %script{:type =>"text/javascript", :src=>"http://disqus.com/forums/tpitale/embed.js"}
 %noscript

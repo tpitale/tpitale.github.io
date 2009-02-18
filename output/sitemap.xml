@@ -2,19 +2,19 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
   <url>
     <loc>http://t.pitale.com/</loc>
-    <lastmod>2009-02-03T22:18:26-05:00</lastmod>
+    <lastmod>2009-02-18T10:44:53-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://t.pitale.com/posts/</loc>
-    <lastmod>2009-02-03T22:18:26-05:00</lastmod>
+    <lastmod>2009-02-18T10:44:53-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://t.pitale.com/feed.xml</loc>
-    <lastmod>2009-02-03T22:18:26-05:00</lastmod>
+    <lastmod>2009-02-18T10:44:53-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -25,20 +25,32 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>http://t.pitale.com/posts/verizon_fios_tv_and_internet_without_actiontec.html</loc>
+    <lastmod>2008-07-08T09:31:33-04:00</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://t.pitale.com/posts/three-games-in-three-weeks-of-midnight-launches.html</loc>
+    <lastmod>2008-11-06T21:34:52-05:00</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>http://t.pitale.com/posts/postgresql_part_1_benefits_for_web_application_development.html</loc>
     <lastmod>2009-01-26T02:11:30-05:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://t.pitale.com/posts/making_the_ics_winepos_website.html</loc>
-    <lastmod>2009-01-12T00:20:12-05:00</lastmod>
+    <loc>http://t.pitale.com/posts/new_site_for_ics_vision_winepos.html</loc>
+    <lastmod>2009-01-07T23:17:04-05:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://t.pitale.com/posts/new_site_for_ics_vision_winepos.html</loc>
-    <lastmod>2009-01-07T23:17:04-05:00</lastmod>
+    <loc>http://t.pitale.com/posts/making_the_ics_winepos_website.html</loc>
+    <lastmod>2009-01-12T00:20:12-05:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
@@ -55,8 +67,8 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://t.pitale.com/posts/three-games-in-three-weeks-of-midnight-launches.html</loc>
-    <lastmod>2008-11-06T21:34:52-05:00</lastmod>
+    <loc>http://t.pitale.com/posts/notes_on_legacy_databases_with_activerecord.html</loc>
+    <lastmod>2008-03-17T10:57:12-04:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
@@ -67,8 +79,8 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://t.pitale.com/posts/upcoming.html</loc>
-    <lastmod>2008-05-27T22:11:10-04:00</lastmod>
+    <loc>http://t.pitale.com/posts/getting_things_done_with_more_than_mail.html</loc>
+    <lastmod>2008-06-04T09:27:02-04:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
@@ -85,38 +97,8 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://t.pitale.com/posts/notes_on_legacy_databases_with_activerecord.html</loc>
-    <lastmod>2008-03-17T10:57:12-04:00</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://t.pitale.com/posts/verizon_fios_tv_and_internet_without_actiontec.html</loc>
-    <lastmod>2008-07-08T09:31:33-04:00</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://t.pitale.com/posts/my_wrists_are_fine_with_apple_computers.html</loc>
-    <lastmod>2008-03-25T00:46:50-04:00</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>http://t.pitale.com/posts/merb_is_not_rails_and_that_is_okay.html</loc>
     <lastmod>2008-05-29T18:33:54-04:00</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://t.pitale.com/posts/slicehost_getting_it_right_right_away.html</loc>
-    <lastmod>2008-03-14T21:33:54-04:00</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://t.pitale.com/posts/webby_series_1.html</loc>
-    <lastmod>2008-04-13T01:21:10-04:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
@@ -127,14 +109,20 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://t.pitale.com/posts/testing_the_slicehost_api.html</loc>
-    <lastmod>2008-03-21T18:29:50-04:00</lastmod>
+    <loc>http://t.pitale.com/posts/slicehost_getting_it_right_right_away.html</loc>
+    <lastmod>2008-03-14T21:33:54-04:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://t.pitale.com/posts/i_prefer_widgets_over_apps_for_getting_things_done.html</loc>
-    <lastmod>2008-07-10T09:29:22-04:00</lastmod>
+    <loc>http://t.pitale.com/posts/my_wrists_are_fine_with_apple_computers.html</loc>
+    <lastmod>2008-03-25T00:46:50-04:00</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://t.pitale.com/posts/who_needs_mac_docking.html</loc>
+    <lastmod>2008-03-18T17:08:41-04:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
@@ -145,14 +133,8 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://t.pitale.com/posts/getting_things_done_with_more_than_mail.html</loc>
-    <lastmod>2008-06-04T09:27:02-04:00</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://t.pitale.com/posts/getting_things_done_with_mail_and_ical.html</loc>
-    <lastmod>2008-03-21T18:16:37-04:00</lastmod>
+    <loc>http://t.pitale.com/posts/upcoming.html</loc>
+    <lastmod>2008-05-27T22:11:10-04:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
@@ -163,14 +145,32 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>http://t.pitale.com/posts/getting_things_done_with_mail_and_ical.html</loc>
+    <lastmod>2008-03-21T18:16:37-04:00</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>http://t.pitale.com/posts/ezra_announces_ey_express.html</loc>
     <lastmod>2008-06-01T14:19:29-04:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://t.pitale.com/posts/who_needs_mac_docking.html</loc>
-    <lastmod>2008-03-18T17:08:41-04:00</lastmod>
+    <loc>http://t.pitale.com/posts/testing_the_slicehost_api.html</loc>
+    <lastmod>2008-03-21T18:29:50-04:00</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://t.pitale.com/posts/webby_series_1.html</loc>
+    <lastmod>2008-04-13T01:21:10-04:00</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://t.pitale.com/posts/i_prefer_widgets_over_apps_for_getting_things_done.html</loc>
+    <lastmod>2008-07-10T09:29:22-04:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>

@@ -53,7 +53,7 @@ filter:
     useful to have backports available when needed and the packages there are
     generally more stable than other random repositories.
     
-#disqus_thread
+  #disqus_thread
 
 %script{:type =>"text/javascript", :src=>"http://disqus.com/forums/tpitale/embed.js"}
 %noscript

@@ -8,7 +8,7 @@ filter:    haml
     %meta{:"http-equiv" => "Content-type", :content => "text/html; charset=utf-8"}/
     %meta{:"name" => "author", :content => @page.author}/
     %meta{:name=>"verify-v1", :content=>"i/cbJtXe1ZDIZNta65CghwcRM/zFMRHIsbR9poU+uwU="}/
-    %title= @page.title unless @page.nil?
+    %title= @page.nil? ? @page.title+" : t.pitale" : "t.pitale"
     %link{:rel=>"shortcut icon", :href=>"/favicon.ico"}
     %link{:rel=>"alternate", :type=>"application/rss+xml", :href=>"http://feeds.feedburner.com/tpitale", :title=>"Atom feed"}
     
@@ -16,31 +16,13 @@ filter:    haml
     %link{:rel=>"stylesheet", :href=>"/css/base.css", :type=>"text/css", :media=>"screen, projection"}/
   %body
     #header
-      .wrap
-        .col
-          %a{:href=>"/"}
-            %img{:src=>"/images/logo.png"}/
-        .block
-          %ul
-            %li
-              = link_to("About", "/#about")
-            %li
-              = link_to("Contact", "/#contact")
-            %li
-              = link_to("Blog", "/#blog")
-            %li
-              = link_to("Portfolio", "/#portfolio")
-            %li
-              = link_to("Links", "/#links")
-            %li
-              = link_to("Photos", "/#photos")
-        %br.clearleft/
     #content
       = @content
 
     %script{:type=>"text/javascript", :src=>"/javascripts/jquery.js"}
     %script{:type=>"text/javascript", :src=>"/javascripts/jquery.scrollTo.js"}
     %script{:type=>"text/javascript", :src=>"/javascripts/jquery.localscroll.js"}
+    %script{:type=>"text/javascript", :src=>"/javascripts/jcarousellite.js"}
     %script{:type=>"text/javascript"}
       $(document).ready(function(){$("#header").localScroll();});
       

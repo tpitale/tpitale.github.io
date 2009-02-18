@@ -50,7 +50,7 @@ filter:
     not worth the  money and neither is MobileMe now, thanks to Google and
     Dropbox.
 
-#disqus_thread
+  #disqus_thread
 
 %script{:type =>"text/javascript", :src=>"http://disqus.com/forums/tpitale/embed.js"}
 %noscript

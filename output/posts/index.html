@@ -4,585 +4,1560 @@
     <meta content='text/html; charset=utf-8' http-equiv='Content-type' />
     <meta name='author' />
     <meta content='i/cbJtXe1ZDIZNta65CghwcRM/zFMRHIsbR9poU+uwU=' name='verify-v1' />
-    <title>t.pitale blog</title>
+    <title>t.pitale</title>
     <link href='/favicon.ico' rel='shortcut icon' />
     <link href='http://feeds.feedburner.com/tpitale' rel='alternate' title='Atom feed' type='application/rss+xml' />
     <!-- Site CSS -->
     <link href='/css/base.css' media='screen, projection' rel='stylesheet' type='text/css' />
   </head>
   <body>
-    <div id='header'>
-      <div class='wrap'>
-        <div class='col'>
-          <a href='/'>
-            <img src='/images/logo.png' />
-          </a>
-        </div>
-        <div class='block'>
-          <ul>
-            <li>
-              <a href="/#about">About</a>
-            </li>
-            <li>
-              <a href="/#contact">Contact</a>
-            </li>
-            <li>
-              <a href="/#blog">Blog</a>
-            </li>
-            <li>
-              <a href="/#portfolio">Portfolio</a>
-            </li>
-            <li>
-              <a href="/#links">Links</a>
-            </li>
-            <li>
-              <a href="/#photos">Photos</a>
-            </li>
-          </ul>
-        </div>
-        <br class='clearleft' />
-      </div>
-    </div>
+    <div id='header'></div>
     <div id='content'>
-      <div id='blog'>
-        <div class='wrap'>
-          <div class='col'>
-            <h1>
-              Blog
-            </h1>
+      <div class='wrap'>
+        <div class='col'></div>
+        <div class='block'>
+          <div id='post'>
+            <h1>Merb and Subdomains with Nginx</h1>
+            <h2>Quick Lessons Learned</h2>
+            <span class='date'>2009-02-03</span>
+            <p>
+              I encountered two issues and learned two quick lessons when deploying a Merb
+              application I have been working on. Aside from the fact that you can use
+              <code>
+                request.subdomains
+              </code>
+              to get an array of subdomains, you must do two little things to get this to
+              play nice when your application is deployed upstream on Nginx (and likely
+              apache, too) as well as handling the same situation in local development.
+            </p>
+            <p>
+              First, in your Nginx configuration file be sure to set the proper header for
+              host, otherwise the host that Merb will see is the name you give to the upstream
+              section of your configuration. To pass this information on correctly, do this:
+              <code>
+                proxy_set_header  Host	 $host;
+              </code>
+              inside the "location" block for your application's root.
+            </p>
+            <p>
+              Second, in order to get the right subdomains, Merb expects you are using a
+              TLD or top-level-domain, such as example.com. If you, like me, are using a
+              local hostname, such as localhost, you aren't going to get anything when
+              you ask for subdomains. So, in /etc/hosts I simply set up a domain pointing
+              to 127.0.0.1 for a place I know I'll never go.
+            </p>
+            <p>
+              I hope these two little tips will help you to avoid some of the trouble I
+              had to deal with, even if it was only 5 minutes of my time, or yours.
+            </p>
+            <div id='disqus_thread'></div>
           </div>
-          <div class='block'>
-            <div id='post'>
-              <h1>Merb and Subdomains with Nginx</h1>
-              <h2>Quick Lessons Learned</h2>
-              <span class='date'>2009-02-03</span>
-              <p>
-                I encountered two issues and learned two quick lessons when deploying a Merb
-                application I have been working on. Aside from the fact that you can use
-                <code>
-                  request.subdomains
-                </code>
-                to get an array of subdomains, you must do two little things to get this to
-                play nice when your application is deployed upstream on Nginx (and likely
-                apache, too) as well as handling the same situation in local development.
-              </p>
-              <p>
-                First, in your Nginx configuration file be sure to set the proper header for
-                host, otherwise the host that Merb will see is the name you give to the upstream
-                section of your configuration. To pass this information on correctly, do this:
-                <code>
-                  proxy_set_header  Host	 $host;
-                </code>
-                inside the "location" block for your application's root.
-              </p>
-              <p>
-                Second, in order to get the right subdomains, Merb expects you are using a
-                TLD or top-level-domain, such as example.com. If you, like me, are using a
-                local hostname, such as localhost, you aren't going to get anything when
-                you ask for subdomains. So, in /etc/hosts I simply set up a domain pointing
-                to 127.0.0.1 for a place I know I'll never go.
-              </p>
-              <p>
-                I hope these two little tips will help you to avoid some of the trouble I
-                had to deal with, even if it was only 5 minutes of my time, or yours.
-              </p>
-            </div>
-            <div id='disqus_thread'></div>
-            <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
-            <noscript>
-              <a href='http://tpitale.disqus.com/?url=ref'>
-                View the discussion thread.
-              </a>
-              <a class='dsq-brlink' href='http://disqus.com'>
-                blog comments powered by
-                <span class='logo-disqus'>
-                  Disqus
-                </span>
-              </a>
-            </noscript>
-            <div id='post'>
-              <h1>PostgreSQL Part 1</h1>
-              <h2>Benefits for Web Application Development</h2>
-              <span class='date'>2009-01-26</span>
-              <p>
-                Most of my days are filled developing with Ruby in frameworks (mostly
-                Rails). I use a large array of industry standard tools in doing so and my
-                favorite of all, and the one most often overlooked, is the database. Of the
-                databases I've worked with, researched, or been witness to,
-                <a href="http://postgresql.org">PostgreSQL</a>
-                is my database of choice. In a series of posts I'd like to cover the
-                reasons I have for this love of mine, some cool things you can do with it,
-                and associated links that I think you might find useful. This first part
-                will cover some potential benefits one might find in using PostgreSQL in
-                web application development, of all places.
-              </p>
-              <h3>Benefits with (insert Ruby Framework here)</h3>
-              <p>
-                Rails with ActiveRecord or Merb with DataMapper are all (with limited
-                exception) designed to be database agnostic. Furthermore, they are intended
-                to abstract away much of the tedium normally associated with dealing in any
-                database. As a result, there is very little direct performance or feature-
-                related benefit to be found by simply using PostgreSQL over say, MySQL.
-              </p>
-              <p>
-                However, there exist a number of plugins and gems that enhance the features
-                normally provided by our framework of choice. A few, in no particular order:
-                <a href="http://github.com/maxim/sexy_pg_constraints/tree/master">sexy_pg_constraints,</a>
-                <a href="http://github.com/pka/acts_as_tsearch/tree/master">acts_as_tsearch,</a>
-                <a href="http://github.com/dylanz/tsearchable/tree/master">tsearchable,</a>
-                <a href="http://github.com/aeden/rails_sql_views/tree/master">rails_sql_views,</a>
-                and
-                <a href="http://github.com/fesplugas/simplified_fk/tree/master">simplified_fk.</a>
-              </p>
-              <p>
-                Maybe then, the benefits are performance related. Unfortunately, neither I,
-                nor anyone else (so far), have reliable benchmarks on this. From everything
-                I've seen, statistics are done by fans or gurus of one side or another and
-                rarely does someone exist who is talented with all the databases being
-                compared. Even if some such person existed, where does one set the baseline?
-                All of the databases that anyone would want to use have performance tweaks
-                that can be performed at a varied level of difficulty. So, who knows? In my
-                opinion, whether a database is fast enough or faster than a competitor is
-                entirely dependent on the situation and the needs of the problem to be
-                solved.
-              </p>
-              <h3>Features</h3>
-              <ul>
-                <li>Triggers (on both statement and row changes)</li>
-                <li>Rules</li>
-                <li>Constraints</li>
-                <li>Partitioning</li>
-                <li>Extremely advanced selects, Views</li>
-                <li>Full procedural languages including: ruby, tcl, perl, python, sql</li>
-                <li>Security (basic, ident, kerberos, pam, ldap, and more)</li>
-                <li>Large Copy</li>
-                <li>Built-in Full Text Search</li>
-                <li>Extensive datatype collection, custom types</li>
-              </ul>
-              <p>
-                If you don't need any of these features there are still many reasons to
-                consider using PostgreSQL. Some examples: fantastic documentation for every
-                production version, broad user community, stability, and in certain cases,
-                performance. There's always the little things: bash completion, command
-                line tools for creation/deletion of users and databases, libraries for GIS,
-                every version is completely open source, performance tuning in PostgreSQL
-                <a href="http://www.varlena.com/GeneralBits/Tidbits/perf.html">is unbelievably flexible for the situation and data in use.</a>
-              </p>
-              <p>
-                Now that I've gotten all that off of my chest, I hope you are at least
-                intrigued. I know I have yet to share anything of real value but, fear not,
-                as I will be back soon with real examples of usage and some other more
-                useful information.
-              </p>
-            </div>
-            <div id='disqus_thread'></div>
-            <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
-            <noscript>
-              <a href='http://tpitale.disqus.com/?url=ref'>
-                View the discussion thread.
-              </a>
-              <a class='dsq-brlink' href='http://disqus.com'>
-                blog comments powered by
-                <span class='logo-disqus'>
-                  Disqus
-                </span>
-              </a>
-            </noscript>
-            <div id='post'>
-              <h1>Making the New ICS Website</h1>
-              <h2>Thanks to Webby, Haml, and Ruby</h2>
-              <span class='date'>2009-01-12</span>
-              <p>
-                Last week I posted on the new ICS website I launched at
-                <a href="http://winepos.com">winepos.com</a>
-                which is built using the same little ruby gem as this site,
-                <a href="http://github.com/TwP/webby/tree/master">Webby.</a>
-                This week, I'd like to go into a little more detail on some of the things
-                I did in creating their new site. Aside from what little design work I did
-                (admittedly not my strongest ability) I will simply be covering many of the
-                cool things you can do with Webby and a couple of tips and gotchas.
-              </p>
-              <p>
-                The first step is obviously to create a new project. The webby-gen command
-                should handle things nicely. I used the 'website' template because that was
-                what I was building. From the basic project, I converted and modified all
-                of the files created (layout, templates) to use Haml and to fit with a very
-                basic structure that I was going to use.
-              </p>
-              <p>
-                After the basic structure was in place, I created files for all of the site
-                pages I was going to need. I also created directories for the feature pages
-                and for the blog posts. At this point, I knew that I was going to be making
-                lots of blog posts and so I created a new template for a blog page. A tip
-                about templates, and pages in general: you can add any variables you would
-                like to the header section of page, and later sort a search on it. Also,
-                you can use Erb in a template and it will be interpreted when generating a
-                new page from the template. For example, in order to get a solid created_at
-                timestamp, I use Time.now.to_y inside an Erb tag.
-              </p>
-              <p>
-                As I started to develop the site I discovered I was reusing pieces of
-                content more and more frequently. In Rails/Merb it's trivial to create a
-                partial snippet of content, and guess what, it's just as easy using Webby.
-                The only thing to make a note of is that partials are looked for in the
-                same path as a page being rendered. In order to share across different sub-
-                directories you must add a preceding forward slash. For example, this:
-                <code>
-                  render :partial => "/newsletter_form"
-                </code>
-                would search for a partial named '_newsletter_form.txt' in the root of the
-                content folder. Also note that a different partial can be rendered by a
-                layout calling partial from the different sub-directories. The default
-                layout could call use partial 'footer' and both the blog and the feature
-                folders could have that footer partial with different structure or content.
-              </p>
-              <p>
-                The last thing I'll cover is making an atom feed from a set of pages. A
-                similar technique can be used to make an xml sitemap for Google and other
-                search engines. A feed is simply a page that has the extension set to xml
-                and the markup content of which results in valid xml for the required
-                specification. Be sure to set the layout to nil! As for the entries, I like
-                to have all of my posts available in the feed, so I use the symbol :all to
-                return all pages from find. For example:
-                <code>
-                  @pages.find(:all, :in_directory => 'blog', :sort_by => 'created_at', :reverse => true)
-                </code>
-                The alternative would be to set a limit of some sort, like this:
-                <code>
-                  @pages.find(:limit => 20, :in_directory => 'blog', :sort_by => 'created_at', :reverse => true)
-                </code>
-              </p>
-              <p>
-                If you're looking to make a website that is going to be just HTML and you
-                don't want to run a webserver aside from Apache or Nginx, Webby is probably
-                the way to go. I certainly love it, and will continue to make static
-                websites using it.
-              </p>
-            </div>
-            <div id='disqus_thread'></div>
-            <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
-            <noscript>
-              <a href='http://tpitale.disqus.com/?url=ref'>
-                View the discussion thread.
-              </a>
-              <a class='dsq-brlink' href='http://disqus.com'>
-                blog comments powered by
-                <span class='logo-disqus'>
-                  Disqus
-                </span>
-              </a>
-            </noscript>
-            <div id='post'>
-              <h1>New ICS Vision Site</h1>
-              <h2>winepos.com</h2>
-              <span class='date'>2009-01-07</span>
-              <p>
-                After starting slowly about 6 months ago, I finally launched the new ICS
-                website for their lead product, Vision. The last major commit before launch
-                was on Sunday night and by the end of Monday most of the nameservers had
-                picked up the change. So go check out the site at
-                <a href="http://winepos.com">winepos.com</a>
-              </p>
-              <p>
-                For those that don't know, ICS is a software company founded 25 years ago
-                to serve the retail liquor industry, exclusively. Vision is the result of
-                all of their effort. Vision provides an amazing number of features and all
-                of the controls required for inventory management, ordering, tracking, and,
-                of course, point-of-sale.
-              </p>
-              <p>
-                The new site is built with
-                <a href="http://webby.rubyforge.org">Webby</a>
-                <a href="http://github.com/TwP/webby/tree/master">(source on github)</a>
-                and is generated out to HTML. Javascript is handled using jQuery and a few
-                other plugins.
-              </p>
-            </div>
-            <div id='disqus_thread'></div>
-            <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
-            <noscript>
-              <a href='http://tpitale.disqus.com/?url=ref'>
-                View the discussion thread.
-              </a>
-              <a class='dsq-brlink' href='http://disqus.com'>
-                blog comments powered by
-                <span class='logo-disqus'>
-                  Disqus
-                </span>
-              </a>
-            </noscript>
-            <div id='post'>
-              <h1>I Normally Love Debian</h1>
-              <h2>As An Application Developer, It Can Hurt</h2>
-              <span class='date'>2008-12-06</span>
-              <p>
-                For whatever reason, I needed to upgrade my apt-get-installed copy of
-                Postgresql from 8.1 to 8.3. Now, I can understand why, from a sysadmin
-                viewpoint, or from the maintainers view, 8.3 is not as stable as previous
-                versions. However, as a user, or as an application developer, 8.3 is a much
-                better option. It is also certainly reasonable to want to use the new stuff
-                available in a new version. Other system choices enable me to use the
-                software I want or need. I've been running 8.3 for months on Mac OS X.
-              </p>
-              <p>
-                On Debian Etch it is generally a good idea to add the backports repository
-                to the list of sources for apt to use. This gave me the version of
-                Postgresql that I wished to use but, unfortunately, it fails to uninstall
-                all of the common libraries for the client and server, as well as the dev
-                library (libpq-dev) for the appropriate version. This failure in upgrading
-                is due to the ability of Postgres to run multiple versioned "clusters" at
-                the same time. I however, uninstalled (without doing --purge, my mistake)
-                version 8.1 and installed 8.3 and was not trying to run them together.
-              </p>
-              <p>
-                The reason this caused problems for me was the native postgres gem for ruby
-                was compiling itself with the 8.1 headers and so, data_objects and dm-core
-                would refuse to connect to 8.3. Especially infuriating was that I could see
-                the server running and could connect with the psql client using the same
-                connection information I was providing to DataMapper.
-              </p>
-              <p>
-                The solution was to uninstall everything postgresql related using apt and
-                the --purge flag. Taking special care to include libpq4 and libpq-dev in
-                that list. Uninstall the postgres gem, as well (and possibly data_objects
-                and dm-core).
-              </p>
-              <p>
-                Now add "deb http://www.backports.org/debian etch-backports main contrib
-                non-free" into /etc/apt/sources.list and do sudo apt-get update to pull the
-                list of packages. Now reinstall postgresql-8.3, libpq5, and libpq-dev and
-                be sure to pass the -t etch-backports option so that all the required libs
-                get pulled from that repository.
-              </p>
-              <p>
-                Finish up by reinstalling all the required gems and all should be well.
-                Note that my experience here is not typical, and in general, being strict
-                about package stability is generally a good cause. However, it is a very
-                useful to have backports available when needed and the packages there are
-                generally more stable than other random repositories.
-              </p>
-            </div>
-            <div id='disqus_thread'></div>
-            <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
-            <noscript>
-              <a href='http://tpitale.disqus.com/?url=ref'>
-                View the discussion thread.
-              </a>
-              <a class='dsq-brlink' href='http://disqus.com'>
-                blog comments powered by
-                <span class='logo-disqus'>
-                  Disqus
-                </span>
-              </a>
-            </noscript>
-            <div id='post'>
-              <h1>Do We Really Need MobileMe?</h1>
-              <h2>Getting By On Google and Dropbox</h2>
-              <span class='date'>2008-12-04</span>
-              <p>
-                MobileMe is a pretty awesome service. However, having used it for at least
-                six months, I'm pretty well decided that it is not quite worth $100 a year.
-                In addition, Google has just released, officially, it's support for CalDAV
-                syncing between iCal and Google Calendar. Google's support of IMAP has also
-                grown strong over this time period. Last, the final important piece of the
-                puzzle is
-                <a href="http://www.getdropbox.com">Dropbox</a>
-                , which is now open for public beta and works very well.
-              </p>
-              <p>
-                Setting up IMAP with google is simple and you can find directions
-                <a href="http://mail.google.com/support/bin/answer.py?hl=en&amp;answer=75725">here.</a>
-              </p>
-              <p>
-                Setting up Google's iCal support is almost as easy, especially with their
-                set-up tool. Directions can be found
-                <a href="http://www.google.com/support/calendar/bin/answer.py?answer=99358#ical">here.</a>
-              </p>
-              <p>
-                The benefits of these combined services speak for themselves, but in any
-                case, I'll repeat them here. Dropbox serves to replace the need for iDisk
-                sharing since it works by synchronizing all of the files within given
-                directories between all of your computers. Dropbox is not only useable on
-                Mac OS X and Windows, it now works on Linux (Ubuntu only). CalDAV is also
-                completely cross-platform using a product from Mozilla,
-                <a href="http://www.mozilla.org/projects/calendar/">Sunbird.</a>
-                Of course, given my love of OS X, CalDAV works extremely well within iCal
-                on Leopard. Finally, email, being the most important of all, works on any
-                email client that supports IMAP (almost every client). Not only this but,
-                it magically syncs between all computers and my iPhone.
-              </p>
-              <p>
-                There are a few remaining features that I don't consider to be critical to
-                the service because I don't use them or because there are other services
-                that have existed for some time to handle the feature. Photo sharing, for
-                example, is more than capably covered by Flickr. The greatest drawback, in
-                my opinion, of this piecemeal approach is the lack of a unified website for
-                when you are away from your computer. All-in-all, the MobileMe website is
-                not worth the  money and neither is MobileMe now, thanks to Google and
-                Dropbox.
-              </p>
-            </div>
-            <div id='disqus_thread'></div>
-            <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
-            <noscript>
-              <a href='http://tpitale.disqus.com/?url=ref'>
-                View the discussion thread.
-              </a>
-              <a class='dsq-brlink' href='http://disqus.com'>
-                blog comments powered by
-                <span class='logo-disqus'>
-                  Disqus
-                </span>
-              </a>
-            </noscript>
-            <div id='post'>
-              <h1>Three Games</h1>
-              <h2>In Three Weeks of Midnight Launches</h2>
-              <span class='date'>2008-11-06</span>
-              <p>
-                The past three weeks (including tonight) have seen the launch of the three
-                biggest games of 2008. Two weeks ago was the launch of Fable 2, the much
-                anticipated sequel to an award winning, though short, game by the famed
-                Peter Molyneux. Much of the gameplay has been tweaked, the game is much
-                longer, and you have a friendly dog to aid your character. Though I am not
-                done with the game, my roommate (who is on his second time through) are
-                enjoying it thoroughly. Last week, Chris and I were lucky enough to attend
-                the launch of Bethesda's version of Fallout, number 3. I have spent more
-                time playing through Fallout 3 and, though I'm not done, I would say it is
-                more than worthy of a "Best Game of the Year" title.
-              </p>
-              <p>
-                Lastly, tonight, I'll be waiting for Gears of War 2! The original Gears of
-                War was very probably my favorite game a short while ago. Aside from Halo 3
-                it was the primary reason that I purchased an Xbox 360 while in college. It
-                has won many, many awards in the past, and I expect it will win many, many
-                more in its second iteration.
-              </p>
-              <p>
-                I hope, for the first time in my life, I can play through all of these
-                games to something that could be considered completion, if not to complete
-                all of the various achievements. If only there were more hours in the day!
-              </p>
-            </div>
-            <div id='disqus_thread'></div>
-            <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
-            <noscript>
-              <a href='http://tpitale.disqus.com/?url=ref'>
-                View the discussion thread.
-              </a>
-              <a class='dsq-brlink' href='http://disqus.com'>
-                blog comments powered by
-                <span class='logo-disqus'>
-                  Disqus
-                </span>
-              </a>
-            </noscript>
-            
-            <div id='post'>
-              <h1>Vision Online, Now Focus</h1>
-              <h2>The exciting tale of a Merb Application and branding</h2>
-              <span class='date'>2008-03-11</span>
-              <p>
-                I have spent my free time, nights and weekends, working to create a new
-                version of Vision, online. For those that do not know, Vision is the
-                peerless, just-in-time, inventory control and point of sale system for the
-                retail liquor market.
-              </p>
-              <p>
-                The project was originally titled Vision Online. That name is simple and
-                it works with all of the branding that
-                <a href="http://www.ics-nj.com">ICS</a>
-                has already done. However, this product heads out on its own and addresses
-                a slightly new market. As such, a new name was a must.
-              </p>
-              <p>
-                Thanks to a stroke of genius by my associate Chris, we've switched to the
-                name Focus. The name is brilliant for three, important, reasons. First,
-                the original product is named Vision and Focus is just that, a focusing of
-                the features and benefits of using Vision. Second, the use of this
-                product is intended to focus the users' inventory until it is as close as
-                possible to just-in-time. Lastly, a function of a person's literal vision
-                is the ability to focus. We are hoping that this reincarnation of Vision
-                will enable a user to focus on getting their inventory in line and online.
-              </p>
-              <p>
-                Solidifying this branding was important for me, as a developer, because it
-                provides a northern star, a guiding light, to my goal. The meaning that
-                branding holds for a user is realized many times over, for me. It is an
-                important aspect of development, keeping the goals, ideals, and vision of
-                the product, in mind.
-              </p>
-            </div>
-            <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
-            <noscript>
-              <a href='http://tpitale.disqus.com/?url=ref'>
-                View the discussion thread.
-              </a>
-              <a class='dsq-brlink' href='http://disqus.com'>
-                blog comments powered by
-                <span class='logo-disqus'>
-                  Disqus
-                </span>
-              </a>
-            </noscript>
-            <div id='post'>
-              <h1>In the Coming Days</h1>
-              <h2>So Much to Do</h2>
-              <span class='date'>2008-05-27</span>
-              <p>
-                The short story is:
-                <a href="http://www.viget.com">Viget</a>
-                is being extremely generous and is paying for me to travel to
-                <a href="http://en.oreilly.com/rails2008/public/content/home">RailsConf</a>
-                this year. Despite the fact that I have only been in their employ for three
-                whole weeks. I'm extremely happy working there and I only hope that I am
-                living up to their expectations of me.
-              </p>
-              <p>
-                I am excited to go to RailsConf for two reasons. First, I have never been
-                to a conference before, any conference, and I really expect to learn a lot
-                in the sessions I am enrolled in. Second, I may finally get to meet many of
-                the people I talk to on the irc chat rooms for Merb and DataMapper. People
-                like Yehuda Katz, Ezra Z., Adam French (who I think is going), and a
-                coworker from Viget South, Ben Scofield, who will be speaking, as well. All
-                in all I have extremely high hopes for this trip.
-              </p>
-              <p>
-                In other news, I've got draft copies of many, many blog posts. The problem
-                is trying to decide where they will be appropriate. Some are about the beta
-                for
-                <a href="http://www.getdropbox.com">Dropbox</a>
-                (my favorite service, at the moment), including some nifty tricks. Another
-                post is a followup to Getting Things Done with Mail and iCal combined with
-                a review of the GTD application, Things. On the
-                <a href="http://www.viget.com/extend/">Viget Extend blog</a>
-                , I've got some ideas for posts on topics ranging from Microsoft Exchange
-                calendar subscriptions in iCal to accessing the LDAP global address list
-                from Address Book.
-              </p>
-            </div>
-            <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
-            <noscript>
-              <a href='http://tpitale.disqus.com/?url=ref'>
-                View the discussion thread.
-              </a>
-              <a class='dsq-brlink' href='http://disqus.com'>
-                blog comments powered by
-                <span class='logo-disqus'>
-                  Disqus
-                </span>
-              </a>
-            </noscript>
+          <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
+          <noscript>
+            <a href='http://tpitale.disqus.com/?url=ref'>
+              View the discussion thread.
+            </a>
+            <a class='dsq-brlink' href='http://disqus.com'>
+              blog comments powered by
+              <span class='logo-disqus'>
+                Disqus
+              </span>
+            </a>
+          </noscript>
+          <div id='post'>
+            <h1>Verizon Fios Internet &amp; TV</h1>
+            <h2>Using Your Own Router, Not the Actiontec Router</h2>
+            <span class='date'>2008-07-08</span>
+            <p>
+              <h3>The basic steps are as follows:</h3>
+              <ol>
+                <li>Order Verizon Fios</li>
+                <li>
+                  During installation have the installer turn on the ethernet port in the
+                  MOCA, not the coax
+                </li>
+                <li>Have the installer leave you with a "NIM"</li>
+                <li>Setup your router as you would have with any other ISP</li>
+                <li>Connect the "NIM" to your router</li>
+                <li>Connect the "NIM" to a coax port in your house</li>
+                <li>
+                  Have the installer connect and activate your television set-top-boxes
+                  (STB)
+                </li>
+              </ol>
+            </p>
+            <h3>Now for some explanation</h3>
+            <p>
+              I think ordering should be pretty self-explanatory. However, I have not
+              said anything about why a sane person would wish to do this instead of
+              letting the nice Verizon installer do their job. It's all in the hardware
+              Using the Actiontec router Verizon provides is fine, if you've never had a
+              wireless home network before. For the rest of us, being allowed to use our
+              own, existing, setup is not possible without the foreknowledge or the will
+              to fight for the information.
+            </p>
+            <h3>Onto the more technical stuff</h3>
+            <p>
+              The MOCA is the box that is left outside of your house. Essentially, it
+              receives and interprets the signal. It takes the place of what we once
+              called a MODEM. In this box, there are multiple connections, one of which
+              is the standard ethernet port any Linksys, DLink, or Apple router knows and
+              loves. There is also a port that passes the network information over a coax
+              (short for coaxial) cable. This is the port left on by Verizon normally
+              because the Actiontec router (which, with a simple google search, one will
+              find is nearly worthless) is intended to work with it. Using the ethernet
+              port is required so that every other brand of standard router will operate.
+            </p>
+            <p>
+              Next, we set up our router in much the same way it would be set up with a
+              DSL or Cable ISP. Verizon uses the standard, DHCP, to give your router an
+              IP address. At this point, assuming the internet has been activated by the
+              installer, you should be able to get on the internet at the wonderfully
+              blazing speeds that Fios provides.
+            </p>
+            <p>
+              The last major step is asking the installer to give you a "NIM". I never
+              found out what "NIM" stood for, but it's purpose is clear. In order to
+              get access to the programming guide or to video-on-demand services your
+              STBs must have internet access, too. The "NIM" should have two ports. The
+              first is an ethernet port and the second is a coax connector. Can you guess
+              what to do? Plug an ethernet cable from your router into the "NIM" and plug
+              a coax cable into the other port. The final coax connection should be made
+              to any coax cable outlet in your home as they are all inter-connected. The
+              "NIM" acts as translator in place of the Actiontec router and provides
+              internet access for the STBs to use. The STBs do have ethernet ports (at
+              least the latest Motorola box Verizon provided) but internet access does
+              not appear to be the purpose, but rather, home network connection for
+              certain media-sharing capabilities (music, movies, pictures to the TV).
+            </p>
+            <p>
+              At this point, the installer should be able to simply plug in all of your
+              STBs and activate them as needed through Verizon.
+            </p>
+            <p>
+              Disclaimer: I am not a Verizon technician. If for some strange reason any
+              of these instructions mess up your system I take no responsibility as
+              these are only the methods that worked FOR ME. Your Mileage May Vary!
+            </p>
           </div>
+          <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
+          <noscript>
+            <a href='http://tpitale.disqus.com/?url=ref'>
+              View the discussion thread.
+            </a>
+            <a class='dsq-brlink' href='http://disqus.com'>
+              blog comments powered by
+              <span class='logo-disqus'>
+                Disqus
+              </span>
+            </a>
+          </noscript>
+          
+          <div id='post'>
+            <h1>Three Games</h1>
+            <h2>In Three Weeks of Midnight Launches</h2>
+            <span class='date'>2008-11-06</span>
+            <p>
+              The past three weeks (including tonight) have seen the launch of the three
+              biggest games of 2008. Two weeks ago was the launch of Fable 2, the much
+              anticipated sequel to an award winning, though short, game by the famed
+              Peter Molyneux. Much of the gameplay has been tweaked, the game is much
+              longer, and you have a friendly dog to aid your character. Though I am not
+              done with the game, my roommate (who is on his second time through) are
+              enjoying it thoroughly. Last week, Chris and I were lucky enough to attend
+              the launch of Bethesda's version of Fallout, number 3. I have spent more
+              time playing through Fallout 3 and, though I'm not done, I would say it is
+              more than worthy of a "Best Game of the Year" title.
+            </p>
+            <p>
+              Lastly, tonight, I'll be waiting for Gears of War 2! The original Gears of
+              War was very probably my favorite game a short while ago. Aside from Halo 3
+              it was the primary reason that I purchased an Xbox 360 while in college. It
+              has won many, many awards in the past, and I expect it will win many, many
+              more in its second iteration.
+            </p>
+            <p>
+              I hope, for the first time in my life, I can play through all of these
+              games to something that could be considered completion, if not to complete
+              all of the various achievements. If only there were more hours in the day!
+            </p>
+            <div id='disqus_thread'></div>
+          </div>
+          <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
+          <noscript>
+            <a href='http://tpitale.disqus.com/?url=ref'>
+              View the discussion thread.
+            </a>
+            <a class='dsq-brlink' href='http://disqus.com'>
+              blog comments powered by
+              <span class='logo-disqus'>
+                Disqus
+              </span>
+            </a>
+          </noscript>
+          <div id='post'>
+            <h1>PostgreSQL Part 1</h1>
+            <h2>Benefits for Web Application Development</h2>
+            <span class='date'>2009-01-26</span>
+            <p>
+              Most of my days are filled developing with Ruby in frameworks (mostly
+              Rails). I use a large array of industry standard tools in doing so and my
+              favorite of all, and the one most often overlooked, is the database. Of the
+              databases I've worked with, researched, or been witness to,
+              <a href="http://postgresql.org">PostgreSQL</a>
+              is my database of choice. In a series of posts I'd like to cover the
+              reasons I have for this love of mine, some cool things you can do with it,
+              and associated links that I think you might find useful. This first part
+              will cover some potential benefits one might find in using PostgreSQL in
+              web application development, of all places.
+            </p>
+            <h3>Benefits with (insert Ruby Framework here)</h3>
+            <p>
+              Rails with ActiveRecord or Merb with DataMapper are all (with limited
+              exception) designed to be database agnostic. Furthermore, they are intended
+              to abstract away much of the tedium normally associated with dealing in any
+              database. As a result, there is very little direct performance or feature-
+              related benefit to be found by simply using PostgreSQL over say, MySQL.
+            </p>
+            <p>
+              However, there exist a number of plugins and gems that enhance the features
+              normally provided by our framework of choice. A few, in no particular order:
+              <a href="http://github.com/maxim/sexy_pg_constraints/tree/master">sexy_pg_constraints,</a>
+              <a href="http://github.com/pka/acts_as_tsearch/tree/master">acts_as_tsearch,</a>
+              <a href="http://github.com/dylanz/tsearchable/tree/master">tsearchable,</a>
+              <a href="http://github.com/aeden/rails_sql_views/tree/master">rails_sql_views,</a>
+              and
+              <a href="http://github.com/fesplugas/simplified_fk/tree/master">simplified_fk.</a>
+            </p>
+            <p>
+              Maybe then, the benefits are performance related. Unfortunately, neither I,
+              nor anyone else (so far), have reliable benchmarks on this. From everything
+              I've seen, statistics are done by fans or gurus of one side or another and
+              rarely does someone exist who is talented with all the databases being
+              compared. Even if some such person existed, where does one set the baseline?
+              All of the databases that anyone would want to use have performance tweaks
+              that can be performed at a varied level of difficulty. So, who knows? In my
+              opinion, whether a database is fast enough or faster than a competitor is
+              entirely dependent on the situation and the needs of the problem to be
+              solved.
+            </p>
+            <h3>Features</h3>
+            <ul>
+              <li>Triggers (on both statement and row changes)</li>
+              <li>Rules</li>
+              <li>Constraints</li>
+              <li>Partitioning</li>
+              <li>Extremely advanced selects, Views</li>
+              <li>Full procedural languages including: ruby, tcl, perl, python, sql</li>
+              <li>Security (basic, ident, kerberos, pam, ldap, and more)</li>
+              <li>Large Copy</li>
+              <li>Built-in Full Text Search</li>
+              <li>Extensive datatype collection, custom types</li>
+            </ul>
+            <p>
+              If you don't need any of these features there are still many reasons to
+              consider using PostgreSQL. Some examples: fantastic documentation for every
+              production version, broad user community, stability, and in certain cases,
+              performance. There's always the little things: bash completion, command
+              line tools for creation/deletion of users and databases, libraries for GIS,
+              every version is completely open source, performance tuning in PostgreSQL
+              <a href="http://www.varlena.com/GeneralBits/Tidbits/perf.html">is unbelievably flexible for the situation and data in use.</a>
+            </p>
+            <p>
+              Now that I've gotten all that off of my chest, I hope you are at least
+              intrigued. I know I have yet to share anything of real value but, fear not,
+              as I will be back soon with real examples of usage and some other more
+              useful information.
+            </p>
+            <div id='disqus_thread'></div>
+          </div>
+          <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
+          <noscript>
+            <a href='http://tpitale.disqus.com/?url=ref'>
+              View the discussion thread.
+            </a>
+            <a class='dsq-brlink' href='http://disqus.com'>
+              blog comments powered by
+              <span class='logo-disqus'>
+                Disqus
+              </span>
+            </a>
+          </noscript>
+          <div id='post'>
+            <h1>New ICS Vision Site</h1>
+            <h2>winepos.com</h2>
+            <span class='date'>2009-01-07</span>
+            <p>
+              After starting slowly about 6 months ago, I finally launched the new ICS
+              website for their lead product, Vision. The last major commit before launch
+              was on Sunday night and by the end of Monday most of the nameservers had
+              picked up the change. So go check out the site at
+              <a href="http://winepos.com">winepos.com</a>
+            </p>
+            <p>
+              For those that don't know, ICS is a software company founded 25 years ago
+              to serve the retail liquor industry, exclusively. Vision is the result of
+              all of their effort. Vision provides an amazing number of features and all
+              of the controls required for inventory management, ordering, tracking, and,
+              of course, point-of-sale.
+            </p>
+            <p>
+              The new site is built with
+              <a href="http://webby.rubyforge.org">Webby</a>
+              <a href="http://github.com/TwP/webby/tree/master">(source on github)</a>
+              and is generated out to HTML. Javascript is handled using jQuery and a few
+              other plugins.
+            </p>
+            <div id='disqus_thread'></div>
+          </div>
+          <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
+          <noscript>
+            <a href='http://tpitale.disqus.com/?url=ref'>
+              View the discussion thread.
+            </a>
+            <a class='dsq-brlink' href='http://disqus.com'>
+              blog comments powered by
+              <span class='logo-disqus'>
+                Disqus
+              </span>
+            </a>
+          </noscript>
+          <div id='post'>
+            <h1>Making the New ICS Website</h1>
+            <h2>Thanks to Webby, Haml, and Ruby</h2>
+            <span class='date'>2009-01-12</span>
+            <p>
+              Last week I posted on the new ICS website I launched at
+              <a href="http://winepos.com">winepos.com</a>
+              which is built using the same little ruby gem as this site,
+              <a href="http://github.com/TwP/webby/tree/master">Webby.</a>
+              This week, I'd like to go into a little more detail on some of the things
+              I did in creating their new site. Aside from what little design work I did
+              (admittedly not my strongest ability) I will simply be covering many of the
+              cool things you can do with Webby and a couple of tips and gotchas.
+            </p>
+            <p>
+              The first step is obviously to create a new project. The webby-gen command
+              should handle things nicely. I used the 'website' template because that was
+              what I was building. From the basic project, I converted and modified all
+              of the files created (layout, templates) to use Haml and to fit with a very
+              basic structure that I was going to use.
+            </p>
+            <p>
+              After the basic structure was in place, I created files for all of the site
+              pages I was going to need. I also created directories for the feature pages
+              and for the blog posts. At this point, I knew that I was going to be making
+              lots of blog posts and so I created a new template for a blog page. A tip
+              about templates, and pages in general: you can add any variables you would
+              like to the header section of page, and later sort a search on it. Also,
+              you can use Erb in a template and it will be interpreted when generating a
+              new page from the template. For example, in order to get a solid created_at
+              timestamp, I use Time.now.to_y inside an Erb tag.
+            </p>
+            <p>
+              As I started to develop the site I discovered I was reusing pieces of
+              content more and more frequently. In Rails/Merb it's trivial to create a
+              partial snippet of content, and guess what, it's just as easy using Webby.
+              The only thing to make a note of is that partials are looked for in the
+              same path as a page being rendered. In order to share across different sub-
+              directories you must add a preceding forward slash. For example, this:
+              <code>
+                render :partial => "/newsletter_form"
+              </code>
+              would search for a partial named '_newsletter_form.txt' in the root of the
+              content folder. Also note that a different partial can be rendered by a
+              layout calling partial from the different sub-directories. The default
+              layout could call use partial 'footer' and both the blog and the feature
+              folders could have that footer partial with different structure or content.
+            </p>
+            <p>
+              The last thing I'll cover is making an atom feed from a set of pages. A
+              similar technique can be used to make an xml sitemap for Google and other
+              search engines. A feed is simply a page that has the extension set to xml
+              and the markup content of which results in valid xml for the required
+              specification. Be sure to set the layout to nil! As for the entries, I like
+              to have all of my posts available in the feed, so I use the symbol :all to
+              return all pages from find. For example:
+              <code>
+                @pages.find(:all, :in_directory => 'blog', :sort_by => 'created_at', :reverse => true)
+              </code>
+              The alternative would be to set a limit of some sort, like this:
+              <code>
+                @pages.find(:limit => 20, :in_directory => 'blog', :sort_by => 'created_at', :reverse => true)
+              </code>
+            </p>
+            <p>
+              If you're looking to make a website that is going to be just HTML and you
+              don't want to run a webserver aside from Apache or Nginx, Webby is probably
+              the way to go. I certainly love it, and will continue to make static
+              websites using it.
+            </p>
+            <div id='disqus_thread'></div>
+          </div>
+          <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
+          <noscript>
+            <a href='http://tpitale.disqus.com/?url=ref'>
+              View the discussion thread.
+            </a>
+            <a class='dsq-brlink' href='http://disqus.com'>
+              blog comments powered by
+              <span class='logo-disqus'>
+                Disqus
+              </span>
+            </a>
+          </noscript>
+          <div id='post'>
+            <h1>I Normally Love Debian</h1>
+            <h2>As An Application Developer, It Can Hurt</h2>
+            <span class='date'>2008-12-06</span>
+            <p>
+              For whatever reason, I needed to upgrade my apt-get-installed copy of
+              Postgresql from 8.1 to 8.3. Now, I can understand why, from a sysadmin
+              viewpoint, or from the maintainers view, 8.3 is not as stable as previous
+              versions. However, as a user, or as an application developer, 8.3 is a much
+              better option. It is also certainly reasonable to want to use the new stuff
+              available in a new version. Other system choices enable me to use the
+              software I want or need. I've been running 8.3 for months on Mac OS X.
+            </p>
+            <p>
+              On Debian Etch it is generally a good idea to add the backports repository
+              to the list of sources for apt to use. This gave me the version of
+              Postgresql that I wished to use but, unfortunately, it fails to uninstall
+              all of the common libraries for the client and server, as well as the dev
+              library (libpq-dev) for the appropriate version. This failure in upgrading
+              is due to the ability of Postgres to run multiple versioned "clusters" at
+              the same time. I however, uninstalled (without doing --purge, my mistake)
+              version 8.1 and installed 8.3 and was not trying to run them together.
+            </p>
+            <p>
+              The reason this caused problems for me was the native postgres gem for ruby
+              was compiling itself with the 8.1 headers and so, data_objects and dm-core
+              would refuse to connect to 8.3. Especially infuriating was that I could see
+              the server running and could connect with the psql client using the same
+              connection information I was providing to DataMapper.
+            </p>
+            <p>
+              The solution was to uninstall everything postgresql related using apt and
+              the --purge flag. Taking special care to include libpq4 and libpq-dev in
+              that list. Uninstall the postgres gem, as well (and possibly data_objects
+              and dm-core).
+            </p>
+            <p>
+              Now add "deb http://www.backports.org/debian etch-backports main contrib
+              non-free" into /etc/apt/sources.list and do sudo apt-get update to pull the
+              list of packages. Now reinstall postgresql-8.3, libpq5, and libpq-dev and
+              be sure to pass the -t etch-backports option so that all the required libs
+              get pulled from that repository.
+            </p>
+            <p>
+              Finish up by reinstalling all the required gems and all should be well.
+              Note that my experience here is not typical, and in general, being strict
+              about package stability is generally a good cause. However, it is a very
+              useful to have backports available when needed and the packages there are
+              generally more stable than other random repositories.
+            </p>
+            <div id='disqus_thread'></div>
+          </div>
+          <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
+          <noscript>
+            <a href='http://tpitale.disqus.com/?url=ref'>
+              View the discussion thread.
+            </a>
+            <a class='dsq-brlink' href='http://disqus.com'>
+              blog comments powered by
+              <span class='logo-disqus'>
+                Disqus
+              </span>
+            </a>
+          </noscript>
+          <div id='post'>
+            <h1>Do We Really Need MobileMe?</h1>
+            <h2>Getting By On Google and Dropbox</h2>
+            <span class='date'>2008-12-04</span>
+            <p>
+              MobileMe is a pretty awesome service. However, having used it for at least
+              six months, I'm pretty well decided that it is not quite worth $100 a year.
+              In addition, Google has just released, officially, it's support for CalDAV
+              syncing between iCal and Google Calendar. Google's support of IMAP has also
+              grown strong over this time period. Last, the final important piece of the
+              puzzle is
+              <a href="http://www.getdropbox.com">Dropbox</a>
+              , which is now open for public beta and works very well.
+            </p>
+            <p>
+              Setting up IMAP with google is simple and you can find directions
+              <a href="http://mail.google.com/support/bin/answer.py?hl=en&amp;answer=75725">here.</a>
+            </p>
+            <p>
+              Setting up Google's iCal support is almost as easy, especially with their
+              set-up tool. Directions can be found
+              <a href="http://www.google.com/support/calendar/bin/answer.py?answer=99358#ical">here.</a>
+            </p>
+            <p>
+              The benefits of these combined services speak for themselves, but in any
+              case, I'll repeat them here. Dropbox serves to replace the need for iDisk
+              sharing since it works by synchronizing all of the files within given
+              directories between all of your computers. Dropbox is not only useable on
+              Mac OS X and Windows, it now works on Linux (Ubuntu only). CalDAV is also
+              completely cross-platform using a product from Mozilla,
+              <a href="http://www.mozilla.org/projects/calendar/">Sunbird.</a>
+              Of course, given my love of OS X, CalDAV works extremely well within iCal
+              on Leopard. Finally, email, being the most important of all, works on any
+              email client that supports IMAP (almost every client). Not only this but,
+              it magically syncs between all computers and my iPhone.
+            </p>
+            <p>
+              There are a few remaining features that I don't consider to be critical to
+              the service because I don't use them or because there are other services
+              that have existed for some time to handle the feature. Photo sharing, for
+              example, is more than capably covered by Flickr. The greatest drawback, in
+              my opinion, of this piecemeal approach is the lack of a unified website for
+              when you are away from your computer. All-in-all, the MobileMe website is
+              not worth the  money and neither is MobileMe now, thanks to Google and
+              Dropbox.
+            </p>
+            <div id='disqus_thread'></div>
+          </div>
+          <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
+          <noscript>
+            <a href='http://tpitale.disqus.com/?url=ref'>
+              View the discussion thread.
+            </a>
+            <a class='dsq-brlink' href='http://disqus.com'>
+              blog comments powered by
+              <span class='logo-disqus'>
+                Disqus
+              </span>
+            </a>
+          </noscript>
+          <div id='post'>
+            <h1>Legacy Databases with ActiveRecord</h1>
+            <h2>So Close, But Yet, So Far</h2>
+            <span class='date'>2008-03-17</span>
+            <p>
+              I loved working with Ruby on Rails, I still do. I bought books, I read
+              blogs, and I made a fair few sites (both personal and for clients). I
+              thought Ruby on Rails was the be-all, end-all for web development. I was
+              very wrong.
+            </p>
+            <p>
+              Ruby on Rails is fantastic. Especially when you create a new application
+              and design and create that web application with Rails, and its way, in
+              mind. However, if, like myself, you have to work with the database from
+              an application that originated nearly 20 years ago, you may hit some snags.
+              Just as I did.
+            </p>
+            <p>
+              The design of a database to be used with Ruby on Rails (specifically
+              ActiveRecord) must adhere to some very stringent "best" practices. These
+              are not always the absolute, best practices in design but, they provide
+              some fairly standard basic practices. One such example, though fairly
+              advanced comes with polymorphic associations. In defining the type in one
+              such association, ActiveRecord uses the class name of the type instead of
+              a secondary table listing all possible types. This breaks any possible use
+              of a foreign-key constraint.
+            </p>
+            <p>
+              Some basics in Ruby on Rails database design, which is often generated
+              without any specification from the developer (when using model generators),
+              include: tables are named the pluralized class name (e.g. User becomes
+              users), every table has an "id" field that is an auto-incremented integer,
+              and a foreign-key is tablename_id.
+            </p>
+            <p>
+              What must we do if we are using an existing database, and it does not
+              comply to these standards? I'll go through each instance of non-standard
+              database design from the existing database and show how ActiveRecord did
+              or did not handle the problem.
+            </p>
+            <p>
+              What to do if a Table is not Named after a Class? Easy. ActiveRecord
+              provides a simple method
+              <code>set_table_name</code>
+              that allows you to do just that. If the tables are named after a class but
+              are not pluralized, you can simply set the environment to not use the
+              pluralized versions.
+            </p>
+            <p>
+              What to do if a Table does not have Primary Key named 'id'? Easy, too.
+              Simply use
+              <code>set_primary_key</code>
+              to set the primary key. This does not, however, provide for a case in which
+              a table does not have a primary key (or otherwise usable unique key) in any
+              way, shape, or form. The simple answer is to add an 'id' field that is not
+              used by the legacy application. This is difficult or impossible to do if
+              you are not the person in control of the database. It is also difficult if,
+              like me, the database exists on hundreds of servers distributed around the
+              country. Making any change in this case is not a simple undertaking.
+            </p>
+            <p>
+              What to do if the Primary Key is not an auto-incremented integer field?
+              Here, we find the most difficult problem of all. ActiveRecord can ignore
+              the fact that you don't have auto-incremented values but, if your key is
+              not an integer ActiveRecord (as of this posting) hits the proverbial wall.
+              In the case of my legacy database, the primary keys were text fields, five
+              digits in length. This was a carry-over from an even older system in which
+              no relational database was involved.
+            </p>
+            <p>
+              My only options here became extremely complicated and were only possible
+              because I was using Postgresql (editable views). That was the end of the
+              road for this project and Ruby on Rails. Thankfully, a helpful suggestion
+              led me to use
+              <a href="http://merbivore.com">Merb</a>
+              for my framework and
+              <a href="http://datamapper.org">DataMapper</a>
+              for my database ORM. Watch for my next post in which I discuss the solutions
+              to these problems, and a few nice perks, found in Merb and DataMapper.
+            </p>
+          </div>
+          <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
+          <noscript>
+            <a href='http://tpitale.disqus.com/?url=ref'>
+              View the discussion thread.
+            </a>
+            <a class='dsq-brlink' href='http://disqus.com'>
+              blog comments powered by
+              <span class='logo-disqus'>
+                Disqus
+              </span>
+            </a>
+          </noscript>
+          <div id='post'>
+            <h1>Vision Online, Now Focus</h1>
+            <h2>The exciting tale of a Merb Application and branding</h2>
+            <span class='date'>2008-03-11</span>
+            <p>
+              I have spent my free time, nights and weekends, working to create a new
+              version of Vision, online. For those that do not know, Vision is the
+              peerless, just-in-time, inventory control and point of sale system for the
+              retail liquor market.
+            </p>
+            <p>
+              The project was originally titled Vision Online. That name is simple and
+              it works with all of the branding that
+              <a href="http://www.ics-nj.com">ICS</a>
+              has already done. However, this product heads out on its own and addresses
+              a slightly new market. As such, a new name was a must.
+            </p>
+            <p>
+              Thanks to a stroke of genius by my associate Chris, we've switched to the
+              name Focus. The name is brilliant for three, important, reasons. First,
+              the original product is named Vision and Focus is just that, a focusing of
+              the features and benefits of using Vision. Second, the use of this
+              product is intended to focus the users' inventory until it is as close as
+              possible to just-in-time. Lastly, a function of a person's literal vision
+              is the ability to focus. We are hoping that this reincarnation of Vision
+              will enable a user to focus on getting their inventory in line and online.
+            </p>
+            <p>
+              Solidifying this branding was important for me, as a developer, because it
+              provides a northern star, a guiding light, to my goal. The meaning that
+              branding holds for a user is realized many times over, for me. It is an
+              important aspect of development, keeping the goals, ideals, and vision of
+              the product, in mind.
+            </p>
+          </div>
+          <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
+          <noscript>
+            <a href='http://tpitale.disqus.com/?url=ref'>
+              View the discussion thread.
+            </a>
+            <a class='dsq-brlink' href='http://disqus.com'>
+              blog comments powered by
+              <span class='logo-disqus'>
+                Disqus
+              </span>
+            </a>
+          </noscript>
+          <div id='post'>
+            <h1>Getting Things Done</h1>
+            <h2>With More Than Mail</h2>
+            <span class='date'>2008-06-04</span>
+            <p>
+              Getting things done apps are over-complicated to-do lists, in my mind. As I
+              said in a previous post, I enjoy using iCal/Mail To-dos for three reasons.
+              Speed, simplicity, and I already have one of those applications open
+              already. However, I was evolving and growing in my workflow. I needed to
+              find a few more features in my to-do tracking. Some original ideas included
+              "archiving" instead of deleting completed to-dos and a better way to
+              display the information, if only in showing which is the next to-do in
+              different orders. Sorting to-dos in Mail is fairly simple, and iCal is even
+              worse.
+            </p>
+            <p>
+              Between
+              <a href="http://tuaw.com">TUAW</a>
+              and
+              <a href="http://macapper.com/">MacApper</a>
+              I was able to select two applications to try. The first is called
+              <a href="http://www.culturedcode.com/things/">Things</a>
+              and is a full-blown application. Things has a fantastic user-interface, a
+              great feature-set, and is under constant development. At the same time, I
+              did not use all of the features the application already had. Things is
+              still new software. As such, some of the polish is missing at this time
+              but, it is still very usable and very beautiful. The largest negative
+              point for me is that Things is an application unto itself. I already have
+              plenty of windows open and I do not wish to find myself spending more time
+              tracking my to-dos than actually doing them. This is a very minor issue and
+              one that I will likely live with as my needs evolve further. Lastly, the
+              price is a little steep at nearly $50.
+            </p>
+            <p>
+              The second application is called
+              <a href="http://www.dejumble.com/">Dejumble.</a>
+              Unlike Things, Dejumble lives in the menubar only. Although I don’t like to
+              clutter my menubar the ease of access is phenomenal and instantaneous. The
+              feature set is not as complete as Things but, given my needs, that is just
+              fine. The application and interface have a few flaws. First, the included
+              themes are all beautiful except when the description font is impossible to
+              see. Second, the search box would be extremely handy if it did something.
+              When I first tried to search I typed in a word I knew was in the
+              descriptions of a few to-dos and waited for a live search. Nothing happened
+              so I hit enter. Unexpectedly, this created a new to-do using the form just
+              below the search. Deleting this new to-do required I open iCal or Mail and,
+              the delete would not remove itself in Dejumble’s list. Lastly, a to-do with
+              none of the fields filled in should not be made a to-do without a warning
+              message or some other notification.
+            </p>
+            <p>
+              Neither of these applications scratches the itch completely but, both are
+              close enough that they may warrant use. I will probably use Dejumble for
+              the trial period, monitor the improvements made and then make a decision.
+              I am absolutely certain that Things has or will have all that I need but, I
+              don’t want to spend $50 without a need. I am thankful for Leopard because
+              without its features, none of these applications would be as useful. As
+              always, Mail still gets the job done.
+            </p>
+          </div>
+          <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
+          <noscript>
+            <a href='http://tpitale.disqus.com/?url=ref'>
+              View the discussion thread.
+            </a>
+            <a class='dsq-brlink' href='http://disqus.com'>
+              blog comments powered by
+              <span class='logo-disqus'>
+                Disqus
+              </span>
+            </a>
+          </noscript>
+          <div id='post'>
+            <h1>Barack Obama</h1>
+            <h2>Experience is Everything</h2>
+            <span class='date'>2008-04-06</span>
+            <p>
+              I won't often speak of politics. In fact, I would like this to be my one
+              and only post on the subject.
+              <b>
+                I am a Barack Obama supporter.
+              </b>
+              The man says a lot of things, just as every other candidate has. However,
+              as I've learned, few can back it up. Yes, John McCain was a POW. That is
+              horrible but, has no bearing on his ability to be president. His health
+              should be of much greater concern. As for Hillary, she talks a whole lot.
+              A significant amount of hatred spews from her mouth. On top of that, many
+              claims that she makes are only true in the simplest sense. For example, she
+              speaks of how she has introduced legislation to improve healthcare and the
+              related industry and regulations. What she doesn't say is that very little
+              of her legislation passes or is even supported by her peers. Many of these
+              bills introduced speak very vaguely about "improving healthcare at sometime
+              in the future", without ever mentioning how or when.
+            </p>
+            <p>
+              Something I have learned working in the IT/Software industry, in a very
+              short time, is that time does NOT equal experience. I know many a developer
+              that has worked for 20 years and has little more real experience than
+              another particular developer, one who had only been in the corporate world
+              for 2, maybe 3, years. It is the passion that drives us all. This passion
+              leads a person to find the experience because it is something they want.
+              For many, it is something that simply may or may not happen over time.
+            </p>
+            <p>
+              If you want to understand just how passionate Barack Obama is, look at how
+              passionate his followers are. Barack Obama's passion drives others to be
+              just as passionate. This could also be seen in another characteristic of
+              Bill Clinton. As Chris Rock used to say in a show, "Bill Clinton is so
+              famous, someone else got famous just from sucking his dick!"
+            </p>
+            <p>
+              Granted, passion isn't everything but, it drives a person to seek out the
+              many other characteristics that make an exceptional person. The traits and
+              abilities that a person must possess to be the president. Barack Obama has
+              these traits and abilities. He may not have been a POW but, he has the
+              necessary abilities at the most basic level to achieve anything he wants.
+              In addition, we must face the fact that nothing will ever prepare a person
+              truly for being one of the most powerful people in the world. So, we must
+              look to the building blocks.
+            </p>
+            <p>
+              Another excellent measure of a person's character and merit is in the way
+              they communicate to the public. Barack Obama, and his campaign, do not
+              speak hatefully of any other person. Even when it is well deserved, honest
+              and would sometimes be necessary. This type of level-headed behavior is
+              precisely what the country needs, right now. Excitable behavior, lack of
+              quality information has gotten this country in way over its head in war,
+              death, debt, and built as a reputation that contrives an extreme level of
+              hatred from nearly every other country in the world.
+            </p>
+            <p>
+              These are only a few of the multitude of "things" that are required to be
+              the president. No one person can ever speak of every quality necessary. My
+              only fear at this point is that something, someone, is going to screw it up
+              for the rest of the country.
+            </p>
+          </div>
+          <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
+          <noscript>
+            <a href='http://tpitale.disqus.com/?url=ref'>
+              View the discussion thread.
+            </a>
+            <a class='dsq-brlink' href='http://disqus.com'>
+              blog comments powered by
+              <span class='logo-disqus'>
+                Disqus
+              </span>
+            </a>
+          </noscript>
+          <div id='post'>
+            <h1>Legacy Databases with DataMapper</h1>
+            <h2>Something Old, Something New</h2>
+            <span class='date'>2008-03-18</span>
+            <p>
+              In my previous post I discussed my eventual discovery that
+              <a href="http://rubyonrails.org">Ruby on Rails</a>
+              would not work for a new project I had begun. Thankfully, I was at the very
+              beginning of my work on said project and making a transition to a new path
+              was not the end of the world.
+            </p>
+            <p>
+              As I mentioned, a helpful suggestion led me to investigate
+              <a href="http://merbivore.com">Merb</a>
+              as a potential framework. Merb has the benefit of letting me use any of
+              three possible database ORMs. ActiveRecord is supported, as well as,
+              <a href="http://datamapper.org/">DataMapper</a>
+              and Sequel. Obviously, ActiveRecord did not work for me and so, I looked at
+              both DataMapper and Sequel. I found DataMapper to be more usable out of the
+              box and so I moved ahead using it. Sequel would have been another excellent
+              alternative but, I had to pick one and continue with my work.
+            </p>
+            <p>
+              How did DataMapper solve my legacy database issues, you may ask. The answer
+              is that DataMapper provides all the same standard solutions that
+              ActiveRecord does but, it allows for keys to be text or any other type as
+              long as they are unique and not null. The sql requirements for a primary
+              key state that it must be unique and not null, there is no requirement for
+              type. There was one little issue with DataMapper in which the text fields
+              were being ignored because, in DataMapper, text fields are lazy. These
+              fields will not be loaded until they are requested by an application. This
+              led to a number of issues but, because DataMapper is so very easy to
+              contribute to, I was able to make the necessary changes with much
+              appreciation from the community.
+            </p>
+            <p>
+              In terms of conventions, DataMapper has another nifty trick up its sleeve.
+              In DataMapper, when defining a column, you may use a different name for the
+              property and later define the actual column name from the database. I was
+              extremely enthused to find that I could change names from the database from
+              <code>wc_shlfprce</code>
+              to something like:
+              <code>warm_case_shelf_price.</code>
+              Though it was a longer name, in terms of legibility the latter is an
+              infinite improvement.
+            </p>
+            <p>
+              And so, I work on, with Merb and DataMapper as my preferred tools, at least
+              for this particular project. Aside from this flexibility, DataMapper would
+              normally adhere to the same specific conventions for a database as does
+              ActiveRecord. Any new converts from Rails will likely feel right at home.
+            </p>
+          </div>
+          <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
+          <noscript>
+            <a href='http://tpitale.disqus.com/?url=ref'>
+              View the discussion thread.
+            </a>
+            <a class='dsq-brlink' href='http://disqus.com'>
+              blog comments powered by
+              <span class='logo-disqus'>
+                Disqus
+              </span>
+            </a>
+          </noscript>
+          <div id='post'>
+            <h1>Merb is Not Rails</h1>
+            <h2>And That is Okay</h2>
+            <span class='date'>2008-05-29</span>
+            <p>
+              Merb is not Rails.
+            </p>
+            <p>
+              If that statement isn't simple enough for you let me, like
+              <a href="http://brainspl.at/articles/2008/05/21/does-it-have-to-be-a-competition-between-rails-and-merb">Ezra</a>
+              and
+              <a href="http://yehudakatz.com/2008/05/21/cant-we-all-just-get-along/">Yehuda</a>
+              , explain why Merb is not Rails, why this is good for both Merb and Rails,
+              and where this will lead both projects in the future.
+            </p>
+            <p>
+              Ezra laid out the simple fact that there is no competition between Rails
+              and Merb. This comes down to “scratching different itches”. Yehuda’s post
+              reiterated this and added a few more important “why”s. Yehuda’s main point
+              is in the goal of “hackability” of Merb as a framework in comparison to the
+              “get-up-and-go” goal in Rails. Each serves a purpose. Merb’s goal is one
+              that served as my impetus for seeking out a Rails alternative. I still use
+              Rails because in many cases the “get-up-and-go” route is exactly what I
+              need. Rails should stick to its guns, philosophically just as Merb should.
+            </p>
+            <p>
+              Yehuda’s second great point is that those that work on Merb often work on
+              Rails and wish to see the experimental developments in Merb move into Rails.
+              His example of note is the “provides” api (which many, many Merb people
+              love). In the future I hope that Merb as a testbed for Rails continues with
+              a bit more stability in Merb, perhaps.
+            </p>
+            <p>
+              At the moment I need to bring more stability to my own install of Merb. I
+              have continually worked with the latest and greatest Merb because of my
+              need to stay on the cutting edge with DataMapper.
+            </p>
+          </div>
+          <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
+          <noscript>
+            <a href='http://tpitale.disqus.com/?url=ref'>
+              View the discussion thread.
+            </a>
+            <a class='dsq-brlink' href='http://disqus.com'>
+              blog comments powered by
+              <span class='logo-disqus'>
+                Disqus
+              </span>
+            </a>
+          </noscript>
+          <div id='post'>
+            <h1>Merb and DataMapper</h1>
+            <h2>Initial Experience with Great Solutions</h2>
+            <span class='date'>2008-03-12</span>
+            <p>
+              I started a new project using Ruby on Rails. Unfortunately, ActiveRecord
+              is so stringent in its requirements for database design that the legacy
+              database I was working with was unusable. I had to look elsewhere for
+              my ruby framework because using the legacy database was a primary
+              requirement. The existing application needs to continue operating for
+              many years to come. It serves its users very well.
+            </p>
+            <p>
+              I turned to Merb for my solution. Database ORM agnosticism was the order
+              of the day. Merb does work with ActiveRecord but, since ActiveRecord did
+              not work with me, I chose to use DataMapper. Sequel was another
+              alternative. I prefer DataMapper (and merb, of course) for many reasons.
+            </p>
+            <p>
+              The community surrounding Merb and DataMapper is excellent. Many of the
+              people that work on one project, work on the other. I began perusing the
+              Google groups for each project. I checked out their Rubyforge pages. I
+              read their websites and documentation. Most importantly, I participated
+              in conversations on irc chat (irc.freenode.net, #merb and #datamapper).
+              Then, I took the dive and it has been amazingly to easy to make the
+              switch from Rails to Merb and DataMapper.
+            </p>
+            <p>
+              When I did happen to find something I wanted to change, a bug I wanted
+              to fix, or brand new feature I wanted to add, the process was cake. The
+              codebase is clean and well spec'd. In addition, both teams have well
+              defined guidelines and processes for contributing to the project. If you
+              are ever unable to find the answer to some question the IRC channels are
+              always full of the core members of the team along with many other very
+              experienced users. The IRC resource has been invaluable to me and since,
+              I hope I've been able to help a few new users myself.
+            </p>
+            <p>
+              In terms of features both Merb and DataMapper are slightly behind the
+              features of Rails (and the many, many plugins) but, all of the core
+              requirements are there. Not only are the features in the core, they are
+              much better than the equivalent features in Rails. For example, you can
+              forget about ever having to write responds_to in every action you have
+              ever again. Merb has a method, provides, which defines the this behavior.
+            </p>
+            <p>
+              My favorite feature in DataMapper, especially useful when working with a
+              legacy database, is the capability to rename a column for use in your own
+              model. For example, if the column in your database is named 'itm_mup' and
+              you would prefer it be called 'item_markup' in your application.
+            </p>
+            <p>
+              Not only does Merb allow you to use one of the three most popular ORM's,
+              it allows you to use RSpec for testing, as well as, any javascript
+              library you would like. Adding to this flexibility, Merb brings back a
+              feature that was destroyed by Rails: lightweight components. Merb refers
+              to these as "parts". Parts are called on by views to render extremely
+              modular subsets of functionality.
+            </p>
+            <p>
+              All in all, any deficiencies are more than made up for by the community,
+              the codebase and ease of contribution, and the features of both Merb and
+              DataMapper.
+            </p>
+          </div>
+          <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
+          <noscript>
+            <a href='http://tpitale.disqus.com/?url=ref'>
+              View the discussion thread.
+            </a>
+            <a class='dsq-brlink' href='http://disqus.com'>
+              blog comments powered by
+              <span class='logo-disqus'>
+                Disqus
+              </span>
+            </a>
+          </noscript>
+          <div id='post'>
+            <h1>Slicehost</h1>
+            <h2>Getting it Right, Right Away</h2>
+            <span class='date'>2008-03-14</span>
+            <p>
+              At the recommendation of Patrick Reagan of Viget Labs I signed up for an
+              account with Slicehost. With a simple form for signup, I was quickly
+              filling in my credit card number. Before my credit card had been validated
+              by Slicehost, my slice was up and running.
+            </p>
+            <p>
+              I was not planning at the time to set up, or modify my new server. The draw
+              of the root password that had just been emailed to me overpowered any such
+              plans. I quickly discovered the fantastic tools made available by Slicehost
+              for the user. Within 2 minutes I had configured my DNS and within 5 minutes
+              I had compiled and installed Nginx, all thanks to the excellent help site.
+            </p>
+            <p>
+              Upon completing the initial "release" of this website the following
+              morning, I was completely up and running and I switched my TLD registration
+              to the Slicehost DNS hosts. If you do sign up for a Slicehost account I
+              would certainly appreciate a
+              <a href="https://manage.slicehost.com/customers/new?referrer=972292314">referral.</a>
+            </p>
+          </div>
+          <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
+          <noscript>
+            <a href='http://tpitale.disqus.com/?url=ref'>
+              View the discussion thread.
+            </a>
+            <a class='dsq-brlink' href='http://disqus.com'>
+              blog comments powered by
+              <span class='logo-disqus'>
+                Disqus
+              </span>
+            </a>
+          </noscript>
+          <div id='post'>
+            <h1>Carpal Tunnel Syndrome</h1>
+            <h2>Or, the Lack Thereof</h2>
+            <span class='date'>2008-03-25</span>
+            <p>
+              How could I forget the voice of my high school typing teacher, constantly
+              nagging me to keep my wrists elevated above the keyboard in an horrific
+              and uncomfortable position. After all of these years I've never, ever
+              been able to accomplish any typing in this fashion. So, my wrists have
+              always rested comfortably, but precariously, upon whatever surface my
+              keyboard is resting upon. For many years, this surface would have been a
+              simple table or desk as I would type at a basic keyboard as I worked in
+              Windows. Luckily, for me, I have moved away from the Windows world. As
+              such, I am now solely reliant upon Apple's hardware creations.
+            </p>
+            <p>
+              Yet, I have somehow come through unscathed. While an unlucky associate of
+              mine did not share the same luck and was required to undergo a simple,
+              preventive, surgery. After much (well, not that much) contemplation, the
+              only justification for this that I can arrive at is Apple's hardware. It is
+              so thin that, in the case of the latest wired and wireless keyboards from
+              Apple, it might as well be the desk. Therefore, the raised wrists position
+              is not a requirement. The same affect is accomplished when using a laptop.
+              However, this applies to all laptops. Now, looking back, I can recall a
+              pair of keyboards, from Logitech, that would also be thin enough to allow
+              a user to safely rest their wrists upon their computing surface.
+            </p>
+          </div>
+          <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
+          <noscript>
+            <a href='http://tpitale.disqus.com/?url=ref'>
+              View the discussion thread.
+            </a>
+            <a class='dsq-brlink' href='http://disqus.com'>
+              blog comments powered by
+              <span class='logo-disqus'>
+                Disqus
+              </span>
+            </a>
+          </noscript>
+          <div id='post'>
+            <h1>Imaginary Mac Dock</h1>
+            <h2>If You Must, You Must</h2>
+            <span class='date'>2008-03-18</span>
+            <p>
+              Some people like to come home and "dock" their laptops to a desktop-type
+              setup. There is no such thing for a Mac, not in the way that the Dell users
+              of the world might imagine it. However, there are two ways to accomplish
+              the same features. The first involves another Mac, the second does not.
+            </p>
+            <p>
+              The first, and conceptually more complicated method relies upon two
+              features that Macs have had as long as I can remember using them. Upon
+              booting, a Mac (laptop or desktop) can act as an external hard drive case
+              for the drive inside. Simply holding down T will start this mode. Now, we
+              can plug this Mac into another and use this hard drive as the boot drive.
+              Simply hold down the Option key when booting the "base", desktop Mac. The
+              desktop will boot the hard drive in the laptop. If you have an Intel Mac,
+              the computers can be connected with a USB cable or a Firewire cable. If you
+              are using a PowerPC Mac, a Firewire cable must be used.
+            </p>
+            <p>
+              The second method is far more simplistic. Apple (and many other companies)
+              offer bluetooth keyboards and mice. Simply plug in an external monitor and
+              use the bluetooth built into most Macs for the keyboard and mouse. With one
+              physical cable you have essentially the same setup as all those "dock"
+              users.
+            </p>
+            <p>
+              There are many reasons why a user might wish to do this but, the most
+              obvious reasoning includes a larger screen on a monitor, a full-sized
+              keyboard, and a more functional mouse (though I prefer the touchpad for
+              scrolling).
+            </p>
+          </div>
+          <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
+          <noscript>
+            <a href='http://tpitale.disqus.com/?url=ref'>
+              View the discussion thread.
+            </a>
+            <a class='dsq-brlink' href='http://disqus.com'>
+              blog comments powered by
+              <span class='logo-disqus'>
+                Disqus
+              </span>
+            </a>
+          </noscript>
+          <div id='post'>
+            <h1>Webby - Part 2</h1>
+            <h2>Essential Features</h2>
+            <span class='date'>2008-04-13</span>
+            <p>
+              In my first post (
+              <a href="/posts/webby_series_1.html">Webby - Part 1</a>
+              ) I gave a basic description of
+              <a href="http://webby.rubyforge.org/">Webby,</a>
+              a ultra-lightweight content management tool. In this post, I intend to
+              cover the most essential features of Webby, starting with the creation of a
+              new project and an overview of the rake tasks. From there I'll cover some
+              of the helper methods that come with Webby.
+            </p>
+            <h3>What is Webby Doing?</h3>
+            <p>
+              Webby is useful because it allows the use of Ruby code as well as helpers,
+              layouts, partials, filters (more on that later), and templates. From this
+              Webby will create the file structure and html (or xml, atom, rss, etc.).
+              This, seems to be done, in a very basic sense, by "running" the Ruby
+              through one time and saving the files created. This is similar to what a
+              page cache would do but, it is done manually due to the infrequency of an
+              update.
+            </p>
+            <h3>Install Webby</h3>
+            <p>
+              First, in order to use Webby you have to install it. Thankfully, there is a
+              gem, making this step very simple. Open the Terminal application (or what
+              you would normally use to install a gem) and install Webby (with any
+              dependencies).
+              <code>sudo gem install webby</code>
+            </p>
+            <h3>Optional Installs</h3>
+            <p>
+              Personally, I like using Haml, so I installed that already. Webby is able
+              to use a series of "filters" to make use of Haml, Sass, Textile, Markdown,
+              and by default, erb. On top of the filters available to transform text,
+              Webby has support for CodeRay and UltraViolet syntax highlighting.
+            </p>
+            <h3>Create a Project</h3>
+            <p>
+              Onto creating a project. Webby comes with a command, webby. We use this and
+              the name of our project in one command and Webby will create the structure
+              for the project, in the current location in the filesystem. To view the
+              full list of options for the webby command, add the -h/--help flag (Hint:
+              there aren't many).
+              <code>webby your_project_name_here</code>
+            </p>
+            <h3>Rake Tasks</h3>
+            <p>
+              Many Ruby developers are experienced using Rake. Change to the project
+              directory in Terminal and try this.
+              <code>rake -T</code>
+              The most frequently used tasks (for me, at least) are:
+              <code>
+                rake create:whatever
+                <br />
+                rake autobuild
+                <br />
+                rake deploy:however
+              </code>
+              <span>
+                The create task is provided a type of document to create (from a template).
+                By default these include a page, a partial, or an atom feed. I will discuss
+                adding to these templates in my next post.
+              </span>
+              <span>
+                The autobuild tasks starts the included heel webserver and builds the files
+                whenever it detects a "dirty" or changed file. This is very handy in
+                development because you can instantly check your changes in a browser.
+              </span>
+              <span>
+                Finally, the deploy task. Using either rsync or ssh, Webby will deploy the
+                output files to your designated webserver.
+              </span>
+            </p>
+            <p>
+              Until next time you should read the
+              <a href="http://webby.rubyforge.org/tutorial/">official tutorial from Webby.</a>
+            </p>
+            <p class='next'>
+              Next time I'll talk about extending these essential features, making Webby
+              an extremely powerful tool.
+            </p>
+          </div>
+          <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
+          <noscript>
+            <a href='http://tpitale.disqus.com/?url=ref'>
+              View the discussion thread.
+            </a>
+            <a class='dsq-brlink' href='http://disqus.com'>
+              blog comments powered by
+              <span class='logo-disqus'>
+                Disqus
+              </span>
+            </a>
+          </noscript>
+          <div id='post'>
+            <h1>In the Coming Days</h1>
+            <h2>So Much to Do</h2>
+            <span class='date'>2008-05-27</span>
+            <p>
+              The short story is:
+              <a href="http://www.viget.com">Viget</a>
+              is being extremely generous and is paying for me to travel to
+              <a href="http://en.oreilly.com/rails2008/public/content/home">RailsConf</a>
+              this year. Despite the fact that I have only been in their employ for three
+              whole weeks. I'm extremely happy working there and I only hope that I am
+              living up to their expectations of me.
+            </p>
+            <p>
+              I am excited to go to RailsConf for two reasons. First, I have never been
+              to a conference before, any conference, and I really expect to learn a lot
+              in the sessions I am enrolled in. Second, I may finally get to meet many of
+              the people I talk to on the irc chat rooms for Merb and DataMapper. People
+              like Yehuda Katz, Ezra Z., Adam French (who I think is going), and a
+              coworker from Viget South, Ben Scofield, who will be speaking, as well. All
+              in all I have extremely high hopes for this trip.
+            </p>
+            <p>
+              In other news, I've got draft copies of many, many blog posts. The problem
+              is trying to decide where they will be appropriate. Some are about the beta
+              for
+              <a href="http://www.getdropbox.com">Dropbox</a>
+              (my favorite service, at the moment), including some nifty tricks. Another
+              post is a followup to Getting Things Done with Mail and iCal combined with
+              a review of the GTD application, Things. On the
+              <a href="http://www.viget.com/extend/">Viget Extend blog</a>
+              , I've got some ideas for posts on topics ranging from Microsoft Exchange
+              calendar subscriptions in iCal to accessing the LDAP global address list
+              from Address Book.
+            </p>
+          </div>
+          <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
+          <noscript>
+            <a href='http://tpitale.disqus.com/?url=ref'>
+              View the discussion thread.
+            </a>
+            <a class='dsq-brlink' href='http://disqus.com'>
+              blog comments powered by
+              <span class='logo-disqus'>
+                Disqus
+              </span>
+            </a>
+          </noscript>
+          <div id='post'>
+            <h1>Ezra Introduces Vertebra at RailsConf 2008</h1>
+            <h2>Configuration Through the Clouds</h2>
+            <span class='date'>2008-06-01</span>
+            <p>
+              Ezra Z.'s talk at RailsConf 2008 started out normally enough but, his first
+              point of order was to introduce Vertebra. Vertebra is similar in purpose to
+              Capistrano. Instead of using a linear interface such as SSH, Vertebra uses
+              XMPP (the protocol used in Jabber) to deal with thousands of concurrent
+              operations. For me, this is the most exciting announcement of RailsConf
+              not because I do much with cloud computing but, because I want to, and this
+              is just another piece of the puzzle. The whole process of XMPP providing
+              presence -- like jabber instant messaging -- and running on an Erlang
+              implementation of the jabber server that is hugely, horizontally scalable.
+            </p>
+            <p>
+              It appears that you can use a jabber client or a command-line client to
+              interact with the system. All sorts of things are capable. The examples
+              Ezra gave included everything from requesting RAM and CPU statistics to
+              rebuilding systems. Map/Reduce type scatter/gather dispatch for discovery
+              and deployment is easily possible with the protocol in use.
+            </p>
+            <p>
+              Ezra coined a new acronym today, CREST, which stands for cloud REST. Along
+              with this Ezra displayed an example that was built on Merb to show a Ruby
+              interaction with the cloud using RESTful processes. Resources have URLs,
+              just as they should.
+            </p>
+            <p>
+              All in all, this process seems to be a platform that other cloud services
+              could be built upon. I can't wait to dig right in considering he demoed the
+              service running live.
+            </p>
+          </div>
+          <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
+          <noscript>
+            <a href='http://tpitale.disqus.com/?url=ref'>
+              View the discussion thread.
+            </a>
+            <a class='dsq-brlink' href='http://disqus.com'>
+              blog comments powered by
+              <span class='logo-disqus'>
+                Disqus
+              </span>
+            </a>
+          </noscript>
+          <div id='post'>
+            <h1>Getting Things Done</h1>
+            <h2>With Apple Mail and iCal</h2>
+            <span class='date'>2008-03-21</span>
+            <p>
+              I'm new to the practice of getting things done (GTD). I am aware of most
+              of the principles and I am aware of the plethora of GTD software for Mac
+              OS X. A number of weeks ago I took a brief survey of the available software
+              in this particular field and, being a newcomer to the actual practice I
+              felt sufficiently overwhelmed by the features of each. I do realize that
+              GTD is about more than just a todo list but, for the ultra efficient all of
+              these applications seemed to take more time to get set up, and to use than
+              a simple checklist. Priorities are nice, as are due-dates but, beyond that
+              I thought I would be better off with a simpler solution.
+            </p>
+            <p>
+              So far, I am right. The metaphorical ticket, for me, was being constantly
+              (or nearly constantly) aware of my list. Knowing this, and knowing that I
+              live much of my life on my Mac I found the simplest solution I could
+              manage: Mail and iCal. These two applications together provide the
+              essentials that are required of a todo list. First, they make it easy to
+              monitor your list. Second, they make it easy to access your list from two
+              frequently accessed applications. Third, they make it exceptionally easy
+              to add new items to my list.
+            </p>
+            <p>
+              I've gotten in the habit of adding every little thing I could possibly
+              accomplish in a day. I get to as much as I can. This accomplishes a couple
+              goals. I get a big list of things to choose from and choice is always nice.
+              It also provides that constant reminder for even the little things, many of
+              which I would likely forget (or ignore) during the day.
+            </p>
+            <p>
+              Perhaps someday I will switch to some uber-GTD software but, for now, my
+              requirements have been satisfied. I would recommend this process to anyone
+              who is considering tackling the daunting GTD world.
+            </p>
+          </div>
+          <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
+          <noscript>
+            <a href='http://tpitale.disqus.com/?url=ref'>
+              View the discussion thread.
+            </a>
+            <a class='dsq-brlink' href='http://disqus.com'>
+              blog comments powered by
+              <span class='logo-disqus'>
+                Disqus
+              </span>
+            </a>
+          </noscript>
+          <div id='post'>
+            <h1>Ezra Announces Engine Yard Express VM Image</h1>
+            <h2>A Slice of a Slice</h2>
+            <span class='date'>2008-06-01</span>
+            <p>
+              Along with Vertebra, which isn't available for use just yet, Ezra announced
+              <a href="http://www.engineyard.com">Engine Yard</a>
+              Express. Express is a clone of the software and configuration
+              used in an Engine Yard Slice. This is another amazing development. Engine
+              Yard customers can now have a development or staging environment on their
+              own machines that mirrors their production environment. Everyone else can
+              simply see how powerful Engine Yard's stack of software really is. You can
+              download
+              <a href="http://express.engineyard.com/system/ey_express_v0.1.tar.bz2">Engine Yard Express</a>
+              , right now. Warning: the image is 343MB.
+            </p>
+          </div>
+          <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
+          <noscript>
+            <a href='http://tpitale.disqus.com/?url=ref'>
+              View the discussion thread.
+            </a>
+            <a class='dsq-brlink' href='http://disqus.com'>
+              blog comments powered by
+              <span class='logo-disqus'>
+                Disqus
+              </span>
+            </a>
+          </noscript>
+          <div id='post'>
+            <h1>Beta Testing the Slicehost API</h1>
+            <h2>A Foray into ActiveResource and DNS Records</h2>
+            <span class='date'>2008-03-21</span>
+            <p>
+              I was fortunate enough to join slicehost this past week. It is a fantastic
+              service, possibly the best VPS I've encountered. While perusing their forum
+              as I am want to do from time to time, I noticed a new post by a slicehost
+              employee requesting beta-testers (a favorite phrase of mine) for their new
+              API. I've used ActiveResource in the past and I thought it would be worth a
+              shot.
+            </p>
+            <p>
+              I threw in my hat on the forum and was summarily rewarded with an email
+              from a slicehost employee. I was given an API key and some documentation
+              with examples in Ruby and Python. Given my ActiveResource experience I
+              immediately went to work with their example. It was a breeze and one that
+              I am delighted to say any Rubyist would be able to complete.
+            </p>
+            <p>
+              I completed the example, messed around a bit more, and then I retired for
+              the evening. The next day I received a short questionnaire which I
+              dutifully filled out and returned. My tinkering was not over, however. Oh,
+              no. The next free chance I had, I dove right in. Given the access the beta
+              provided I could create only two things off the top of my head. The first,
+              a dynamic-dns-type updater. The second, a monitor of system status.
+            </p>
+            <p>
+              So far, I have only completed the dynamic dns updater. It is crude but, it
+              provides the basic functionality required. It allows you to provide a
+              Zone and a Record, as well as, the IP address to use when updating the
+              record. If you do not provide an IP address, the current external IP of
+              your location will be used.
+            </p>
+            <p>
+              The point of all this is I can have a domain name pointing to my home IP.
+              If my provider changes my IP for whatever reason, the script, run by cron
+              on a regular basis will tell slicehost, my DNS provider, that my home IP
+              address has changed within a reasonable amount of time.
+            </p>
+          </div>
+          <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
+          <noscript>
+            <a href='http://tpitale.disqus.com/?url=ref'>
+              View the discussion thread.
+            </a>
+            <a class='dsq-brlink' href='http://disqus.com'>
+              blog comments powered by
+              <span class='logo-disqus'>
+                Disqus
+              </span>
+            </a>
+          </noscript>
+          <div id='post'>
+            <h1>Webby - Part 1</h1>
+            <h2>An Introduction to Webby</h2>
+            <span class='date'>2008-04-13</span>
+            <p>
+              <a href="http://webby.rubyforge.org/">Webby</a>
+              is the best tool available on the web (especially for Ruby developers) to
+              manage the content on a website. When I say website I mean a general class
+              of website that has no dynamic content. Websites such as personal blogs are
+              ideal candidates for Webby as they only change when a new post is made.
+              Webby is essentially the lightest, most hackable CMS available.
+            </p>
+            <p>
+              In my case, I needed a tool to create a website that was not database-
+              backed but, the content changed frequently enough to warrant a simple means
+              by which I could update and makes other changes. Having been working with
+              Ruby and the Rails/Merb frameworks, I wished I could have the rendering
+              abilities and helper methods of these frameworks. However, both require
+              massive resources in comparison to serving up static files. Therefore, both
+              were overkill with all of their abilities designed for web applications.
+            </p>
+            <p>
+              In this ongoing series of posts I will do my best to cover Webby and some
+              of the features of Webby that are not fully covered in the tutorials. Also,
+              I would really love to help out anyone interested in Webby that is not sure
+              that Webby will meet their needs (and don't have time to dig into Webby
+              itself to find out).
+            </p>
+            <p class='next'>
+              Check back tomorrow for my next post in the series on some of the essential
+              features that I found in Webby, but not in the documentation.
+            </p>
+          </div>
+          <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
+          <noscript>
+            <a href='http://tpitale.disqus.com/?url=ref'>
+              View the discussion thread.
+            </a>
+            <a class='dsq-brlink' href='http://disqus.com'>
+              blog comments powered by
+              <span class='logo-disqus'>
+                Disqus
+              </span>
+            </a>
+          </noscript>
+          <div id='post'>
+            <h1>Stopped Using Things</h1>
+            <h2>Because iSlayer is Awesome</h2>
+            <span class='date'>2008-07-10</span>
+            <p>
+              I posted awhile back about my attempts at using
+              <a href="http://www.culturedcode.com/things/">Things</a>
+              for my GTD needs. While Cultured Code has made an amazing application,
+              even in beta, I was finding myself with features I didn't want and missing
+              some features I did want.
+            </p>
+            <p>
+              As such, I've learned to make due using a fine combination of iCal and Mail
+              for to do lists. Now, with the addition of something
+              <a href="http://www.islayer.com/index.php?op=item&amp;id=64">new from the fine developers at iSlayer</a>
+              I have a wonderful little widget that lets me integrate perfectly into
+              this system I've got going. Organized is the name of the new widget and I
+              think it fits precisely. Now, I don't have to leave Mail or iCal running
+              for all the times that I'm on my Mac (which is a lot).
+            </p>
+            <p>
+              Organized is beautifully crafted, as all iSlayer widgets and products that
+              I have encountered. As you can see from the screenshots on the web page
+              Organized is dominated by the calendar at the top, which is just how I like
+              it. Beneath are four tabs: clocks, notes, events, and to dos. I do not
+              often use the notes and I have yet to have a real use for clocks. However,
+              having events present (with which you can see events in the coming days)
+              has been extremely useful for getting my head around an ever more populous
+              calendar.
+            </p>
+            <p>
+              The last tab, to dos, is the tab I use most. Mostly because it adds such a
+              simple, quick, and perfectly powerful list. While at the same time, those
+              to dos work their way back into the rest of my system, for when I do have
+              Mail or iCal open, I like to have access to those to dos. I've learned to
+              organize my buckets as calendars that accurately represent my life. Around
+              these calendars I create groups that mimic the major focuses, life and
+              work. Perfect!
+            </p>
+          </div>
+          <script src='http://disqus.com/forums/tpitale/embed.js' type='text/javascript'></script>
+          <noscript>
+            <a href='http://tpitale.disqus.com/?url=ref'>
+              View the discussion thread.
+            </a>
+            <a class='dsq-brlink' href='http://disqus.com'>
+              blog comments powered by
+              <span class='logo-disqus'>
+                Disqus
+              </span>
+            </a>
+          </noscript>
         </div>
       </div>
     </div>
-    <script src='/javascripts/jquery.js' type='text/javascript'></script>
-    <script src='/javascripts/jquery.scrollTo.js' type='text/javascript'></script>
-    <script src='/javascripts/jquery.localscroll.js' type='text/javascript'></script>
-    <script type='text/javascript'>
-      $(document).ready(function(){$("#header").localScroll();});
-    </script>
     <!-- Google -->
     <script type='text/javascript'>
       var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

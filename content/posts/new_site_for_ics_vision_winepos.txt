@@ -31,7 +31,7 @@ filter:
     and is generated out to HTML. Javascript is handled using jQuery and a few
     other plugins.
     
-#disqus_thread
+  #disqus_thread
 
 %script{:type =>"text/javascript", :src=>"http://disqus.com/forums/tpitale/embed.js"}
 %noscript

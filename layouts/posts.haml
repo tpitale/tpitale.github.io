@@ -8,7 +8,7 @@ filter:    haml
     %meta{:"http-equiv" => "Content-type", :content => "text/html; charset=utf-8"}/
     %meta{:"name" => "author", :content => @page.author}/
     %meta{:name=>"verify-v1", :content=>"i/cbJtXe1ZDIZNta65CghwcRM/zFMRHIsbR9poU+uwU="}/
-    %title= @page.title unless @page.nil?
+    %title= @page.nil? ? @page.title+" : t.pitale" : "t.pitale"
     %link{:rel=>"shortcut icon", :href=>"/favicon.ico"}
     %link{:rel=>"alternate", :type=>"application/rss+xml", :href=>"http://feeds.feedburner.com/tpitale", :title=>"Atom feed"}
 
@@ -17,21 +17,9 @@ filter:    haml
     
   %body
     #header
-      .wrap
-        .col
-          %a{:href=>"/"}
-            %img{:src=>"/images/logo.png"}/
-        .block
-          %ul
-            %li
-              = link_to("Home", "/")
-            %li
-              = link_to("Blog Archive", "/posts/")
-          %br.clearleft/
     #content
       .wrap
         .col
-          %h2 Blog
         .block
           = @content
           

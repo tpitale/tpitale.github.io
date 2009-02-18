@@ -37,7 +37,7 @@ filter:
     I hope these two little tips will help you to avoid some of the trouble I
     had to deal with, even if it was only 5 minutes of my time, or yours.
     
-#disqus_thread
+  #disqus_thread
 
 %script{:type =>"text/javascript", :src=>"http://disqus.com/forums/tpitale/embed.js"}
 %noscript

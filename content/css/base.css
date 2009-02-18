@@ -1,5 +1,5 @@
 /*CSS Reset
-==================================================*/
+=============================================================================*/
 body,div,
 p,pre,blockquote
 dl,dt,dd,
@@ -48,7 +48,7 @@ abbr,acronym {
 }
 
 a {
-	color: #000000;
+	color: #FFFFFF;
 	text-decoration: none;
 }
 
@@ -57,15 +57,16 @@ a {
 }
 
 /* +Layout
-==================================================*/
+=============================================================================*/
 body {
 	font-size: 9pt;
-	background-color: #FFFFFF;
+	color: #FFFFFF;
 	font-family: verdana, sans-serif;
+	background: #14128A url('/images/background.jpg') no-repeat top center;
 }
 
 b {
-	color: #999999;
+	color: #FFFFFF;
 	font-weight: normal;
 }
 
@@ -73,167 +74,130 @@ a:hover {
 	text-decoration: underline;
 }
 
+p a {
+  font-weight: bold;
+}
+
 .wrap {
-	width: 800px;
+	width: 870px;
 	margin: 0 auto;
 }
 
 .col {
 	float: left;
-	width: 150px;
+	width: 200px;
 	text-align: right;
 }
 
-.col h2 {
-	color: #333333;
-	font-size: 150%;
+.col ul {
+  margin-top: 40px;
+}
+
+.col ul li {
+  margin-top: 2px;
+  margin-right: -3px;
 }
 
 .col ul li a {
 	margin: 2px 0;
+	padding: 3px;
+	color: #B8C4CC;
 	display: block;
 	font-size: 85%;
 }
 
+.col ul li a:hover {
+  color: #FFFFFF;
+}
+
 .block {
-	margin-left: 150px;
+	margin-left: 220px;
 	padding-left: 20px;
 }
 
-.block h1 {
-  color: #666666;
-  font-size: 150%;
-}
-
-
-#header,
-#about,
-#contact,
-#blog,
-#portfolio,
-#links,
-#photos {
-	padding: 10px 0;
-	border-top: 1px solid #CCCCCC;
-	border-bottom: 1px solid #EEEEEE;
-	background: #FFFFFF url('/images/section_fade.png') repeat-x left top;
-}
-
 #header {
-	background-image: none;
+  height: 50px;
 }
 
-#about,
-#blog,
-#links {
+#blog {
+  background: transparent url('/images/shadow-lip-upper.png') no-repeat center -10px;
 }
 
-/* +Header
-==================================================*/
-#header ul {
-	/* align with TP in logo*/
-	padding-top: 18px;
+#blog .wrap {
+  padding-top: 20px;
+  padding-bottom: 30px;
+  border-top: 1px dotted #0F105C;
+  border-bottom: 1px dotted #0F005C;
 }
-
-#header ul li {
-	float: left;
-}
-
-#header ul li a {
-	display: block;
-	padding: 5px 20px 11px 0;
-}
-
-#header ul li a:hover {
-	text-decoration: none;
-	background: #FFFFFF url('/images/link_arrow.png') no-repeat left bottom;
-}
-
-/* +About
-==================================================*/
-#about p {
-	line-height: 1.4em;
-}
-
-/* +Contact
-==================================================*/
-#fast,
-#faster,
-#fastest {
-	width: 32%;
-	float: left;
-}
-
-#fast h3,
-#faster h3,
-#fastest h3 {
-  font-size: 125%;
-	margin-bottom: 5px;
-}
-
-#contact {
-	line-height: 1.5em;
-}
-
-/* +Blog
-==================================================*/
-
-/* +Portfolio
-==================================================*/
-#portfolio a {}
-
-#portfolio a img {
-	padding: 4px;
-	margin-bottom: 10px;
-	border: 1px solid #EEEEEE;
-}
-
-/* +Links
-==================================================*/
-#people,
-#companies,
-#community {
-	width: 32%;
-	float: left;
-}
-
-#people h3,
-#companies h3,
-#community h3 {
-  font-size: 125%;
-}
-
-#links ul li {
-	margin-top: 5px;
-}
-
 /* +Photos
-==================================================*/
+=============================================================================*/
+#photos {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  overflow: hidden;
+}
+
+#photos .wrap {
+}
+
 div.flickr_badge_image {
 	float: left;
-	padding: 2px;
 	display: block;
-	margin-right: 7px;
-	border: 1px solid #EEEEEE;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	border: 1px dotted #999999;
+}
+
+div.flickr_badge_image:hover {
+  border: 1px dotted #CCCCCC;
+}
+
+/* +Projects
+=============================================================================*/
+#projects {
+}
+
+#projects .wrap {
+  padding-top: 30px;
+  border-top: 1px dotted #0F005C;
+}
+
+#projects a {}
+
+#projects a img {
+	margin-bottom: 10px;
+	border: 1px solid #333333;
+}
+
+#projects a:hover img {
+  border: 1px solid #CCCCCC;
 }
 
 /* +Post
-==================================================*/
+=============================================================================*/
 #post {
 	max-width: 800px;
-	margin: 5px auto 20px auto;
+	margin: 5px auto 40px auto;
+}
+
+#post h1 {
+  color: #FFFFFF;
+  font-size: 200%;
+  margin-top: 10px;
+  font-style: italic;
+  font-family: Georgia, serif;
 }
 
 #post h2 {
-	color: #999999;
+	color: #99B8CC;
 	font-size: 125%;
-	margin-top: 10px;
+	margin-bottom: 5px;
 }
 
 #post h3 {
-  color: #333333;
+  color: #FFFFFF;
   font-size: 115%;
-  margin-top: 10px;
+  margin: 5px 0;
 }
 
 #post ol li {
@@ -243,7 +207,7 @@ div.flickr_badge_image {
 }
 
 #post span.date {
-	color: #999999;
+	color: #FFFFFF;
 	font-size: 85%;
 }
 
@@ -264,11 +228,13 @@ div.flickr_badge_image {
 
 #post p a {
 	font-weight: bold;
+	color: #999999;
 }
 
 #post p code {
   margin: 10px;
-  padding: 10px;
+  padding: 5px;
+  color: #FFFFFF;
   display: block;
   font-size: 110%;
 	font-family: monospace;
@@ -283,6 +249,37 @@ div.flickr_badge_image {
 }
 
 .allposts {
-	color: #666666;
+	color: #FFFFFF;
 	font-size: 125%;
+}
+
+/* Footer
+=============================================================================*/
+#footer {
+  margin-top: 50px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  background-color: #323232;
+}
+
+#footer .wrap {
+  text-align: center;
+}
+
+#footer p.about {
+  color: #CCCCCC;
+  font-size: 95%;
+}
+
+#footer p.about a {
+  color: #CCCCCC;
+}
+
+#footer p.copyright {
+  color: #999999;
+  padding-top: 10px;
+}
+
+#footer p.copyright a {
+  color: #999999;
 }
