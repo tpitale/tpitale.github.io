@@ -11,18 +11,18 @@ filter:
     .col
       / List of Blog Posts
       %ul
-        - posts = @pages.find(:limit => 15, :in_directory => 'posts', :sort_by => 'mtime', :reverse => true)
+        - posts = @pages.find(:limit => 15, :in_directory => 'posts', :sort_by => 'created_at', :reverse => true)
         - posts.each do |post|
           %li
-            = link_to_page(post) unless post.filename == 'index'
+            = link_to_page(post)
     .block
       / Latest Post
-      - posts = @pages.find(:limit => 5, :in_directory => 'posts', :sort_by => 'mtime', :reverse => true)
-      = posts.first.filename == 'index' ? render(posts[2]) : render(posts.first)
+      - posts = @pages.find(:limit => 1, :in_directory => 'posts', :sort_by => 'created_at', :reverse => true)
+      = render(posts.first)
       
       .allposts
-        = link_to("All", "/posts/")
-        or
+        = link_to("Blog Archive", "/blog.html")
+        %b or
         = link_to("Feed <img src='/images/feed.png' />", "http://feeds.feedburner.com/tpitale")
 
 / Sampling of flickr images

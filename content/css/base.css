@@ -60,7 +60,7 @@ a {
 =============================================================================*/
 body {
 	font-size: 13px;
-	color: #CCCCCC;
+	color: #999999;
 	font-family: Helvetica, Arial, sans-serif;
 }
 
@@ -84,21 +84,20 @@ p a {
 
 .col {
 	float: left;
-	width: 200px;
+	width: 210px;
 	text-align: right;
 }
 
 .col ul {
   margin-top: 40px;
+  padding-right: 10px;
+  border-right: 1px dotted #CCCCCC;
 }
 
 .col ul li {
-  margin-top: 2px;
-  margin-right: -3px;
 }
 
 .col ul li a {
-	margin: 2px 0;
 	padding: 3px;
 	color: #999999;
 	display: block;
@@ -110,8 +109,7 @@ p a {
 }
 
 .block {
-	margin-left: 220px;
-	padding-left: 20px;
+	margin-left: 230px;
 }
 
 #header {
@@ -121,6 +119,7 @@ p a {
 }
 
 #header h1 {
+  color: #FFFFFF;
   font-size: 30px;
   font-weight: 300;
   padding: 7px 20px;
@@ -129,8 +128,8 @@ p a {
 }
 
 #content {
-  border-top: 1px solid #EEEEEE;
-  background: #FFFFFF url('/images/body_gradient.png') repeat-x left -30px;
+  border-top: 1px solid #FFFFFF;
+  background: #FFFFFF url('/images/body_gradient.png') repeat-x left -100px;
 }
 
 #blog {
@@ -192,12 +191,12 @@ div.flickr_badge_image:hover {
 }
 
 #post h1 {
-  color: #FFFFFF;
+  color: #333333;
   font-size: 200%;
   font-weight: 300;
   font-style: italic;
   margin: 10px 0 5px 0;
-  text-shadow: #CCC 0px 1px 1px;
+  text-shadow: #FFFFFF 0px 1px 1px;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica sans-serif;
 }
 
@@ -262,9 +261,19 @@ div.flickr_badge_image:hover {
   margin: 2px 0;
 }
 
-.allposts {
-	color: #FFFFFF;
+div.allposts {
 	font-size: 125%;
+}
+
+div.allposts a:hover {
+  color: #333333;
+  text-decoration: none;
+}
+
+div.allposts b {
+  color: #999999;
+  margin-right: 3px;
+  font-style: italic;
 }
 
 /* Footer

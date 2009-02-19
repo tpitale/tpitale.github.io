@@ -19,9 +19,8 @@ filter:
     %name Tony Pitale
     %email tpitale@gmail.com
     
-  - posts = @pages.find(:all, :in_directory => 'posts', :sort_by => 'mtime', :reverse => true)
+  - posts = @pages.find(:all, :in_directory => 'posts', :sort_by => 'created_at', :reverse => true)
   - posts.each do |post|
-    - next if post.filename == 'index'
     %entry
       %id= post.url+","+post.created_at.to_s
       %title= post.title
