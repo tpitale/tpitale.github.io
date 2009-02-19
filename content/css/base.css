@@ -154,7 +154,7 @@ p a {
 
 div.flickr_badge_image {
 	float: left;
-	display: block;
+	display: none;
 	margin-right: 10px;
 	margin-bottom: 10px;
 	border: 1px solid #AAAAAA;
@@ -163,6 +163,8 @@ div.flickr_badge_image {
 div.flickr_badge_image:hover {
   border: 1px solid #666666;
 }
+
+
 
 /* +Projects
 =============================================================================*/
