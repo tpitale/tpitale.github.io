@@ -3,7 +3,7 @@ title: Making the New ICS Website
 subtitle: Thanks to Webby, Haml, and Ruby
 author: Tony Pitale
 created_at: 2009-01-12 00:20:12.678860 -05:00
-layout: posts
+layout: default
 filter:
   - haml
 ---

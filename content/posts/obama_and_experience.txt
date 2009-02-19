@@ -3,7 +3,7 @@ title: Barack Obama
 subtitle: Experience is Everything
 author: Tony Pitale
 created_at: 2008-04-06 20:46:17.756245 -04:00
-layout: posts
+layout: default
 filter:
   - haml
 ---

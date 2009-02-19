@@ -3,7 +3,7 @@ title: Webby - Part 1
 subtitle: An Introduction to Webby
 author: Tony Pitale
 created_at: 2008-04-13 01:21:10.031729 -04:00
-layout: posts
+layout: default
 filter:
   - haml
 ---

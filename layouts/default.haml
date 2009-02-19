@@ -8,7 +8,7 @@ filter:    haml
     %meta{:"http-equiv" => "Content-type", :content => "text/html; charset=utf-8"}/
     %meta{:"name" => "author", :content => @page.author}/
     %meta{:name=>"verify-v1", :content=>"i/cbJtXe1ZDIZNta65CghwcRM/zFMRHIsbR9poU+uwU="}/
-    %title= @page.nil? ? @page.title+" : t.pitale" : "t.pitale"
+    %title= @page.nil? ? @page.title+" : Tony Pitale" : "Tony Pitale"
     %link{:rel=>"shortcut icon", :href=>"/favicon.ico"}
     %link{:rel=>"alternate", :type=>"application/rss+xml", :href=>"http://feeds.feedburner.com/tpitale", :title=>"Atom feed"}
     
@@ -16,6 +16,7 @@ filter:    haml
     %link{:rel=>"stylesheet", :href=>"/css/base.css", :type=>"text/css", :media=>"screen, projection"}/
   %body
     #header
+      %h1 Tony Pitale
     #content
       = @content
 

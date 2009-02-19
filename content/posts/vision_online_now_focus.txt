@@ -3,7 +3,7 @@ title: Vision Online, Now Focus
 subtitle: The exciting tale of a Merb Application and branding
 author: Tony Pitale
 created_at: 2008-03-11 23:49:29.425579 -04:00
-layout: posts
+layout: default
 filter:
   - haml
 ---

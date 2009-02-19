@@ -3,7 +3,7 @@ title: In the Coming Days
 subtitle: So Much to Do
 author: Tony Pitale
 created_at: 2008-05-27 22:11:10.502871 -04:00
-layout: posts
+layout: default
 filter:
   - haml
 ---

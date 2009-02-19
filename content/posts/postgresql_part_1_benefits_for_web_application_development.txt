@@ -3,7 +3,7 @@ title: PostgreSQL Part 1
 subtitle: Benefits for Web Application Development
 author: Tony Pitale
 created_at: 2009-01-26 02:11:30.339755 -05:00
-layout: posts
+layout: default
 filter:
   - haml
 ---

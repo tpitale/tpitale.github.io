@@ -2,7 +2,7 @@
 title: Legacy Databases with DataMapper
 subtitle: Something Old, Something New
 author: Tony Pitale
-layout: posts
+layout: default
 created_at: 2008-03-18 10:57:06.231695 -04:00
 filter:
   - haml

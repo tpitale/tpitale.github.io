@@ -3,7 +3,7 @@ title: Webby - Part 2
 subtitle: Essential Features
 author: Tony Pitale
 created_at: 2008-04-13 14:40:12.756500 -04:00
-layout: posts
+layout: default
 filter:
   - haml
 ---

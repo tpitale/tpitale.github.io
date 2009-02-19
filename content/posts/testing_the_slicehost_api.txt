@@ -3,7 +3,7 @@ title: Beta Testing the Slicehost API
 subtitle: A Foray into ActiveResource and DNS Records
 author: Tony Pitale
 created_at: 2008-03-21 18:29:50.464798 -04:00
-layout: posts
+layout: default
 filter:
   - haml
 ---

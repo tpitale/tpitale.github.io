@@ -3,7 +3,7 @@ title: Ezra Introduces Vertebra at RailsConf 2008
 subtitle: Configuration Through the Clouds
 author: Tony Pitale
 created_at: 2008-06-01 10:51:45.374671 -07:00
-layout: posts
+layout: default
 filter:
   - haml
 ---

@@ -3,7 +3,7 @@ title: Carpal Tunnel Syndrome
 subtitle: Or, the Lack Thereof
 author: Tony Pitale
 created_at: 2008-03-25 00:46:50.999737 -04:00
-layout: posts
+layout: default
 filter:
   - haml
 ---

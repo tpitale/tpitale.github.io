@@ -48,7 +48,7 @@ abbr,acronym {
 }
 
 a {
-	color: #FFFFFF;
+	color: #999999;
 	text-decoration: none;
 }
 
@@ -59,14 +59,13 @@ a {
 /* +Layout
 =============================================================================*/
 body {
-	font-size: 9pt;
-	color: #FFFFFF;
-	font-family: verdana, sans-serif;
-	background: #14128A url('/images/background.jpg') no-repeat top center;
+	font-size: 13px;
+	color: #CCCCCC;
+	font-family: Helvetica, Arial, sans-serif;
 }
 
 b {
-	color: #FFFFFF;
+	color: #666666;
 	font-weight: normal;
 }
 
@@ -101,13 +100,13 @@ p a {
 .col ul li a {
 	margin: 2px 0;
 	padding: 3px;
-	color: #B8C4CC;
+	color: #999999;
 	display: block;
 	font-size: 85%;
 }
 
 .col ul li a:hover {
-  color: #FFFFFF;
+  color: #333333;
 }
 
 .block {
@@ -117,27 +116,41 @@ p a {
 
 #header {
   height: 50px;
+  border-bottom: 2px solid #333333;
+  background: #14128A url('/images/background.jpg') no-repeat center top;
+}
+
+#header h1 {
+  font-size: 30px;
+  font-weight: 300;
+  padding: 7px 20px;
+  text-shadow: #000000 0px 1px 1px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica sans-serif;
+}
+
+#content {
+  border-top: 1px solid #EEEEEE;
+  background: #FFFFFF url('/images/body_gradient.png') repeat-x left -30px;
 }
 
 #blog {
-  background: transparent url('/images/shadow-lip-upper.png') no-repeat center -10px;
+  border-bottom: 1px solid #CCCCCC;
 }
 
 #blog .wrap {
-  padding-top: 20px;
-  padding-bottom: 30px;
-  border-top: 1px dotted #0F105C;
-  border-bottom: 1px dotted #0F005C;
+  padding: 20px 0;
 }
+
 /* +Photos
 =============================================================================*/
 #photos {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  overflow: hidden;
+  padding: 30px 0;
+  background: #CCCCCC url('/images/shadow-lip-upper.png') no-repeat center top;
 }
 
 #photos .wrap {
+  left: 5px;
+  position:relative;
 }
 
 div.flickr_badge_image {
@@ -145,32 +158,30 @@ div.flickr_badge_image {
 	display: block;
 	margin-right: 10px;
 	margin-bottom: 10px;
-	border: 1px dotted #999999;
+	border: 1px solid #AAAAAA;
 }
 
 div.flickr_badge_image:hover {
-  border: 1px dotted #CCCCCC;
+  border: 1px solid #666666;
 }
 
 /* +Projects
 =============================================================================*/
 #projects {
+  background-color: #999999;
+  padding: 30px 0;
 }
 
 #projects .wrap {
-  padding-top: 30px;
-  border-top: 1px dotted #0F005C;
 }
 
 #projects a {}
 
 #projects a img {
 	margin-bottom: 10px;
-	border: 1px solid #333333;
 }
 
 #projects a:hover img {
-  border: 1px solid #CCCCCC;
 }
 
 /* +Post
@@ -183,9 +194,11 @@ div.flickr_badge_image:hover {
 #post h1 {
   color: #FFFFFF;
   font-size: 200%;
-  margin-top: 10px;
+  font-weight: 300;
   font-style: italic;
-  font-family: Georgia, serif;
+  margin: 10px 0 5px 0;
+  text-shadow: #CCC 0px 1px 1px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica sans-serif;
 }
 
 #post h2 {
@@ -195,7 +208,7 @@ div.flickr_badge_image:hover {
 }
 
 #post h3 {
-  color: #FFFFFF;
+  color: #999999;
   font-size: 115%;
   margin: 5px 0;
 }
@@ -207,13 +220,14 @@ div.flickr_badge_image:hover {
 }
 
 #post span.date {
-	color: #FFFFFF;
+	color: #999999;
 	font-size: 85%;
 }
 
 #post p {
-	margin: 10px 0 20px 0;
+  color: #666666;
 	line-height: 1.4em;
+	margin: 10px 0 20px 0;
 }
 
 #post p.next {
@@ -234,7 +248,7 @@ div.flickr_badge_image:hover {
 #post p code {
   margin: 10px;
   padding: 5px;
-  color: #FFFFFF;
+  color: #999999;
   display: block;
   font-size: 110%;
 	font-family: monospace;
@@ -256,7 +270,6 @@ div.flickr_badge_image:hover {
 /* Footer
 =============================================================================*/
 #footer {
-  margin-top: 50px;
   padding-top: 10px;
   padding-bottom: 20px;
   background-color: #323232;

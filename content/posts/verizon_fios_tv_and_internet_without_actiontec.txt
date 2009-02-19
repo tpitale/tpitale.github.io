@@ -3,7 +3,7 @@ title: Verizon Fios Internet & TV
 subtitle: Using Your Own Router, Not the Actiontec Router
 author: Tony Pitale
 created_at: 2008-07-08 09:31:33.371391 -04:00
-layout: posts
+layout: default
 filter:
   - haml
 ---

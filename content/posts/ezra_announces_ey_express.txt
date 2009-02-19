@@ -3,7 +3,7 @@ title: Ezra Announces Engine Yard Express VM Image
 subtitle: A Slice of a Slice
 author: Tony Pitale
 created_at: 2008-06-01 11:19:29.965784 -07:00
-layout: posts
+layout: default
 filter:
   - haml
 ---

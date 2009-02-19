@@ -3,7 +3,7 @@ title: Imaginary Mac Dock
 subtitle: If You Must, You Must
 author: Tony Pitale
 created_at: 2008-03-18 17:08:41.565556 -04:00
-layout: posts
+layout: default
 filter:
   - haml
 ---

@@ -3,7 +3,7 @@ title: Three Games
 subtitle: In Three Weeks of Midnight Launches
 author: Tony Pitale
 created_at: 2008-11-06 21:34:52.546585 -05:00
-layout: posts
+layout: default
 filter:
   - haml
 ---

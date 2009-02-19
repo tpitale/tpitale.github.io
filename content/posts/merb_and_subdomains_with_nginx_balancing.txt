@@ -3,7 +3,7 @@ title: Merb and Subdomains with Nginx
 subtitle: Quick Lessons Learned
 author: Tony Pitale
 created_at: 2009-02-03 22:06:18.454455 -05:00
-layout: posts
+layout: default
 filter:
   - haml
 ---

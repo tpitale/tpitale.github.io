@@ -3,7 +3,7 @@ title: Do We Really Need MobileMe?
 subtitle: Getting By On Google and Dropbox
 author: Tony Pitale
 created_at: 2008-12-04 13:42:33.800276 -05:00
-layout: posts
+layout: default
 filter:
   - haml
 ---

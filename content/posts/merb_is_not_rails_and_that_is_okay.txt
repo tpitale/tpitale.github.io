@@ -3,7 +3,7 @@ title: Merb is Not Rails
 subtitle: And That is Okay
 author: Tony Pitale
 created_at: 2008-05-29 15:33:54.256781 -07:00
-layout: posts
+layout: default
 filter:
   - haml
 ---
