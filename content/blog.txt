@@ -6,6 +6,6 @@ layout: default
 filter:
   - haml
 ---
-- posts = @pages.find(:all, :in_directory => 'posts', :sort_by => 'mtime', :reverse => true)
+- posts = @pages.find(:all, :in_directory => 'posts', :sort_by => 'created_at', :reverse => true)
 - posts.each do |post|
   = render(post)
