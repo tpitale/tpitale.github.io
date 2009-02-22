@@ -1,10 +1,11 @@
 $(document).ready(function(){
-  display_flickr();
+  display_flickr($("div.flickr_badge_image", "#photos"), 0);
 });
 
-function display_flickr(obj) {
-  if(obj==undefined) obj = $("div.flickr_badge_image:first")
-  $(obj).fadeIn(250, function() {
-    display_flickr($(this).next());
+function display_flickr(divs, at) {
+  if(at >= $(divs).length) return;
+  
+  $($(divs).get(at)).fadeIn(250, function() {
+    display_flickr(divs, at++);
   });
 }

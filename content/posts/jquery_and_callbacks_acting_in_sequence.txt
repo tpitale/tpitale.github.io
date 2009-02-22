@@ -1,0 +1,67 @@
+---
+title: jQuery and Callbacks
+subtitle: Making Actions Happen in Sequence
+author: Tony Pitale
+created_at: 2009-02-22 02:24:02.062705 -05:00
+layout: default
+filter:
+  - haml
+---
+#post
+  %h1= h(@page.title)
+  %h2= h(@page.subtitle)
+  %span.date= @page.created_at.strftime('%Y-%m-%d')
+  
+  %p
+    Almost every jQuery function has the ability to accept and execute callbacks.
+    A callback is simply a function that is intended to be executed by another
+    function upon it's own completion.
+  %p
+    I have a sneaking suspicion that jQuery's powerful ability to chain effects
+    and other actions together has lulled many of its users into expecting those
+    effects or actions to occur in sequence. In reality, the execution of the
+    chain happens so rapidly that the outcome is often simultaneous and unexpected.
+  %p
+    Even if it isn't an unexpected behavior it is still sometimes difficult to
+    wrap up the chain to create whatever sequence of effects we do wish to create.
+    And if what we are looking for is a sequence of effects or actions on one or
+    multiple selected elements, look no farther than the mighty callback function.
+    Further we can mix in some other programming concepts (like recursion), for
+    those with strong hearts, and come out with a nice little example.
+  %p
+    My markup has a collection of div elements that I'd like to have appear one
+    after another with a nice fadeIn effect. Here is what I came up with:
+    %code
+      function display_in_sequence(divs, at) {
+      %code
+        if(at >= $(divs).length) return;
+      %code
+        $($(divs).get(at)).fadeIn(250, function() {
+        %code
+          display_in_sequence(divs, at++);
+        });
+      }
+  %p
+    Simply call this function from within the standard document readiness function
+    like so:
+    %code
+      display_in_sequence($("div.sequence", "#scope_id"), 0);
+  %p
+    A couple things to note: I have to wrap the call to get an element from the 
+    array of elements as the only thing returned is the element selected and not
+    a jQuery object, and also note in the originating call that I use a second
+    parameter which has the effect of scoping the DOM traversal that jQuery has
+    to do to find the selection of elements you want. It is almost always wise
+    to provide a scope so that jQuery doesn't waste it's time searching through
+    the entire DOM tree for your elements.
+    
+  #disqus_thread
+
+%script{:type =>"text/javascript", :src=>"http://disqus.com/forums/tpitale/embed.js"}
+%noscript
+  %a{:href=>"http://tpitale.disqus.com/?url=ref"}
+    View the discussion thread.
+  %a{:href=>"http://disqus.com", :class=>"dsq-brlink"}
+    blog comments powered by 
+    %span{:class=>"logo-disqus"}
+      Disqus

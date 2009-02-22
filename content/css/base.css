@@ -335,11 +335,10 @@ div.flickr_badge_image:hover {
 }
 
 #post p code {
-  margin: 10px;
+  margin: 5px;
   padding: 5px;
   color: #999999;
   display: block;
-  font-size: 110%;
 	font-family: monospace;
 }
 
