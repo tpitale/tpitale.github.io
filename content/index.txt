@@ -28,7 +28,7 @@ filter:
 / Sampling of flickr images
 #photos
   .wrap
-    %script{:type=>"text/javascript", :src=>"http://www.flickr.com/badge_code_v2.gne?count=10&display=random&size=s&layout=x&source=user_set&user=41783324%40N00&set=72157604108727991"}
+    %script{:type=>"text/javascript", :src=>"http://www.flickr.com/badge_code_v2.gne?count=10&display=random&size=s&layout=x&source=user_set&user=41783324%40N00&set=72157605236285647"}
     %script{:type=>"text/javascript", :src=>"http://www.flickr.com/badge_code_v2.gne?count=10&display=random&size=s&layout=x&source=user_set&user=41783324%40N00&set=72157602176622405"}
     %script{:type=>"text/javascript", :src=>"http://www.flickr.com/badge_code_v2.gne?count=10&display=latest&size=s&layout=x&source=user_set&user=41783324%40N00&set=72157600262586911"}
     %br.clearleft/
@@ -37,13 +37,29 @@ filter:
 #projects
   .wrap
     .col
+      %ul
+        %li
+          = link_to("Information Schema", 'http://github.com/tpitale/information_schema')
+          Collection of Datamapper Resources to access PostgreSQL Information Schema
+        %li
+          = link_to("ICS Winepos", 'http://github.com/tpitale/vznweb')
+          ICS Winepos Site Webby Project for ICS
+        %li
+          = link_to("GA Debug", 'http://github.com/tpitale/ga-debug')
+          Debug Google Analytics in Development
+        %li
+          = link_to("SimplestAuth", 'http://github.com/vigetlabs/simplest_auth')
+          Very Simple Authentication for Rails, developed at Viget
+
     .block
-      = link_to("<img src='/images/winepos.png' />", "http://www.winepos.com")
-      = link_to("<img src='/images/focus.png' />", "http://focusapp.com")
-      / = link_to("<img src='/images/appuser.png' />", "#")
-      / = link_to("<img src='/images/threeoseven.png' />", "#")
-      / = link_to("<img src='/images/prv3.png' />", "#")
-      / = link_to("<img src='/images/checkout.png' />", "#")
+      %a{:href => 'http://winepos.com', :target => '_blank', :class => 'winepos'}
+        / %img{:src => '/images/winepos.png'}
+        %h3 ICS Winepos Site
+        %span Implementation using Webby, some design work, deployment
+      %a{:href => 'http://focusapp.com', :target => '_blank', :class => 'focus'}
+        / %img{:src => '/images/focus.png'}
+        %h3 Focus
+        %span Under Development with Ruby, Merb, jQuery, and PostgreSQL
       %br.clearleft/
 
 #footer
