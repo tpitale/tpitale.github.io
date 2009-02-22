@@ -40,16 +40,16 @@ filter:
       %ul
         %li
           = link_to("Information Schema", 'http://github.com/tpitale/information_schema')
-          Collection of Datamapper Resources to access PostgreSQL Information Schema
+          Collection of DataMapper Resource Classes to access PostgreSQL Information Schema Views
         %li
           = link_to("ICS Winepos", 'http://github.com/tpitale/vznweb')
-          ICS Winepos Site Webby Project for ICS
+          Winepos Site, a Webby Project for Innovative Computer Solutions
         %li
           = link_to("GA Debug", 'http://github.com/tpitale/ga-debug')
-          Debug Google Analytics in Development
+          Script to Debug Google Analytics in Development with console logs and a popup message box
         %li
           = link_to("SimplestAuth", 'http://github.com/vigetlabs/simplest_auth')
-          Very Simple Authentication for Rails, developed at Viget
+          Very Simple Authentication for Rails using BCrypt, developed at Viget
 
     .block
       %a{:href => 'http://winepos.com', :target => '_blank', :class => 'winepos'}
@@ -61,16 +61,3 @@ filter:
         %h3 Focus
         %span Under Development with Ruby, Merb, jQuery, and PostgreSQL
       %br.clearleft/
-
-#footer
-  .wrap
-    %p.about
-      I've been called many things:
-      = link_to("Developer,", "http://www.github.com/tpitale")
-      = link_to("Hokie,", "http://www.vt.edu")
-      = link_to("Viget Lab Rat,", "http://www.viget.com")
-      = link_to("Photographer", "http://www.flickr.com/photos/thatdbeme/")
-      and some other names, too gruesome to repeat.
-    %p.copyright
-      © 2009
-      = link_to("Tony Pitale", "mailto:tpitale@gmail.com")

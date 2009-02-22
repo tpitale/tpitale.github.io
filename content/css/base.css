@@ -86,8 +86,10 @@ p a {
 	margin-left: 230px;
 }
 
+/* +Header
+=============================================================================*/
+
 #header {
-  height: 50px;
   border-bottom: 2px solid #333333;
   background: #14128A url('/images/background.jpg') no-repeat center top;
 }
@@ -101,6 +103,31 @@ p a {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica sans-serif;
 }
 
+#header ul {
+  top: 5px;
+  right: 10px;
+  position: absolute;
+}
+
+#header ul li {
+  float: left;
+}
+
+#header ul li a {
+  margin: 7px 2px;
+  color: #FFFFFF;
+  display: block;
+  font-size: 125%;
+  padding: 5px 7px;
+  text-shadow: #999999 0px 1px 1px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica sans-serif;
+}
+
+#header ul li a:hover {
+  text-decoration: none;
+  background-color: #19188D;
+}
+
 #content {
   border-top: 1px solid #FFFFFF;
   background: #FFFFFF url('/images/body_gradient.png') repeat-x left -100px;
@@ -110,7 +137,7 @@ p a {
 =============================================================================*/
 
 #blog {
-  border-bottom: 1px solid #CCCCCC;
+  border-bottom: 1px solid #666666;
 }
 
 #blog .wrap {
@@ -168,13 +195,12 @@ div.flickr_badge_image:hover {
   border: 1px solid #666666;
 }
 
-
-
 /* +Projects
 =============================================================================*/
 #projects {
-  background-color: #999999;
   padding: 30px 0;
+  background-color: #999999;
+  border-top: 1px solid #666666;
 }
 
 #projects .wrap {
@@ -198,7 +224,7 @@ div.flickr_badge_image:hover {
 
 #projects .col ul li a {
   margin: 7px 0;
-  color: #666666;
+  color: #19188D;
   display: block;
   padding: 3px 5px;
   text-align: left;
@@ -235,7 +261,7 @@ div.flickr_badge_image:hover {
 #projects .block a h3 {
   width: 190px;
   padding: 5px;
-  color: #333333;
+  color: #19188D;
   font-size: 125%;
   background-color: #EEEEEE;
 }
@@ -265,7 +291,7 @@ div.flickr_badge_image:hover {
 }
 
 #post h2 {
-	color: #99B8CC;
+	color: #19188D;
 	font-size: 125%;
 	margin-bottom: 5px;
 }
@@ -343,7 +369,7 @@ div.allposts b {
 /* Footer
 =============================================================================*/
 #footer {
-  padding-top: 10px;
+  padding-top: 20px;
   padding-bottom: 20px;
   background-color: #323232;
 }
@@ -368,4 +394,10 @@ div.allposts b {
 
 #footer p.copyright a {
   color: #999999;
+}
+
+#footer p.ps {
+  margin-top: 10px;
+  font-size: 85%;
+  color: #666666;
 }

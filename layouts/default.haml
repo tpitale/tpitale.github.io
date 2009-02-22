@@ -17,9 +17,29 @@ filter:    haml
   %body
     #header
       %h1 Tony Pitale
+      %ul
+        %li
+          = link_to('Home', '/')
+        %li
+          = link_to('Blog', '/blog.html')
     #content
       = @content
 
+    #footer
+      .wrap
+        %p.about
+          I've been called many things:
+          = link_to("Developer,", "http://www.github.com/tpitale")
+          = link_to("Hokie,", "http://www.vt.edu")
+          = link_to("Viget Lab Rat,", "http://www.viget.com")
+          = link_to("Photographer,", "http://www.flickr.com/photos/thatdbeme/")
+          = link_to("Orator", "http://www.twitter.com/hibiscus4")
+          and some other names, too gruesome to repeat.
+        %p.copyright
+          © 2009
+          = link_to("Tony Pitale", "mailto:tpitale@gmail.com")
+        %p.ps
+          Okay, so &ldquo;Orator&rdquo; might be pushing it.
     %script{:type=>"text/javascript", :src=>"/javascripts/jquery.js"}
     %script{:type=>"text/javascript", :src=>"/javascripts/main.js"}
       
