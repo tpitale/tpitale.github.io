@@ -1,0 +1,87 @@
+---
+title: MongoDB in a Deployed Environment
+subtitle: Secure, Init, Rejoice
+author: Tony Pitale
+created_at: 2009-08-05 16:45:04.211619 -04:00
+layout: default
+filter:
+  - haml
+---
+#post
+  %h1= h(@page.title)
+  %h2= h(@page.subtitle)
+  %span.date= @page.created_at.strftime('%Y-%m-%d')
+  
+  %p
+    I've been messing around with MongoDB in a Ruby/Rails environment for the
+    past week or so. It's been pretty great. I've tweeted about it, and I'm
+    planning to write more than one blog post about it. While at the same time
+    I'm very wary of the so-called NOSQL movement and getting caught up in it.
+    As such, I'm going to avoid dropping my RDBMS of choice (PostgreSQL) and
+    say I'm actually using it in a mixed environment, with zero trouble at all.
+  %p
+    So, what will I talk about here? Two things are most important aside from
+    the actual install of MongoDB (which itself is amazingly simple). The first
+    is Security, and the second is Init.
+  %p
+    Security is something that must be specially considered with MongoDB because,
+    by default, it runs without any sort of auth in place. This may be contrary
+    to the normal expectations you might have of a data-store. However, this is
+    just fine for many applications, and turning on auth isn't really going to
+    stop anyone, when the password is already in plaintext in a Rails
+    application. The important security aspect we must consider is the firewall.
+    If you are not running iptables on your server, you're behind already.
+    Either way, be sure to double-check the settings and lock any open stuff
+    down. My personal settings only allow for SSH, HTTP, HTTPS to get in. There
+    already exist many good resources available for setting up iptables. So, I'll
+    be skipping it here.
+  %p
+    The other half is setting up an init.d script to run the mongod server at
+    boot time. To start, we'll want to download and position the binary files
+    from
+    = link_to 'MongoDB.org', "http://www.mongodb.org"
+    and since I'm on a 64-bit linux (ubuntu) system I went and downloaded this:
+    = link_to '64-bit linux download.', "http://downloads.mongodb.org/linux/mongodb-linux-x86_64-0.9.7.tgz"
+  %p
+    Shortly after downloading, I untar'd it, and moved /bin the files to a
+    location within a usable path (e.g., /usr/local/mongodb). I checked the
+    permissions to verify that it was executable, but still owned and writable
+    only by root. I finally created symbolic links from /usr/local/mongodb/bin
+    to /usr/local/sbin. In addition I created a logs directory for a pid and a
+    log file within /usr/local/mongodb. Then, I was prep'd to write the init.d.
+  %p
+    Since there are many, many init.d scripts on even a barebones server I
+    decided I would crib something from the fine folks on the nginx project who
+    make use of the start-stop-daemon utility. Here is the init.d script that I
+    came up with:
+    = link_to 'MongoDB init script.', "http://gist.github.com/162954"
+  %p
+    It's fairly simple to understand, but the important parts are the $DAEMON
+    and the extra params I provide to start-stop-daemon. "run" is the command
+    that must be passed to start MongoDB, and after that I log to the given
+    $LOGFILE I created earlier. This has the benefit of keeping mongod in the
+    background, and also keeping a desired log.
+  %p
+    Hopefully, MongoDB will find itself in the repositories of many popular
+    Linux distributions very soon (especially Debian). This should hopefully
+    include a useful init.d script within the package as is par for the course.
+  %p
+    In the near future I'll write a post on my experiences mixing MongoDB and
+    a typical SQL database. Amazingly, there's not much difficulty in doing so.
+    I'll also have a post up with a better introduction to Mongolytics, my new
+    gem for doing base server-side analytics tracking with storage provided by
+    MongoDB.
+  %p
+    If you'd like to share your experiences, best MongoDB practices, and any
+    comments/questions, please comment!
+    
+  #disqus_thread
+
+%script{:type =>"text/javascript", :src=>"http://disqus.com/forums/tpitale/embed.js"}
+%noscript
+  %a{:href=>"http://tpitale.disqus.com/?url=ref"}
+    View the discussion thread.
+  %a{:href=>"http://disqus.com", :class=>"dsq-brlink"}
+    blog comments powered by 
+    %span{:class=>"logo-disqus"}
+      Disqus
