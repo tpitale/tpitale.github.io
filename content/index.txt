@@ -42,6 +42,12 @@ filter:
           = link_to("Garb", 'http://github.com/vigetlabs/garb')
           Ruby Wrapper for the Google Analytics Data Export API
         %li
+          = link_to("Mongolytics", 'http://github.com/tpitale/mongolytics')
+          Rails Request and Session Analytics Stored in MongoDB
+        %li
+          = link_to("SimplestAuth", 'http://github.com/vigetlabs/simplest_auth')
+          Very Simple Authentication for Rails using BCrypt, developed at Viget
+        %li
           = link_to("net/simple", 'http://github.com/tpitale/net-simple')
           Simple wrapper around net/ssh and net/scp, inspired by Capistrano
         %li
@@ -56,11 +62,12 @@ filter:
         %li
           = link_to("GA Debug", 'http://github.com/tpitale/ga-debug')
           Script to Debug Google Analytics in Development with console logs and a popup message box
-        %li
-          = link_to("SimplestAuth", 'http://github.com/vigetlabs/simplest_auth')
-          Very Simple Authentication for Rails using BCrypt, developed at Viget
 
     .block
+      %a{:href => 'http://wineistasty.com', :target => '_blank', :class => 'tasty'}
+        / %img{:src => '/images/tasty.png'}
+        %h3 Tasty
+        %span Ruby/Rails with PostgreSQL, DataMapper, and MongoDB
       %a{:href => 'http://winepos.com', :target => '_blank', :class => 'winepos'}
         / %img{:src => '/images/winepos.png'}
         %h3 ICS Winepos Site

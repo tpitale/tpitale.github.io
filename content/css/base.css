@@ -246,6 +246,9 @@ div.flickr_badge_image:hover {
   border: 5px solid #CCCCCC;
 }
 
+#projects .block a.tasty {
+  background: #D0D68B url('/images/tasty.png') no-repeat 40px -65px;
+}
 #projects .block a.winepos {
   background: #FFFFFF url('/images/winepos.png') no-repeat 200px top;
 }
