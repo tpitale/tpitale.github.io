@@ -1,28 +1,41 @@
 ;(function($) {
   $.fn.gistify = function() {
     return this.each(function() {
-      this.innerHTML = 'Loading Gist '+this.id;
-      $.getJSON("http://gist.github.com/"+ this.id +".json?callback=?", function (gist) {
-        $('#'+gist.repo).replaceWith(gist.div);
-      });
+      var link = $(this);
+      var href = $(this).attr('href');
+
+      var gist_id = /http:\/\/gist\.github\.com\/(\d+)/.exec(href);
+
+      if (gist_id) {
+        link.wrap('<div id="embedded-gist-'+gist_id[1]+'">');
+        jQuery.getJSON(href+'.json?callback=?', function(data) {
+          var stylesheet_needed = true;
+          $('head link[rel=stylesheet]').each(function() {
+            if (this.href == data.stylesheet) { stylesheet_needed = false; }
+          })
+          
+          if (stylesheet_needed) {$('head').append('<link rel="stylesheet" href="' + data.stylesheet + '" />');}
+          $('div#embedded-gist-'+gist_id[1]).replaceWith(data.div);
+        });
+      }
     });
   }
 })(jQuery);
 
+;(function($) {
+  $.fn.flickr_in_sequence = function() {
+    var i = 0;
+    return this.each(function() {
+      i++;
+      var badge = this;
+      var display_flickr = function(){$(badge).fadeIn(250);};
+      setTimeout(display_flickr, 500*i);      
+    });
+  }
+})(jQuery);
+
+
 $(document).ready(function(){
-  fill_in_gists();
-  display_flickr($("div.flickr_badge_image", "#photos"), 0);
+  $('a.gist').gistify();
+  $("div.flickr_badge_image", "#photos").flickr_in_sequence();
 });
-
-function display_flickr(divs, at) {
-  if(at >= $(divs).length) return;
-  
-  $($(divs).get(at)).fadeIn(250, function() {
-    display_flickr(divs, at++);
-  });
-}
-
-function fill_in_gists() {
-  $('div.gist').gistify();
-  $("head").append('<link rel="stylesheet" href="http://gist.github.com/stylesheets/gist/embed.css"/>');
-}

@@ -185,7 +185,7 @@ p a {
 
 div.flickr_badge_image {
 	float: left;
-	display: none;
+  display: none;
 	margin-right: 10px;
 	margin-bottom: 10px;
 	border: 1px solid #AAAAAA;

@@ -52,11 +52,11 @@ filter:
     some stats have been tracked we can turn around and retrieve them. Here is
     what that might look like:
   %h3 Include the Module
-  %div.gist#166751
+  %a.gist{:href => 'http://gist.github.com/166751'}
   %h3 Track Actions
-  %div.gist#166753
+  %a.gist{:href => 'http://gist.github.com/166753'}
   %h3 Check the Stats
-  %div.gist#166755
+  %a.gist{:href => 'http://gist.github.com/166755'}
   %p
     And that is it. MongoDB will store all that stuff and make it easy to pull
     back out again. I tried to make it as quick and painless as possible. There
