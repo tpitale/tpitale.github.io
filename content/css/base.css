@@ -254,7 +254,7 @@ div.flickr_badge_image:hover {
   background: #FFFFFF url('/images/winepos.png') no-repeat 200px top;
 }
 #projects .block a.append {
-  background: #202522 url('/images/append.png') no-repeat -750px top;
+  background: #202522 url('/images/append.png') no-repeat -150px top;
 }
 #projects .block a.focus {
   background: #D6D6D6 url('/images/focus.png') no-repeat 100px -10px;
