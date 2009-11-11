@@ -74,6 +74,7 @@ a:hover {
 }
 
 p a {
+  color: #000000;
   font-weight: bold;
 }
 
@@ -247,13 +248,16 @@ div.flickr_badge_image:hover {
 }
 
 #projects .block a.tasty {
-  background: #D0D68B url('/images/tasty.png') no-repeat 40px -65px;
+  background: #D9DF9E url('/images/tasty.png') no-repeat 40px -65px;
 }
 #projects .block a.winepos {
   background: #FFFFFF url('/images/winepos.png') no-repeat 200px top;
 }
+#projects .block a.append {
+  background: #202522 url('/images/append.png') no-repeat -750px top;
+}
 #projects .block a.focus {
-  background: #CCCCCC url('/images/focus.png') no-repeat 100px -10px;
+  background: #D6D6D6 url('/images/focus.png') no-repeat 100px -10px;
 }
 
 #projects .block a:hover {
@@ -333,8 +337,8 @@ div.flickr_badge_image:hover {
 }
 
 #post p a {
+  color: #333333;
 	font-weight: bold;
-	color: #999999;
 }
 
 #post p code {

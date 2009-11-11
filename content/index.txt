@@ -51,9 +51,6 @@ filter:
           = link_to("net/simple", 'http://github.com/tpitale/net-simple')
           Simple wrapper around net/ssh and net/scp, inspired by Capistrano
         %li
-          = link_to("dm_session_store", 'http://github.com/tpitale/dm_session_store')
-          Rails Session Store implementation for using DataMapper
-        %li
           = link_to("Information Schema", 'http://github.com/tpitale/information_schema')
           Collection of DataMapper Resource Classes to access PostgreSQL Information Schema Views
         %li
@@ -72,6 +69,10 @@ filter:
         / %img{:src => '/images/winepos.png'}
         %h3 ICS Winepos Site
         %span Implementation using Webby, some design work, deployment
+      %a{:href => 'http://a.ppend.to', :target => '_blank', :class => 'append'}
+        / %img{:src => '/images/append.png'}
+        %h3 Append
+        %span 2009 Rails Rumble Entry; Team Scatapult
       %a{:href => 'http://focusapp.com', :target => '_blank', :class => 'focus'}
         / %img{:src => '/images/focus.png'}
         %h3 Focus
