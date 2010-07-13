@@ -6,11 +6,6 @@ author: Tony Pitale
 created_at: 2008-06-04 09:27:02.668589 -04:00
 layout: post
 ---
-<div id="post">
-  %h1= h(@page.title)
-  %h2= h(@page.subtitle)
-  %span.date= @page.created_at.strftime('%Y-%m-%d')
-  
   <p>
     Getting things done apps are over-complicated to-do lists, in my mind. As I
     said in a previous post, I enjoy using iCal/Mail To-dos for three reasons.
@@ -24,11 +19,11 @@ layout: post
 
   <p>
     Between
-    = link_to "TUAW", "http://tuaw.com"
+    <a href="http://tuaw.com">TUAW</a>
     and
-    = link_to "MacApper", "http://macapper.com/"
+    <a href="http://macapper.com/">MacApper</a>
     I was able to select two applications to try. The first is called
-    = link_to "Things", "http://www.culturedcode.com/things/"
+    <a href="http://www.culturedcode.com/things/">Things</a>
     and is a full-blown application. Things has a fantastic user-interface, a
     great feature-set, and is under constant development. At the same time, I
     did not use all of the features the application already had. Things is
@@ -42,7 +37,7 @@ layout: post
 
   <p>
     The second application is called
-    = link_to "Dejumble.", "http://www.dejumble.com/"
+    <a href="http://www.dejumble.com/">Dejumble.</a>
     Unlike Things, Dejumble lives in the menubar only. Although I don’t like to
     clutter my menubar the ease of access is phenomenal and instantaneous. The
     feature set is not as complete as Things but, given my needs, that is just
@@ -66,11 +61,3 @@ layout: post
     without its features, none of these applications would be as useful. As
     always, Mail still gets the job done.
 
-%script{:type =>"text/javascript", :src=>"http://disqus.com/forums/tpitale/embed.js"}
-%noscript
-  %a{:href=>"http://tpitale.disqus.com/?url=ref"}
-    View the discussion thread.
-  %a{:href=>"http://disqus.com", :class=>"dsq-brlink"}
-    blog comments powered by 
-    %span{:class=>"logo-disqus"}
-      Disqus

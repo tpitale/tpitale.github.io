@@ -6,11 +6,6 @@ author: Tony Pitale
 created_at: 2008-04-06 20:46:17.756245 -04:00
 layout: post
 ---
-<div id="post">
-  %h1= h(@page.title)
-  %h2= h(@page.subtitle)
-  %span.date= @page.created_at.strftime('%Y-%m-%d')
-  
   <p>
     I won't often speak of politics. In fact, I would like this to be my one
     and only post on the subject.
@@ -65,11 +60,3 @@ layout: post
     only fear at this point is that something, someone, is going to screw it up
     for the rest of the country.
     
-%script{:type =>"text/javascript", :src=>"http://disqus.com/forums/tpitale/embed.js"}
-%noscript
-  %a{:href=>"http://tpitale.disqus.com/?url=ref"}
-    View the discussion thread.
-  %a{:href=>"http://disqus.com", :class=>"dsq-brlink"}
-    blog comments powered by 
-    %span{:class=>"logo-disqus"}
-      Disqus
