@@ -11,7 +11,7 @@ layout: post
   %h2= h(@page.subtitle)
   %span.date= @page.created_at.strftime('%Y-%m-%d')
   
-  %p
+  <p>
     I've been busy. At work, at home (working), and always in my head. I can't
     decide which is more exciting: the news that I'll be speaking, along with
     three of my Viget comrades at RubyNation this year, or that Google
@@ -20,7 +20,7 @@ layout: post
     everything in this opportunity. Without the marketing folks I would not
     have had access to the beta API, and without Viget in general it would not
     have happened.
-  %p
+  <p>
     Let's start with RubyNation. My talk will be on DataMapper and Rails and
     you can find out more
     = link_to("on the RubyNation website.", 'http://www.rubynation.org/')
@@ -37,7 +37,7 @@ layout: post
       standard table naming, connecting to multiple databases for the purpose of
       syncing or migrating data, and a variety of association examples.
 
-  %p
+  <p>
     Next, onto Garb. Google release a data export API for all of the Google
     Analytics date they have. It provides an unprecedented level of access to
     data never-before accessible. To make the API easy and fun when working
@@ -45,16 +45,16 @@ layout: post
     which anyone can create custom reports in their Ruby application. I've
     reached near to feature-parity with the API itself and aside from OAuth
     you can do almost anything you would need.
-  %p
+  <p>
     = link_to("Check it out on Github.", "http://github.com/vigetlabs/garb")
 
-  %p
+  <p>
     What else? I'm very excited to be working on an unreleased Rails project
     with an unannounced, famed designer. What I can tell you is that it is
     presently named (codenamed?) Tasty and I'm hoping to have it out "soon". Oh,
     and it will be able to do some stuff that nobody in the its market will be
     able to do.
-  %p
+  <p>
     I hope you'll check out
     = link_to("Garb,", "http://github.com/vigetlabs/garb")
     and I hope you'll come hear my talk at

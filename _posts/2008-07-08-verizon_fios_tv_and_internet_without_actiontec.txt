@@ -11,7 +11,7 @@ layout: post
   %h2= h(@page.subtitle)
   %span.date= @page.created_at.strftime('%Y-%m-%d')
   
-  %p
+  <p>
     %h3 The basic steps are as follows:
     %ol
       %li Order Verizon Fios
@@ -27,7 +27,7 @@ layout: post
         (STB)
   
   %h3 Now for some explanation  
-  %p
+  <p>
     I think ordering should be pretty self-explanatory. However, I have not
     said anything about why a sane person would wish to do this instead of
     letting the nice Verizon installer do their job. It's all in the hardware
@@ -37,7 +37,7 @@ layout: post
     to fight for the information.
 
   %h3 Onto the more technical stuff
-  %p
+  <p>
     The MOCA is the box that is left outside of your house. Essentially, it
     receives and interprets the signal. It takes the place of what we once
     called a MODEM. In this box, there are multiple connections, one of which
@@ -47,13 +47,13 @@ layout: post
     because the Actiontec router (which, with a simple google search, one will
     find is nearly worthless) is intended to work with it. Using the ethernet
     port is required so that every other brand of standard router will operate.
-  %p
+  <p>
     Next, we set up our router in much the same way it would be set up with a
     DSL or Cable ISP. Verizon uses the standard, DHCP, to give your router an
     IP address. At this point, assuming the internet has been activated by the
     installer, you should be able to get on the internet at the wonderfully
     blazing speeds that Fios provides.
-  %p
+  <p>
     The last major step is asking the installer to give you a "NIM". I never
     found out what "NIM" stood for, but it's purpose is clear. In order to
     get access to the programming guide or to video-on-demand services your
@@ -67,10 +67,10 @@ layout: post
     least the latest Motorola box Verizon provided) but internet access does
     not appear to be the purpose, but rather, home network connection for
     certain media-sharing capabilities (music, movies, pictures to the TV).
-  %p
+  <p>
     At this point, the installer should be able to simply plug in all of your
     STBs and activate them as needed through Verizon.
-  %p
+  <p>
     Disclaimer: I am not a Verizon technician. If for some strange reason any
     of these instructions mess up your system I take no responsibility as
     these are only the methods that worked FOR ME. Your Mileage May Vary!

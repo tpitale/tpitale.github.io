@@ -11,7 +11,7 @@ layout: post
   %h2= h(@page.subtitle)
   %span.date= @page.created_at.strftime('%Y-%m-%d')
   
-  %p
+  <p>
     I won't often speak of politics. In fact, I would like this to be my one
     and only post on the subject.
     %b
@@ -27,7 +27,7 @@ layout: post
     of her legislation passes or is even supported by her peers. Many of these
     bills introduced speak very vaguely about "improving healthcare at sometime
     in the future", without ever mentioning how or when.
-  %p
+  <p>
     Something I have learned working in the IT/Software industry, in a very
     short time, is that time does NOT equal experience. I know many a developer
     that has worked for 20 years and has little more real experience than
@@ -35,13 +35,13 @@ layout: post
     for 2, maybe 3, years. It is the passion that drives us all. This passion
     leads a person to find the experience because it is something they want.
     For many, it is something that simply may or may not happen over time.
-  %p
+  <p>
     If you want to understand just how passionate Barack Obama is, look at how
     passionate his followers are. Barack Obama's passion drives others to be
     just as passionate. This could also be seen in another characteristic of
     Bill Clinton. As Chris Rock used to say in a show, "Bill Clinton is so
     famous, someone else got famous just from sucking his dick!"
-  %p
+  <p>
     Granted, passion isn't everything but, it drives a person to seek out the
     many other characteristics that make an exceptional person. The traits and
     abilities that a person must possess to be the president. Barack Obama has
@@ -50,7 +50,7 @@ layout: post
     In addition, we must face the fact that nothing will ever prepare a person
     truly for being one of the most powerful people in the world. So, we must
     look to the building blocks.
-  %p
+  <p>
     Another excellent measure of a person's character and merit is in the way
     they communicate to the public. Barack Obama, and his campaign, do not
     speak hatefully of any other person. Even when it is well deserved, honest
@@ -59,7 +59,7 @@ layout: post
     quality information has gotten this country in way over its head in war,
     death, debt, and built as a reputation that contrives an extreme level of
     hatred from nearly every other country in the world.
-  %p
+  <p>
     These are only a few of the multitude of "things" that are required to be
     the president. No one person can ever speak of every quality necessary. My
     only fear at this point is that something, someone, is going to screw it up

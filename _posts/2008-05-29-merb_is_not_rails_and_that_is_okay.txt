@@ -11,16 +11,16 @@ layout: post
   %h2= h(@page.subtitle)
   %span.date= @page.created_at.strftime('%Y-%m-%d')
   
-  %p
+  <p>
     Merb is not Rails.
-  %p
+  <p>
     If that statement isn't simple enough for you let me, like
     = link_to 'Ezra', 'http://brainspl.at/articles/2008/05/21/does-it-have-to-be-a-competition-between-rails-and-merb'
     and
     = link_to 'Yehuda', 'http://yehudakatz.com/2008/05/21/cant-we-all-just-get-along/'
     , explain why Merb is not Rails, why this is good for both Merb and Rails,
     and where this will lead both projects in the future.
-  %p
+  <p>
     Ezra laid out the simple fact that there is no competition between Rails
     and Merb. This comes down to “scratching different itches”. Yehuda’s post
     reiterated this and added a few more important “why”s. Yehuda’s main point
@@ -29,13 +29,13 @@ layout: post
     that served as my impetus for seeking out a Rails alternative. I still use
     Rails because in many cases the “get-up-and-go” route is exactly what I
     need. Rails should stick to its guns, philosophically just as Merb should.
-  %p
+  <p>
     Yehuda’s second great point is that those that work on Merb often work on
     Rails and wish to see the experimental developments in Merb move into Rails.
     His example of note is the “provides” api (which many, many Merb people
     love). In the future I hope that Merb as a testbed for Rails continues with
     a bit more stability in Merb, perhaps.
-  %p
+  <p>
     At the moment I need to bring more stability to my own install of Merb. I
     have continually worked with the latest and greatest Merb because of my
     need to stay on the cutting edge with DataMapper.

@@ -11,7 +11,7 @@ layout: post
   %h2= h(@page.subtitle)
   %span.date= @page.created_at.strftime('%Y-%m-%d')
   
-  %p
+  <p>
     Ezra Z.'s talk at RailsConf 2008 started out normally enough but, his first
     point of order was to introduce Vertebra. Vertebra is similar in purpose to
     Capistrano. Instead of using a linear interface such as SSH, Vertebra uses
@@ -21,18 +21,18 @@ layout: post
     is just another piece of the puzzle. The whole process of XMPP providing
     presence -- like jabber instant messaging -- and running on an Erlang
     implementation of the jabber server that is hugely, horizontally scalable.
-  %p
+  <p>
     It appears that you can use a jabber client or a command-line client to
     interact with the system. All sorts of things are capable. The examples
     Ezra gave included everything from requesting RAM and CPU statistics to
     rebuilding systems. Map/Reduce type scatter/gather dispatch for discovery
     and deployment is easily possible with the protocol in use.
-  %p
+  <p>
     Ezra coined a new acronym today, CREST, which stands for cloud REST. Along
     with this Ezra displayed an example that was built on Merb to show a Ruby
     interaction with the cloud using RESTful processes. Resources have URLs,
     just as they should.
-  %p
+  <p>
     All in all, this process seems to be a platform that other cloud services
     could be built upon. I can't wait to dig right in considering he demoed the
     service running live.

@@ -11,7 +11,7 @@ layout: post
   %h2= h(@page.subtitle)
   %span.date= @page.created_at.strftime('%Y-%m-%d')
   
-  %p
+  <p>
     How could I forget the voice of my high school typing teacher, constantly
     nagging me to keep my wrists elevated above the keyboard in an horrific
     and uncomfortable position. After all of these years I've never, ever
@@ -21,7 +21,7 @@ layout: post
     simple table or desk as I would type at a basic keyboard as I worked in
     Windows. Luckily, for me, I have moved away from the Windows world. As
     such, I am now solely reliant upon Apple's hardware creations.
-  %p
+  <p>
     Yet, I have somehow come through unscathed. While an unlucky associate of
     mine did not share the same luck and was required to undergo a simple,
     preventive, surgery. After much (well, not that much) contemplation, the

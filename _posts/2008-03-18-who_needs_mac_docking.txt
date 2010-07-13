@@ -11,12 +11,12 @@ layout: post
   %h2= h(@page.subtitle)
   %span.date= @page.created_at.strftime('%Y-%m-%d')
   
-  %p
+  <p>
     Some people like to come home and "dock" their laptops to a desktop-type
     setup. There is no such thing for a Mac, not in the way that the Dell users
     of the world might imagine it. However, there are two ways to accomplish
     the same features. The first involves another Mac, the second does not.
-  %p
+  <p>
     The first, and conceptually more complicated method relies upon two 
     features that Macs have had as long as I can remember using them. Upon
     booting, a Mac (laptop or desktop) can act as an external hard drive case
@@ -26,13 +26,13 @@ layout: post
     desktop will boot the hard drive in the laptop. If you have an Intel Mac,
     the computers can be connected with a USB cable or a Firewire cable. If you
     are using a PowerPC Mac, a Firewire cable must be used.
-  %p
+  <p>
     The second method is far more simplistic. Apple (and many other companies)
     offer bluetooth keyboards and mice. Simply plug in an external monitor and
     use the bluetooth built into most Macs for the keyboard and mouse. With one
     physical cable you have essentially the same setup as all those "dock"
     users.
-  %p
+  <p>
     There are many reasons why a user might wish to do this but, the most
     obvious reasoning includes a larger screen on a monitor, a full-sized
     keyboard, and a more functional mouse (though I prefer the touchpad for

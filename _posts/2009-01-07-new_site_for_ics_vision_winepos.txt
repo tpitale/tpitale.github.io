@@ -11,19 +11,19 @@ layout: post
   %h2= h(@page.subtitle)
   %span.date= @page.created_at.strftime('%Y-%m-%d')
   
-  %p
+  <p>
     After starting slowly about 6 months ago, I finally launched the new ICS
     website for their lead product, Vision. The last major commit before launch
     was on Sunday night and by the end of Monday most of the nameservers had
     picked up the change. So go check out the site at
     = link_to 'winepos.com', 'http://winepos.com'
-  %p
+  <p>
     For those that don't know, ICS is a software company founded 25 years ago
     to serve the retail liquor industry, exclusively. Vision is the result of
     all of their effort. Vision provides an amazing number of features and all
     of the controls required for inventory management, ordering, tracking, and,
     of course, point-of-sale.
-  %p
+  <p>
     The new site is built with
     = link_to 'Webby', 'http://webby.rubyforge.org'
     = link_to '(source on github)', 'http://github.com/TwP/webby/tree/master'

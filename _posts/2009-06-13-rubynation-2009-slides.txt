@@ -11,7 +11,7 @@ layout: post
   %h2= h(@page.subtitle)
   %span.date= @page.created_at.strftime('%Y-%m-%d')
   
-  %p
+  <p>
     Not much going on other than giving my talk at Rubynation in Reston. I
     think it went well for my first presentation of that size. If you were able
     to attend I would really
@@ -23,12 +23,12 @@ layout: post
     %a{:style=>"font:14px Helvetica,Arial,Sans-serif;display:block;margin:12px 0 3px 0;text-decoration:underline;", :href=>"http://www.slideshare.net/tpitale/legacy-database-with-datamapper?type=powerpoint", :title=>"Legacy Database with Datamapper"}
       Legacy Database with Datamapper
     %object{:style=>"margin:0px", :width=>"425", :height=>"355"}
-      %param{:name=>"movie", :value=>"http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=presentation2-090613155513-phpapp02&stripped_title=legacy-database-with-datamapper"}
-      %param{:name=>"allowFullScreen", :value=>"true"}
-      %param{:name=>"allowScriptAccess", :value=>"always"}
+      <p>aram{:name=>"movie", :value=>"http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=presentation2-090613155513-phpapp02&stripped_title=legacy-database-with-datamapper"}
+      <p>aram{:name=>"allowFullScreen", :value=>"true"}
+      <p>aram{:name=>"allowScriptAccess", :value=>"always"}
       %embed{:src=>"http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=presentation2-090613155513-phpapp02&stripped_title=legacy-database-with-datamapper", :type=>"application/x-shockwave-flash", :allowscriptaccess=>"always", :allowfullscreen=>"true", :width=>"425", :height=>"355"}
       
-  %p
+  <p>
     I just want to say thanks to the organizers and sponsors, as well as, a
     special thanks to Russ Olsen for introducing me and kicking off the QA
     portion when my talk ran under the expected time.

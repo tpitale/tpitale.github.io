@@ -11,7 +11,7 @@ layout: post
   %h2= h(@page.subtitle)
   %span.date= @page.created_at.strftime('%Y-%m-%d')
   
-  %p
+  <p>
     Last week I posted on the new ICS website I launched at
     = link_to 'winepos.com', 'http://winepos.com'
     which is built using the same little ruby gem as this site,
@@ -20,13 +20,13 @@ layout: post
     I did in creating their new site. Aside from what little design work I did
     (admittedly not my strongest ability) I will simply be covering many of the
     cool things you can do with Webby and a couple of tips and gotchas.
-  %p
+  <p>
     The first step is obviously to create a new project. The webby-gen command
     should handle things nicely. I used the 'website' template because that was
     what I was building. From the basic project, I converted and modified all
     of the files created (layout, templates) to use Haml and to fit with a very
     basic structure that I was going to use.
-  %p
+  <p>
     After the basic structure was in place, I created files for all of the site
     pages I was going to need. I also created directories for the feature pages
     and for the blog posts. At this point, I knew that I was going to be making
@@ -36,7 +36,7 @@ layout: post
     you can use Erb in a template and it will be interpreted when generating a
     new page from the template. For example, in order to get a solid created_at
     timestamp, I use Time.now.to_y inside an Erb tag.
-  %p
+  <p>
     As I started to develop the site I discovered I was reusing pieces of
     content more and more frequently. In Rails/Merb it's trivial to create a
     partial snippet of content, and guess what, it's just as easy using Webby.
@@ -50,7 +50,7 @@ layout: post
     layout calling partial from the different sub-directories. The default
     layout could call use partial 'footer' and both the blog and the feature
     folders could have that footer partial with different structure or content.
-  %p
+  <p>
     The last thing I'll cover is making an atom feed from a set of pages. A
     similar technique can be used to make an xml sitemap for Google and other
     search engines. A feed is simply a page that has the extension set to xml
@@ -64,7 +64,7 @@ layout: post
     %code
       @pages.find(:limit => 20, :in_directory => 'blog', :sort_by => 'created_at', :reverse => true)
 
-  %p
+  <p>
     If you're looking to make a website that is going to be just HTML and you
     don't want to run a webserver aside from Apache or Nginx, Webby is probably
     the way to go. I certainly love it, and will continue to make static

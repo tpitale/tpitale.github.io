@@ -11,7 +11,7 @@ layout: post
   %h2= h(@page.subtitle)
   %span.date= @page.created_at.strftime('%Y-%m-%d')
   
-  %p
+  <p>
     In my first post (
     = link_to_page "Webby - Part 1"
     ) I gave a basic description of 
@@ -22,7 +22,7 @@ layout: post
     of the helper methods that come with Webby.
     
   %h3 What is Webby Doing?
-  %p
+  <p>
     Webby is useful because it allows the use of Ruby code as well as helpers,
     layouts, partials, filters (more on that later), and templates. From this
     Webby will create the file structure and html (or xml, atom, rss, etc.).
@@ -32,7 +32,7 @@ layout: post
     update.
     
   %h3 Install Webby
-  %p
+  <p>
     First, in order to use Webby you have to install it. Thankfully, there is a
     gem, making this step very simple. Open the Terminal application (or what
     you would normally use to install a gem) and install Webby (with any
@@ -41,14 +41,14 @@ layout: post
     %code sudo gem install webby
 
   %h3 Optional Installs
-  %p
+  <p>
     Personally, I like using Haml, so I installed that already. Webby is able
     to use a series of "filters" to make use of Haml, Sass, Textile, Markdown,
     and by default, erb. On top of the filters available to transform text,
     Webby has support for CodeRay and UltraViolet syntax highlighting.
   
   %h3 Create a Project
-  %p    
+  <p>    
     Onto creating a project. Webby comes with a command, webby. We use this and
     the name of our project in one command and Webby will create the structure
     for the project, in the current location in the filesystem. To view the
@@ -58,7 +58,7 @@ layout: post
     %code webby your_project_name_here
   
   %h3 Rake Tasks
-  %p
+  <p>
     Many Ruby developers are experienced using Rake. Change to the project
     directory in Terminal and try this.
     
@@ -85,11 +85,11 @@ layout: post
       Finally, the deploy task. Using either rsync or ssh, Webby will deploy the
       output files to your designated webserver.
 
-  %p
+  <p>
     Until next time you should read the
     = link_to "official tutorial from Webby.", "http://webby.rubyforge.org/tutorial/"
     
-  %p.next
+  <p>.next
     Next time I'll talk about extending these essential features, making Webby
     an extremely powerful tool.
 

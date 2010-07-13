@@ -11,7 +11,7 @@ layout: post
   %h2= h(@page.subtitle)
   %span.date= @page.created_at.strftime('%Y-%m-%d')
   
-  %p
+  <p>
     Along with Vertebra, which isn't available for use just yet, Ezra announced
     = link_to 'Engine Yard', 'http://www.engineyard.com'
     Express. Express is a clone of the software and configuration

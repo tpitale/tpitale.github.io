@@ -11,7 +11,7 @@ layout: post
   %h2= h(@page.subtitle)
   %span.date= @page.created_at.strftime('%Y-%m-%d')
   
-  %p
+  <p>
     I'm new to the practice of getting things done (GTD). I am aware of most
     of the principles and I am aware of the plethora of GTD software for Mac
     OS X. A number of weeks ago I took a brief survey of the available software
@@ -21,7 +21,7 @@ layout: post
     these applications seemed to take more time to get set up, and to use than
     a simple checklist. Priorities are nice, as are due-dates but, beyond that
     I thought I would be better off with a simpler solution.
-  %p
+  <p>
     So far, I am right. The metaphorical ticket, for me, was being constantly
     (or nearly constantly) aware of my list. Knowing this, and knowing that I
     live much of my life on my Mac I found the simplest solution I could
@@ -30,13 +30,13 @@ layout: post
     monitor your list. Second, they make it easy to access your list from two
     frequently accessed applications. Third, they make it exceptionally easy
     to add new items to my list.
-  %p
+  <p>
     I've gotten in the habit of adding every little thing I could possibly
     accomplish in a day. I get to as much as I can. This accomplishes a couple
     goals. I get a big list of things to choose from and choice is always nice.
     It also provides that constant reminder for even the little things, many of
     which I would likely forget (or ignore) during the day.
-  %p
+  <p>
     Perhaps someday I will switch to some uber-GTD software but, for now, my
     requirements have been satisfied. I would recommend this process to anyone
     who is considering tackling the daunting GTD world.

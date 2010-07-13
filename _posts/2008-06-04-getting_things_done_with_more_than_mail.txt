@@ -11,7 +11,7 @@ layout: post
   %h2= h(@page.subtitle)
   %span.date= @page.created_at.strftime('%Y-%m-%d')
   
-  %p
+  <p>
     Getting things done apps are over-complicated to-do lists, in my mind. As I
     said in a previous post, I enjoy using iCal/Mail To-dos for three reasons.
     Speed, simplicity, and I already have one of those applications open
@@ -22,7 +22,7 @@ layout: post
     different orders. Sorting to-dos in Mail is fairly simple, and iCal is even
     worse.
 
-  %p
+  <p>
     Between
     = link_to "TUAW", "http://tuaw.com"
     and
@@ -40,7 +40,7 @@ layout: post
     one that I will likely live with as my needs evolve further. Lastly, the
     price is a little steep at nearly $50.
 
-  %p
+  <p>
     The second application is called
     = link_to "Dejumble.", "http://www.dejumble.com/"
     Unlike Things, Dejumble lives in the menubar only. Although I don’t like to
@@ -57,7 +57,7 @@ layout: post
     none of the fields filled in should not be made a to-do without a warning
     message or some other notification.
 
-  %p
+  <p>
     Neither of these applications scratches the itch completely but, both are
     close enough that they may warrant use. I will probably use Dejumble for
     the trial period, monitor the improvements made and then make a decision.

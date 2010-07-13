@@ -11,7 +11,7 @@ layout: post
   %h2= h(@page.subtitle)
   %span.date= @page.created_at.strftime('%Y-%m-%d')
   
-  %p
+  <p>
     For whatever reason, I needed to upgrade my apt-get-installed copy of
     Postgresql from 8.1 to 8.3. Now, I can understand why, from a sysadmin
     viewpoint, or from the maintainers view, 8.3 is not as stable as previous
@@ -19,7 +19,7 @@ layout: post
     better option. It is also certainly reasonable to want to use the new stuff
     available in a new version. Other system choices enable me to use the
     software I want or need. I've been running 8.3 for months on Mac OS X.
-  %p
+  <p>
     On Debian Etch it is generally a good idea to add the backports repository
     to the list of sources for apt to use. This gave me the version of
     Postgresql that I wished to use but, unfortunately, it fails to uninstall
@@ -28,24 +28,24 @@ layout: post
     is due to the ability of Postgres to run multiple versioned "clusters" at
     the same time. I however, uninstalled (without doing --purge, my mistake)
     version 8.1 and installed 8.3 and was not trying to run them together.
-  %p
+  <p>
     The reason this caused problems for me was the native postgres gem for ruby
     was compiling itself with the 8.1 headers and so, data_objects and dm-core
     would refuse to connect to 8.3. Especially infuriating was that I could see
     the server running and could connect with the psql client using the same
     connection information I was providing to DataMapper.
-  %p
+  <p>
     The solution was to uninstall everything postgresql related using apt and
     the --purge flag. Taking special care to include libpq4 and libpq-dev in
     that list. Uninstall the postgres gem, as well (and possibly data_objects
     and dm-core).
-  %p
+  <p>
     Now add "deb http://www.backports.org/debian etch-backports main contrib
     non-free" into /etc/apt/sources.list and do sudo apt-get update to pull the
     list of packages. Now reinstall postgresql-8.3, libpq5, and libpq-dev and
     be sure to pass the -t etch-backports option so that all the required libs
     get pulled from that repository.
-  %p
+  <p>
     Finish up by reinstalling all the required gems and all should be well.
     Note that my experience here is not typical, and in general, being strict
     about package stability is generally a good cause. However, it is a very

@@ -6,71 +6,63 @@ author: Tony Pitale
 created_at: 2009-08-12 14:41:45.265639 -04:00
 layout: post
 ---
-<div id="post">
-  %h1= h(@page.title)
-  %h2= h(@page.subtitle)
-  %span.date= @page.created_at.strftime('%Y-%m-%d')
-  
-  %p
-    Last time, I wrote about how I was messing around with MongoDB (
-    = link_to_page 'MongoDB in a Deployed Environment'
-    ) and how I had gotten it in a deployed state. However, I failed to cover
-    my reasons for doing so. Why would I need to deploy MongoDB if I was only
-    "messing around"?
-  %p
-    The answer is my latest Ruby library: Mongolytics. As you can probably
-    surmise, the name is a combination of MongoDB and analytics. You would be
-    correct in guessing so. The interesting thing about Mongolytics, aside from
-    its use of MongoDB is that the analytics are tracked on the server side of
-    the request/response cycle.
-  %p
-    Google has been (and will continue to be) the leader in the web analytics
-    domain. And as everyone who has worked with Google Analytics knows, the
-    tracking is done via Javascripts on the client side. This is the best way
-    to operate given the scale of the operation and the data that GA collects.
-  %p
-    I needed something to track not only page requests, but actions in Rails
-    which may or may not have associated unique URIs. An example of this would
-    be a create action. Typically, in a resourceful controller and in REST
-    principles, a successful create should redirect to the newly created
-    resource. This is most likely a show action.
-  %p
-    In order to track this sort of thing, I could have added some fancy
-    Javascript to make a pageview of every submit button click or any number
-    of other fancy solutions.
-  %p
-    This solution provides a few benefits. Speed, first and foremost. The
-    results of any request instantly present a query-able statistic. This leads
-    to the second benefit. The entire history of our statistics are permanently
-    and easily accessible through a MongoMapped class.
-  %h3 Using Mongolytics
-  %p
-    There are three main parts to using Mongolytics (aside from
-    = link_to "setting up MongoMapper", "http://railstips.org/2009/7/23/getting-started-with-mongomapper-and-rails"
-    ): include the module, tell it what actions you want to track, and when
-    some stats have been tracked we can turn around and retrieve them. Here is
-    what that might look like:
-  %h3 Include the Module
-  %a.gist{:href => 'http://gist.github.com/166751'}
-  %h3 Track Actions
-  %a.gist{:href => 'http://gist.github.com/166753'}
-  %h3 Check the Stats
-  %a.gist{:href => 'http://gist.github.com/166755'}
-  %p
-    And that is it. MongoDB will store all that stuff and make it easy to pull
-    back out again. I tried to make it as quick and painless as possible. There
-    are more options, including tracking session variables, that I will get
-    to in another post (with a real example). In the meantime, please check out
-    = link_to "the project and README on Github", "http://github.com/tpitale/mongolytics/tree/master"
-    and please tell me what you think in the comments.
-    
-  <div id="disqus_thread">
-
-%script{:type =>"text/javascript", :src=>"http://disqus.com/forums/tpitale/embed.js"}
-%noscript
-  %a{:href=>"http://tpitale.disqus.com/?url=ref"}
-    View the discussion thread.
-  %a{:href=>"http://disqus.com", :class=>"dsq-brlink"}
-    blog comments powered by 
-    %span{:class=>"logo-disqus"}
-      Disqus
+<p>
+  Last time, I wrote about how I was messing around with MongoDB (
+  = link_to_page 'MongoDB in a Deployed Environment'
+  ) and how I had gotten it in a deployed state. However, I failed to cover
+  my reasons for doing so. Why would I need to deploy MongoDB if I was only
+  "messing around"?
+</p>
+<p>
+  The answer is my latest Ruby library: Mongolytics. As you can probably
+  surmise, the name is a combination of MongoDB and analytics. You would be
+  correct in guessing so. The interesting thing about Mongolytics, aside from
+  its use of MongoDB is that the analytics are tracked on the server side of
+  the request/response cycle.
+</p>
+<p>
+  Google has been (and will continue to be) the leader in the web analytics
+  domain. And as everyone who has worked with Google Analytics knows, the
+  tracking is done via Javascripts on the client side. This is the best way
+  to operate given the scale of the operation and the data that GA collects.
+</p>
+<p>
+  I needed something to track not only page requests, but actions in Rails
+  which may or may not have associated unique URIs. An example of this would
+  be a create action. Typically, in a resourceful controller and in REST
+  principles, a successful create should redirect to the newly created
+  resource. This is most likely a show action.
+</p>
+<p>
+  In order to track this sort of thing, I could have added some fancy
+  Javascript to make a pageview of every submit button click or any number
+  of other fancy solutions.
+</p>
+<p>
+  This solution provides a few benefits. Speed, first and foremost. The
+  results of any request instantly present a query-able statistic. This leads
+  to the second benefit. The entire history of our statistics are permanently
+  and easily accessible through a MongoMapped class.
+</p>
+<h3>Using Mongolytics</h3>
+<p>
+  There are three main parts to using Mongolytics (aside from
+  = link_to "setting up MongoMapper", "http://railstips.org/2009/7/23/getting-started-with-mongomapper-and-rails"
+  ): include the module, tell it what actions you want to track, and when
+  some stats have been tracked we can turn around and retrieve them. Here is
+  what that might look like:
+</p>
+<h3>Include the Module</h3>
+<a class="gist" href="http://gist.github.com/166751">module gist</a>
+<h3>Track Actions</h3>
+<a class="gist" href="http://gist.github.com/166753">track gist</a>
+<h3>Check the Stats</h3>
+<a class="gist" href="http://gist.github.com/166755">stats gist</a>
+<p>
+  And that is it. MongoDB will store all that stuff and make it easy to pull
+  back out again. I tried to make it as quick and painless as possible. There
+  are more options, including tracking session variables, that I will get
+  to in another post (with a real example). In the meantime, please check out
+  <a href="http://github.com/tpitale/mongolytics/tree/master">the project and README on Github</a>
+  and please tell me what you think in the comments.
+</p>

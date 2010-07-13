@@ -11,7 +11,7 @@ layout: post
   %h2= h(@page.subtitle)
   %span.date= @page.created_at.strftime('%Y-%m-%d')
   
-  %p
+  <p>
     MobileMe is a pretty awesome service. However, having used it for at least
     six months, I'm pretty well decided that it is not quite worth $100 a year.
     In addition, Google has just released, officially, it's support for CalDAV
@@ -20,14 +20,14 @@ layout: post
     puzzle is
     = link_to "Dropbox", "http://www.getdropbox.com"
     , which is now open for public beta and works very well.
-  %p
+  <p>
     Setting up IMAP with google is simple and you can find directions
     = link_to "here.", "http://mail.google.com/support/bin/answer.py?hl=en&answer=75725"
-  %p
+  <p>
     Setting up Google's iCal support is almost as easy, especially with their
     set-up tool. Directions can be found
     = link_to "here.", "http://www.google.com/support/calendar/bin/answer.py?answer=99358#ical"
-  %p
+  <p>
     The benefits of these combined services speak for themselves, but in any
     case, I'll repeat them here. Dropbox serves to replace the need for iDisk
     sharing since it works by synchronizing all of the files within given
@@ -39,7 +39,7 @@ layout: post
     on Leopard. Finally, email, being the most important of all, works on any
     email client that supports IMAP (almost every client). Not only this but,
     it magically syncs between all computers and my iPhone.
-  %p
+  <p>
     There are a few remaining features that I don't consider to be critical to
     the service because I don't use them or because there are other services
     that have existed for some time to handle the feature. Photo sharing, for

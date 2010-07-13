@@ -11,7 +11,7 @@ layout: post
   %h2= h(@page.subtitle)
   %span.date= @page.created_at.strftime('%Y-%m-%d')
   
-  %p
+  <p>
     The short story is: 
     = link_to "Viget", "http://www.viget.com"
     is being extremely generous and is paying for me to travel to
@@ -19,7 +19,7 @@ layout: post
     this year. Despite the fact that I have only been in their employ for three
     whole weeks. I'm extremely happy working there and I only hope that I am
     living up to their expectations of me.
-  %p
+  <p>
     I am excited to go to RailsConf for two reasons. First, I have never been
     to a conference before, any conference, and I really expect to learn a lot
     in the sessions I am enrolled in. Second, I may finally get to meet many of
@@ -27,7 +27,7 @@ layout: post
     like Yehuda Katz, Ezra Z., Adam French (who I think is going), and a
     coworker from Viget South, Ben Scofield, who will be speaking, as well. All
     in all I have extremely high hopes for this trip.
-  %p
+  <p>
     In other news, I've got draft copies of many, many blog posts. The problem
     is trying to decide where they will be appropriate. Some are about the beta
     for

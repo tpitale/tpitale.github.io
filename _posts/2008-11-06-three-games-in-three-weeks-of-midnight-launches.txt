@@ -11,7 +11,7 @@ layout: post
   %h2= h(@page.subtitle)
   %span.date= @page.created_at.strftime('%Y-%m-%d')
   
-  %p
+  <p>
     The past three weeks (including tonight) have seen the launch of the three
     biggest games of 2008. Two weeks ago was the launch of Fable 2, the much
     anticipated sequel to an award winning, though short, game by the famed
@@ -22,13 +22,13 @@ layout: post
     the launch of Bethesda's version of Fallout, number 3. I have spent more
     time playing through Fallout 3 and, though I'm not done, I would say it is
     more than worthy of a "Best Game of the Year" title.
-  %p
+  <p>
     Lastly, tonight, I'll be waiting for Gears of War 2! The original Gears of
     War was very probably my favorite game a short while ago. Aside from Halo 3
     it was the primary reason that I purchased an Xbox 360 while in college. It
     has won many, many awards in the past, and I expect it will win many, many
     more in its second iteration.
-  %p
+  <p>
     I hope, for the first time in my life, I can play through all of these
     games to something that could be considered completion, if not to complete
     all of the various achievements. If only there were more hours in the day!
