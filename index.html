@@ -3,13 +3,14 @@ title: t.pitale
 created_at: 2008-03-11 23:23:49.995233 -04:00
 layout: default
 ---
+
 <div id="blog">
   <div class="wrap">
     <div class="col">
       <!-- List of Blog Posts -->
       {% assign posts = site.posts %}
       {% for post in posts limit:15 offset:1 %}
-        * [{{post.title}}]({{post.url}})
+        <a href="{{post.url}}">{{post.title}}</a>
       {% endfor %}
     </div>
     <div class="block">
@@ -17,11 +18,10 @@ layout: default
       {% for post in posts limit:1 %}
         {{include post.md}}
       {% endfor %}
-      
       <div class="allposts">
-        [Blog Archive](/blog.html)
+        <a href="/blog.html">Blog Archive</a>
         <b>or</b>
-        [Feed](http://feeds.feedburner.com/tpitale)
+        <a href="http://feeds.feedburner.com/tpitale">Feed</a>
         <img src='/images/feed.png' />
       </div>
     </div>
@@ -37,61 +37,50 @@ layout: default
     <br class="clearleft" />
   </div>
 </div>
-
-<!-- Portfolio Links, w/images, to my projects -->
 <div id="projects">
   <div class="wrap">
     <div class="col">
       <ul>
         <li>
-          [Garb](http://github.com/vigetlabs/garb)
+          <a href="http://github.com/vigetlabs/garb">Garb</a>
           Ruby Wrapper for the Google Analytics Data Export API
         </li>
         <li>
-          = link_to("Mongolytics", 'http://github.com/tpitale/mongolytics')
-          Rails Request and Session Analytics Stored in MongoDB
-        </li>
-        <li>
-          = link_to("SimplestAuth", 'http://github.com/vigetlabs/simplest_auth')
+          <a href="http://github.com/vigetlabs/simplest_auth">SimplestAuth</a>
           Very Simple Authentication for Rails using BCrypt, developed at Viget
         </li>
         <li>
-          = link_to("net/simple", 'http://github.com/tpitale/net-simple')
+          <a href="http://github.com/tpitale/mongolytics">Mongolytics</a>
+          Rails Request and Session Analytics Stored in MongoDB
+        </li>
+        <li>
+          <a href="http://github.com/tpitale/net-simple">net/simple</a>
           Simple wrapper around net/ssh and net/scp, inspired by Capistrano
         </li>
         <li>
-          = link_to("Information Schema", 'http://github.com/tpitale/information_schema')
+          <a href="http://github.com/tpitale/information_schema">Information Schema</a>
           Collection of DataMapper Resource Classes to access PostgreSQL Information Schema Views
-        </li>
-        <li>
-          = link_to("ICS Winepos", 'http://github.com/tpitale/vznweb')
-          Winepos Site, a Webby Project for Innovative Computer Solutions
-        </li>
-        <li>
-          = link_to("GA Debug", 'http://github.com/tpitale/ga-debug')
-          Script to Debug Google Analytics in Development with console logs and a popup message box
         </li>
       </ul>
     </div>
-
     <div class="block">
       <a href="http://wineistasty.com" target="_blank" class="tasty">
-        ### Tasty ###
+        <h3>Tasty</h3>
         <span>Ruby/Rails with PostgreSQL, DataMapper, and MongoDB</span>
       </a>
       <a href="http://winepos.com" target="_blank" class="winepos">
-        ### ICS Winepos Site ###
+        <h3>ICS Winepos Site</h3>
         <span>Implementation using Webby, some design work, deployment</span>
       </a>
-      %a{:href => 'http://a.ppend.to', :target => '_blank', :class => 'append'}
-        / %img{:src => '/images/append.png'}
-        %h3 Append
-        %span 2009 Rails Rumble Entry; Team Scatapult
-      %a{:href => 'http://focusapp.com', :target => '_blank', :class => 'focus'}
-        / %img{:src => '/images/focus.png'}
-        %h3 Focus
-        %span Under Development with Ruby, Merb, jQuery, and PostgreSQL
-      %br.clearleft/
+      <a href="http://a.ppend.to" target="_blank" class="append">
+        <h3>Append</h3>
+        <span>2009 Rails Rumble Entry; Team Scatapult</span>
+      </a>
+      <a href="http://focusapp.com" target="_blank" class="focus">
+        <h3>Focus</h3>
+        <span>Under Development with Ruby, Merb, jQuery, and PostgreSQL</span>
+      </a>
+      <br class="clearleft" />
     </div>
   </div>
 </div>
