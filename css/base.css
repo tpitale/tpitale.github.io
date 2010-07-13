@@ -372,6 +372,30 @@ div.allposts b {
   font-style: italic;
 }
 
+ul#posts {
+  padding: 10px 0;
+  max-width: 800px;
+  margin: 5px auto 20px auto;
+  border-top: 1px solid #CCCCCC;
+  border-bottom: 1px solid #CCCCCC;
+}
+
+ul#posts li {
+  width: 32%;
+  display: inline-block;
+}
+
+ul#posts li a {
+  padding: 3px;
+  color: #999999;
+  display: block;
+  font-size: 90%;
+}
+
+ul#posts li a:hover {
+  color: #333333;
+}
+
 /* Footer
 =============================================================================*/
 #footer {
