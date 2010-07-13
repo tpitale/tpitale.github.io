@@ -1,4 +1,5 @@
 ---
+published: false
 title: Merb and Subdomains with Nginx
 subtitle: Quick Lessons Learned
 author: Tony Pitale

@@ -1,4 +1,5 @@
 ---
+published: false
 title: MongoDB in a Deployed Environment
 subtitle: Secure, Init, Rejoice
 author: Tony Pitale

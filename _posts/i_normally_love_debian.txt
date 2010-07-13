@@ -1,4 +1,5 @@
 ---
+published: false
 title: I Normally Love Debian
 subtitle: As An Application Developer, It Can Hurt
 author: Tony Pitale

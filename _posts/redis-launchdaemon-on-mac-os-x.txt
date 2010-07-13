@@ -1,4 +1,5 @@
 ---
+published: false
 title: Redis LaunchDaemon
 subtitle: Run Redis at Startup on Mac OS X
 author: Tony Pitale

@@ -1,4 +1,5 @@
 ---
+published: false
 title: Intro to Mongolytics
 subtitle: Simple Analytics in Rails with MongoDB
 author: Tony Pitale

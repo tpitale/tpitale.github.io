@@ -1,4 +1,5 @@
 ---
+published: false
 title: Rubynation 2009 Slides
 subtitle: Legacy Databases are my …
 author: Tony Pitale

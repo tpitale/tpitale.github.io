@@ -1,4 +1,5 @@
 ---
+published: false
 title: Beta Testing the Slicehost API
 subtitle: A Foray into ActiveResource and DNS Records
 author: Tony Pitale

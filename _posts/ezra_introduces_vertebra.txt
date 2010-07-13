@@ -1,4 +1,5 @@
 ---
+published: false
 title: Ezra Introduces Vertebra at RailsConf 2008
 subtitle: Configuration Through the Clouds
 author: Tony Pitale

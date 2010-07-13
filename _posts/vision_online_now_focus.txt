@@ -1,4 +1,5 @@
 ---
+published: false
 title: Vision Online, Now Focus
 subtitle: The exciting tale of a Merb Application and branding
 author: Tony Pitale

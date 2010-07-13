@@ -1,4 +1,5 @@
 ---
+published: false
 title: Ezra Announces Engine Yard Express VM Image
 subtitle: A Slice of a Slice
 author: Tony Pitale

@@ -1,4 +1,5 @@
 ---
+published: false
 title: Verizon Fios Internet & TV
 subtitle: Using Your Own Router, Not the Actiontec Router
 author: Tony Pitale

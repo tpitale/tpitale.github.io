@@ -1,4 +1,5 @@
 ---
+published: false
 title: Legacy Databases with ActiveRecord
 subtitle: So Close, But Yet, So Far
 author: Tony Pitale

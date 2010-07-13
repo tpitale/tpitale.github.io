@@ -1,4 +1,5 @@
 ---
+published: false
 title: Merb is Not Rails
 subtitle: And That is Okay
 author: Tony Pitale
