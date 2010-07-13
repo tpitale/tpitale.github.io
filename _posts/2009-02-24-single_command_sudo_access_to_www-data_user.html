@@ -1,49 +1,50 @@
 ---
-published: false
+published: true
 title: Giving Required Access to www-data User
 subtitle: Single Command Permission With Sudo
 author: Tony Pitale
 created_at: 2009-02-24 23:39:12.620680 -05:00
 layout: post
 ---
-<div id="post">
-  %h1= h(@page.title)
-  %h2= h(@page.subtitle)
-  %span.date= @page.created_at.strftime('%Y-%m-%d')
-
-  <p>
-    Just a quick post tonight. It is appropriate to give access to Apache, or
-    Nginx, to the www-data user that has sites or applications deployed under
-    their care. It is also appropriate limit www-data's access to the system as
-    much as possible. The appropriate method by which to give access then is to
-    add them to the sudoers file. Often, you may see the sudoers file used to
-    permit a super user, of sorts, access to all of the system as a temporary
-    root user. However, sudo is extremely powerful. Here is how you would give
-    the www-data user access to only restart an Nginx server using the init
-    scripts.
-  <p>re
-    %code
-      \# Make a command alias
-      Cmnd_Alias NGINX=/etc/init.d/nginx
-  <p>re
-    %code
-      \# Give access, removing password requirement is optional
-      www-data ALL=NOPASSWD: NGINX
-  <p>
-    And there we have it. Simply drop the NOPASSWD: section to require a
-    password be used. Now, deployment utilities, like Capistrano can be setup
-    to start, stop, and restart Nginx as the configuration changes. A very
-    simple example to start Nginx with capistrano would be:
-  <p>re
-    %code
-      desc "Start Nginx"
-      task :start, :roles => :web do
-      &#09;run "/etc/init.d/nginx start"
-      end
-  <p>
-    All in all, a good skill to have. I know I'll be re-reading the MAN pages
-    for sudo in the coming days because there is much more sys-admin power to
-    be found.
-    
-  <div id="disqus_thread">
-
+<p>
+  Just a quick post tonight. It is appropriate to give access to Apache, or
+  Nginx, to the www-data user that has sites or applications deployed under
+  their care. It is also appropriate limit www-data's access to the system as
+  much as possible. The appropriate method by which to give access then is to
+  add them to the sudoers file. Often, you may see the sudoers file used to
+  permit a super user, of sorts, access to all of the system as a temporary
+  root user. However, sudo is extremely powerful. Here is how you would give
+  the www-data user access to only restart an Nginx server using the init
+  scripts.
+</p>
+<pre>
+  <code>
+    # Make a command alias
+    Cmnd_Alias NGINX=/etc/init.d/nginx
+  </code>
+</pre>
+<pre>
+  <code>
+    # Give access, removing password requirement is optional
+    www-data ALL=NOPASSWD: NGINX
+  </code>
+</pre>
+<p>
+  And there we have it. Simply drop the NOPASSWD: section to require a
+  password be used. Now, deployment utilities, like Capistrano can be setup
+  to start, stop, and restart Nginx as the configuration changes. A very
+  simple example to start Nginx with capistrano would be:
+</p>
+<pre>
+  <code>
+    desc "Start Nginx"
+    task :start, :roles => :web do
+    &#09;run "/etc/init.d/nginx start"
+    end
+  </code>
+</pre>
+<p>
+  All in all, a good skill to have. I know I'll be re-reading the MAN pages
+  for sudo in the coming days because there is much more sys-admin power to
+  be found.
+</p>
