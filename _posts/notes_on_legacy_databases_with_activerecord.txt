@@ -7,7 +7,7 @@ created_at: 2008-03-17 10:57:12.737429 -04:00
 filter:
   - haml
 ---
-#post
+<div id="post">
   %h1= h(@page.title)
   %h2= h(@page.subtitle)
   %span.date= @page.created_at.strftime('%Y-%m-%d')

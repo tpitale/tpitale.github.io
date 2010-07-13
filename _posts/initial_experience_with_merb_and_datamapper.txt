@@ -6,7 +6,7 @@ layout: default
 filter:
   - haml
 ---
-#post
+<div id="post">
   %h1= h(@page.title)
   %h2= h(@page.subtitle)
   %span.date= @page.created_at.strftime('%Y-%m-%d')
