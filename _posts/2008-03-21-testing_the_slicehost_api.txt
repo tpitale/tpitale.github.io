@@ -1,0 +1,54 @@
+---
+published: false
+title: Beta Testing the Slicehost API
+subtitle: A Foray into ActiveResource and DNS Records
+author: Tony Pitale
+created_at: 2008-03-21 18:29:50.464798 -04:00
+layout: post
+---
+<div id="post">
+  %h1= h(@page.title)
+  %h2= h(@page.subtitle)
+  %span.date= @page.created_at.strftime('%Y-%m-%d')
+  
+  %p
+    I was fortunate enough to join slicehost this past week. It is a fantastic
+    service, possibly the best VPS I've encountered. While perusing their forum
+    as I am want to do from time to time, I noticed a new post by a slicehost
+    employee requesting beta-testers (a favorite phrase of mine) for their new
+    API. I've used ActiveResource in the past and I thought it would be worth a
+    shot.
+  %p
+    I threw in my hat on the forum and was summarily rewarded with an email
+    from a slicehost employee. I was given an API key and some documentation
+    with examples in Ruby and Python. Given my ActiveResource experience I
+    immediately went to work with their example. It was a breeze and one that
+    I am delighted to say any Rubyist would be able to complete.
+  %p
+    I completed the example, messed around a bit more, and then I retired for
+    the evening. The next day I received a short questionnaire which I
+    dutifully filled out and returned. My tinkering was not over, however. Oh,
+    no. The next free chance I had, I dove right in. Given the access the beta
+    provided I could create only two things off the top of my head. The first,
+    a dynamic-dns-type updater. The second, a monitor of system status.
+  %p
+    So far, I have only completed the dynamic dns updater. It is crude but, it
+    provides the basic functionality required. It allows you to provide a 
+    Zone and a Record, as well as, the IP address to use when updating the
+    record. If you do not provide an IP address, the current external IP of
+    your location will be used.
+  %p
+    The point of all this is I can have a domain name pointing to my home IP.
+    If my provider changes my IP for whatever reason, the script, run by cron
+    on a regular basis will tell slicehost, my DNS provider, that my home IP
+    address has changed within a reasonable amount of time.
+    
+    
+%script{:type =>"text/javascript", :src=>"http://disqus.com/forums/tpitale/embed.js"}
+%noscript
+  %a{:href=>"http://tpitale.disqus.com/?url=ref"}
+    View the discussion thread.
+  %a{:href=>"http://disqus.com", :class=>"dsq-brlink"}
+    blog comments powered by 
+    %span{:class=>"logo-disqus"}
+      Disqus

@@ -1,0 +1,50 @@
+---
+published: false
+title: Merb is Not Rails
+subtitle: And That is Okay
+author: Tony Pitale
+created_at: 2008-05-29 15:33:54.256781 -07:00
+layout: post
+---
+<div id="post">
+  %h1= h(@page.title)
+  %h2= h(@page.subtitle)
+  %span.date= @page.created_at.strftime('%Y-%m-%d')
+  
+  %p
+    Merb is not Rails.
+  %p
+    If that statement isn't simple enough for you let me, like
+    = link_to 'Ezra', 'http://brainspl.at/articles/2008/05/21/does-it-have-to-be-a-competition-between-rails-and-merb'
+    and
+    = link_to 'Yehuda', 'http://yehudakatz.com/2008/05/21/cant-we-all-just-get-along/'
+    , explain why Merb is not Rails, why this is good for both Merb and Rails,
+    and where this will lead both projects in the future.
+  %p
+    Ezra laid out the simple fact that there is no competition between Rails
+    and Merb. This comes down to “scratching different itches”. Yehuda’s post
+    reiterated this and added a few more important “why”s. Yehuda’s main point
+    is in the goal of “hackability” of Merb as a framework in comparison to the
+    “get-up-and-go” goal in Rails. Each serves a purpose. Merb’s goal is one
+    that served as my impetus for seeking out a Rails alternative. I still use
+    Rails because in many cases the “get-up-and-go” route is exactly what I
+    need. Rails should stick to its guns, philosophically just as Merb should.
+  %p
+    Yehuda’s second great point is that those that work on Merb often work on
+    Rails and wish to see the experimental developments in Merb move into Rails.
+    His example of note is the “provides” api (which many, many Merb people
+    love). In the future I hope that Merb as a testbed for Rails continues with
+    a bit more stability in Merb, perhaps.
+  %p
+    At the moment I need to bring more stability to my own install of Merb. I
+    have continually worked with the latest and greatest Merb because of my
+    need to stay on the cutting edge with DataMapper.
+    
+%script{:type =>"text/javascript", :src=>"http://disqus.com/forums/tpitale/embed.js"}
+%noscript
+  %a{:href=>"http://tpitale.disqus.com/?url=ref"}
+    View the discussion thread.
+  %a{:href=>"http://disqus.com", :class=>"dsq-brlink"}
+    blog comments powered by 
+    %span{:class=>"logo-disqus"}
+      Disqus

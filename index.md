@@ -31,50 +31,58 @@ layout: default
 <!-- Sampling of flickr images -->
 <div id="photos">
   <div class="wrap">
-    %script{:type=>"text/javascript", :src=>"http://www.flickr.com/badge_code_v2.gne?count=10&display=random&size=s&layout=x&source=user_set&user=41783324%40N00&set=72157605236285647"}
-    %script{:type=>"text/javascript", :src=>"http://www.flickr.com/badge_code_v2.gne?count=10&display=random&size=s&layout=x&source=user_set&user=41783324%40N00&set=72157602176622405"}
-    %script{:type=>"text/javascript", :src=>"http://www.flickr.com/badge_code_v2.gne?count=10&display=latest&size=s&layout=x&source=user_set&user=41783324%40N00&set=72157600262586911"}
-    %br.clearleft/
+    <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=10&display=random&size=s&layout=x&source=user_set&user=41783324%40N00&set=72157605236285647"></script>
+    <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=10&display=random&size=s&layout=x&source=user_set&user=41783324%40N00&set=72157602176622405"></script>
+    <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=10&display=latest&size=s&layout=x&source=user_set&user=41783324%40N00&set=72157600262586911"></script>
+    <br class="clearleft" />
   </div>
 </div>
-  
 
 <!-- Portfolio Links, w/images, to my projects -->
-#projects
+<div id="projects">
   <div class="wrap">
-    .col
-      %ul
-        %li
-          = link_to("Garb", 'http://github.com/vigetlabs/garb')
+    <div class="col">
+      <ul>
+        <li>
+          [Garb](http://github.com/vigetlabs/garb)
           Ruby Wrapper for the Google Analytics Data Export API
-        %li
+        </li>
+        <li>
           = link_to("Mongolytics", 'http://github.com/tpitale/mongolytics')
           Rails Request and Session Analytics Stored in MongoDB
-        %li
+        </li>
+        <li>
           = link_to("SimplestAuth", 'http://github.com/vigetlabs/simplest_auth')
           Very Simple Authentication for Rails using BCrypt, developed at Viget
-        %li
+        </li>
+        <li>
           = link_to("net/simple", 'http://github.com/tpitale/net-simple')
           Simple wrapper around net/ssh and net/scp, inspired by Capistrano
-        %li
+        </li>
+        <li>
           = link_to("Information Schema", 'http://github.com/tpitale/information_schema')
           Collection of DataMapper Resource Classes to access PostgreSQL Information Schema Views
-        %li
+        </li>
+        <li>
           = link_to("ICS Winepos", 'http://github.com/tpitale/vznweb')
           Winepos Site, a Webby Project for Innovative Computer Solutions
-        %li
+        </li>
+        <li>
           = link_to("GA Debug", 'http://github.com/tpitale/ga-debug')
           Script to Debug Google Analytics in Development with console logs and a popup message box
+        </li>
+      </ul>
+    </div>
 
-    .block
-      %a{:href => 'http://wineistasty.com', :target => '_blank', :class => 'tasty'}
-        / %img{:src => '/images/tasty.png'}
-        %h3 Tasty
-        %span Ruby/Rails with PostgreSQL, DataMapper, and MongoDB
-      %a{:href => 'http://winepos.com', :target => '_blank', :class => 'winepos'}
-        / %img{:src => '/images/winepos.png'}
-        %h3 ICS Winepos Site
-        %span Implementation using Webby, some design work, deployment
+    <div class="block">
+      <a href="http://wineistasty.com" target="_blank" class="tasty">
+        ### Tasty ###
+        <span>Ruby/Rails with PostgreSQL, DataMapper, and MongoDB</span>
+      </a>
+      <a href="http://winepos.com" target="_blank" class="winepos">
+        ### ICS Winepos Site ###
+        <span>Implementation using Webby, some design work, deployment</span>
+      </a>
       %a{:href => 'http://a.ppend.to', :target => '_blank', :class => 'append'}
         / %img{:src => '/images/append.png'}
         %h3 Append
@@ -84,3 +92,6 @@ layout: default
         %h3 Focus
         %span Under Development with Ruby, Merb, jQuery, and PostgreSQL
       %br.clearleft/
+    </div>
+  </div>
+</div>

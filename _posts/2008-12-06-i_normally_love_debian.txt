@@ -1,0 +1,64 @@
+---
+published: false
+title: I Normally Love Debian
+subtitle: As An Application Developer, It Can Hurt
+author: Tony Pitale
+created_at: 2008-12-06 19:19:45.874483 -05:00
+layout: post
+---
+<div id="post">
+  %h1= h(@page.title)
+  %h2= h(@page.subtitle)
+  %span.date= @page.created_at.strftime('%Y-%m-%d')
+  
+  %p
+    For whatever reason, I needed to upgrade my apt-get-installed copy of
+    Postgresql from 8.1 to 8.3. Now, I can understand why, from a sysadmin
+    viewpoint, or from the maintainers view, 8.3 is not as stable as previous
+    versions. However, as a user, or as an application developer, 8.3 is a much
+    better option. It is also certainly reasonable to want to use the new stuff
+    available in a new version. Other system choices enable me to use the
+    software I want or need. I've been running 8.3 for months on Mac OS X.
+  %p
+    On Debian Etch it is generally a good idea to add the backports repository
+    to the list of sources for apt to use. This gave me the version of
+    Postgresql that I wished to use but, unfortunately, it fails to uninstall
+    all of the common libraries for the client and server, as well as the dev
+    library (libpq-dev) for the appropriate version. This failure in upgrading
+    is due to the ability of Postgres to run multiple versioned "clusters" at
+    the same time. I however, uninstalled (without doing --purge, my mistake)
+    version 8.1 and installed 8.3 and was not trying to run them together.
+  %p
+    The reason this caused problems for me was the native postgres gem for ruby
+    was compiling itself with the 8.1 headers and so, data_objects and dm-core
+    would refuse to connect to 8.3. Especially infuriating was that I could see
+    the server running and could connect with the psql client using the same
+    connection information I was providing to DataMapper.
+  %p
+    The solution was to uninstall everything postgresql related using apt and
+    the --purge flag. Taking special care to include libpq4 and libpq-dev in
+    that list. Uninstall the postgres gem, as well (and possibly data_objects
+    and dm-core).
+  %p
+    Now add "deb http://www.backports.org/debian etch-backports main contrib
+    non-free" into /etc/apt/sources.list and do sudo apt-get update to pull the
+    list of packages. Now reinstall postgresql-8.3, libpq5, and libpq-dev and
+    be sure to pass the -t etch-backports option so that all the required libs
+    get pulled from that repository.
+  %p
+    Finish up by reinstalling all the required gems and all should be well.
+    Note that my experience here is not typical, and in general, being strict
+    about package stability is generally a good cause. However, it is a very
+    useful to have backports available when needed and the packages there are
+    generally more stable than other random repositories.
+    
+  <div id="disqus_thread">
+
+%script{:type =>"text/javascript", :src=>"http://disqus.com/forums/tpitale/embed.js"}
+%noscript
+  %a{:href=>"http://tpitale.disqus.com/?url=ref"}
+    View the discussion thread.
+  %a{:href=>"http://disqus.com", :class=>"dsq-brlink"}
+    blog comments powered by 
+    %span{:class=>"logo-disqus"}
+      Disqus

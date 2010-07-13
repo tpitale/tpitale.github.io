@@ -1,0 +1,26 @@
+---
+published: true
+title: Redis LaunchDaemon
+subtitle: Run Redis at Startup on Mac OS X
+author: Tony Pitale
+created_at: 2009-12-28 10:13:51.826349 -05:00
+layout: post
+---
+LaunchDaemons are the Mac OS X equivalent of init.d scripts on most Linux systems.
+I keep mine collected in the root LaunchDaemons folder at /Library/LaunchDaemons.
+LaunchDaemons are simply xml plist configuration files which indicate the how, where,
+and when to start a server which daemonizes at startup. Here's one for Redis:
+
+### Redis LaunchDaemon ###
+<a class="gist" href="http://gist.github.com/264721">LaunchDaemon Gist</a>
+
+The important lines to note are 9 and 10, under ProgramArguments. The first line is
+where I built the Redis server and placed it on my system. Yours may be in a different
+location entirely. The second is the configuration I use. If you are using the default
+you can probably skip that line.
+
+In either case, you should change the working directory to the path in which you have
+Redis built so that the default configuration is used, relative to the server command.    
+
+Overall, the LaunchDaemon is simple despite being foreign to most of us used to creating
+init.d scripts. I'll have one up for MongoDB shortly.

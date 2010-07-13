@@ -1,0 +1,53 @@
+---
+published: false
+title: Stopped Using Things
+subtitle: Because iSlayer is Awesome
+author: Tony Pitale
+created_at: 2008-07-10 09:29:22.065335 -04:00
+layout: post
+---
+<div id="post">
+  %h1= h(@page.title)
+  %h2= h(@page.subtitle)
+  %span.date= @page.created_at.strftime('%Y-%m-%d')
+  
+  %p
+    I posted awhile back about my attempts at using
+    = link_to("Things", "http://www.culturedcode.com/things/")
+    for my GTD needs. While Cultured Code has made an amazing application,
+    even in beta, I was finding myself with features I didn't want and missing
+    some features I did want.
+  %p
+    As such, I've learned to make due using a fine combination of iCal and Mail
+    for to do lists. Now, with the addition of something 
+    = link_to("new from the fine developers at iSlayer", "http://www.islayer.com/index.php?op=item&id=64")
+    I have a wonderful little widget that lets me integrate perfectly into
+    this system I've got going. Organized is the name of the new widget and I
+    think it fits precisely. Now, I don't have to leave Mail or iCal running
+    for all the times that I'm on my Mac (which is a lot).
+  %p
+    Organized is beautifully crafted, as all iSlayer widgets and products that
+    I have encountered. As you can see from the screenshots on the web page
+    Organized is dominated by the calendar at the top, which is just how I like
+    it. Beneath are four tabs: clocks, notes, events, and to dos. I do not
+    often use the notes and I have yet to have a real use for clocks. However,
+    having events present (with which you can see events in the coming days)
+    has been extremely useful for getting my head around an ever more populous
+    calendar.
+  %p
+    The last tab, to dos, is the tab I use most. Mostly because it adds such a
+    simple, quick, and perfectly powerful list. While at the same time, those
+    to dos work their way back into the rest of my system, for when I do have
+    Mail or iCal open, I like to have access to those to dos. I've learned to
+    organize my buckets as calendars that accurately represent my life. Around
+    these calendars I create groups that mimic the major focuses, life and
+    work. Perfect!
+    
+%script{:type =>"text/javascript", :src=>"http://disqus.com/forums/tpitale/embed.js"}
+%noscript
+  %a{:href=>"http://tpitale.disqus.com/?url=ref"}
+    View the discussion thread.
+  %a{:href=>"http://disqus.com", :class=>"dsq-brlink"}
+    blog comments powered by 
+    %span{:class=>"logo-disqus"}
+      Disqus
