@@ -1,41 +1,47 @@
 ---
-title:      t.pitale
+title: t.pitale
 created_at: 2008-03-11 23:23:49.995233 -04:00
-dirty: true
-filter:
-  - haml
+layout: default
 ---
-/ Latest Blog Post
-#blog
-  .wrap
-    .col
-      / List of Blog Posts
-      %ul
-        - posts = @pages.find(:limit => 15, :in_directory => 'posts', :sort_by => 'created_at', :reverse => true)
-        - posts.each do |post|
-          %li
-            = link_to_page(post)
-    .block
-      / Latest Post
-      - posts = @pages.find(:limit => 1, :in_directory => 'posts', :sort_by => 'created_at', :reverse => true)
-      = render(posts.first)
+<div id="blog">
+  <div class="wrap">
+    <div class="col">
+      <!-- List of Blog Posts -->
+      {% assign posts = site.posts %}
+      {% for post in posts limit:15 offset:1 %}
+        * [{{post.title}}]({{post.url}})
+      {% endfor %}
+    </div>
+    <div class="block">
+      <!-- Latest Post -->
+      {% for post in posts limit:1 %}
+        {{include post.md}}
+      {% endfor %}
       
-      .allposts
-        = link_to("Blog Archive", "/blog.html")
-        %b or
-        = link_to("Feed <img src='/images/feed.png' />", "http://feeds.feedburner.com/tpitale")
+      <div class="allposts">
+        [Blog Archive](/blog.html)
+        <b>or</b>
+        [Feed](http://feeds.feedburner.com/tpitale)
+        <img src='/images/feed.png' />
+      </div>
+    </div>
+  </div>
+</div>
 
-/ Sampling of flickr images
-#photos
-  .wrap
+<!-- Sampling of flickr images -->
+<div id="photos">
+  <div class="wrap">
     %script{:type=>"text/javascript", :src=>"http://www.flickr.com/badge_code_v2.gne?count=10&display=random&size=s&layout=x&source=user_set&user=41783324%40N00&set=72157605236285647"}
     %script{:type=>"text/javascript", :src=>"http://www.flickr.com/badge_code_v2.gne?count=10&display=random&size=s&layout=x&source=user_set&user=41783324%40N00&set=72157602176622405"}
     %script{:type=>"text/javascript", :src=>"http://www.flickr.com/badge_code_v2.gne?count=10&display=latest&size=s&layout=x&source=user_set&user=41783324%40N00&set=72157600262586911"}
     %br.clearleft/
+  </div>
+</div>
+  
 
-/ Portfolio Links, w/images, to my projects
+<!-- Portfolio Links, w/images, to my projects -->
 #projects
-  .wrap
+  <div class="wrap">
     .col
       %ul
         %li
