@@ -1,0 +1,42 @@
+---
+published: true
+title: Switched to Github Pages
+subtitle: Transitioning from Webby to Jekyll
+author: Tony Pitale
+created_at: 2010-08-06 04:29:00.000000 -04:00
+layout: post
+---
+<p>
+  When I first began writing on this blog I used the excellent Webby gem
+  to generate a static site from my content. I love this approach considering
+  that I write so infrequently. Combined with comments by Disqus, it was (and
+  still is, in some ways) the perfect solution for me.
+</p>
+<p>
+  Counter to this was the slight pain I had in remembering how to make a new
+  blog post when I did get around to writing, the rake tasks (in a webby
+  wrapper command) to regenerate the whole site, and the process of deploying
+  the resulting html to my own server. I was using a combination of HAML,
+  HTML, Markdown, and Erb at varying degrees of complexity to mark up the site
+  that would be output by Webby. I came to realize this was more than I needed.
+</p>
+<p>
+  Github Pages and the underlying gem, Jekyll, have been available for quite
+  some time now. Given the overall simplicity of the blog I had built, and that,
+  ultimately, most of the content came out to be HTML in the end, I decided to
+  ditch the plethora of markup I was using and make the switch to a more
+  homogenous setup.
+</p>
+<p>
+  The transition was extremely painless. I simply took most of the output from
+  Webby and plopped it into the very simple structure Jekyll uses, along with my
+  images, javascript, and css (all intact). I read up on the Liquid helpers
+  provided and made the quick transition from the post/site syntax used by Webby
+  to the quite similar syntax used by Jekyll.
+</p>
+<p>
+  In the end, my favorite feature is simply git pushing my new content to Github.
+  No self-hosting, no deploying, no hassles whatsoever. I love it! Go ahead and
+  take a look <a href="http://github.com/tpitale/tpitale.github.com">at the
+  repository</a>.
+</p>
