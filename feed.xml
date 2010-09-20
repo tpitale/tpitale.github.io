@@ -1,5 +1,5 @@
 ---
-title:      t.pitale blog
+title: t.pitale blog
 extension: xml
 layout: false
 ---
@@ -16,14 +16,16 @@ layout: false
     <email>tpitale@gmail.com</email>
   </author>
 
-  {% assign posts = site.posts %}
-  {% for post in posts limit:10 %}
+  {% for post in site.posts limit:10 %}
     <entry>
       <id>{{post.url}},{{post.created_at}}</id>
       <title>{{post.title}}</title>
       <subtitle>{{post.subtitle}}</subtitle>
       <link href="http://t.pitale.com/{{post.url}}" />
       <updated>{{post.created_at | date_to_xmlschema}}</updated>
+      <content type="html">
+        {{post.content | xml_escape}}
+      </content>
     </entry>
   {% endfor %}
 </feed>
