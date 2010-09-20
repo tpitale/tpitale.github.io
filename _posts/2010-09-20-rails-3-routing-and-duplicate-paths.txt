@@ -1,0 +1,33 @@
+---
+published: true
+title: Rails 3 Routing
+subtitle: Duplicate Paths, Namespacing, and SubDomains
+author: Tony Pitale
+created_at: 2010-09-20 15:58:00.000000 -04:00
+layout: post
+---
+<p>
+  While working on <a href="http://wineistasty.com">Tasty</a> and an, as yet unannounced, new product
+  I came across a situation in which I wanted to route two different controllers with two different
+  sets of functionality to what was essentially the same path. Normally, this is impossible. There has
+  to be something to differentiate the two paths so that a route can be sent to a controller and action.
+</p>
+<p>
+  Thankfully, in Rails 3, we now have constraints. The common case for using constraints would be to
+  match a subdomain. In my case, I could easily use such a differentiation.
+</p>
+<p>
+  Constraints, combined with the use of namespacing of controllers in modules allowed me to route two
+  different controllers at the path '/items'. Unconstrained it simply goes to ItemsController, but if
+  a subdomain matches it is sent to Store::ItemsController. The trick is to use the :path option on
+  the appropriate namespace within the constraint. Here's how that might look:
+</p>
+<p>
+  <a class="gist" href="http://gist.github.com/588620">Tasty Routes Gist</a>
+</p>
+<p>
+  All in all, the new Rails 3 routing is extremely flexible, miles ahead of Rails 2.3. The SubDomain
+  class used in the constraint is simply a class that implements a class method called matches? which
+  takes a request and returns true or false. I match on the request.subdomain to check for what I 
+  need.
+</p>
