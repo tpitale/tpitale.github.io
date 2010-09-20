@@ -23,7 +23,7 @@ layout: post
   the appropriate namespace within the constraint. Here's how that might look:
 </p>
 <p>
-  <a class="gist" href="http://gist.github.com/588620">Tasty Routes Gist</a>
+  <a class="gist" href="http://gist.github.com/588635">Tasty Routes Gist</a>
 </p>
 <p>
   All in all, the new Rails 3 routing is extremely flexible, miles ahead of Rails 2.3. The SubDomain
