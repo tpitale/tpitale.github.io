@@ -1,0 +1,49 @@
+---
+published: true
+title: Things You Never Wanted to Know About Javascript and iframes
+subtitle: Resizing, Height/Width Tips, and the 'scroll' Event
+author: Tony Pitale
+created_at: 2010-10-01 22:41:00.000000 -04:00
+layout: post
+---
+<h3>Sizing and Resizing</h3>
+<p>
+  If an iframe is in a window that is smaller than its needs for minimum height
+  and width, and you haven't done anything to suppress them, you'll get scrollbars.
+  The interesting thing is when we use a little bit of JavaScript to get the sizing:
+</p>
+<p>
+  <a class="gist" href="http://gist.github.com/607216">iframe sizing javascript</a>
+</p>
+<p>
+  In this example we'll just assume that <code>iframe</code> is the iframe element
+  we want to be operating on.
+</p>
+<p>
+  What's interesting about the above example is that despite the parent window
+  being a smaller size than the required area of the iframe, the sizing values
+  we'll get back will be the actual height and width of that the contained page
+  requires. So, if you're using something like a 960px grid then it is very
+  likely that the value will be '960px'.
+</p>
+<p>
+  Even more interesting is what will happen if we increase the window to be
+  large enough to properly display the entire iframe and its contents. If we
+  were to run that JavaScript again, the values returned will be the sizing
+  of the parent as well not simply the minimum required space for the iframe.
+</p>
+<p>
+  While interesting, this information is really very useful if you're trying to
+  match the size of other elements on a page, or do some resizing. In my case I
+  was on a quest to match the size of an iframe with a canvas element in order
+  to add an overlay.
+</p>
+<h3>Events of the 'scroll' Variety</h3>
+<p>
+  If we want to add an event listener (in many, but not all, browsers) we would
+  normally attach it to <code>window</code> but what if we have an iframe? In this
+  case we can use the previously mentioned <code>contentWindow</code> like so:
+</p>
+<p>
+  <a class="gist" href="http://gist.github.com/607221">iframe sizing javascript</a>
+</p>
