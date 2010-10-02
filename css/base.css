@@ -330,11 +330,7 @@ div.flickr_badge_image:hover {
   font-weight: bold;
 }
 
-#post p span {
-  display: block;
-  margin: 10px 0;
-  line-height: 1.4em;
-}
+#post p span {}
 
 #post p a {
   color: #333333;
