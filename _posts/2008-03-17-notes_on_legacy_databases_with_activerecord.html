@@ -45,15 +45,13 @@ filter:
     or did not handle the problem.
   <p>
     What to do if a Table is not Named after a Class? Easy. ActiveRecord 
-    provides a simple method
-    %code set_table_name
+    provides a simple method <code>set_table_name</code>
     that allows you to do just that. If the tables are named after a class but
     are not pluralized, you can simply set the environment to not use the
     pluralized versions.
   <p>
     What to do if a Table does not have Primary Key named 'id'? Easy, too.
-    Simply use
-    %code set_primary_key
+    Simply use <code>set_primary_key</code>
     to set the primary key. This does not, however, provide for a case in which
     a table does not have a primary key (or otherwise usable unique key) in any
     way, shape, or form. The simple answer is to add an 'id' field that is not

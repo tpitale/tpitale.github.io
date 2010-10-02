@@ -16,7 +16,7 @@ layout: post
     new project and an overview of the rake tasks. From there I'll cover some
     of the helper methods that come with Webby.
     
-  %h3 What is Webby Doing?
+  <h3>What is Webby Doing?</h3>
   <p>
     Webby is useful because it allows the use of Ruby code as well as helpers,
     layouts, partials, filters (more on that later), and templates. From this
@@ -26,23 +26,23 @@ layout: post
     page cache would do but, it is done manually due to the infrequency of an
     update.
     
-  %h3 Install Webby
+  <h3>Install Webby</h3>
   <p>
     First, in order to use Webby you have to install it. Thankfully, there is a
     gem, making this step very simple. Open the Terminal application (or what
     you would normally use to install a gem) and install Webby (with any
     dependencies).
     
-    %code sudo gem install webby
+    <code>sudo gem install webby</code>
 
-  %h3 Optional Installs
+  <h3>Optional Installs</h3>
   <p>
     Personally, I like using Haml, so I installed that already. Webby is able
     to use a series of "filters" to make use of Haml, Sass, Textile, Markdown,
     and by default, erb. On top of the filters available to transform text,
     Webby has support for CodeRay and UltraViolet syntax highlighting.
   
-  %h3 Create a Project
+  <h3>Create a Project</h3>
   <p>    
     Onto creating a project. Webby comes with a command, webby. We use this and
     the name of our project in one command and Webby will create the structure
@@ -50,24 +50,25 @@ layout: post
     full list of options for the webby command, add the -h/--help flag (Hint:
     there aren't many).
     
-    %code webby your_project_name_here
+    <code>webby your_project_name_here</code>
   
-  %h3 Rake Tasks
+  <h3>Rake Tasks</h3>
   <p>
     Many Ruby developers are experienced using Rake. Change to the project
     directory in Terminal and try this.
     
-    %code rake -T
+    <code>rake -T</code>
     
     The most frequently used tasks (for me, at least) are:
     
-    %code
+    <code>
       rake create:whatever
       %br/
       rake autobuild
       %br/
       rake deploy:however
-      
+    </code>
+
     %span
       The create task is provided a type of document to create (from a template).
       By default these include a page, a partial, or an atom feed. I will discuss
