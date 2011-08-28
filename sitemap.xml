@@ -11,7 +11,7 @@ layout: false
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>http://t.pitale.com/posts/</loc>
+    <loc>http://t.pitale.com/blog.html</loc>
     <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -25,7 +25,7 @@ layout: false
   {% assign posts = site.posts %}
   {% for post in posts %}
   <url>
-    <loc>http://t.pitale.com/{{post.url}}</loc>
+    <loc>http://t.pitale.com{{post.url}}</loc>
     <lastmod>{{post.created_at | date_to_xmlschema}}</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
