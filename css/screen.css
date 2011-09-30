@@ -47,19 +47,32 @@ abbr,acronym {
 	border: 0;
 }
 
+.gist-meta {display: none;}
+.gist .gist-file {border: none !important;}
+.gist .gist-file .gist-data {background-color: #FFF !important; border-bottom: none !important;}
+
+body {
+	background: #000000 url('/images/body-bg.png') top left repeat;
+}
+
 /* Layout
 =============================================================================*/
 .wrap {
-	width: 480px;
+	width: 320px;
 	margin: 0 auto;
 }
 
 /* Header
 =============================================================================*/
 .header {
+	margin: 10px auto;
 }
 
 .header h1 {
+	color: #FFF;
+	font-size: 30px;
+	text-align: center;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica sans-serif;
 }
 
 /* Content
@@ -67,9 +80,29 @@ abbr,acronym {
 
 /* Post
 =============================================================================*/
+.post {
+	margin: 10px 0;
+	background-color: #FFFFFF;
+}
+
+.post p {
+	padding: 10px;
+	line-height: 1.25em;
+}
 
 /* Photos
 =============================================================================*/
+
+.photos {
+	overflow-y: auto;
+	height: 85px;
+}
+
+.photos .photos-container {
+	width: 2250px;
+}
+
+.photos .flickr_badge_image { float: left }
 
 /* Projects
 =============================================================================*/
