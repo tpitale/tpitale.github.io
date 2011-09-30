@@ -89,6 +89,10 @@ a:hover {text-decoration: underline;}
 .post,
 .photos,
 .projects {
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+
 	-moz-box-shadow: 0px 0px 10px #000;
   -webkit-box-shadow: 0px 0px 10px #000;
 }
@@ -147,7 +151,7 @@ a:hover {text-decoration: underline;}
 	margin: 30px auto;
 }
 .projects .projects-container {
-	width: 640px;
+	width: 960px;
 	height: 100px;
 }
 
@@ -180,4 +184,8 @@ a:hover {text-decoration: underline;}
 
 .projects a.winepos {
 	background: #FFFFFF url('/images/winepos.png') no-repeat 0px top;
+}
+
+.projects a.dispatch {
+	background: #FFFFFF url('/images/dispatch.png') no-repeat 0px top;
 }
