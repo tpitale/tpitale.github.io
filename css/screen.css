@@ -49,11 +49,20 @@ abbr,acronym {
 
 .gist-meta {display: none;}
 .gist .gist-file {border: none !important;}
-.gist .gist-file .gist-data {background-color: #FFF !important; border-bottom: none !important;}
+.gist .gist-file .gist-data {
+	font-size: 90% !important;
+	border-bottom: none !important;
+	background-color: #FFF !important;
+}
 
 body {
+	font-size: 13px;
+	font-family: Helvetica, Arial, sans-serif;
 	background: #000000 url('/images/body-bg.png') top left repeat;
 }
+
+a {text-decoration: none;}
+a:hover {text-decoration: underline;}
 
 /* Layout
 =============================================================================*/
@@ -65,7 +74,7 @@ body {
 /* Header
 =============================================================================*/
 .header {
-	margin: 10px auto;
+	margin: 30px auto;
 }
 
 .header h1 {
@@ -77,12 +86,30 @@ body {
 
 /* Content
 =============================================================================*/
+.post,
+.photos,
+.projects {
+	-moz-box-shadow: 0px 0px 10px #000;
+  -webkit-box-shadow: 0px 0px 10px #000;
+}
 
 /* Post
 =============================================================================*/
 .post {
-	margin: 10px 0;
+	margin: 30px 0;
 	background-color: #FFFFFF;
+}
+
+.post h1 {
+	padding: 10px;
+	font-size: 150%;
+	text-align: center;
+	font-weight: lighter;
+	font-family: "Helvetica Neue", Helvetica sans-serif;
+}
+
+.post span.created {
+	margin-left: 10px;
 }
 
 .post p {
@@ -90,12 +117,21 @@ body {
 	line-height: 1.25em;
 }
 
+.post a.gist {
+	display: block;
+	text-align: center;
+}
+
+.post a.archive {
+}
+
 /* Photos
 =============================================================================*/
 
 .photos {
+	height: 75px;
 	overflow-y: auto;
-	height: 85px;
+	margin: 30px auto;
 }
 
 .photos .photos-container {
@@ -106,3 +142,42 @@ body {
 
 /* Projects
 =============================================================================*/
+.projects {
+	overflow-y: scroll;
+	margin: 30px auto;
+}
+.projects .projects-container {
+	width: 640px;
+	height: 100px;
+}
+
+.projects .projects-container a {
+	float: left;
+	width: 320px;
+	height: 100px;
+	display: block;
+}
+
+.projects .projects-container a h3 {
+	width: 120px;
+	padding: 5px;
+	color: #19188D;
+	font-size: 125%;
+	background-color: #EEEEEE;
+	display: none;
+}
+
+.projects .projects-container a span {
+	width: 120px;
+	padding: 5px;
+	display: none;
+	background-color: #EEEEEE;
+}
+
+.projects a.tasty {
+	background: #D9DF9E url('/images/tasty.png') no-repeat -90px -75px;
+}
+
+.projects a.winepos {
+	background: #FFFFFF url('/images/winepos.png') no-repeat 0px top;
+}
