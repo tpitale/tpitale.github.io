@@ -1,0 +1,75 @@
+/*CSS Reset
+=============================================================================*/
+body,div,
+p,pre,blockquote
+dl,dt,dd,
+ul,ol,li,
+h1,h2,h3,h4,h5,h6,
+form,fieldset,input,textarea,
+th,td {
+	margin:0;
+	padding:0;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+fieldset,img { 
+	border: 0;
+}
+
+address,caption,cite,code,dfn,
+em,strong,th,var {
+	font-style: normal;
+	font-weight: normal;
+}
+
+ol,ul {
+	list-style: none;
+}
+
+caption,th {
+	text-align: left;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+	font-weight: normal;
+}
+
+q:before,q:after {
+	content: '';
+}
+
+abbr,acronym { 
+	border: 0;
+}
+
+/* Layout
+=============================================================================*/
+.wrap {
+	width: 480px;
+	margin: 0 auto;
+}
+
+/* Header
+=============================================================================*/
+.header {
+}
+
+.header h1 {
+}
+
+/* Content
+=============================================================================*/
+
+/* Post
+=============================================================================*/
+
+/* Photos
+=============================================================================*/
+
+/* Projects
+=============================================================================*/
