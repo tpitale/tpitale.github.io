@@ -110,6 +110,7 @@ a:hover {text-decoration: underline;}
 /* Content
 =============================================================================*/
 .post,
+.posts,
 .photos,
 .projects {
 	-webkit-border-radius: 2px;
@@ -157,6 +158,15 @@ a:hover {text-decoration: underline;}
 	margin-left: 10px;
 }
 
+ul.post-list {
+	list-style: square inside none;
+	margin-left: 10px;
+}
+
+ul.post-list li {
+	padding: 2px 0;
+}
+
 ul.post-links {
 }
 
@@ -185,11 +195,12 @@ ul.post-links li a.feed {
 
 ul.posts {
 	padding: 10px 0;
+	margin: 30px auto;
 	background-color: #FFFFFF;
 }
 
 ul.posts li {
-	padding: 0 10px;
+	padding: 0 12px;
 }
 
 ul.posts li a {
@@ -201,7 +212,7 @@ ul.posts li a {
 
 .photos {
 	height: 75px;
-	overflow-y: auto;
+	overflow: hidden;
 	margin: 30px auto;
 }
 
@@ -213,10 +224,20 @@ ul.posts li a {
 
 /* Projects
 =============================================================================*/
-.projects {
-	overflow-y: scroll;
-	margin: 30px auto;
+h2.projects-label {
+	color: #FFFFFF;
+	font-size: 25px;
+	text-align: center;
+	margin-bottom: 10px;
+	font-weight: lighter;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica sans-serif;
 }
+
+.projects {
+	overflow: hidden;
+	margin: 0 auto 30px auto;
+}
+
 .projects .projects-container {
 	width: 960px;
 	height: 100px;
@@ -229,14 +250,28 @@ ul.posts li a {
 	display: block;
 }
 
+/*.projects .projects-container a:hover {
+	text-decoration: none;
+}*/
+
 .projects .projects-container a h3 {
-	width: 120px;
+	height: 100%;
 	padding: 5px;
-	color: #19188D;
-	font-size: 125%;
-	background-color: #EEEEEE;
 	display: none;
+	color: #63D9EF;
+	font-size: 125%;
+/*	margin: 70px auto;*/
+	text-align: center;
+	background-color: #000000;
+  filter: alpha(opacity=65);
+  -moz-opacity: 0.65;
+	-webkit-opacity: 0.65;
+  opacity: 0.65;
 }
+
+/*.projects .projects-container a:hover h3 {
+	display: block;
+}*/
 
 .projects .projects-container a span {
 	width: 120px;
