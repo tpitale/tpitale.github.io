@@ -48,11 +48,26 @@ abbr,acronym {
 }
 
 .gist-meta {display: none;}
-.gist .gist-file {border: none !important;}
+.gist .gist-file {border: none !important; margin-bottom: 0px !important}
 .gist .gist-file .gist-data {
 	font-size: 90% !important;
 	border-bottom: none !important;
 	background-color: #FFF !important;
+}
+
+.group:before,
+.group:after {
+    content:"";
+    display:table;
+}
+
+.group:after {
+    clear:both;
+}
+
+/* For IE 6/7 (trigger hasLayout) */
+.group {
+    zoom:1;
 }
 
 body {
@@ -61,7 +76,7 @@ body {
 	background: #000000 url('/images/body-bg.png') top left repeat;
 }
 
-a {text-decoration: none;}
+a {text-decoration: none; color: #1C14C2;}
 a:hover {text-decoration: underline;}
 
 /* Layout
@@ -78,10 +93,18 @@ a:hover {text-decoration: underline;}
 }
 
 .header h1 {
-	color: #FFF;
 	font-size: 30px;
 	text-align: center;
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica sans-serif;
+}
+
+.header h1 a {
+	color: #FFFFFF;
+}
+
+.header h1 a:hover {
+	color: #999;
+	text-decoration: none;
 }
 
 /* Content
@@ -101,15 +124,24 @@ a:hover {text-decoration: underline;}
 =============================================================================*/
 .post {
 	margin: 30px 0;
+	overflow: hidden;
 	background-color: #FFFFFF;
 }
 
 .post h1 {
 	padding: 10px;
 	font-size: 150%;
-	text-align: center;
+	text-align: left;
+	color: #19188D;
 	font-weight: lighter;
 	font-family: "Helvetica Neue", Helvetica sans-serif;
+}
+
+.post h3 {
+	padding: 10px;
+	color: #19188D;
+	font-size: 120%;
+	text-align: left;
 }
 
 .post span.created {
@@ -121,12 +153,47 @@ a:hover {text-decoration: underline;}
 	line-height: 1.25em;
 }
 
-.post a.gist {
-	display: block;
-	text-align: center;
+.post a.gist-link {
+	margin-left: 10px;
 }
 
-.post a.archive {
+ul.post-links {
+}
+
+ul.post-links li {
+	width: 50%;
+	float: left;
+}
+
+ul.post-links li a {
+	display: block;
+	padding: 10px 0;
+}
+
+ul.post-links li a.archive {
+	text-align: right;
+	padding-right: 5px;
+}
+ul.post-links li a.feed {
+	text-align: left;
+	padding-left: 5px;
+	background: transparent url('/images/feed.png') 38px 10px no-repeat;
+}
+
+/* Posts
+=============================================================================*/
+
+ul.posts {
+	padding: 10px 0;
+	background-color: #FFFFFF;
+}
+
+ul.posts li {
+	padding: 0 10px;
+}
+
+ul.posts li a {
+	line-height: 1.25em;
 }
 
 /* Photos
@@ -188,4 +255,37 @@ a:hover {text-decoration: underline;}
 
 .projects a.dispatch {
 	background: #FFFFFF url('/images/dispatch.png') no-repeat 0px top;
+}
+
+/* Footer
+=============================================================================*/
+.footer {
+	padding-top: 10px;
+	text-align: center;
+	padding-bottom: 30px;
+/*	background-color: #323232;*/
+}
+
+.footer p.about {
+	color: #CCCCCC;
+	font-size: 95%;
+}
+
+.footer p.about a {
+	color: #63D9EF;
+}
+
+.footer p.copyright {
+	color: #999999;
+	padding-top: 10px;
+}
+
+.footer p.copyright a {
+	color: #999999;
+}
+
+.footer p.ps {
+	margin-top: 10px;
+	font-size: 85%;
+	color: #666666;
 }

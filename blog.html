@@ -1,0 +1,13 @@
+---
+title: Blog | Tony Pitale | tpitale.com
+created_at: 2011-10-01 23:23:50.00000 -04:00
+layout: application
+---
+
+{% assign posts = site.posts %}
+
+<ul class="posts">
+{% for post in posts %}
+  <li><a href="{{post.url}}">{{post.title}}</a></li>
+{% endfor %}
+</ul>
