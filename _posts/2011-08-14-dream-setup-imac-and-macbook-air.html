@@ -1,13 +1,13 @@
 ---
-published: false
+published: true
 title: "Dream Setup: iMac and Macbook Air"
 subtitle: Automation, Flexibility, and More
 author: Tony Pitale
-created_at: 2011-08-14 09:23:00.000000 -04:00
+created_at: 2011-10-04 10:50:00.000000 -04:00
 layout: post
 ---
 <p>
-	It has been nearly three years since I last purchased an Apple computer (laptop or desktop) of my very own. For anyone that knows me, this is a very, very long time. Recently, I went all-in and replaced my entire home computing setup, selling my Mac Pro (and previously Macbook Pro) in order to purchase a new iMac and Macbook Air. I'd like to share my reasoning for this particular pairing, my brief review of both pieces of hardware, and my experiences assembling my dream setup.
+	It has been nearly three years since I last purchased an Apple computer (laptop or desktop) of my very own. For anyone that knows me, this is a very, very long time. Recently, I went all-in and replaced my entire home computing setup, selling my Mac Pro (and previously a 15" Macbook Pro) in order to purchase a new iMac and 11" Macbook Air. I'd like to share my reasoning for this particular pairing, my brief review of both pieces of hardware, and my experiences assembling my dream setup.
 </p>
 
 <p class="disclaimer">
@@ -16,24 +16,88 @@ layout: post
 
 <h3>The Story</h3>
 <p>
-	My Mac Pro is heavy, it's big, and a lot of times, it's surprisingly slow. I dread moving it and I think the speed issues were only in comparison to my work computer which has an SSD. I have a Macbook Pro at work, and previously had one for personal use. But, traveling with the Macbook Pro when I didn't really need it was a drag, and there's no reason to have two identical computers.
+	My Mac Pro is heavy, it's big, and a lot of times, it's surprisingly slow. I dread moving it to a new apartment. I think the speed issue is even more noticeable in comparison to my work computer, which has an SSD. I have a Macbook Pro at work, and previously had one for personal use. But, traveling with the Macbook Pro when I didn't really need it was a drag (especially through airport security). There's no reason to have two identical computers at home and at work. All in all, too much power in some places, not enough in others, and a nearly complete lack of portability.
 </p>
 
 <p>
-	Tangent 1: a few months back I wanted a standing desk for home. I looked around at all of the conventional free standing desk only to be aghast at the price, especially for the adjustable variety. Instead, I took a note from 
+	Tangent 1: a few months back I wanted a standing desk for home. I looked around at all of the conventional free standing desk only to be aghast at the price, especially for the adjustable variety. Instead, I took a note from my friend and colleague, Jason Garber, and went looking for the pieces to build a standing desk. I accomplished this using shelving from Ikea which bolts to the wall of my apartment, and is extremely height adjustable.
+</p>
+
+<h3>The 11" Macbook Air</h3>
+<p>
+	Having made this purchase first, I'll review it first, too.
+</p>
+<p>
+	I knew it was coming. I'd read all the rumors. So, within an hour of the announcement, one of Steve Jobs' last announcements, I purchased my 11" Macbook Air. I ordered it with the maximum RAM and CPU, but kept the 128GB SSD. The price for the 256 is still too much to swallow.
+</p>
+<p>
+	Tangent 2: Interestingly, but not surprisingly, my father ordered a similar configuration 13". The race was for delivery was now on. He won. Mostly because mine inexplicable sat in Alaska for 4 days, despite paying for priority shipping.
+</p>
+
+<h4>Screen Size</h4>
+<p>
+	I actually do all of my coding (Ruby, mostly) on the Air. It's fantastic. The screen size is well worth the portability, especially considering the increased pixel density. I've been using spaces since Leopard and my workflow means I don't need nearly as much single-screen real estate.
+</p>
+
+<h4>Performance</h4>
+<p>
+	The tests I run perform better on my Air than on my three-month-old Pro at work (even with an SSD it)! The Core i7 in the Air will spike the frequency from 1.8 GHz to a much faster frequency as demand on the CPU rises. This will have some effect on battery life, but I don't run my full test-suite continuously. The database performance on the SSD in the Air also outclasses the SSD in the Pro. I'm not exactly sure why this is, but likely has something to do with the controller.
+</p>
+
+<h3>The iMac</h3>
+<p>
+	After a month or so, I returned to the Apple store. I tapped on the little iPads they have at every computer around the store (a great idea, by the way). Shortly thereafter, I walked out with a 27" iMac. Having previously ordered 16GB of RAM from <a href="http://macsales.com">OWC</a> I felt comfortable in getting the base configuration CPU (Core i5) and HDD. The CPU was fast enough, faster than the Mac Pro. As for storage, I'm happy with external. With Thunderbolt, I fully anticipate external storage to get even better (read: Drobo or Lacie Little Big Disk).
+</p>
+<p>
+	Tangent 3: Absolutely buy 16GB from OWC. It's half the price of RAM from Apple, and comes with fantastic warranty. It's one of the few remaining user-replaceable parts on Apple computers.
+</p>
+
+<h4>Screen Size</h4>
+<p>It is … HUGE!</p>
+<p>Even better, I can use it with my Macbook Air as an external display.</p>
+
+<h4>Performance</h4>
+<p>
+	Although I sometimes miss the SSD, the quad-core Core i5 makes up for it in video transcoding. I use Handbrake, and I can hardly believe the speedup from the Mac Pro. Photo editing in Aperture, Photoshop, and Pixelmator is no problem at all. I'm not a power user in this department. But, my Aperture library has nearly 10,000 photos, in three libraries, split across two HDDs. This would often choke the UI on the Mac Pro. I think the 16GB of memory available to Photoshop is really what makes the difference.
+</p>
+<p>
+	As for development, I do a fair bit on iMac. To get it to perform like the powerhouse that it is, I tuned my PostgreSQL instance to use the appropriate amount of RAM given what's available to the machine. Redis, too, has more space to play around with than I have ever had before. On the Macbook Air, I tune PostgreSQL to use less RAM because the SSD is so darn fast that it hardly matters. I try to keep my indexes in memory, but they don't get very large at all in development and testing.
 </p>
 
 <h3>What I Love</h3>
 <p>
-	
+	There's a lot to love when mixing these two fantastic machines.	I love the portability. I love having something with permanence. I love the tiny screen. I love the big screen! I love the small, fast SSD. I love the big HDD. I love thunderbolt!
+</p>
+<p>
+	This setup, more than any other I have had in my lifetime, provides me with the most flexibility, with the most ease of integration, for the least amount of money. As compared to having a Mac Pro, and a 15" Macbook Pro, this combination is downright affordable. The computers themselves perform above and beyond anything I have previously owned.
+</p>
+<p>
+	Tangent 4: I'm not a gamer. The Macbook Air would be a horrible gaming computer, even worse than the previous model. I don't care.
 </p>
 
 <h3>Downsides</h3>
 <p>
-	
+	The connection between the Macbook Air and the iMac, when using it as a display, takes a very unreliable moment. It requires both external keyboard and trackpad be connected, as well as power. When using bluetooth devices, this can be a bit wonky.
+</p>
+<p>
+	My recommendation? Keep the MBA open until the external display switches, then close the lid and pop it stand. When you use the mouse or keyboard, the display on the iMac will wake up.
+</p>
+<p>
+	And then there's the price. But you know that already.
 </p>
 
-<h3>Conclusion</h3>
+<h3>What's Missing?</h3>
 <p>
-	I made my dream a reality with a little work, and a lot of money.
+	Drobo. I really can't wait for a Drobo with Thunderbolt. I hope it comes soon.
+</p>
+<p>
+	My Mac Pro had 6TB of storage. I removed all those HDD's and shoved them in external cases I had accumulated over the years. And so, at present, I'm daisy chaining these 4TB of HDD's off the Firewire 800 port on the iMac. Most troubling of all? I can't back it up. Thankfully, it's all media that I have somewhere on physical media or from iTunes (which permits re-downloading now!) or that I won't otherwise miss (mostly television episodes I've already watched). All my photos are backed up both on my TimeMachine, and somewhere outside my apartment in case of catastrophe. All my work is in Github (of course).
+</p>
+<p>
+	So, all I really want is a Drobo, with Thunderbolt.
+</p>
+
+<h3>Conclusion (tl;dr)</h3>
+<p>
+	I made my dream a reality with a little work, a trip to Ikea, and a lot of money. Check back soon for more on PostgreSQL tuning in these two environments.
 </p>
