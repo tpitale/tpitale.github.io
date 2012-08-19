@@ -1,21 +1,38 @@
 ---
 published: false
-title: "Sunspot with Datamapper"
-subtitle: Rock Search with a Great ORM
+title: "Sunspot with Datamapper 2"
+subtitle: Search with My Favorite ORM
 author: Tony Pitale
-created_at: 2011-10-03 07:17:00.000000 -04:00
+created_at: 2011-10-16 13:01:00.000000 -04:00
 layout: post
 ---
 
 <p>
-	I was working on a project for a client and I hit a wall with "search". Thus far, I'd been making due with PostgreSQL. This was fine as the tool was only used by a small set of users, internally. This made PostgreSQL "search" the pragmatic choice. Unfortunately, with just one keyword, it becomes increasingly nasty to search many fields. Especially, and this is key, when joining tables. Thankfully, I had read about Sunspot
+	I was working on a project for a client and I hit a wall with "search". Thus far, I'd been making due with PostgreSQL. This was fine as the app was only used by a small set of internal users at the client. This made PostgreSQL "search" the pragmatic choice. Unfortunately, when searching with a single keyword, it becomes increasingly nasty to find matches across many fields. Especially, and this is key, when joining tables. Thankfully, I had read about <a href="http://outoftime.github.com/sunspot/">Sunspot</a> and watched the excellent introductory <a href="http://railscasts.com/episodes/278-search-with-sunspot">"Search with Sunspot" Railscast</a> by Ryan Bates (you should really <a href="http://railscasts.com/pro">buy a pro account</a>, it's worth every penny).
 </p>
 
+<h3>Install and Setup</h3>
+
+<p>Thanks to <a href="http://gist.github.com/1291094">a gist by Dan Kubb</a>, there was an example of how to create an adapter for DataMapper to work with Sunspot. I <a href="http://gist.github.com/1291094">forked it and added a few more pieces</a> that seem to be required.</p>
+
+<p>After the adapter is in place, we can generate the Sunspot configuration with <pre><code>script/rails generate sunspot_rails:install</code></pre>. We'll want to be sure to add <pre><code>solr/data</code></pre> to our .gitignore file</p>
+
+My setup and configuration of Sunspot/Solr, arrays of text
+
+<h3>Model Configuration</h3>
+
+<h3>Sunspot/Solr Tweaks</h3>
+
+<h3>Quirks</h3>
+
+<p>
+	Without specifying the models you wish to use explicitly, the rake tasks for sunspot will attempt to load ActiveRecord, which we obviously do not have. The simple solution is to use <pre><code>rake sunspot:index models=Problem+Task+OtherModel</code></pre>
+</p>
 
 Complain about weird stemming
 
-Using rake tasks with models=Problem
+<h3>Testing</h3>
 
-My setup, arrays of text
+<p>I would be remiss if I didn't write about how I'm testing. Two parts are required. First, we must isolate our own tests from depending on Sunspot or, even more importantly, Solr itself. Secondly, we want to have some testing of the integration between our code and Sunspot. I'll only be touching on the stubbing, in this post.</p>
 
-Stubbing the search
+<p></p>
