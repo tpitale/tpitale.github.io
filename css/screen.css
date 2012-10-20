@@ -165,6 +165,11 @@ a:hover {text-decoration: underline;}
 	margin-left: 10px;
 }
 
+.post img {
+	width: 300px;
+	margin: 0 10px;
+}
+
 ul.post-list {
 	list-style: square inside none;
 	margin-left: 10px;
