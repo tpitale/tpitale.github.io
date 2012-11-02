@@ -1,0 +1,55 @@
+---
+published: true
+title: Server-Sent-Events with Celluloid and Reel
+subtitle: Half-a-Websocket, Cheap and Easy
+author: Tony Pitale
+created_at: 2012-11-02 17:22:00.000000 -04:00
+layout: post
+---
+
+<p>
+  There's a lot of buzz around websockets, and rightly so. They provide very
+  powerful, two-way communication between you and the user's browser. Sadly,
+  the current level of compatibility, along with the Flash-based fallbacks,
+  leave me shuddering at the thought of using them in almost every scenario.
+</p>
+
+<p>
+  More recently, the half-a-websocket alternative server-sent-events (SSE),
+  has been getting a fair amount of press, too. Aaron Patterson (aka,
+  <a href="https://twitter.com/tenderlove">@tenderlove</a>) <a href="http://tenderlovemaking.com/2012/07/30/is-it-live.html">
+  showed us how to do it using  ActionController::Live in Rails 4</a>. 
+  Even better, Tony Arcieri (aka <a href="https://twitter.com/bascule">@bascule</a>)
+  <a href="https://github.com/celluloid/reel/blob/master/examples/websockets.rb">
+  has an example of how to use websockets</a> within his brilliant project
+  <a href="http://github.com/celluloid/celluloid">Celluloid</a> and its offshoot
+  webserver, <a href="http://github.com/celluloid/reel">Reel</a>.
+</p>
+
+<p>
+  Thanks goes entirely to these two giants of the Ruby community, I've simply
+  patched their work together to show a simplistic example of how to do a SSE
+  broadcast using a Reel webserver and Aaron's basic SSE class.
+</p>
+
+<h3>The Code</h3>
+<p>
+  <a class="gist-link" href="http://gist.github.com/4004298">SSE with Reel</a>
+  <br>
+  <a class="raw-gist-link" href="https://raw.github.com/gist/4004298/82c120f868d14029e9247301a0056782552e45d7/server.rb">Raw Code</a>
+</p>
+
+<p>
+  As you might imagine, SSE probably serves the needs of most everyone that
+  wants to push up events and data to a browser. Thankfully, SSE is based on
+  http and there are a handful of pure-javascript polyfills available. Check
+  out MDN for <a href="https://developer.mozilla.org/en-US/docs/Server-sent_events">
+  more information on SSE</a>.
+</p>
+
+<p>
+  Thanks for reading! <a href="http://twitter.com/tpitale">Tweet at me</a>
+  with any comments, suggestions, or questions. Check back later or follow
+  me to see when I share how I'm using this with <a href="http://emberjs.com">
+  Ember.js</a>.
+</p>

@@ -162,7 +162,7 @@ a:hover {text-decoration: underline;}
 }
 
 .post a.gist-link {
-	margin-left: 10px;
+	/*margin-left: 10px;*/
 }
 
 .post img {
