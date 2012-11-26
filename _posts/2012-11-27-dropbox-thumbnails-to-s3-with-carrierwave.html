@@ -1,0 +1,27 @@
+---
+published: false
+title: "Dropbox Thumbnails Into S3"
+subtitle: With CarrierWave
+author: Tony Pitale
+created_at: 2012-11-27 23:00:00.000000 -04:00
+layout: post
+---
+
+<p>
+  While building <a href="http://photodrop.in">PhotoDrop</a> I needed to upload thumbnails returned from Dropbox into S3. This should be an easy task, and it is, once you get passed this one little snag: the thumbnails from Dropbox are strings of binary data.
+</p>
+
+<p>
+  Dropbox is, of course, doing the right thing here. And, so is the rubygem dropbox-api. Rather than writing out a file, even a temporary one, these small thumbnail files can remain in memory and be quickly disposed of after we've sent them on to S3 for storage.
+</p>
+
+<p>
+  <a href="https://github.com/jnicklas/carrierwave">CarrierWave</a> is an excellent gem. It makes uploading, processing, manipulating, and storing images/files quite pleasant. The challenge is to trick CarrierWave into using the string as if it was a file. Happily, this is an easy task.
+</p>
+
+<h3>ThumbnailIO</h3>
+<p><a href="http://gist.github.com/4146418" class="gist-link">ThumbnailIO Class</a></p>
+
+<p>
+  We simply take the string, wrap it up as a StringIO, and give it an original_filename. To assign the image to a CarrierWave handler just pass the name and data to a new instance, like so: <span class="inline-code">image = ThumbnailIO.new(some_filename, entry.thumbnail(format: 'jpeg', size: 's'))</span> and save. That's all there is to it!
+</p>
