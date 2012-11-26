@@ -170,6 +170,11 @@ a:hover {text-decoration: underline;}
 	margin: 0 10px;
 }
 
+.post span.inline-code {
+	font-family: monospace;
+	background-color: #EEE;
+}
+
 ul.post-list {
 	list-style: square inside none;
 	margin-left: 10px;
