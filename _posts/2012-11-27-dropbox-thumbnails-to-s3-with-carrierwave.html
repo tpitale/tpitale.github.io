@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: "Dropbox Thumbnails Into S3"
 subtitle: With CarrierWave
 author: Tony Pitale
@@ -8,7 +8,7 @@ layout: post
 ---
 
 <p>
-  While building <a href="http://photodrop.in">PhotoDrop</a> I needed to upload thumbnails returned from Dropbox into S3. This should be an easy task, and it is, once you get passed this one little snag: the thumbnails from Dropbox are strings of binary data.
+  While building <a href="http://photodrop.in">PhotoDrop</a> I needed to upload thumbnails returned from Dropbox into S3. This should be an easy task, and it is, once you get passed this one little snag: the thumbnails from Dropbox are strings of data representing as if you just called File.read on the image file.
 </p>
 
 <p>
