@@ -6,7 +6,7 @@ layout: false
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>tpitale</title>
-  <link href="http://feeds.feedburner.com/tpitale" rel="self" />
+  <link href="http://tpitale.com/feed.xml" rel="self" />
   <link href="http://tpitale.com/" />
   <id>http://tpitale.com/</id>
   <updated>{{ site.time | date_to_xmlschema }}</updated>
@@ -18,8 +18,8 @@ layout: false
   {% for post in site.posts limit:10 %}
     <entry>
       <id>http://tpitale.com{{post.id}}</id>
-      <title>{{post.title}}</title>
-      <subtitle>{{post.subtitle}}</subtitle>
+      <title>{{post.title | xml_escape}}</title>
+      <subtitle>{{post.subtitle | xml_escape}}</subtitle>
       <link href="http://tpitale.com{{post.url}}" />
       <updated>{{post.created_at | date_to_xmlschema }}</updated>
       <content type="html">
