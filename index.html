@@ -4,22 +4,23 @@ created_at: 2011-10-01 23:23:50.00000 -04:00
 layout: application
 ---
 
-<div class="post">
-	{% assign posts = site.posts %}
+{% assign posts = site.posts %}
 
-	{% for post in posts limit:1 %}
+{% for post in posts limit:1 %}
+	<div class="post">
 		<!-- latest post -->
 		<h1>{{ post.title }}</h1>
 		<span class="created timestamp">{{post.created_at | date:'%Y-%m-%d' }}</span>
 		
 		{{ post.content }}
-	{% endfor %}
+	</div>
+{% endfor %}
 
-	<ul class="post-links group">
-		<li><a href="/blog.html" class="archive">Archive</a></li>
-		<li><a href="http://feeds.feedburner.com/tpitale" class="feed">Feed</a></li>
-	</ul>
-</div>
+<ul class="post-links group">
+	<li><a href="/blog.html" class="archive">Archive</a></li>
+	<li><a href="http://feeds.feedburner.com/tpitale" class="feed">Feed</a></li>
+</ul>
+
 <div class="photos">
 	<div class="photos-container">
 		<script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=10&display=latest&size=s&layout=x&source=user_set&user=41783324%40N00&set=72157624642260867"></script>

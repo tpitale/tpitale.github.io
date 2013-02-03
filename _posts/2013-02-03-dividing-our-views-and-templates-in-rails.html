@@ -1,0 +1,72 @@
+---
+published: true
+title: "Dividing Our Views and Templates in Rails"
+subtitle: "Introducing SimplestViews"
+author: Tony Pitale
+created_at: 2013-02-03 17:00:00.000000 -04:00
+layout: post
+---
+
+<p>TL;DR: I created a gem called simplest_view that makes it easy to move logic out of your Rails templates and into a class, in a conventional way.</p>
+
+<p>You can see it on Github at <a href="https://github.com/tpitale/simplest_view">tpitale/simplest_view</a></p>
+
+<p>Feel free to start using it, but read on to see how I made it.</p>
+
+<h3>Is it a View or a Template?</h3>
+
+<p>Rails views are actually ERB templates. However, they're found under app/views. I think this manifests as a problem when our ERB templates grow in complexity as:</p>
+
+<ul class="post-list">
+  <li>more data (in more instance variables) is passed to the ERB template</li>
+  <li>logic is embedded within the template</li>
+  <li>none of this is sufficiently tested</li>
+</ul>
+
+<p>My goal was to be able to put my code in views, rather than letting my templates handle logic. That meant I needed to split the view from the ERB templates, so I could have a real view object. The template's only responsibility should be the display of markup, json, xml, etc. <!-- We don't have to be hardcore to do this, we don't have to switch to handlebars or liquid for our tempting language. We just need a little discipline. --></p>
+
+<h3>Moving the Templates</h3>
+
+<p>The easy part is the existing templates.</p>
+
+<p>I started by moving any existing "view" templates from app/views into app/templates. To make my app work I added <span class="inline-code">self.view_paths = ['app/templates']</span> to my ApplicationController.</p>
+
+<p>If you're following along, you could run your tests and this should work.</p>
+
+<h3>A Little Spelunking</h3>
+
+<p>Now, for the fun part: views!</p>
+
+<p>If you've ever done something like <span class="inline-code">&lt;% puts self.inspect %&gt;</span> inside of an ERB template, you'll see that it's just a class. To know what functionality it has and where it comes from, I had to dig into Rails just a bit.</p>
+
+<p>The first thing I saw was that the class's ancestors include some interesting things like <span class="inline-code">ActionView::Base</span> and, of course, my <span class="inline-code">ApplicationHelper</span> that gets included. The real question is, 'Where does this view get made?'</p>
+
+<h3>And the Views</h3>
+
+<p>The answer is found within the rendering module that is mixed in with AbstractController. Within, I found two methods: <span class="inline-code">view_context</span> and <span class="inline-code">view_context_class</span>. An anoymous class is created, which inherits from <span class="inline-code">ActionView::Base</span> and is used as the context for any ERB templates.</p>
+
+<p>I made some small changes to <span class="inline-code">view_context_class</span> to make it use my own view classes.</p>
+
+<p>To start I made up a convention for the view class that mirrors the templates. Something like app/views/posts/index_view.rb will have the view for <span class="inline-code">PostsController#index</span> defined as <span class="inline-code">class Posts::IndexView &lt; ActionView::Base</span>.</p>
+
+<p>Using that class name, I just did what Rails 3 does, which is to create an anonymous class, and include the routing and misc helpers. This class then becomes the context for my ERB templates.</p>
+
+<p>It will have access to all the instance variables from the controller, and the ERB template will have access to any methods defined on the view.</p>
+
+<p>What I've got now is the simplest split between Rails templates and views. This lets me clean up any logic that may have crept into my ERB templates over many months or years of development.</p>
+
+<p>You can see the completed code module <a href="https://github.com/tpitale/simplest_view/blob/master/lib/simplest_view.rb">on Github</a>.</p>
+
+<h3>Test Drive</h3>
+
+<p>If you would like to try this out in your project, please give <a href="https://github.com/tpitale/simplest_view">SimplestView</a> a spin.</p>
+
+<h3>Next Steps</h3>
+
+<ul>
+  <li>It would definitely be a huge help if you could try it out, see how the approach feels in your project.</li>
+  <li>If you can spot a better way to hook into the view_context, let me know.</li>
+  <li>And lastly, open an issue if you find anything wrong or broken!</li>
+</ul>
+
+<p>Thanks for reading!</p>
