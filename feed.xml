@@ -19,7 +19,6 @@ layout: false
     <entry>
       <id>http://tpitale.com{{post.id}}</id>
       <title>{{post.title | xml_escape}}</title>
-      <subtitle>{{post.subtitle | xml_escape}}</subtitle>
       <link href="http://tpitale.com{{post.url}}" />
       <updated>{{post.created_at | date_to_xmlschema }}</updated>
       <content type="html">
