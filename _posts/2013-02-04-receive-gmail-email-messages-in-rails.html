@@ -1,0 +1,44 @@
+---
+published: true
+title: "Recieve Gmail Email Messages in Rails"
+subtitle: "Introducing mail_room"
+author: Tony Pitale
+created_at: 2013-02-04 21:40:00.000000 -04:00
+layout: post
+---
+
+<p>I want to announce the release of <a href="https://github.com/tpitale/mail_room">mail_room</a> and tell you a little bit about it and how it fits in with your Rails app.</p>
+
+<p>Suppose you have a Rails application, and you would like to receive email from your customers, your users, or someone else. Out of the box, the <a href="https://github.com/mikel/mail#getting-emails-from-a-pop-server">mail gem can get messages from a POP3 server</a> and allows you to query for messages in a very nice way. Unfortunately, in order to receive new mail, you have to ask the server at regular intervals.</p>
+
+<p>With mail_room, we can let gmail's IMAP do the work, using the IDLE command. As soon as a message arrives, mail_room will get it to your application.</p>
+
+<h3>mail_room</h3>
+
+<p>At its simplest <a href="https://github.com/tpitale/mail_room">mail_room</a> will forward your incoming gmail email to a URL you define.</p>
+
+<p>It starts and runs as a process on its own. Given a configuration file <a href="https://github.com/tpitale/mail_room/blob/master/spec/fixtures/test_config.yml">like this</a>, mail_room will open a connection for each gmail account and use the IMAP IDLE command to wait for new mail to come in. As soon as new mail arrives, mail_room will POST to the delivery_url you have configured.</p>
+
+<p>Messages are sent to your application's delivery_url as RFC822 and can be received and parsed by the mail gem. From the mail object, you can see from, to, subject, body, and html for the message.</p>
+
+<p>A delivery_token can be set to provide a simple mechanism to verify the sender. If an https delivery_url is provided, mail_room uses the excellent Faraday under the covers. By default, Faraday will attempt to use a verify_mode of <span class="inline-code">OpenSSL::SSL::VERIFY_PEER</span>.</p>
+
+<h3>Trying it out</h3>
+
+<p>If you'd like to try it out, but don't have an endpoint to receive the messages from mail_room, it can be configured to do more. Messages can be written to a log file, or better yet, they can be received and opened by Ryan Bates' (of <a href="http://railscasts.com/ ">Railscasts</a>) fantastic gem, <a href="https://github.com/ryanb/letter_opener ">letter_opener</a>.</p>
+
+<p>Descriptions of the other configuration parameters for delivery methods can be found in this <a href="https://github.com/tpitale/mail_room#delivery_method ">section of the README</a>.</p>
+
+<p>Start it up from your terminal using <span class="inline-code">mail_room -c /path/to/config.yml</span>.</p>
+
+<p>When you're ready, you can simply use the mail gem to parse the body that mail_room sends using <span class="inline-code">Mail.read_from_string(message)</span>. In this example 'message' is the POST body.</p>
+
+<h3>Next Steps</h3>
+
+<p>mail_room has greatly simplified the code I need to have in my Rails applications in order to have email pushed to me.</p>
+
+<ul>
+  <li>Try it out for yourself.</li>
+  <li>Watch the code for updates, new features, and an end-to-end example Rails integration.</li>
+  <li>Open an issue for any problems or questions you have.</li>
+</ul>
