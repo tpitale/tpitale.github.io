@@ -1,1 +1,1 @@
-web: jekyll  --server --auto
+web: jekyll  --server --auto --pygments --no-lsi --safe
