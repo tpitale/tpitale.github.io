@@ -1,0 +1,37 @@
+---
+published: true
+title: ActiveModel::Serializers with DataMapper
+subtitle: 
+author: Tony Pitale
+created_at: 2013-03-10 15:25:19.986216 -04:00
+layout: post
+---
+<p>
+  Now that <a href="http://twitter.com/steveklabnik">Steve Klabnik</a> has released ActiveModel::Serializers version 0.7.0, and <a href="http://twitter.com/rbates">Ryan Bates</a> has produced a fantastic Railscast on its usage (<a href="http://railscasts.com/episodes/409-active-model-serializers">episode 409</a>), I'd like to share how I'm using <a href="https://github.com/rails-api/active_model_serializers">ActiveModel::Serializers</a> with DataMapper to build an API for Ember.js with ember-data.
+</p>
+
+<!-- I'll split the article into two parts, starting with getting ActiveModel::Serializers working seamlessly with DataMapper. -->
+
+<p>
+  I love ActiveModel::Serializers and I love DataMapper. With a little work, they are a match made in heaven! Thankfully, the integration of the two is actually very easy, once you get down into it.
+</p>
+
+<p>
+  The biggest change was a <a href="https://github.com/rails-api/active_model_serializers/commit/dcd412132249367c971abd545398e8184e88223c">commit</a> I added to ActiveModel::Serializers to make eager loading work properly in DataMapper. Steve has already released this as a gem, so be sure to use a version >= 0.7.0.
+</p>
+
+<p>
+  Otherwise we just include the right support modules. I've chose to do this in an initializer in Rails called simply 'serializer.rb'.
+</p>
+
+<p>
+  <a href="https://gist.github.com/tpitale/5130038" class="gist-link">Serializer Gist</a>
+</p>
+
+<p>
+  Now you should be able to create Serializers to your heart's content and everything from DataMapper should work just like we want it. Thank you Steve and Ryan!
+</p>
+
+<p>
+  I'll followup with a blog on how I'm using ActiveModel::Serizliers to build APIs to work with well with ember-data and Ember.js.
+</p>

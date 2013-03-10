@@ -4,7 +4,7 @@
 			var $link = $(this);
 			var href = $(this).attr('href');
 
-			var gist_id = /http:\/\/gist\.github\.com\/(\d+)/.exec(href);
+			var gist_id = /https?:\/\/gist\.github\.com\/?[a-z]*\/(\d+)/.exec(href);
 
 			if (gist_id) {
 				$link.before('<div id="embedded-gist-'+gist_id[1]+'">');
