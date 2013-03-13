@@ -1,3 +1,4 @@
 output/*
 _site
+_sass/.sass-cache
 .DS_Store

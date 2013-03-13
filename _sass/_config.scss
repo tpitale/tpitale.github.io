@@ -1,0 +1,27 @@
+// Colors
+
+$base: #211c22;
+
+$blue: #269bed;
+$green: #1eafb1;
+$grey-dark: #9e9c9a;
+$grey-light: #e2e0dd;
+$grey-medium: #d4d4d4;
+$purple: #5f2699;
+$red: #c62828;
+$white: #fcf9f6;
+$yellow: #f0b005;
+
+// Defaults
+
+$default-border-radius: 4px;
+$default-transition-property: all;
+$default-transition-duration: 0.25s;
+$default-transition-function: linear;
+
+// Responsive breakpoints
+
+$small: "( min-width: 500px )";
+$medium: "( min-width: 800px )";
+
+// Sprites
