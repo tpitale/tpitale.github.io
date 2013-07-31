@@ -1,0 +1,121 @@
+---
+published: true
+title: How I've Been Running Email Standups
+subtitle: 
+author: Tony Pitale
+created_at: 2013-07-31 13:10:40.108319 -04:00
+layout: post
+---
+<p>
+  Lots of people do standups, but most frequently they're done synchronously;
+  either in-person or over video chat of some variety. After
+  <a href="http://wellbredgrapefruit.com/blog/2013/05/28/daily-meetings-are-great-but-you-should-never-have-them/">
+    reading this post from the development team at Treehouse
+  </a>
+  on why it might be best to do them asynchronously I decided to try out their
+  ideas with my small team.
+</p>
+
+<p>
+  As suggested in the blog post, we set up Google Groups. In order to send
+  the email from my own account to kick things off, I had to tweak some
+  settings. First I had to enable sending as the group email from my own
+  account. Then, in order to actually receive my own emails, I had to tweak
+  a setting in Google Groups. See the instructions below.
+</p>
+
+<p>
+  And of course, since I have stuff to do every day and I'm a "good" developer :-),
+  I automated the sending of the email with a little cron and a ruby script.
+</p>
+
+<p>
+  All in all, this as been a huge success for us. Our favorite benefits:
+  <ul>
+    <li>reduce this mundane but useful task to something I can do when it's convenient to take the time</li>
+    <li>do not pull me out of my own work for a standup</li>
+    <li>do not start other discussions not related to standup</li>
+    <li>link to PRs, commits, and code in Github directly from the email</li>
+    <li>it's all logged and searchable by the project/product managers</li>
+  </ul>
+</p>
+
+<p>
+  Lots of win, there. We were happy to find even more reasons to stick with
+  this approach than are given in the initial Treehouse post.
+</p>
+
+<p>
+  The only downside we could come up with is that we're taking away a time
+  when we get to socialize. But this barely counts. First, we don't want to use
+  the standup time for socializing and building camaraderie. And second, if
+  standup is the only time your team is socializing, you'll want to make an
+  attempt to correct that.
+</p>
+
+<h3>Make it Happen</h3>
+<p>
+  At a high level, getting it set up involves:
+
+  <ul>
+    <li>Create a new google group.</li>
+    <li>Go to settings in your gmail to allow you to send mail as the email for the google group.</li>
+    <li>Confirm that you have access to that email by clicking the link.</li>
+    <li>Put the mail script somewhere in your path.</li>
+    <li>Set cron to trigger it when you would like to have your standup.</li>
+  </ul>
+</p>
+
+<h3>Google Group Settings</h3>
+<p>
+  Inside groups > settings
+  <ul>
+    <li>Information > general information: Allow posting by email.</li>
+    <li>Information > Content control: Archive messages to the group.</li>
+    <li>Information > Web view customization: Allow users to highlight code.</li>
+    <li>Permissions > Posting permissions: Post As The Group should include Owners and Managers</li>
+  </ul>
+</p>
+
+<h3>The Ruby Script</h3>
+<p>
+  <a href="https://gist.github.com/tpitale/6124084" class="gist-link">standup_email ruby script gist</a>
+</p>
+
+<p>
+  Personally, I put this in my home directory .bin, and call it with the absolute path.
+  Note: If you have two-factor authentication turned on for your Gmail, you'll need
+  to generate a token to use.
+</p>
+
+<p>
+  <h3>Cron</h3>
+  <pre><code>
+    0 10 * * 1,2,3,4,5 /bin/zsh -ic '/Users/<username>/.bin/standup_email' > /tmp/standup.log 2>&1
+  </code></pre>
+</p>
+
+<p>
+  I've been running standups this way for 3+ months, and everyone on the team loves it.
+  Surprisingly, everyone still knows what other people on the team are working on.
+  Perhaps even more so, now!
+</p>
+
+<p>
+  I can't vouch for how this will scale to a team of greater than 5 people, so
+  YMMV. I do expect there is an upper limit to how well this will work on large
+  teams. That being said, it's probably the same constraint on time that
+  holding a large synchronous standup would have anyway.
+</p>
+
+<p>
+  So please, give this a try, and see how it works for your team.
+  <a href="http://twitter.com/tpitale">Tweet at me</a> with your results, I
+  would love to know how it goes for you!
+</p>
+
+<h3>P.S.,</h3>
+<p>
+  If you'd rather pay for this sort of functionality, and not mess with Google groups, you should
+  check out <a href="https://idonethis.com/">iDoneThis</a>.
+</p>
