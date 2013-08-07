@@ -27,7 +27,7 @@ And then just write some code inside &lt;pre&gt;&lt;code&gt; tags!
   end
 end
 
-Cow.says #=> moo</code></pre>
+Cow.new.says #=> moo</code></pre>
 
 Simple as that! I'm gonna give it a try for a little while. Let me know how
 you think it looks, and how the code reads for you. Thanks!
