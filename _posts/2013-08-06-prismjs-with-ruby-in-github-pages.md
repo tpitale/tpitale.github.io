@@ -19,7 +19,7 @@ case, Github Pages).
 * Add [prism.ruby.js](https://github.com/samflores/prism-langs/blob/master/prism.ruby.js)
 * Link to both in your layout
 
-And then just write some code inside &lt;pre&gt;&lt;code&gt; tags!
+And then just write some code inside &lt;pre&gt;&lt;code class="language-ruby"&gt; tags!
 
 <pre><code class="language-ruby">class Cow
   def says
