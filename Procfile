@@ -1,2 +1,2 @@
-web: jekyll  --server --auto --pygments --no-lsi --safe
+web: jekyll serve --watch
 compass: compass watch ./_sass

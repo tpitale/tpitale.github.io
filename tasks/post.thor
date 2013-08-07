@@ -7,15 +7,15 @@ class Post < Thor
   def create(title)
     puts "Generating blog post: #{title}"
 
-    html = ERB.new(File.read('./tasks/templates/post.erb')).result(binding)
+    md = ERB.new(File.read('./tasks/templates/post.erb')).result(binding)
 
-    file = "_posts/" + [short_date, title.downcase.gsub(/\W+/, '-')].join('-') + '.html'
+    file = "_posts/" + [short_date, title.downcase.gsub(/\W+/, '-')].join('-') + '.md'
 
     exists = File.exists?(file)
     overwrite = yes? "Do you want to overwrite #{file}?" if exists
 
     if !exists || overwrite
-      File.open(file, 'w') {|f| f.write(html)}
+      File.open(file, 'w') {|f| f.write(md)}
       `$EDITOR #{file}`
     else
       puts "Not going to overwrite #{file}. Move it, or try a different title."
