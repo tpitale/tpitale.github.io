@@ -105,25 +105,28 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* line 39, ../_sass/screen.scss */
 body {
-  font-size: 13px;
-  font-family: Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  color: #262c31;
+  line-height: 1.5em;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica-Neue, helvetica, sans-serif;
   background: black url("/images/body-bg.png") top left repeat;
 }
 
-/* line 45, ../_sass/screen.scss */
+/* line 48, ../_sass/screen.scss */
 a {
   text-decoration: none;
   color: #1C14C2;
 }
 
-/* line 46, ../_sass/screen.scss */
+/* line 49, ../_sass/screen.scss */
 a:hover {
   text-decoration: underline;
 }
 
 /* Layout
 =============================================================================*/
-/* line 50, ../_sass/screen.scss */
+/* line 53, ../_sass/screen.scss */
 .wrap {
   min-width: 320px;
   max-width: 640px;
@@ -132,24 +135,23 @@ a:hover {
 
 /* Header
 =============================================================================*/
-/* line 58, ../_sass/screen.scss */
+/* line 61, ../_sass/screen.scss */
 .header {
   margin: 30px auto;
 }
 
-/* line 62, ../_sass/screen.scss */
+/* line 65, ../_sass/screen.scss */
 .header h1 {
-  font-size: 30px;
+  font-size: 150%;
   text-align: center;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica sans-serif;
 }
 
-/* line 68, ../_sass/screen.scss */
+/* line 71, ../_sass/screen.scss */
 .header h1 a {
   color: #FFFFFF;
 }
 
-/* line 72, ../_sass/screen.scss */
+/* line 75, ../_sass/screen.scss */
 .header h1 a:hover {
   color: #999;
   text-decoration: none;
@@ -157,7 +159,7 @@ a:hover {
 
 /* Content
 =============================================================================*/
-/* line 83, ../_sass/screen.scss */
+/* line 86, ../_sass/screen.scss */
 .post,
 .posts,
 .photos,
@@ -170,152 +172,136 @@ a:hover {
   -webkit-box-shadow: 0px 0px 10px #000;
 }
 
-/* line 92, ../_sass/screen.scss */
+/* line 95, ../_sass/screen.scss */
 ul.post-links {
   background-color: #FFFFFF;
   list-style: none;
 }
-
-/* line 97, ../_sass/screen.scss */
+/* line 99, ../_sass/screen.scss */
 ul.post-links li {
   width: 50%;
   float: left;
 }
-
-/* line 102, ../_sass/screen.scss */
+/* line 103, ../_sass/screen.scss */
 ul.post-links li a {
   display: block;
   padding: 10px 0;
 }
-
-/* line 107, ../_sass/screen.scss */
+/* line 108, ../_sass/screen.scss */
 ul.post-links li a.archive {
   text-align: right;
   padding-right: 5px;
 }
-
-/* line 111, ../_sass/screen.scss */
+/* line 113, ../_sass/screen.scss */
 ul.post-links li a.feed {
   text-align: left;
   padding-left: 5px;
-  background: transparent url("/images/feed.png") 38px 10px no-repeat;
+  background: transparent url("/images/feed.png") 50px 16px no-repeat;
 }
 
 /* Post
 =============================================================================*/
-/* line 119, ../_sass/screen.scss */
+/* line 123, ../_sass/screen.scss */
 .post {
-  margin: 30px 0;
+  margin: 1em 0;
+  padding: 1em;
   overflow: hidden;
   background-color: #FFFFFF;
 }
-
-/* line 125, ../_sass/screen.scss */
+/* line 129, ../_sass/screen.scss */
 .post h1 {
-  padding: 10px;
   font-size: 150%;
   text-align: left;
   color: #19188D;
-  font-weight: lighter;
-  font-family: "Helvetica Neue", Helvetica sans-serif;
+  font-weight: 500;
 }
-
-/* line 134, ../_sass/screen.scss */
+/* line 138, ../_sass/screen.scss */
 .post h3 {
-  padding: 10px;
   color: #19188D;
   font-size: 120%;
   text-align: left;
 }
-
-/* line 141, ../_sass/screen.scss */
+/* line 145, ../_sass/screen.scss */
 .post h4 {
-  padding: 10px;
   color: #19188D;
   font-size: 105%;
   text-align: left;
 }
-
-/* line 148, ../_sass/screen.scss */
-.post span.created {
-  margin-left: 10px;
-}
-
 /* line 152, ../_sass/screen.scss */
-.post p {
-  padding: 10px;
-  line-height: 1.25em;
+.post span.created {
+  font-size: 90%;
+  color: #9e9c9a;
 }
-
-/* line 157, ../_sass/screen.scss */
+/* line 158, ../_sass/screen.scss */
+.post p {
+  margin: 1em 0;
+}
+/* line 162, ../_sass/screen.scss */
 .post a.gist-link {
   /*margin-left: 10px;*/
 }
-
-/* line 161, ../_sass/screen.scss */
+/* line 166, ../_sass/screen.scss */
 .post img {
   width: 300px;
   margin: 0 10px;
 }
-
-/* line 166, ../_sass/screen.scss */
+/* line 171, ../_sass/screen.scss */
 .post span.inline-code {
   font-family: monospace;
   background-color: #EEE;
 }
-
-/* line 171, ../_sass/screen.scss */
+/* line 176, ../_sass/screen.scss */
 .post ul {
   list-style: square inside none;
-  margin: 5px 10px;
+  margin: 1em 0;
 }
-
-/* line 176, ../_sass/screen.scss */
+/* line 180, ../_sass/screen.scss */
 .post ul li {
-  padding: 2px 0;
+  line-height: 1.25em;
+}
+/* line 186, ../_sass/screen.scss */
+.post pre {
+  font-size: 80%;
+  line-height: 1.25em;
 }
 
 /* Posts
 =============================================================================*/
-/* line 183, ../_sass/screen.scss */
+/* line 196, ../_sass/screen.scss */
 ul.posts {
   padding: 10px 0;
   margin: 30px auto;
   background-color: #FFFFFF;
 }
-
-/* line 189, ../_sass/screen.scss */
+/* line 201, ../_sass/screen.scss */
 ul.posts li {
   padding: 0 12px;
 }
-
-/* line 193, ../_sass/screen.scss */
+/* line 204, ../_sass/screen.scss */
 ul.posts li a {
   line-height: 1.25em;
 }
 
 /* Photos
 =============================================================================*/
-/* line 200, ../_sass/screen.scss */
+/* line 213, ../_sass/screen.scss */
 .photos {
   height: 75px;
   overflow: hidden;
   margin: 30px auto;
 }
-
-/* line 206, ../_sass/screen.scss */
+/* line 218, ../_sass/screen.scss */
 .photos .photos-container {
   width: 2250px;
 }
-
-/* line 210, ../_sass/screen.scss */
+/* line 222, ../_sass/screen.scss */
 .photos .flickr_badge_image {
   float: left;
 }
 
 /* Projects
 =============================================================================*/
-/* line 214, ../_sass/screen.scss */
+/* line 229, ../_sass/screen.scss */
 h2.projects-label {
   color: #FFFFFF;
   font-size: 25px;
@@ -325,19 +311,19 @@ h2.projects-label {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica sans-serif;
 }
 
-/* line 223, ../_sass/screen.scss */
+/* line 238, ../_sass/screen.scss */
 .projects {
   overflow: hidden;
   margin: 0 auto 30px auto;
 }
 
-/* line 228, ../_sass/screen.scss */
+/* line 243, ../_sass/screen.scss */
 .projects .projects-container {
   width: 960px;
   height: 100px;
 }
 
-/* line 233, ../_sass/screen.scss */
+/* line 248, ../_sass/screen.scss */
 .projects .projects-container a {
   float: left;
   width: 320px;
@@ -348,7 +334,7 @@ h2.projects-label {
 /*.projects .projects-container a:hover {
   text-decoration: none;
 }*/
-/* line 244, ../_sass/screen.scss */
+/* line 259, ../_sass/screen.scss */
 .projects .projects-container a h3 {
   height: 100%;
   padding: 5px;
@@ -367,7 +353,7 @@ h2.projects-label {
 /*.projects .projects-container a:hover h3 {
   display: block;
 }*/
-/* line 263, ../_sass/screen.scss */
+/* line 278, ../_sass/screen.scss */
 .projects .projects-container a span {
   width: 120px;
   padding: 5px;
@@ -375,54 +361,50 @@ h2.projects-label {
   background-color: #EEEEEE;
 }
 
-/* line 270, ../_sass/screen.scss */
+/* line 285, ../_sass/screen.scss */
 .projects a.tasty {
   background: #d9df9e url("/images/tasty.png") no-repeat -90px -75px;
 }
 
-/* line 274, ../_sass/screen.scss */
+/* line 289, ../_sass/screen.scss */
 .projects a.winepos {
   background: white url("/images/winepos.png") no-repeat 0px top;
 }
 
-/* line 278, ../_sass/screen.scss */
+/* line 293, ../_sass/screen.scss */
 .projects a.dispatch {
   background: white url("/images/dispatch.png") no-repeat 0px top;
 }
 
 /* Footer
 =============================================================================*/
-/* line 284, ../_sass/screen.scss */
+/* line 3, ../_sass/_footer.scss */
 .footer {
   padding-top: 10px;
   text-align: center;
   padding-bottom: 30px;
   /*  background-color: #323232;*/
 }
-
-/* line 291, ../_sass/screen.scss */
+/* line 9, ../_sass/_footer.scss */
 .footer p.about {
   color: #CCCCCC;
-  font-size: 95%;
+  font-size: 80%;
+  line-height: 1.25em;
 }
-
-/* line 296, ../_sass/screen.scss */
+/* line 15, ../_sass/_footer.scss */
 .footer p.about a {
   color: #63D9EF;
 }
-
-/* line 300, ../_sass/screen.scss */
+/* line 19, ../_sass/_footer.scss */
 .footer p.copyright {
   color: #999999;
   padding-top: 10px;
 }
-
-/* line 305, ../_sass/screen.scss */
+/* line 24, ../_sass/_footer.scss */
 .footer p.copyright a {
   color: #999999;
 }
-
-/* line 309, ../_sass/screen.scss */
+/* line 28, ../_sass/_footer.scss */
 .footer p.ps {
   margin-top: 10px;
   font-size: 85%;
@@ -436,11 +418,10 @@ h2.projects-label {
  * Based on dabblet (http://dabblet.com)
  * @author Lea Verou
  */
-/* line 325, ../_sass/screen.scss */
+/* line 11, ../_sass/_prism.scss */
 code[class*="language-"],
 pre[class*="language-"] {
   color: black;
-  text-shadow: 0 1px white;
   font-family: Consolas, Monaco, 'Andale Mono', monospace;
   direction: ltr;
   text-align: left;
@@ -455,47 +436,47 @@ pre[class*="language-"] {
   hyphens: none;
 }
 
-/* line 344, ../_sass/screen.scss */
+/* line 30, ../_sass/_prism.scss */
 ::-moz-selection {
   text-shadow: none;
   background: #b3d4fc;
 }
 
-/* line 349, ../_sass/screen.scss */
+/* line 35, ../_sass/_prism.scss */
 ::selection {
   text-shadow: none;
   background: #b3d4fc;
 }
 
 @media print {
-  /* line 356, ../_sass/screen.scss */
+  /* line 42, ../_sass/_prism.scss */
   code[class*="language-"],
   pre[class*="language-"] {
     text-shadow: none;
   }
 }
 /* Code blocks */
-/* line 362, ../_sass/screen.scss */
+/* line 48, ../_sass/_prism.scss */
 pre[class*="language-"] {
   padding: 1em;
-  margin: .5em 0;
   overflow: auto;
 }
 
-/* line 369, ../_sass/screen.scss */
+/* line 54, ../_sass/_prism.scss */
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-  background: #f5f2f0;
+  border-top: 1px solid #f5f2f0;
+  border-bottom: 1px solid #f5f2f0;
 }
 
 /* Inline code */
-/* line 374, ../_sass/screen.scss */
+/* line 60, ../_sass/_prism.scss */
 :not(pre) > code[class*="language-"] {
   padding: .1em;
   border-radius: .3em;
 }
 
-/* line 382, ../_sass/screen.scss */
+/* line 68, ../_sass/_prism.scss */
 .token.comment,
 .token.prolog,
 .token.doctype,
@@ -503,17 +484,17 @@ pre[class*="language-"] {
   color: slategray;
 }
 
-/* line 386, ../_sass/screen.scss */
+/* line 72, ../_sass/_prism.scss */
 .token.punctuation {
   color: #999;
 }
 
-/* line 390, ../_sass/screen.scss */
+/* line 76, ../_sass/_prism.scss */
 .namespace {
   opacity: .7;
 }
 
-/* line 397, ../_sass/screen.scss */
+/* line 83, ../_sass/_prism.scss */
 .token.property,
 .token.tag,
 .token.boolean,
@@ -521,14 +502,14 @@ pre[class*="language-"] {
   color: #905;
 }
 
-/* line 403, ../_sass/screen.scss */
+/* line 89, ../_sass/_prism.scss */
 .token.selector,
 .token.attr-name,
 .token.string {
   color: #690;
 }
 
-/* line 411, ../_sass/screen.scss */
+/* line 97, ../_sass/_prism.scss */
 .token.operator,
 .token.entity,
 .token.url,
@@ -538,25 +519,25 @@ pre[class*="language-"] {
   background: rgba(255, 255, 255, 0.5);
 }
 
-/* line 418, ../_sass/screen.scss */
+/* line 104, ../_sass/_prism.scss */
 .token.atrule,
 .token.attr-value,
 .token.keyword {
   color: #07a;
 }
 
-/* line 424, ../_sass/screen.scss */
+/* line 110, ../_sass/_prism.scss */
 .token.regex,
 .token.important {
   color: #e90;
 }
 
-/* line 428, ../_sass/screen.scss */
+/* line 114, ../_sass/_prism.scss */
 .token.important {
   font-weight: bold;
 }
 
-/* line 432, ../_sass/screen.scss */
+/* line 118, ../_sass/_prism.scss */
 .token.entity {
   cursor: help;
 }

@@ -1,0 +1,33 @@
+/* Footer
+=============================================================================*/
+.footer {
+  padding-top: 10px;
+  text-align: center;
+  padding-bottom: 30px;
+  /*  background-color: #323232;*/
+
+  p.about {
+    color: #CCCCCC;
+    font-size: 80%;
+    line-height: 1.25em;
+  }
+
+  p.about a {
+    color: #63D9EF;
+  }
+
+  p.copyright {
+    color: #999999;
+    padding-top: 10px;
+  }
+
+  p.copyright a {
+    color: #999999;
+  }
+
+  p.ps {
+    margin-top: 10px;
+    font-size: 85%;
+    color: #666666;
+  }
+}

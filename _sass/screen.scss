@@ -37,8 +37,11 @@
 }
 
 body {
-  font-size: 13px;
-  font-family: Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  color: $font-black;
+  line-height: 1.5em;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica-Neue, helvetica, sans-serif;
   background: #000000 url('/images/body-bg.png') top left repeat;
 }
 
@@ -60,9 +63,9 @@ a:hover {text-decoration: underline;}
 }
 
 .header h1 {
-  font-size: 30px;
+  font-size: 150%;
   text-align: center;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica sans-serif;
+  // font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica sans-serif;
 }
 
 .header h1 a {
@@ -92,89 +95,99 @@ a:hover {text-decoration: underline;}
 ul.post-links {
   background-color: #FFFFFF;
   list-style: none;
-}
 
-ul.post-links li {
-  width: 50%;
-  float: left;
-}
+  li {
+    width: 50%;
+    float: left;
 
-ul.post-links li a {
-  display: block;
-  padding: 10px 0;
-}
+    a {
+      display: block;
+      padding: 10px 0;
+    }
 
-ul.post-links li a.archive {
-  text-align: right;
-  padding-right: 5px;
-}
-ul.post-links li a.feed {
-  text-align: left;
-  padding-left: 5px;
-  background: transparent url('/images/feed.png') 38px 10px no-repeat;
+    a.archive {
+      text-align: right;
+      padding-right: 5px;
+    }
+
+    a.feed {
+      text-align: left;
+      padding-left: 5px;
+      background: transparent url('/images/feed.png') 50px 16px no-repeat;
+    }
+  }
 }
 
 /* Post
 =============================================================================*/
 .post {
-  margin: 30px 0;
+  margin: 1em 0;
+  padding: 1em;
   overflow: hidden;
   background-color: #FFFFFF;
-}
 
-.post h1 {
-  padding: 10px;
-  font-size: 150%;
-  text-align: left;
-  color: #19188D;
-  font-weight: lighter;
-  font-family: "Helvetica Neue", Helvetica sans-serif;
-}
+  h1 {
+    // margin: .5em 0 0 .5em;
+    font-size: 150%;
+    text-align: left;
+    color: #19188D;
+    font-weight: 500;
+    // font-family: "Helvetica Neue", Helvetica sans-serif;
+  }
 
-.post h3 {
-  padding: 10px;
-  color: #19188D;
-  font-size: 120%;
-  text-align: left;
-}
+  h3 {
+    color: #19188D;
+    font-size: 120%;
+    text-align: left;
+    // margin: .5em 0 0 .75em;
+  }
 
-.post h4 {
-  padding: 10px;
-  color: #19188D;
-  font-size: 105%;
-  text-align: left;
-}
+  h4 {
+    color: #19188D;
+    font-size: 105%;
+    text-align: left;
+    // margin: .5em 0 0 1em;
+  }
 
-.post span.created {
-  margin-left: 10px;
-}
+  span.created {
+    font-size: 90%;
+    // margin-left: 1em;
+    color: $grey-dark;
+  }
 
-.post p {
-  padding: 10px;
-  line-height: 1.25em;
-}
+  p {
+    margin: 1em 0;
+  }
 
-.post a.gist-link {
-  /*margin-left: 10px;*/
-}
+  a.gist-link {
+    /*margin-left: 10px;*/
+  }
 
-.post img {
-  width: 300px;
-  margin: 0 10px;
-}
+  img {
+    width: 300px;
+    margin: 0 10px;
+  }
 
-.post span.inline-code {
-  font-family: monospace;
-  background-color: #EEE;
-}
+  span.inline-code {
+    font-family: monospace;
+    background-color: #EEE;
+  }
 
-.post ul {
-  list-style: square inside none;
-  margin: 5px 10px;
-}
+  ul {
+    list-style: square inside none;
+    margin: 1em 0;
 
-.post ul li {
-  padding: 2px 0;
+    li {
+      line-height: 1.25em;
+      // padding: 2px 0;
+    }
+  }
+
+  pre {
+    font-size: 80%;
+    // margin: 0 -1.25em;
+    line-height: 1.25em;
+  }
 }
 
 /* Posts
@@ -184,14 +197,14 @@ ul.posts {
   padding: 10px 0;
   margin: 30px auto;
   background-color: #FFFFFF;
-}
 
-ul.posts li {
-  padding: 0 12px;
-}
+  li {
+    padding: 0 12px;
 
-ul.posts li a {
-  line-height: 1.25em;
+    a {
+      line-height: 1.25em;
+    }
+  }
 }
 
 /* Photos
@@ -201,13 +214,15 @@ ul.posts li a {
   height: 75px;
   overflow: hidden;
   margin: 30px auto;
-}
 
-.photos .photos-container {
-  width: 2250px;
-}
+  .photos-container {
+    width: 2250px;
+  }
 
-.photos .flickr_badge_image { float: left }
+  .flickr_badge_image {
+    float: left;
+  }
+}
 
 /* Projects
 =============================================================================*/
@@ -279,156 +294,6 @@ h2.projects-label {
   background: #FFFFFF url('/images/dispatch.png') no-repeat 0px top;
 }
 
-/* Footer
-=============================================================================*/
-.footer {
-  padding-top: 10px;
-  text-align: center;
-  padding-bottom: 30px;
-/*  background-color: #323232;*/
-}
+@import "footer";
 
-.footer p.about {
-  color: #CCCCCC;
-  font-size: 95%;
-}
-
-.footer p.about a {
-  color: #63D9EF;
-}
-
-.footer p.copyright {
-  color: #999999;
-  padding-top: 10px;
-}
-
-.footer p.copyright a {
-  color: #999999;
-}
-
-.footer p.ps {
-  margin-top: 10px;
-  font-size: 85%;
-  color: #666666;
-}
-
-/* Prism
-=============================================================================*/
-
-/**
- * prism.js default theme for JavaScript, CSS and HTML
- * Based on dabblet (http://dabblet.com)
- * @author Lea Verou
- */
-
-code[class*="language-"],
-pre[class*="language-"] {
-  color: black;
-  text-shadow: 0 1px white;
-  font-family: Consolas, Monaco, 'Andale Mono', monospace;
-  direction: ltr;
-  text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
-
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none;
-}
-
-::-moz-selection {
-  text-shadow: none;
-  background: #b3d4fc;
-}
-
-::selection {
-  text-shadow: none;
-  background: #b3d4fc;
-}
-
-@media print {
-  code[class*="language-"],
-  pre[class*="language-"] {
-    text-shadow: none;
-  }
-}
-
-/* Code blocks */
-pre[class*="language-"] {
-  padding: 1em;
-  margin: .5em 0;
-  overflow: auto;
-}
-
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-  background: #f5f2f0;
-}
-
-/* Inline code */
-:not(pre) > code[class*="language-"] {
-  padding: .1em;
-  border-radius: .3em;
-}
-
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-  color: slategray;
-}
-
-.token.punctuation {
-  color: #999;
-}
-
-.namespace {
-  opacity: .7;
-}
-
-.token.property,
-.token.tag,
-.token.boolean,
-.token.number {
-  color: #905;
-}
-
-.token.selector,
-.token.attr-name,
-.token.string {
-  color: #690;
-}
-
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string {
-  color: #a67f59;
-  background: hsla(0,0%,100%,.5);
-}
-
-.token.atrule,
-.token.attr-value,
-.token.keyword {
-  color: #07a;
-}
-
-
-.token.regex,
-.token.important {
-  color: #e90;
-}
-
-.token.important {
-  font-weight: bold;
-}
-
-.token.entity {
-  cursor: help;
-}
+@import "prism";
