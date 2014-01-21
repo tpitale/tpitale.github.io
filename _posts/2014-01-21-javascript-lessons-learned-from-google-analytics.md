@@ -15,8 +15,7 @@ In javascript, `undefined` is a variable. If someone less-sane than ourselves wa
 
 To be certain that they're really working with undefined, the GA tracking javascript uses `void 0` or `void(0)` to ensure it works with an explicitly undefined `undefined`.
 
-`void(0) == undefined`
-`true`
+<pre><code class="language-javascript">void(0) == undefined //=> true</code></pre>
 
 ### arguments ###
 
