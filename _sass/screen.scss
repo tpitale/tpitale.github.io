@@ -168,9 +168,11 @@ ul.post-links {
     margin: 0 10px;
   }
 
-  span.inline-code {
+  span.inline-code,
+  p code {
+    font-size: 95%;
     font-family: monospace;
-    background-color: #EEE;
+    background-color: #EEEEEE;
   }
 
   ul {

@@ -245,21 +245,23 @@ ul.post-links li a.feed {
   width: 300px;
   margin: 0 10px;
 }
-/* line 171, ../_sass/screen.scss */
-.post span.inline-code {
+/* line 172, ../_sass/screen.scss */
+.post span.inline-code,
+.post p code {
+  font-size: 95%;
   font-family: monospace;
-  background-color: #EEE;
+  background-color: #EEEEEE;
 }
-/* line 176, ../_sass/screen.scss */
+/* line 178, ../_sass/screen.scss */
 .post ul {
   list-style: square inside none;
   margin: 1em 0;
 }
-/* line 180, ../_sass/screen.scss */
+/* line 182, ../_sass/screen.scss */
 .post ul li {
   line-height: 1.25em;
 }
-/* line 186, ../_sass/screen.scss */
+/* line 188, ../_sass/screen.scss */
 .post pre {
   margin: 1em 0;
   font-size: 80%;
@@ -268,41 +270,41 @@ ul.post-links li a.feed {
 
 /* Posts
 =============================================================================*/
-/* line 196, ../_sass/screen.scss */
+/* line 198, ../_sass/screen.scss */
 ul.posts {
   padding: 10px 0;
   margin: 30px auto;
   background-color: #FFFFFF;
 }
-/* line 201, ../_sass/screen.scss */
+/* line 203, ../_sass/screen.scss */
 ul.posts li {
   padding: 0 12px;
 }
-/* line 204, ../_sass/screen.scss */
+/* line 206, ../_sass/screen.scss */
 ul.posts li a {
   line-height: 1.25em;
 }
 
 /* Photos
 =============================================================================*/
-/* line 213, ../_sass/screen.scss */
+/* line 215, ../_sass/screen.scss */
 .photos {
   height: 75px;
   overflow: hidden;
   margin: 30px auto;
 }
-/* line 218, ../_sass/screen.scss */
+/* line 220, ../_sass/screen.scss */
 .photos .photos-container {
   width: 2250px;
 }
-/* line 222, ../_sass/screen.scss */
+/* line 224, ../_sass/screen.scss */
 .photos .flickr_badge_image {
   float: left;
 }
 
 /* Projects
 =============================================================================*/
-/* line 229, ../_sass/screen.scss */
+/* line 231, ../_sass/screen.scss */
 h2.projects-label {
   color: #FFFFFF;
   font-size: 25px;
@@ -312,19 +314,19 @@ h2.projects-label {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica sans-serif;
 }
 
-/* line 238, ../_sass/screen.scss */
+/* line 240, ../_sass/screen.scss */
 .projects {
   overflow: hidden;
   margin: 0 auto 30px auto;
 }
 
-/* line 243, ../_sass/screen.scss */
+/* line 245, ../_sass/screen.scss */
 .projects .projects-container {
   width: 960px;
   height: 100px;
 }
 
-/* line 248, ../_sass/screen.scss */
+/* line 250, ../_sass/screen.scss */
 .projects .projects-container a {
   float: left;
   width: 320px;
@@ -335,7 +337,7 @@ h2.projects-label {
 /*.projects .projects-container a:hover {
   text-decoration: none;
 }*/
-/* line 259, ../_sass/screen.scss */
+/* line 261, ../_sass/screen.scss */
 .projects .projects-container a h3 {
   height: 100%;
   padding: 5px;
@@ -354,7 +356,7 @@ h2.projects-label {
 /*.projects .projects-container a:hover h3 {
   display: block;
 }*/
-/* line 278, ../_sass/screen.scss */
+/* line 280, ../_sass/screen.scss */
 .projects .projects-container a span {
   width: 120px;
   padding: 5px;
@@ -362,17 +364,17 @@ h2.projects-label {
   background-color: #EEEEEE;
 }
 
-/* line 285, ../_sass/screen.scss */
+/* line 287, ../_sass/screen.scss */
 .projects a.tasty {
   background: #d9df9e url("/images/tasty.png") no-repeat -90px -75px;
 }
 
-/* line 289, ../_sass/screen.scss */
+/* line 291, ../_sass/screen.scss */
 .projects a.winepos {
   background: white url("/images/winepos.png") no-repeat 0px top;
 }
 
-/* line 293, ../_sass/screen.scss */
+/* line 295, ../_sass/screen.scss */
 .projects a.dispatch {
   background: white url("/images/dispatch.png") no-repeat 0px top;
 }
