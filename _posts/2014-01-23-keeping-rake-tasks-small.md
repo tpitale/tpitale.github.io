@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: Keeping Rake Tasks Small
 subtitle: 
 author: Tony Pitale
