@@ -261,6 +261,7 @@ ul.post-links li a.feed {
 }
 /* line 186, ../_sass/screen.scss */
 .post pre {
+  margin: 1em 0;
   font-size: 80%;
   line-height: 1.25em;
 }

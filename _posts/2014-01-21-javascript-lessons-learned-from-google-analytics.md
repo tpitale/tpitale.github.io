@@ -37,7 +37,7 @@ The output from the above should be:
 [1,2,3,4,5]
 </code></pre>
 
-As always, the (Mozilla Developer Network docs)[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope/arguments] have a ton of fantastic information.
+As always, the [Mozilla Developer Network docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope/arguments) have a ton of fantastic information.
 
 ### Access functions in objects with array syntax ###
 
