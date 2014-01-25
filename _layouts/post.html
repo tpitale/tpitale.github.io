@@ -1,7 +1,7 @@
 ---
 layout: application
 ---
-<div class="post">
+<div class="post layer wrap">
 	<h1>{{ page.title }}</h1>
 	<!-- <h2>{{ page.subtitle }}</h2> -->
 	<span class="created timestamp">{{ page.created_at | date:'%Y-%m-%d' }}</span>
@@ -9,7 +9,17 @@ layout: application
 	{{ content }}
 </div>
 
-<ul class="post-links group">
+<div class="recent-posts layer wrap">
+  <h2>Recent Posts</h2>
+  <ul>
+  {% for post in site.posts limit:3 offset:1 %}
+    <li>
+      <a href="{{post.url}}">{{post.title}}</a>
+    </li>
+  {% endfor %}
+</div>
+
+<ul class="post-links group layer wrap">
   <li><a href="/blog.html" class="archive">Archive</a></li>
   <li><a href="http://feeds.feedburner.com/tpitale" class="feed">Feed</a></li>
 </ul>

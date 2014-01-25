@@ -4,10 +4,8 @@ created_at: 2011-10-01 23:23:50.00000 -04:00
 layout: application
 ---
 
-{% assign posts = site.posts %}
-
-{% for post in posts limit:1 %}
-	<div class="post">
+{% for post in site.posts limit:1 %}
+	<div class="post layer wrap">
 		<!-- latest post -->
 		<h1>{{ post.title }}</h1>
 		<span class="created timestamp">{{post.created_at | date:'%Y-%m-%d' }}</span>
@@ -16,12 +14,22 @@ layout: application
 	</div>
 {% endfor %}
 
-<ul class="post-links group">
+<div class="recent-posts layer wrap">
+	<h2>Recent Posts</h2>
+	<ul>
+	{% for post in site.posts limit:3 offset:1 %}
+		<li>
+			<a href="{{post.url}}">{{post.title}}</a>
+		</li>
+	{% endfor %}
+</div>
+
+<ul class="post-links group layer wrap">
 	<li><a href="/blog.html" class="archive">Archive</a></li>
 	<li><a href="http://tpitale.com/feed.xml" class="feed">Feed</a></li>
 </ul>
 
-<div class="photos">
+<!-- <div class="photos">
 	<div class="photos-container">
 		<script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=10&display=latest&size=s&layout=x&source=user_set&user=41783324%40N00&set=72157624642260867"></script>
 		<script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=10&display=latest&size=s&layout=x&source=user_set&user=41783324%40N00&set=72157624827429575"></script>
@@ -29,12 +37,11 @@ layout: application
 		<script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=10&display=random&size=s&layout=x&source=user_set&user=41783324%40N00&set=72157602176622405"></script>
 		<script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=10&display=latest&size=s&layout=x&source=user_set&user=41783324%40N00&set=72157600262586911"></script>
 	</div>
-</div>
-
-<h2 class="projects-label">Projects</h2>
+</div> -->
 
 <div class="projects">
-	<div class="projects-container">
+	<h2 class="projects-label wrap">Projects</h2>
+	<div class="projects-container wrap">
 		<a href="http://wineistasty.com" target="_blank" class="tasty">
 			<h3>Tasty: Development with Rails 3 and PostgreSQL</h3>
 		</a>

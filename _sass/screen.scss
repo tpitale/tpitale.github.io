@@ -42,7 +42,7 @@ body {
   line-height: 1.5em;
   -webkit-font-smoothing: antialiased;
   font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica-Neue, helvetica, sans-serif;
-  background: #000000 url('/images/body-bg.png') top left repeat;
+  // background: #000000 url('/images/body-bg.png') top left repeat;
 }
 
 a {text-decoration: none; color: #1C14C2;}
@@ -54,6 +54,10 @@ a:hover {text-decoration: underline;}
   min-width: 320px;
   max-width: 640px;
   margin: 0 auto;
+}
+
+.layer {
+  background-color: $white;
 }
 
 /* Header
@@ -69,31 +73,31 @@ a:hover {text-decoration: underline;}
 }
 
 .header h1 a {
-  color: #FFFFFF;
+  color: $grey-dark;
 }
 
 .header h1 a:hover {
-  color: #999;
+  color: $font-black;
   text-decoration: none;
 }
 
 /* Content
 =============================================================================*/
-.post,
-.posts,
-.photos,
-.projects,
-.post-links {
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
+// .post,
+// .posts,
+// .photos,
+// .projects,
+// .post-links {
+//   -webkit-border-radius: 2px;
+//   -moz-border-radius: 2px;
+//   border-radius: 2px;
 
-  -moz-box-shadow: 0px 0px 10px #000;
-  -webkit-box-shadow: 0px 0px 10px #000;
-}
+//   -moz-box-shadow: 0px 0px 10px #000;
+//   -webkit-box-shadow: 0px 0px 10px #000;
+// }
 
 ul.post-links {
-  background-color: #FFFFFF;
+  background-color: $white;
   list-style: none;
 
   li {
@@ -121,7 +125,7 @@ ul.post-links {
 /* Post
 =============================================================================*/
 .post {
-  margin: 1em 0;
+  // margin: 1em 0;
   padding: 1em;
   overflow: hidden;
   background-color: #FFFFFF;
@@ -194,6 +198,9 @@ ul.post-links {
 
 /* Posts
 =============================================================================*/
+.recent-posts {
+  padding: 1em;
+}
 
 ul.posts {
   padding: 10px 0;
@@ -229,7 +236,7 @@ ul.posts {
 /* Projects
 =============================================================================*/
 h2.projects-label {
-  color: #FFFFFF;
+  color: $font-black;
   font-size: 25px;
   text-align: center;
   margin-bottom: 10px;
@@ -238,12 +245,13 @@ h2.projects-label {
 }
 
 .projects {
-  overflow: hidden;
+  width: 100%;
   margin: 0 auto 30px auto;
+  background-color: $grey-light;
 }
 
 .projects .projects-container {
-  width: 960px;
+  overflow: hidden;
   height: 100px;
 }
 
