@@ -299,80 +299,62 @@ ul.posts li a {
 
 /* Projects
 =============================================================================*/
-/* line 238, ../_sass/screen.scss */
-h2.projects-label {
-  color: #262c31;
-  font-size: 25px;
-  text-align: center;
-  margin-bottom: 10px;
-  font-weight: lighter;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica sans-serif;
-}
-
-/* line 247, ../_sass/screen.scss */
+/* line 239, ../_sass/screen.scss */
 .projects {
   width: 100%;
+  padding: 1px 0;
   margin: 0 auto 30px auto;
   background-color: #e2e0dd;
 }
-
-/* line 253, ../_sass/screen.scss */
-.projects .projects-container {
-  overflow: hidden;
-  height: 100px;
+/* line 245, ../_sass/screen.scss */
+.projects h2 {
+  color: #262c31;
+  font-size: 25px;
+  text-align: left;
+  margin: 0.5em auto;
+  font-weight: lighter;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica sans-serif;
 }
-
+/* line 254, ../_sass/screen.scss */
+.projects ul {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
 /* line 258, ../_sass/screen.scss */
+.projects ul li {
+  padding-right: 1em;
+  display: inline-block;
+}
+/* line 264, ../_sass/screen.scss */
+.projects .projects-container {
+  margin-bottom: 1em;
+}
+/* line 267, ../_sass/screen.scss */
 .projects .projects-container a {
-  float: left;
-  width: 320px;
-  height: 100px;
-  display: block;
+  width: 313px;
+  height: 70px;
+  display: inline-block;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
 }
-
-/*.projects .projects-container a:hover {
-  text-decoration: none;
-}*/
-/* line 269, ../_sass/screen.scss */
-.projects .projects-container a h3 {
-  height: 100%;
-  padding: 5px;
+/* line 272, ../_sass/screen.scss */
+.projects .projects-container a:first-child {
+  margin-right: 0.5em;
+}
+/* line 278, ../_sass/screen.scss */
+.projects .projects-container a h3, .projects .projects-container a span {
   display: none;
-  color: #63D9EF;
-  font-size: 125%;
-  /*  margin: 70px auto;*/
-  text-align: center;
-  background-color: #000000;
-  filter: alpha(opacity=65);
-  -moz-opacity: 0.65;
-  -webkit-opacity: 0.65;
-  opacity: 0.65;
 }
-
-/*.projects .projects-container a:hover h3 {
-  display: block;
-}*/
-/* line 288, ../_sass/screen.scss */
-.projects .projects-container a span {
-  width: 120px;
-  padding: 5px;
-  display: none;
-  background-color: #EEEEEE;
-}
-
-/* line 295, ../_sass/screen.scss */
+/* line 284, ../_sass/screen.scss */
 .projects a.tasty {
-  background: #d9df9e url("/images/tasty.png") no-repeat -90px -75px;
+  background: #d9df9e url("/images/tasty.png") no-repeat -90px -88px;
 }
-
-/* line 299, ../_sass/screen.scss */
+/* line 288, ../_sass/screen.scss */
 .projects a.winepos {
-  background: white url("/images/winepos.png") no-repeat 0px top;
-}
-
-/* line 303, ../_sass/screen.scss */
-.projects a.dispatch {
-  background: white url("/images/dispatch.png") no-repeat 0px top;
+  background: white url("/images/winepos.png") no-repeat 0px -7px;
 }
 
 /* Footer

@@ -15,7 +15,7 @@ layout: application
 {% endfor %}
 
 <div class="recent-posts layer wrap">
-	<h2>Recent Posts</h2>
+	<h2>Read More Recent Posts</h2>
 	<ul>
 	{% for post in site.posts limit:3 offset:1 %}
 		<li>
@@ -40,6 +40,18 @@ layout: application
 </div> -->
 
 <div class="projects">
+	<h2 class="projects-label wrap">OSS Projects</h2>
+	<ul class="wrap">
+		<li><a href="https://github.com/growingdevs/growingdevs.github.io">GrowingDevs</a></li>
+		<li><a href="https://github.com/tpitale/legato">Legato</a></li>
+		<li><a href="https://github.com/tpitale/staccato">Staccato</a></li>
+		<li><a href="https://github.com/tpitale/mail_room">MailRoom</a></li>
+		<li><a href="https://github.com/tpitale/simplest_view">SimplestView</a></li>
+		<!-- <li><a href="https://github.com/tpitale/tryruby">TryRuby</a></li> -->
+		<!-- <li><a href="https://github.com/tpitale/wisp">Wisp</a></li> -->
+		<!-- <li><a href="https://github.com/tpitale/dispatch">Dispatch</a></li> -->
+	</ul>
+
 	<h2 class="projects-label wrap">Projects</h2>
 	<div class="projects-container wrap">
 		<a href="http://wineistasty.com" target="_blank" class="tasty">
@@ -47,11 +59,10 @@ layout: application
 		</a>
 		<a href="http://winepos.com" target="_blank" class="winepos">
 			<h3>ICS Winepos.com</h3>
-			<span>Rails 3, MongoDB, and a little design</span>
 		</a>
-		<a href="http://github.com/tpitale/dispatch" target="_blank" class="dispatch">
+<!-- 		<a href="http://github.com/tpitale/dispatch" target="_blank" class="dispatch">
 			<h3>Dispatch</h3>
 			<span>Sinatra, Capistrano, EventMachine, Websockets</span>
-		</a>
+		</a> -->
 	</div>
 </div>

@@ -62,6 +62,6 @@ var project_scroller = function(){
 
 $(document).ready(function(){
 	$('a.gist-link').gistify();
-	photo_scroller();
-	project_scroller();
+	// photo_scroller();
+	// project_scroller();
 });

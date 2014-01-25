@@ -235,73 +235,59 @@ ul.posts {
 
 /* Projects
 =============================================================================*/
-h2.projects-label {
-  color: $font-black;
-  font-size: 25px;
-  text-align: center;
-  margin-bottom: 10px;
-  font-weight: lighter;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica sans-serif;
-}
 
 .projects {
   width: 100%;
+  padding: 1px 0;
   margin: 0 auto 30px auto;
   background-color: $grey-light;
-}
 
-.projects .projects-container {
-  overflow: hidden;
-  height: 100px;
-}
+  h2 {
+    color: $font-black;
+    font-size: 25px;
+    text-align: left;
+    margin: 0.5em auto;
+    font-weight: lighter;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica sans-serif;
+  }
 
-.projects .projects-container a {
-  float: left;
-  width: 320px;
-  height: 100px;
-  display: block;
-}
+  ul {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 
-/*.projects .projects-container a:hover {
-  text-decoration: none;
-}*/
+    li {
+      padding-right: 1em;
+      display: inline-block;
+    }
+  }
 
-.projects .projects-container a h3 {
-  height: 100%;
-  padding: 5px;
-  display: none;
-  color: #63D9EF;
-  font-size: 125%;
-/*  margin: 70px auto;*/
-  text-align: center;
-  background-color: #000000;
-  filter: alpha(opacity=65);
-  -moz-opacity: 0.65;
-  -webkit-opacity: 0.65;
-  opacity: 0.65;
-}
+  .projects-container {
+    margin-bottom: 1em;
 
-/*.projects .projects-container a:hover h3 {
-  display: block;
-}*/
+    a {
+      width: 313px;
+      height: 70px;
+      display: inline-block;
 
-.projects .projects-container a span {
-  width: 120px;
-  padding: 5px;
-  display: none;
-  background-color: #EEEEEE;
-}
+      &:first-child {
+        margin-right: 0.5em;
+      }
 
-.projects a.tasty {
-  background: #D9DF9E url('/images/tasty.png') no-repeat -90px -75px;
-}
+      @include border-radius($default-border-radius);
 
-.projects a.winepos {
-  background: #FFFFFF url('/images/winepos.png') no-repeat 0px top;
-}
+      h3, span {
+        display: none;
+      }
+    }
+  }
 
-.projects a.dispatch {
-  background: #FFFFFF url('/images/dispatch.png') no-repeat 0px top;
+  a.tasty {
+    background: #D9DF9E url('/images/tasty.png') no-repeat -90px -88px;
+  }
+
+  a.winepos {
+    background: #FFFFFF url('/images/winepos.png') no-repeat 0px -7px;
+  }
 }
 
 @import "footer";
