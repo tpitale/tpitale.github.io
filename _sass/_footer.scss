@@ -7,22 +7,23 @@
   /*  background-color: #323232;*/
 
   p.about {
-    color: #CCCCCC;
+    color: $grey-medium;
     font-size: 80%;
     line-height: 1.25em;
   }
 
   p.about a {
-    color: #63D9EF;
+    color: $blue;
+    // color: #63D9EF;
   }
 
   p.copyright {
-    color: #999999;
+    color: $grey-dark;
     padding-top: 10px;
   }
 
   p.copyright a {
-    color: #999999;
+    color: $grey-dark;
   }
 
   p.ps {

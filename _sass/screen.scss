@@ -45,7 +45,7 @@ body {
   // background: #000000 url('/images/body-bg.png') top left repeat;
 }
 
-a {text-decoration: none; color: #1C14C2;}
+a {text-decoration: none; color: $blue;}
 a:hover {text-decoration: underline;}
 
 /* Layout
@@ -64,21 +64,21 @@ a:hover {text-decoration: underline;}
 =============================================================================*/
 .header {
   margin: 30px auto;
-}
 
-.header h1 {
-  font-size: 150%;
-  text-align: center;
-  // font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica sans-serif;
-}
+  h1 {
+    font-size: 150%;
+    text-align: center;
+    // font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica sans-serif;
 
-.header h1 a {
-  color: $grey-dark;
-}
+    a {
+      color: $grey-dark;
 
-.header h1 a:hover {
-  color: $font-black;
-  text-decoration: none;
+      &:hover {
+        color: $font-black;
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 /* Content
@@ -97,8 +97,8 @@ a:hover {text-decoration: underline;}
 // }
 
 ul.post-links {
-  background-color: $white;
   list-style: none;
+  background-color: $white;
 
   li {
     width: 50%;
@@ -128,26 +128,26 @@ ul.post-links {
   // margin: 1em 0;
   padding: 1em;
   overflow: hidden;
-  background-color: #FFFFFF;
+  background-color: $white;
 
   h1 {
     // margin: .5em 0 0 .5em;
     font-size: 150%;
     text-align: left;
-    color: #19188D;
+    color: $blue;
     font-weight: 500;
     // font-family: "Helvetica Neue", Helvetica sans-serif;
   }
 
   h3 {
-    color: #19188D;
+    color: $blue;
     font-size: 120%;
     text-align: left;
     // margin: .5em 0 0 .75em;
   }
 
   h4 {
-    color: #19188D;
+    color: $blue;
     font-size: 105%;
     text-align: left;
     // margin: .5em 0 0 1em;
@@ -176,7 +176,7 @@ ul.post-links {
   p code {
     font-size: 95%;
     font-family: monospace;
-    background-color: #EEEEEE;
+    background-color: $code-grey;
   }
 
   ul {
@@ -205,7 +205,7 @@ ul.post-links {
 ul.posts {
   padding: 10px 0;
   margin: 30px auto;
-  background-color: #FFFFFF;
+  background-color: $white;
 
   li {
     padding: 0 12px;
@@ -239,7 +239,7 @@ ul.posts {
 .projects {
   width: 100%;
   padding: 1px 0;
-  margin: 0 auto 30px auto;
+  margin: 1em auto;
   background-color: $grey-light;
 
   h2 {

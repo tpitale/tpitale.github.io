@@ -115,7 +115,7 @@ body {
 /* line 48, ../_sass/screen.scss */
 a {
   text-decoration: none;
-  color: #1C14C2;
+  color: #269bed;
 }
 
 /* line 49, ../_sass/screen.scss */
@@ -143,19 +143,16 @@ a:hover {
 .header {
   margin: 30px auto;
 }
-
-/* line 69, ../_sass/screen.scss */
+/* line 68, ../_sass/screen.scss */
 .header h1 {
   font-size: 150%;
   text-align: center;
 }
-
-/* line 75, ../_sass/screen.scss */
+/* line 73, ../_sass/screen.scss */
 .header h1 a {
-  color: #9e9c9a;
+  color: #999999;
 }
-
-/* line 79, ../_sass/screen.scss */
+/* line 76, ../_sass/screen.scss */
 .header h1 a:hover {
   color: #262c31;
   text-decoration: none;
@@ -165,8 +162,8 @@ a:hover {
 =============================================================================*/
 /* line 99, ../_sass/screen.scss */
 ul.post-links {
-  background-color: white;
   list-style: none;
+  background-color: white;
 }
 /* line 103, ../_sass/screen.scss */
 ul.post-links li {
@@ -196,31 +193,31 @@ ul.post-links li a.feed {
 .post {
   padding: 1em;
   overflow: hidden;
-  background-color: #FFFFFF;
+  background-color: white;
 }
 /* line 133, ../_sass/screen.scss */
 .post h1 {
   font-size: 150%;
   text-align: left;
-  color: #19188D;
+  color: #269bed;
   font-weight: 500;
 }
 /* line 142, ../_sass/screen.scss */
 .post h3 {
-  color: #19188D;
+  color: #269bed;
   font-size: 120%;
   text-align: left;
 }
 /* line 149, ../_sass/screen.scss */
 .post h4 {
-  color: #19188D;
+  color: #269bed;
   font-size: 105%;
   text-align: left;
 }
 /* line 156, ../_sass/screen.scss */
 .post span.created {
   font-size: 90%;
-  color: #9e9c9a;
+  color: #999999;
 }
 /* line 162, ../_sass/screen.scss */
 .post p {
@@ -240,7 +237,7 @@ ul.post-links li a.feed {
 .post p code {
   font-size: 95%;
   font-family: monospace;
-  background-color: #EEEEEE;
+  background-color: #f5f2f0;
 }
 /* line 182, ../_sass/screen.scss */
 .post ul {
@@ -269,7 +266,7 @@ ul.post-links li a.feed {
 ul.posts {
   padding: 10px 0;
   margin: 30px auto;
-  background-color: #FFFFFF;
+  background-color: white;
 }
 /* line 210, ../_sass/screen.scss */
 ul.posts li {
@@ -303,8 +300,8 @@ ul.posts li a {
 .projects {
   width: 100%;
   padding: 1px 0;
-  margin: 0 auto 30px auto;
-  background-color: #e2e0dd;
+  margin: 1em auto;
+  background-color: #eeeeee;
 }
 /* line 245, ../_sass/screen.scss */
 .projects h2 {
@@ -368,24 +365,24 @@ ul.posts li a {
 }
 /* line 9, ../_sass/_footer.scss */
 .footer p.about {
-  color: #CCCCCC;
+  color: #aaaaaa;
   font-size: 80%;
   line-height: 1.25em;
 }
 /* line 15, ../_sass/_footer.scss */
 .footer p.about a {
-  color: #63D9EF;
+  color: #269bed;
 }
-/* line 19, ../_sass/_footer.scss */
+/* line 20, ../_sass/_footer.scss */
 .footer p.copyright {
   color: #999999;
   padding-top: 10px;
 }
-/* line 24, ../_sass/_footer.scss */
+/* line 25, ../_sass/_footer.scss */
 .footer p.copyright a {
   color: #999999;
 }
-/* line 28, ../_sass/_footer.scss */
+/* line 29, ../_sass/_footer.scss */
 .footer p.ps {
   margin-top: 10px;
   font-size: 85%;
