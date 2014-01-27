@@ -8,6 +8,7 @@ $font-black: #262C31;
 $grey-dark: #999999;
 $grey-light: #EEEEEE;
 $grey-medium: #AAAAAA;
+$layer-grey: #F8F7FB;
 $code-grey: #f5f2f0;
 $purple: #5f2699;
 $red: #c62828;
@@ -20,6 +21,10 @@ $default-border-radius: 3px;
 $default-transition-property: all;
 $default-transition-duration: 0.25s;
 $default-transition-function: linear;
+
+// Font Family
+$default-font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica-Neue, helvetica, sans-serif;
+$header-font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica sans-serif;
 
 // Responsive breakpoints
 

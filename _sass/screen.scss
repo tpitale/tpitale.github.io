@@ -41,19 +41,31 @@ body {
   color: $font-black;
   line-height: 1.5em;
   -webkit-font-smoothing: antialiased;
-  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica-Neue, helvetica, sans-serif;
-  // background: #000000 url('/images/body-bg.png') top left repeat;
+  font-family: $default-font-family;
 }
 
-a {text-decoration: none; color: $blue;}
-a:hover {text-decoration: underline;}
+h1,h2,h3,h4,h5,h6 {
+  font-family: $header-font-family;
+
+  // a {
+  //   font-family: $header-font-family;
+  // }
+}
+
+a {
+  color: $blue;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
 
 /* Layout
 =============================================================================*/
 .wrap {
+  margin: 0 auto;
   min-width: 320px;
   max-width: 640px;
-  margin: 0 auto;
 }
 
 .layer {
@@ -68,7 +80,6 @@ a:hover {text-decoration: underline;}
   h1 {
     font-size: 150%;
     text-align: center;
-    // font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica sans-serif;
 
     a {
       color: $grey-dark;
@@ -83,44 +94,6 @@ a:hover {text-decoration: underline;}
 
 /* Content
 =============================================================================*/
-// .post,
-// .posts,
-// .photos,
-// .projects,
-// .post-links {
-//   -webkit-border-radius: 2px;
-//   -moz-border-radius: 2px;
-//   border-radius: 2px;
-
-//   -moz-box-shadow: 0px 0px 10px #000;
-//   -webkit-box-shadow: 0px 0px 10px #000;
-// }
-
-ul.post-links {
-  list-style: none;
-  background-color: $white;
-
-  li {
-    width: 50%;
-    float: left;
-
-    a {
-      display: block;
-      padding: 10px 0;
-    }
-
-    a.archive {
-      text-align: right;
-      padding-right: 5px;
-    }
-
-    a.feed {
-      text-align: left;
-      padding-left: 5px;
-      background: transparent url('/images/feed.png') 50px 16px no-repeat;
-    }
-  }
-}
 
 /* Post
 =============================================================================*/
@@ -136,7 +109,6 @@ ul.post-links {
     text-align: left;
     color: $blue;
     font-weight: 500;
-    // font-family: "Helvetica Neue", Helvetica sans-serif;
   }
 
   h3 {
@@ -200,6 +172,30 @@ ul.post-links {
 =============================================================================*/
 .recent-posts {
   padding: 1em;
+
+  h2 {
+    margin-bottom: 0.5em;
+  }
+
+  li.post-links {
+    b {
+      margin: 0 0.5em;
+      font-style: italic;
+    }
+
+    a {
+      padding: 1em 0;
+      display: inline-block;
+    }
+
+    a.archive {
+    }
+
+    a.feed {
+      padding-right: 2em;
+      background: transparent url('/images/feed.png') 2.5em 1.35em no-repeat;
+    }
+  }
 }
 
 ul.posts {
@@ -240,14 +236,14 @@ ul.posts {
   width: 100%;
   padding: 1px 0;
   margin: 1em auto;
-  background-color: $grey-light;
+  background-color: $layer-grey;
 
   h2 {
     color: $font-black;
-    font-size: 25px;
+    font-size: 150%;
     text-align: left;
     margin: 0.5em auto;
-    font-weight: lighter;
+    font-weight: normal;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica sans-serif;
   }
 
