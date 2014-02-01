@@ -44,12 +44,17 @@ body {
   font-family: $default-font-family;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1 {
   font-family: $header-font-family;
 
   // a {
   //   font-family: $header-font-family;
   // }
+}
+
+h2,h3,h4,h5,h6 {
+  font-weight: 400;
+  font-family: $secondary-header-font-family;
 }
 
 a {
@@ -105,34 +110,32 @@ a {
 
   h1 {
     // margin: .5em 0 0 .5em;
+    color: $blue;
     font-size: 150%;
     text-align: left;
-    color: $blue;
-    font-weight: 500;
+    font-weight: 300;
   }
 
   h3 {
-    color: $blue;
+    color: $black;
     font-size: 120%;
     text-align: left;
-    // margin: .5em 0 0 .75em;
+    margin-top: 1.5em;
   }
 
   h4 {
-    color: $blue;
+    color: $black;
     font-size: 105%;
     text-align: left;
-    // margin: .5em 0 0 1em;
   }
 
   span.created {
     font-size: 90%;
-    // margin-left: 1em;
     color: $grey-dark;
   }
 
   p {
-    margin: 1em 0;
+    margin: 0.5em 0 1em 0;
   }
 
   a.gist-link {

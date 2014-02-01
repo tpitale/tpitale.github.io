@@ -14,6 +14,7 @@ $purple: #5f2699;
 $red: #c62828;
 $white: #FFFFFF;
 $yellow: #f0b005;
+$black: #000000;
 
 // Defaults
 
@@ -24,7 +25,8 @@ $default-transition-function: linear;
 
 // Font Family
 $default-font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica-Neue, helvetica, sans-serif;
-$header-font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica sans-serif;
+$header-font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, sans-serif;
+$secondary-header-font-family: "Helvetica Neue", Helvetica, sans-serif;
 
 // Responsive breakpoints
 
