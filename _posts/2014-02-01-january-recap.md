@@ -17,7 +17,7 @@ The best way that I've found to grow is through deliberate practice. Review and 
 
 My first goal, to code more on OSS, lead me to attempt to build the habit of contributing daily. For the entire month I have done just that, by the standards of the Github contribution graph. I feel pretty amazing about this achievement.
 
-I'll soon be writing a post on the numerous benefits I've found ton contributing daily and how I managed to keep it up for even one month.
+I'll soon be writing a post on the numerous benefits I've found when contributing daily and how I managed to keep it up for even one month.
 
 ### Writing ###
 
@@ -42,11 +42,11 @@ My plan was to do at least one photowalk a month. While I did not do a photowalk
 
 One of my biggest challenges in 2013 was finishing what I started. There's no real system for doing this, other than to get feedback and do regular reviews.
 
-This month, I finally finished a project in the first week. That project had been hanging around for 6+ months.
+The first week of this month, I finally finished a project that has been hanging around for 6+ months.
 
 My OSS has also been brought back into a state of repair after my month of daily OSS coding. While not exactly finishing what I start, it is taking responsibility for the open issues and pull requests that I've been neglecting.
 
-This all feels great, and helps to motivate me to finish more of what I start. It also frees me up to start new project, which I'm pretty jazzed about!
+This all feels great, and helps to motivate me to finish more of what I start. It also frees me up to start new projects, which I'm pretty jazzed about!
 
 ### Monthly Reviews ###
 
@@ -56,9 +56,9 @@ To wrap up this review, I wanted to point out again that one of my systems is to
 
 After one month, I already have some ideas for changes I'd like to make in my systems going forward.
 
-I'm hoping to switch to doing shorter, biweekly reviews. Close feedback and introspection is important. Monthly has been too long.
+I'm hoping to switch to doing shorter, biweekly reviews. Close feedback and introspection is important. Doing this after a whole month has felt too long.
 
-Less coding. I'm going to try to keep an _average_ above one OSS contribution per day. My count on Github should stay at or above 365. For now, I'll keep contributing daily. My current count for OSS contributes as of this writing is 349.
+Less coding. I'm going to try to keep an _average_ above one OSS contribution per day. My count on Github should stay at or above 365. For now, I'll keep contributing daily. My current count for OSS contributions, as of this writing, is 346.
 
 I'd like to read and meditate more. Look for that in my next recap.
 
