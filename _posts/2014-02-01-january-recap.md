@@ -21,9 +21,9 @@ I'll soon be writing a post on the numerous benefits I've found when contributin
 
 ### Writing ###
 
-I've always wanted to write more. And while I wasn't as bold to say I would write every day, I did decide I wanted to make it easier to write. My system was to reduce my backlog of blog posts I've been collecting in Evernote. I plan to finish these regulary.
+I've always wanted to write more. And while I wasn't as bold to say I would write every day, I did decide I wanted to make it easier to write. My system was to reduce my backlog of blog posts I've been collecting in Evernote. I plan to finish these regularly.
 
-In addition, I started GrowingDevs in 2013 with the help of a few friends. This month, I posted our fourth article. I'm hoping that the site as a whole will keep to a monthly posting schedule. So, if you have something you would like to share, please send me a message, or just a PR! I'll be very excited to help anyone interested in getting started.
+Also, I started GrowingDevs in 2013 with the help of a few friends. This month, I posted our fourth article. I'm hoping that the site as a whole will keep to a monthly posting schedule. So, if you have something you would like to share, please send me a message, or just a PR! I am excited to help anyone interested in getting started.
 
 Lastly, my ideas for a book also continue to evolve, but that is not yet an active goal. The system is little work at a time to continue to develop these ideas, ask friends, and fill out outlines and research notes.
 
