@@ -21,7 +21,7 @@ At first, I was itching to write my first review. As my contributions have slowe
 
 ## Writing ##
 
-In general, I've continued to write. I wrote a post on [growingdevs.com](http://growingdev.com) for February. I'm still looking for contributors for March, so please get in touch!
+In general, I've continued to write. I wrote a post on [growingdevs.com](http://growingdevs.com) for February. I'm still looking for contributors for March, so please get in touch!
 
 ## Photography ##
 
