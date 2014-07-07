@@ -1,0 +1,38 @@
+{
+  "name": "tpitale.com",
+  "records": [
+    {
+      "name": "",
+      "type": "A",
+      "content": "207.97.227.245",
+      "ttl": 3600
+    },
+    {
+      "name": "www",
+      "type": "CNAME",
+      "content": "tpitale.com",
+      "ttl": 3600
+    },
+    {
+      "name": "",
+      "type": "MX",
+      "content": "mx-1.rightbox.com",
+      "ttl": 3600,
+      "prio": 10
+    }
+    {
+      "name": "",
+      "type": "MX",
+      "content": "mx-2.rightbox.com",
+      "ttl": 3600,
+      "prio": 20
+    }
+    {
+      "name": "",
+      "type": "MX",
+      "content": "mx-3.rightbox.com",
+      "ttl": 3600,
+      "prio": 30
+    }
+  ]
+}
