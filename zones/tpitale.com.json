@@ -4,7 +4,13 @@
     {
       "name": "",
       "type": "A",
-      "content": "207.97.227.245",
+      "content": "192.30.252.153",
+      "ttl": 3600
+    },
+    {
+      "name": "",
+      "type": "A",
+      "content": "192.30.252.154",
       "ttl": 3600
     },
     {
@@ -19,14 +25,14 @@
       "content": "mx-1.rightbox.com",
       "ttl": 3600,
       "prio": 10
-    }
+    },
     {
       "name": "",
       "type": "MX",
       "content": "mx-2.rightbox.com",
       "ttl": 3600,
       "prio": 20
-    }
+    },
     {
       "name": "",
       "type": "MX",
