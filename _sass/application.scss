@@ -241,22 +241,33 @@ ul.posts {
   margin: 1em auto;
   background-color: $layer-grey;
 
-  h2 {
+  h2.projects-label {
     color: $font-black;
     font-size: 150%;
-    text-align: left;
-    margin: 0.5em auto;
+    text-align: center;
+    margin: 0.5em;
     font-weight: normal;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica sans-serif;
+
+    @include respond-to($small) {
+      text-align: left;
+    }
+    @include respond-to($medium) {
+      margin: 0.5em auto;
+    }
   }
 
-  ul {
+  ul.project-list {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
 
     li {
-      padding-right: 1em;
-      display: inline-block;
+      padding: 0 1em;
+
+      @include respond-to($small) {
+        padding-right: 1em;
+        display: inline-block;
+      }
     }
   }
 
@@ -264,15 +275,15 @@ ul.posts {
     margin-bottom: 1em;
 
     a {
-      width: 313px;
+      width: 100%;
       height: 70px;
       display: inline-block;
 
-      &:first-child {
-        margin-right: 0.5em;
-      }
-
       @include border-radius($default-border-radius);
+
+      @include respond-to($small) {
+        width: 49%;
+      }
 
       h3, span {
         display: none;
@@ -281,11 +292,11 @@ ul.posts {
   }
 
   a.tasty {
-    background: #D9DF9E url('/images/tasty.png') no-repeat -90px -88px;
+    background: #D9DF9E url('/images/tasty.png') no-repeat center center;
   }
 
   a.winepos {
-    background: #FFFFFF url('/images/winepos.png') no-repeat 0px -7px;
+    background: #F0F0F0 url('/images/winepos.png') no-repeat center -7px;
   }
 }
 
