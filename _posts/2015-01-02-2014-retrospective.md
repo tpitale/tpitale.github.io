@@ -1,7 +1,7 @@
 ---
 published: true
 title: 2014 Retrospective
-subtitle: It Has Been a Terrible and Great Year
+subtitle: It Has Been a Wonderful and Difficult Year
 author: Tony Pitale
 created_at: 2015-01-02 14:59:17.361268 -05:00
 layout: post
@@ -81,4 +81,4 @@ I have a big list planned for 2015, but mostly I'll be focusing on three areas:
 
 ## Altogether Now ##
 
-What a year it has been! 2014 was wonderful and terrible. I am thankful for all the family and friends that helped make it possible, and who helped me get through those days that weren't as wonderful. I can't be anything but excited for 2015!
+What a year it has been! 2014 was wonderful and difficult. I am thankful for all the family and friends that helped make it possible, and who helped me get through those days that weren't as wonderful. I can't be anything but excited for 2015!
