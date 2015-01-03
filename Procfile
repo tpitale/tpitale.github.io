@@ -1,2 +1,2 @@
-web: jekyll serve --watch
-compass: compass watch ./_sass
+web: bundle exec jekyll serve --watch
+compass: bundle exec compass watch ./_sass

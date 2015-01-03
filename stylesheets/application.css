@@ -82,7 +82,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 .gist .gist-file .gist-data {
   font-size: 90% !important;
   border-bottom: none !important;
-  background-color: #FFF !important;
+  background-color: white !important;
 }
 
 /* line 25, ../_sass/application.scss */
@@ -133,36 +133,41 @@ a:hover {
   text-decoration: underline;
 }
 
+/* line 68, ../_sass/application.scss */
+strong {
+  font-weight: bold;
+}
+
 /* Layout
 =============================================================================*/
-/* line 70, ../_sass/application.scss */
+/* line 74, ../_sass/application.scss */
 .wrap {
   margin: 0 auto;
   min-width: 320px;
   max-width: 640px;
 }
 
-/* line 76, ../_sass/application.scss */
+/* line 80, ../_sass/application.scss */
 .layer {
   background-color: white;
 }
 
 /* Header
 =============================================================================*/
-/* line 82, ../_sass/application.scss */
+/* line 86, ../_sass/application.scss */
 .header {
   margin: 30px auto;
 }
-/* line 85, ../_sass/application.scss */
+/* line 89, ../_sass/application.scss */
 .header h1 {
   font-size: 150%;
   text-align: center;
 }
-/* line 89, ../_sass/application.scss */
+/* line 93, ../_sass/application.scss */
 .header h1 a {
   color: #999999;
 }
-/* line 92, ../_sass/application.scss */
+/* line 96, ../_sass/application.scss */
 .header h1 a:hover {
   color: #262c31;
   text-decoration: none;
@@ -172,67 +177,88 @@ a:hover {
 =============================================================================*/
 /* Post
 =============================================================================*/
-/* line 105, ../_sass/application.scss */
+/* line 109, ../_sass/application.scss */
 .post {
   padding: 1em;
   overflow: hidden;
   background-color: white;
 }
-/* line 111, ../_sass/application.scss */
+/* line 115, ../_sass/application.scss */
 .post h1 {
   color: #269bed;
   font-size: 150%;
   text-align: left;
   font-weight: 300;
 }
-/* line 119, ../_sass/application.scss */
-.post h3 {
+/* line 123, ../_sass/application.scss */
+.post h2 {
   color: black;
   font-size: 120%;
   text-align: left;
   margin-top: 1.5em;
 }
-/* line 126, ../_sass/application.scss */
-.post h4 {
-  color: black;
+/* line 130, ../_sass/application.scss */
+.post h3 {
+  color: #262c31;
   font-size: 105%;
   text-align: left;
+  margin-top: 1em;
 }
-/* line 132, ../_sass/application.scss */
+/* line 137, ../_sass/application.scss */
+.post h4 {
+  color: #999999;
+  font-size: 100%;
+  text-align: left;
+  margin-top: 0.75em;
+}
+/* line 144, ../_sass/application.scss */
 .post span.created {
   font-size: 90%;
   color: #999999;
 }
-/* line 137, ../_sass/application.scss */
+/* line 150, ../_sass/application.scss */
+.post blockquote p {
+  padding: 1em;
+  font-size: 105%;
+  font-style: italic;
+  border-left: 0.5em solid #999999;
+}
+/* line 158, ../_sass/application.scss */
 .post p {
   margin: 0.5em 0 1em 0;
 }
-/* line 141, ../_sass/application.scss */
+/* line 162, ../_sass/application.scss */
 .post a.gist-link {
   /*margin-left: 10px;*/
 }
-/* line 145, ../_sass/application.scss */
+/* line 166, ../_sass/application.scss */
 .post img {
-  width: 300px;
-  margin: 0 10px;
+  width: 100%;
 }
-/* line 151, ../_sass/application.scss */
+@media only screen and (min-width: 450px) {
+  /* line 166, ../_sass/application.scss */
+  .post img {
+    width: 49.5%;
+    display: inline;
+  }
+}
+/* line 176, ../_sass/application.scss */
 .post span.inline-code,
 .post p code {
   font-size: 95%;
   font-family: monospace;
   background-color: #f5f2f0;
 }
-/* line 157, ../_sass/application.scss */
+/* line 182, ../_sass/application.scss */
 .post ul {
   list-style: square inside none;
   margin: 1em 0;
 }
-/* line 161, ../_sass/application.scss */
+/* line 186, ../_sass/application.scss */
 .post ul li {
   line-height: 1.25em;
 }
-/* line 167, ../_sass/application.scss */
+/* line 192, ../_sass/application.scss */
 .post pre {
   margin: 1em 0;
   font-size: 80%;
@@ -241,72 +267,72 @@ a:hover {
 
 /* Posts
 =============================================================================*/
-/* line 176, ../_sass/application.scss */
+/* line 201, ../_sass/application.scss */
 .recent-posts {
   padding: 1em;
 }
-/* line 179, ../_sass/application.scss */
+/* line 204, ../_sass/application.scss */
 .recent-posts h2 {
   margin-bottom: 0.5em;
 }
-/* line 184, ../_sass/application.scss */
+/* line 209, ../_sass/application.scss */
 .recent-posts li.post-links b {
   margin: 0 0.5em;
   font-style: italic;
 }
-/* line 189, ../_sass/application.scss */
+/* line 214, ../_sass/application.scss */
 .recent-posts li.post-links a {
   padding: 1em 0;
   display: inline-block;
 }
-/* line 197, ../_sass/application.scss */
+/* line 222, ../_sass/application.scss */
 .recent-posts li.post-links a.feed {
   padding-right: 2em;
   background: transparent url("/images/feed.png") 2.5em 1.35em no-repeat;
 }
 
-/* line 204, ../_sass/application.scss */
+/* line 229, ../_sass/application.scss */
 ul.posts {
   padding: 10px 0;
   margin: 30px auto;
   background-color: white;
 }
-/* line 209, ../_sass/application.scss */
+/* line 234, ../_sass/application.scss */
 ul.posts li {
   padding: 0 12px;
 }
-/* line 212, ../_sass/application.scss */
+/* line 237, ../_sass/application.scss */
 ul.posts li a {
   line-height: 1.25em;
 }
 
 /* Photos
 =============================================================================*/
-/* line 221, ../_sass/application.scss */
+/* line 246, ../_sass/application.scss */
 .photos {
   height: 75px;
   overflow: hidden;
   margin: 30px auto;
 }
-/* line 226, ../_sass/application.scss */
+/* line 251, ../_sass/application.scss */
 .photos .photos-container {
   width: 2250px;
 }
-/* line 230, ../_sass/application.scss */
+/* line 255, ../_sass/application.scss */
 .photos .flickr_badge_image {
   float: left;
 }
 
 /* Projects
 =============================================================================*/
-/* line 238, ../_sass/application.scss */
+/* line 263, ../_sass/application.scss */
 .projects {
   width: 100%;
   padding: 1px 0;
   margin: 1em auto;
   background-color: #f8f7fb;
 }
-/* line 244, ../_sass/application.scss */
+/* line 269, ../_sass/application.scss */
 .projects h2.projects-label {
   color: #262c31;
   font-size: 150%;
@@ -316,38 +342,38 @@ ul.posts li a {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica sans-serif;
 }
 @media only screen and (min-width: 450px) {
-  /* line 244, ../_sass/application.scss */
+  /* line 269, ../_sass/application.scss */
   .projects h2.projects-label {
     text-align: left;
   }
 }
 @media only screen and (min-width: 640px) {
-  /* line 244, ../_sass/application.scss */
+  /* line 269, ../_sass/application.scss */
   .projects h2.projects-label {
     margin: 0.5em auto;
   }
 }
-/* line 260, ../_sass/application.scss */
+/* line 285, ../_sass/application.scss */
 .projects ul.project-list {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
 }
-/* line 264, ../_sass/application.scss */
+/* line 289, ../_sass/application.scss */
 .projects ul.project-list li {
   padding: 0 1em;
 }
 @media only screen and (min-width: 450px) {
-  /* line 264, ../_sass/application.scss */
+  /* line 289, ../_sass/application.scss */
   .projects ul.project-list li {
     padding-right: 1em;
     display: inline-block;
   }
 }
-/* line 274, ../_sass/application.scss */
+/* line 299, ../_sass/application.scss */
 .projects .projects-container {
   margin-bottom: 1em;
 }
-/* line 277, ../_sass/application.scss */
+/* line 302, ../_sass/application.scss */
 .projects .projects-container a {
   width: 100%;
   height: 70px;
@@ -359,20 +385,20 @@ ul.posts li a {
   border-radius: 3px;
 }
 @media only screen and (min-width: 450px) {
-  /* line 277, ../_sass/application.scss */
+  /* line 302, ../_sass/application.scss */
   .projects .projects-container a {
     width: 49%;
   }
 }
-/* line 288, ../_sass/application.scss */
+/* line 313, ../_sass/application.scss */
 .projects .projects-container a h3, .projects .projects-container a span {
   display: none;
 }
-/* line 294, ../_sass/application.scss */
+/* line 319, ../_sass/application.scss */
 .projects a.tasty {
   background: #d9df9e url("/images/tasty.png") no-repeat center center;
 }
-/* line 298, ../_sass/application.scss */
+/* line 323, ../_sass/application.scss */
 .projects a.winepos {
   background: #f0f0f0 url("/images/winepos.png") no-repeat center -7px;
 }
@@ -422,7 +448,7 @@ ul.posts li a {
 code[class*="language-"],
 pre[class*="language-"] {
   color: black;
-  font-family: Consolas, Monaco, 'Andale Mono', monospace;
+  font-family: Consolas, Monaco, "Andale Mono", monospace;
   direction: ltr;
   text-align: left;
   white-space: pre;

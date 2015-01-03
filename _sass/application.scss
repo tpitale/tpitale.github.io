@@ -65,6 +65,10 @@ a {
   }
 }
 
+strong {
+  font-weight: bold;
+}
+
 /* Layout
 =============================================================================*/
 .wrap {
@@ -116,22 +120,39 @@ a {
     font-weight: 300;
   }
 
-  h3 {
+  h2 {
     color: $black;
     font-size: 120%;
     text-align: left;
     margin-top: 1.5em;
   }
 
-  h4 {
-    color: $black;
+  h3 {
+    color: $font-black;
     font-size: 105%;
     text-align: left;
+    margin-top: 1em;
+  }
+
+  h4 {
+    color: $grey-dark;
+    font-size: 100%;
+    text-align: left;
+    margin-top: 0.75em;
   }
 
   span.created {
     font-size: 90%;
     color: $grey-dark;
+  }
+
+  blockquote {
+    p {
+      padding: 1em;
+      font-size: 105%;
+      font-style: italic;
+      border-left: 0.5em solid $grey-dark;
+    }
   }
 
   p {
@@ -143,8 +164,12 @@ a {
   }
 
   img {
-    width: 300px;
-    margin: 0 10px;
+    width: 100%;
+
+    @include respond-to($small) {
+      width: 49.5%;
+      display: inline;
+    }
   }
 
   span.inline-code,
