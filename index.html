@@ -5,21 +5,23 @@ layout: application
 ---
 
 {% for post in site.posts limit:1 %}
-	<div class="post layer wrap">
+	<div class="post layer wrap h-entry">
 		<!-- latest post -->
-		<h1><a href="{{post.url}}">{{post.title}}</a></h1>
-		<span class="created timestamp">{{post.created_at | date:'%Y-%m-%d' }}</span>
-		
-		{{ post.content }}
+		<h1 class="p-name"><a href="{{post.url}}" class="u-url">{{post.title}}</a></h1>
+		<time class="created timestamp dt-published" datetime="{{post.created_at | date:'%FT%T%:z' }}">{{post.created_at | date:'%F' }}</time>
+
+		<div class="e-content">
+			{{ post.content }}
+		</div>
 	</div>
 {% endfor %}
 
-<div class="recent-posts layer wrap">
-	<h2>Read More Recent Posts</h2>
+<div class="recent-posts layer wrap h-feed">
+	<h2>Read More <span class="p-name">Recent Posts</span></h2>
 	<ul>
 	{% for post in site.posts limit:3 offset:1 %}
-		<li>
-			<a href="{{post.url}}">{{post.title}}</a>
+		<li class="h-entry">
+			<a href="{{post.url}}" class="p-name u-url">{{post.title}}</a>
 		</li>
 	{% endfor %}
 		<li class="post-links">
@@ -29,7 +31,7 @@ layout: application
 	</ul>
 </div>
 
-<!-- 
+<!--
 <ul class="post-links group layer wrap">
 	<li><a href="/blog.html" class="archive">Archive</a></li>
 	<li><a href="http://tpitale.com/feed.xml" class="feed">Feed</a></li>

@@ -1,24 +1,27 @@
 ---
 layout: application
 ---
-<div class="post layer wrap">
-	<h1>{{ page.title }}</h1>
+<div class="post layer wrap h-entry">
+	<h1 class="p-name"><a href="{{page.url}}" class="u-url">{{page.title}}</a></h1>
 	<!-- <h2>{{ page.subtitle }}</h2> -->
-	<span class="created timestamp">{{ page.created_at | date:'%Y-%m-%d' }}</span>
+	<time class="created timestamp dt-published" datetime="{{page.created_at | date:'%FT%T%:z' }}">{{page.created_at | date:'%F' }}</time>
 
-	{{ content }}
+	<div class="e-content">
+		{{ content }}
+	</div>
 </div>
 
-<div class="recent-posts layer wrap">
-  <h2>Read More Recent Posts</h2>
-  <ul>
-  {% for post in site.posts limit:3 offset:1 %}
-    <li>
-      <a href="{{post.url}}">{{post.title}}</a>
-    </li>
-  {% endfor %}
-    <li class="post-links">
-      <a href="/blog.html" class="archive">Archive</a><b>or</b>
-      <a href="http://tpitale.com/feed.xml" class="feed">Feed</a>
-    </li>
+<div class="recent-posts layer wrap h-feed">
+	<h2>Read More <span class="p-name">Recent Posts</span></h2>
+	<ul>
+		{% for post in site.posts limit:3 offset:1 %}
+			<li class="h-entry">
+				<a href="{{post.url}}" class="p-name u-url">{{post.title}}</a>
+			</li>
+		{% endfor %}
+		<li class="post-links">
+			<a href="/blog.html" class="archive">Archive</a><b>or</b>
+			<a href="http://tpitale.com/feed.xml" class="feed">Feed</a>
+		</li>
+	</ul>
 </div>
