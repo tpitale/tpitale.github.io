@@ -9,21 +9,21 @@ layout: post
 
 There is rarely one right solution to a problem. As [Adam Keys describes in a recent post](http://therealadam.com/2014/09/23/well-tuned-judgement/), the path to improvement comes (at some point) to be our ability to identify the paths we might take, to understand the tradeoffs between each path, and to choose the "right" path given the constraints, context, and goals we're working with.
 
-I'm striving to learn, and teach, some of the ways to identify which path is the right one. The aim is to have a rough idea which path suits best. Here are a few of the questions I might ask myself before choosing the next path I take.
+I'm striving to learn some of the ways to identify which path is the right one. The aim is to have a rough idea which path suits best. Here are a few of the questions I might ask myself before choosing the next path I take.
 
 ### Constraints and Context ###
 
-What can be changed in your system and environment, what can’t or shouldn’t? How much time do you have? Who do you need to communicate with, to either help or simply to make aware of the changes coming? Will customers be impacted? Will internal teams have to change the way they work, or be prepared to offer increased support communication?
+What can be changed in your system and environment, what can’t or shouldn’t? How much time do you have? Who do you need to communicate with, either to ask for their help or to make them aware of the changes coming? Will customers be impacted? Will internal teams have to change the way they work, or be prepared to offer increased support communication?
 
 ### Consistency ###
 
-Both are provided by the environment, the team and the company, in which we operate. Starting simply, stick with the **language**, **tools**, and other **moving parts**, that your environment already supports. Consistency is valuable. The right tool for the job may very well be the tool you already have in your hand.
+Provided by the environment, the team, and the company, in which we operate. Starting simply, stick with the **language**, **tools**, and other **moving parts**, that your environment already supports. Consistency is valuable. The right tool for the job may very well be the tool you already have in your hand.
 
 The counter to this is also important. Consider whether or not what you're trying to hammer is a nail, or if it is something entirely different. Maybe it is time to use a new tool.
 
 ### Pain ###
 
-Identify points of friction. Which path will be challenging, and at what points. Will one path take longer than another and does that matter? Can some of the pain be deferred?
+Identify points of friction. Which path will be challenging, and at what points? Will one path take longer than another and does that matter? Can some of the pain be deferred?
 
 ### Change ###
 
@@ -39,4 +39,4 @@ Will the path lead to a solution that is surprising? Or, will you have to do som
 
 What insights might be useful to have now, or after your solution is added? What logging, stats, or other instrumentation should be put in place?
 
-These are just some of the things I try to mull over in my head when weighing different paths to a solution. Most importantly, have a discussion. Foster a culture where the choice of solutions is easy for anyone in the team to discuss.
+These are just some of the things I try to mull over in my head, or with folks on my team, when weighing different paths to a solution. Foster a culture where the choice of solutions is easy for anyone in the team to discuss.
