@@ -1,9 +1,9 @@
 ---
 published: true
 title: ActiveSupport::Notifications to InfluxDB, with Tremolo
-subtitle: 
+subtitle: Cause it's Awesome
 author: Tony Pitale
-created_at: 2015-10-09 21:56:19.107390 -04:00
+created_at: 2015-10-19 21:56:19.107390 -04:00
 layout: post
 ---
 
