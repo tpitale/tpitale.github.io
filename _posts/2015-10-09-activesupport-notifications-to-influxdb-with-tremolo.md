@@ -9,7 +9,7 @@ layout: post
 
 If you've ever used stat-tracking software like StatsD and Graphite, you may already have heard of [InfluxDB](https://influxdb.com/). For those who have not, it is a time-series database, useful for tracking data to be aggregated over a period of time. 
 
-I've been using InfluxDB for some time to track a variety of data in my Rails application. InfluxDB caught my eye because it not only tracked data, but _metadata_, too.
+I've been using InfluxDB for some time to track a variety of data in my Rails application. InfluxDB caught my eye because it not only tracked data, but _metadata_, too. Metadata is anything you might want to use to "scope" your query (that is not time-related). For me, this is the ID of a client in a multi-tenant application for background processing work.
 
 To make it easier to use in my Rails applications I wrote a little library called [Tremolo](https://github.com/tpitale/tremolo) which has similar functionality to the Ruby StatsD library.
 
@@ -19,7 +19,7 @@ By way of introduction, I would like to show how I leveraged ActiveSupport::Noti
 * Setting up ActiveSupport::Notifications
 * Tie the two together
 
-As a bonus, I'll also give you a glimpse at what the data looks like graphed on my dashboard, which uses [Grafana](http://grafana.org/).
+As a bonus, I'll also give you a peek at what the data looks like graphed on my dashboard, which uses [Grafana](http://grafana.org/).
 
 ## Intro to Tremolo ##
 
@@ -161,13 +161,25 @@ Though, if it takes time in code, or is of any importance to your business or th
 
 InfluxDB is extremely easy to get installed and running. If you're on a Mac `brew install` will get you running, and a simple configuration change will set up a UDP listener.
 
-InfluxDB does not, however, have a UI for anything more than querying databases/series with a SQL-esque query language. This is where Grafana comes in.
+<pre><code class="language-ini">
+[udp]
+  enabled = true # make sure this is true
+  bind-address = ":4444" # pick your own port here, match to Tremolo's config
+  database = "your-database-here"
+  batch-size = 1000
+  batch-timeout = "1s"
+</code></pre>
 
-![Grafana Dashboard](http://grafana.org/assets/img/features/dashboard_ex.png "Grafana Dashboard")
-![Grafana Dashboard](http://grafana.org/assets/img/features/dashboard_ex.png "Grafana Dashboard")
+InfluxDB does not, however, have a UI for anything other than querying databases/series with a SQL-esque query language. This is where Grafana comes in.
+
+![Grafana Dashboard](/images/posts/grafana.png "Grafana Dashboard")
+
+Grafana has [installation](http://docs.grafana.org/installation/) packages for most linux platforms, but for Mac OS X you'll need to [install from source](http://docs.grafana.org/installation/mac/). This was quick and easy on my system, and required no further (backend) configuration to get running. Just set your data source (influxdb) and go.
+
+## Wrap it Up ##
 
 I've found ActiveSupport::Notifications and Tremolo to be a fantastic combo. I hope this article has made it easier for you to get into tracking important data in your own applications.
 
 Read more here about [ActiveSupport::Notifications](http://api.rubyonrails.org/classes/ActiveSupport/Notifications.html) and more about [Tremolo](https://github.com/tpitale/tremolo).
 
-If you're wondering about the name Tremolo, I have a whole series of libraries for integrating stats in a variety of ways, all named for different musical terms. [Legato](https://github.com/tpitale/legato) pulls data from Google Analytics, and [Staccato](https://github.com/tpitale/staccato) sends data to GA using the official tracking API. Check 'em both out!
+If you're wondering about the name Tremolo, I have a whole series of libraries for integrating stats in a variety of ways, all named for different musical terms. [Legato](https://github.com/tpitale/legato) pulls data from Google Analytics, and [Staccato](https://github.com/tpitale/staccato) sends data to GA using the official tracking API. Tremolo is just the latest in this collection. Check 'em all out!
