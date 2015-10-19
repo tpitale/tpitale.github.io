@@ -40,8 +40,8 @@ I also got to work on my own car in preparation for maybe doing some track drivi
 
 Even better, my father and I installed all new front brakes. It was a challenging but hugely rewarding process. I'm making plans to do more work myself going forward!
 
-![Stoptech Brakes on my S4](/images/posts/stoptech-brakes-s4.jpg)
-![Me holding an old brake from my S4](/images/posts/old-brakes-s4.jpg)
+<img src="/images/posts/stoptech-brakes-s4.jpg" alt="Stoptech Brakes on my S4" class="twoup"/>
+<img src="/images/posts/old-brakes-s4.jpg" alt="Me holding an old brake from my S4" class="twoup"/>
 
 In photography, I hit a landmark (for me at least) when I gave prints of my photography as gifts. To my sister, I gave a series of photos from the beach where she and her husband were engaged. To my mother, I gave a photo of the Cliffs of Moher in Ireland, where we recently vacationed as a family for her birthday.
 

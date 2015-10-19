@@ -167,8 +167,10 @@ strong {
     width: 100%;
 
     @include respond-to($small) {
-      width: 49.5%;
-      display: inline;
+      &.twoup {
+        width: 49.5%;
+        display: inline;
+      }
     }
   }
 
