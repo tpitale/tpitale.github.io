@@ -157,6 +157,10 @@ strong {
 
   p {
     margin: 0.5em 0 1em 0;
+
+    em {
+      font-style: italic;
+    }
   }
 
   a.gist-link {
@@ -188,6 +192,15 @@ strong {
     li {
       line-height: 1.25em;
       // padding: 2px 0;
+    }
+  }
+
+  ol {
+    list-style: decimal inside none;
+    margin: 1em 0;
+
+    li {
+      line-height: 1.25em;
     }
   }
 

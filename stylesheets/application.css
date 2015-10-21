@@ -227,38 +227,51 @@ strong {
 .post p {
   margin: 0.5em 0 1em 0;
 }
-/* line 162, ../_sass/application.scss */
+/* line 161, ../_sass/application.scss */
+.post p em {
+  font-style: italic;
+}
+/* line 166, ../_sass/application.scss */
 .post a.gist-link {
   /*margin-left: 10px;*/
 }
-/* line 166, ../_sass/application.scss */
+/* line 170, ../_sass/application.scss */
 .post img {
   width: 100%;
 }
 @media only screen and (min-width: 450px) {
-  /* line 170, ../_sass/application.scss */
+  /* line 174, ../_sass/application.scss */
   .post img.twoup {
     width: 49.5%;
     display: inline;
   }
 }
-/* line 178, ../_sass/application.scss */
+/* line 182, ../_sass/application.scss */
 .post span.inline-code,
 .post p code {
   font-size: 95%;
   font-family: monospace;
   background-color: #f5f2f0;
 }
-/* line 184, ../_sass/application.scss */
+/* line 188, ../_sass/application.scss */
 .post ul {
   list-style: square inside none;
   margin: 1em 0;
 }
-/* line 188, ../_sass/application.scss */
+/* line 192, ../_sass/application.scss */
 .post ul li {
   line-height: 1.25em;
 }
-/* line 194, ../_sass/application.scss */
+/* line 198, ../_sass/application.scss */
+.post ol {
+  list-style: decimal inside none;
+  margin: 1em 0;
+}
+/* line 202, ../_sass/application.scss */
+.post ol li {
+  line-height: 1.25em;
+}
+/* line 207, ../_sass/application.scss */
 .post pre {
   margin: 1em 0;
   font-size: 80%;
@@ -267,72 +280,72 @@ strong {
 
 /* Posts
 =============================================================================*/
-/* line 203, ../_sass/application.scss */
+/* line 216, ../_sass/application.scss */
 .recent-posts {
   padding: 1em;
 }
-/* line 206, ../_sass/application.scss */
+/* line 219, ../_sass/application.scss */
 .recent-posts h2 {
   margin-bottom: 0.5em;
 }
-/* line 211, ../_sass/application.scss */
+/* line 224, ../_sass/application.scss */
 .recent-posts li.post-links b {
   margin: 0 0.5em;
   font-style: italic;
 }
-/* line 216, ../_sass/application.scss */
+/* line 229, ../_sass/application.scss */
 .recent-posts li.post-links a {
   padding: 1em 0;
   display: inline-block;
 }
-/* line 224, ../_sass/application.scss */
+/* line 237, ../_sass/application.scss */
 .recent-posts li.post-links a.feed {
   padding-right: 2em;
   background: transparent url("/images/feed.png") 2.5em 1.35em no-repeat;
 }
 
-/* line 231, ../_sass/application.scss */
+/* line 244, ../_sass/application.scss */
 ul.posts {
   padding: 10px 0;
   margin: 30px auto;
   background-color: white;
 }
-/* line 236, ../_sass/application.scss */
+/* line 249, ../_sass/application.scss */
 ul.posts li {
   padding: 0 12px;
 }
-/* line 239, ../_sass/application.scss */
+/* line 252, ../_sass/application.scss */
 ul.posts li a {
   line-height: 1.25em;
 }
 
 /* Photos
 =============================================================================*/
-/* line 248, ../_sass/application.scss */
+/* line 261, ../_sass/application.scss */
 .photos {
   height: 75px;
   overflow: hidden;
   margin: 30px auto;
 }
-/* line 253, ../_sass/application.scss */
+/* line 266, ../_sass/application.scss */
 .photos .photos-container {
   width: 2250px;
 }
-/* line 257, ../_sass/application.scss */
+/* line 270, ../_sass/application.scss */
 .photos .flickr_badge_image {
   float: left;
 }
 
 /* Projects
 =============================================================================*/
-/* line 265, ../_sass/application.scss */
+/* line 278, ../_sass/application.scss */
 .projects {
   width: 100%;
   padding: 1px 0;
   margin: 1em auto;
   background-color: #f8f7fb;
 }
-/* line 271, ../_sass/application.scss */
+/* line 284, ../_sass/application.scss */
 .projects h2.projects-label {
   color: #262c31;
   font-size: 150%;
@@ -342,38 +355,38 @@ ul.posts li a {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica sans-serif;
 }
 @media only screen and (min-width: 450px) {
-  /* line 271, ../_sass/application.scss */
+  /* line 284, ../_sass/application.scss */
   .projects h2.projects-label {
     text-align: left;
   }
 }
 @media only screen and (min-width: 640px) {
-  /* line 271, ../_sass/application.scss */
+  /* line 284, ../_sass/application.scss */
   .projects h2.projects-label {
     margin: 0.5em auto;
   }
 }
-/* line 287, ../_sass/application.scss */
+/* line 300, ../_sass/application.scss */
 .projects ul.project-list {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
 }
-/* line 291, ../_sass/application.scss */
+/* line 304, ../_sass/application.scss */
 .projects ul.project-list li {
   padding: 0 1em;
 }
 @media only screen and (min-width: 450px) {
-  /* line 291, ../_sass/application.scss */
+  /* line 304, ../_sass/application.scss */
   .projects ul.project-list li {
     padding-right: 1em;
     display: inline-block;
   }
 }
-/* line 301, ../_sass/application.scss */
+/* line 314, ../_sass/application.scss */
 .projects .projects-container {
   margin-bottom: 1em;
 }
-/* line 304, ../_sass/application.scss */
+/* line 317, ../_sass/application.scss */
 .projects .projects-container a {
   width: 100%;
   height: 70px;
@@ -385,20 +398,20 @@ ul.posts li a {
   border-radius: 3px;
 }
 @media only screen and (min-width: 450px) {
-  /* line 304, ../_sass/application.scss */
+  /* line 317, ../_sass/application.scss */
   .projects .projects-container a {
     width: 49%;
   }
 }
-/* line 315, ../_sass/application.scss */
+/* line 328, ../_sass/application.scss */
 .projects .projects-container a h3, .projects .projects-container a span {
   display: none;
 }
-/* line 321, ../_sass/application.scss */
+/* line 334, ../_sass/application.scss */
 .projects a.tasty {
   background: #d9df9e url("/images/tasty.png") no-repeat center center;
 }
-/* line 325, ../_sass/application.scss */
+/* line 338, ../_sass/application.scss */
 .projects a.winepos {
   background: #f0f0f0 url("/images/winepos.png") no-repeat center -7px;
 }

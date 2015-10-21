@@ -7,9 +7,9 @@ created_at: 2015-10-19 21:56:19.107390 -04:00
 layout: post
 ---
 
-If you've ever used stat-tracking software like StatsD and Graphite, you may already have heard of [InfluxDB](https://influxdb.com/). For those who have not, it is a time-series database, useful for tracking data to be aggregated over a period of time. 
+If you've ever used stat-tracking software like StatsD and Graphite, you may have already heard of [InfluxDB](https://influxdb.com/). For those who have not, it is a time-series database, useful for tracking data to be aggregated over a period of time.
 
-I've been using InfluxDB for some time to track a variety of data in my Rails application. InfluxDB caught my eye because it not only tracked data, but _metadata_, too. Metadata is anything you might want to use to "scope" your query (that is not time-related). For me, this is the ID of a client in a multi-tenant application for background processing work.
+I've been using InfluxDB for some time to track a variety of data in my Rails applications. InfluxDB caught my eye because it not only tracked data, but _metadata_, too. Metadata is anything you might want to use to "scope" your query (that is not time-related). For me, this is the ID of a client in a multi-tenant application for background processing work.
 
 To make it easier to use in my Rails applications I wrote a little library called [Tremolo](https://github.com/tpitale/tremolo) which has similar functionality to the Ruby StatsD library.
 
@@ -38,7 +38,7 @@ tracker = Tremolo.fetch(:tracker)
 tracker.increment('count.series-name')
 </code></pre>
 
-Tremolo also supports `derement`, `timing` with an integer for milliseconds, and most importantly for my examples: `time` with a block.
+Tremolo also supports `decrement`, `timing` with an integer for milliseconds, and most importantly for my examples: `time` with a block.
 
 <pre><code class="language-ruby">
 tracker = Tremolo.fetch(:tracker)
