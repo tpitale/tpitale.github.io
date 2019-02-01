@@ -1,7 +1,7 @@
 ---
-published: false
+published: true
 title: Aliasing Fields on Ecto Associations in Absinthe for GraphQL
-subtitle: 
+subtitle:
 author: Tony Pitale
 created_at: 2019-02-01 11:10:24.786042 -06:00
 layout: post
@@ -19,6 +19,7 @@ I’ll cover two scenarios of database refactorings I went through recently, whi
 ## Renaming a Column ##
 
 This is a simple example to get us warmed up, but we’ll use this technique in combination with another in our next example.
+
 We’ll start with a table and a column (example from Postgres):
 
 ```
@@ -57,10 +58,12 @@ object :device do
 end
 ```
 
+### Changing the object type for the new column name ###
+
 What happens when we change the column name from `desired_firmware_version_id` to `requested_firmware_version_id`? An admittedly contrived example, meant to highlight a point. Aside from the normal database migration to alter the table, we need only make a straightforward change in our GraphQL type for the device to maintain the interface for our users.
 
 ```
-field(:requested_firmware_version, :firmware_version, resolve: dataloader(Device), name: “desired_firmware_version”)
+field(:requested_firmware_version, :firmware_version, resolve: dataloader(Device), name: "desired_firmware_version")
 ```
 
 Two changes are required. Change the first argument in `field` to match the new name of the column (in this case, an association). And then, add the option for `name` and pass in a string (binary) to match the previous column’s name in the API.
@@ -69,7 +72,7 @@ We may also wish to make use of the `deprecate` option available to `field` and 
 
 ## Moving to a New Table ##
 
-Whether this is a new table or an existing table that better suits our data, our structures may change in more substantial ways. In this example, we’ll start from the same initial structure of the `devices` table from above. Instead, we’ll add a new table rather than renaming our column.
+What happens if we make a more drastic change to the structure of our data. Whether this is a new table or an existing table that better suits our data, our structures may change in more substantial ways. In this example, we’ll start from the same initial structure of the `devices` table from above. Instead, we’ll add a new table rather than renaming our column.
 
 ```
 CREATE TABLE firmware_update_requests (
@@ -81,7 +84,12 @@ CREATE TABLE firmware_update_requests (
 
 CREATE UNIQUE INDEX pending_request_index ON firmware_update_requests(device_id, pending);
 ```
-This change will necessitate more changes than our previous example, but fundamentally, the technique is the same. To make it work, we just need to get the data from this new table’s `firmware_version_id` into a place on the device record where our alias `field` can get it.
+
+### Add an Ecto virtual field ###
+
+This change will necessitate more changes than our previous example, but fundamentally, the technique is the same.
+
+To make it work, we just need to get the data from this new table’s `firmware_version_id` into a place on the device record where our alias Absinthe `field` can get to it.
 
 To accomplish this, we’ll use a combination of two Ecto features. First, we’ll make space for the `firmware_version_id` (and association) using a `virtual` field in the schema.
 
@@ -94,7 +102,11 @@ schema :devices do
 end
 ```
 
-This creates a place for us to join data into the device, and allows us to look it up as an association. Now, we can change our query to load this data. For Absinthe, we do this in the resolver:
+This creates a place for us to join data into the device, and allows us to look it up as an association.
+
+### Update the Absinthe resolver ###
+
+Now, we can change our query to load this data. For Absinthe, we do this in the resolver:
 
 ```
 defp with_pending_request(query \\ MyApp.Device) do
@@ -108,10 +120,12 @@ defp with_pending_request(query \\ MyApp.Device) do
 end
 ```
 
-Let’s break this down. First thing is the `query` argument. This is an `Ecto.Query` for records from `MyApp.Device`. Next, we `left_join` our firmware update request record on the matching `device_id` and we restrict it to `pending` requests so that we only join at most a single record for each device.
+Let’s break this down. First, is the `query` argument. This is an `Ecto.Query` for records from `MyApp.Device`. Next, we `left_join` our `firmware_update_request` record on the matching `device_id` and we restrict it to `pending` requests so that we only join, at most, a single record for each device.
 
-Lastly, my favorite bit is the `select`. It merges the `firmware_version_id` into the new virtual field we added to device. And with that data in place, we can use our change to the Absinthe `object` for the `name` option and everything will work.
+## All Together Now ###
 
-With all of these changes: loading the firmware version from the request association into a virtual field and aliasing the field in Absinthe we have successfully mapped a field from an associated table into place on the original field in our API.
+Lastly, my favorite bit is the `select`. It merges the `firmware_version_id` into the new virtual field we added to the `MyApp.Device` schema. And with that data in place, we can use our previous change to the Absinthe object type `field` for the `name` option and everything will work.
 
-While this is how I solved this particular problem it is, of course, not the only way to solve this problem. Other solutions might involve resolver callbacks coming in the next version of Absinthe, or simply a custom resolver that returns a properly formed map.
+With all of these changes: using the resolver to load the firmware version from the `firmware_update_request` association into an Ecto virtual field and aliasing the field in Absinthe we have successfully mapped a column from an associated table into place on the original field in our GraphQL API. Thus, we have retained the external structure and data of our API while modifying the underlying data store.
+
+While this is how I solved this particular problem it is, of course, not the only way to solve this problem. Other solutions might involve resolver callbacks (coming in the next version of Absinthe) or simply a custom resolver that returns a properly formed map. Whatever path you choose, I hope this provides you some new info on both Absinthe and Ecto and their function.
