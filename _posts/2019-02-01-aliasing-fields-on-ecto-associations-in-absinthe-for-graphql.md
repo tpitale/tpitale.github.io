@@ -22,7 +22,7 @@ This is a simple example to get us warmed up, but we’ll use this technique in 
 
 We’ll start with a table and a column (example from Postgres):
 
-```
+<pre><code class="language-sql">
 CREATE TABLE firmware_versions (
   id SERIAL,
   semantic_version_number text
@@ -33,11 +33,11 @@ CREATE TABLE devices (
   firmware_version_id integer REFERENCES firmware_versions(id),
   desired_firmware_version_id integer REFERENCES firmware_versions(id)
 );
-```
+</code></pre>
 
 And the Absinthe object type would look something like (I’ve omitted data loaders and resolvers):
 
-```
+<pre><code class="language-elixir">
 @desc "Firmware version"
 object :firmware_version do
   @desc "Database ID of the firmware version"
@@ -56,15 +56,15 @@ object :device do
   @desc “Firmware version we are attempting to update to"
   field(:desired_firmware_version, :firmware_version, resolve: dataloader(Device))
 end
-```
+</code></pre>
 
 ### Changing the object type for the new column name ###
 
 What happens when we change the column name from `desired_firmware_version_id` to `requested_firmware_version_id`? An admittedly contrived example, meant to highlight a point. Aside from the normal database migration to alter the table, we need only make a straightforward change in our GraphQL type for the device to maintain the interface for our users.
 
-```
+<pre><code class="language-elixir">
 field(:requested_firmware_version, :firmware_version, resolve: dataloader(Device), name: "desired_firmware_version")
-```
+</code></pre>
 
 Two changes are required. Change the first argument in `field` to match the new name of the column (in this case, an association). And then, add the option for `name` and pass in a string (binary) to match the previous column’s name in the API.
 
@@ -74,7 +74,7 @@ We may also wish to make use of the `deprecate` option available to `field` and 
 
 What happens if we make a more drastic change to the structure of our data. Whether this is a new table or an existing table that better suits our data, our structures may change in more substantial ways. In this example, we’ll start from the same initial structure of the `devices` table from above. Instead, we’ll add a new table rather than renaming our column.
 
-```
+<pre><code class="language-sql">
 CREATE TABLE firmware_update_requests (
   id SERIAL,
   pending boolean DEFAULT true,
@@ -83,7 +83,7 @@ CREATE TABLE firmware_update_requests (
 )
 
 CREATE UNIQUE INDEX pending_request_index ON firmware_update_requests(device_id, pending);
-```
+</code></pre>
 
 ### Add an Ecto virtual field ###
 
@@ -93,14 +93,14 @@ To make it work, we just need to get the data from this new table’s `firmware_
 
 To accomplish this, we’ll use a combination of two Ecto features. First, we’ll make space for the `firmware_version_id` (and association) using a `virtual` field in the schema.
 
-```
+<pre><code class="language-elixir">
 # in MyApp.Device module
 schema :devices do
   …
   field(:requested_firmware_version_id, :integer, virtual: true)
   belongs_to(:requested_firmware_version, MyApp.FirmwareVersion, define_field: false)
 end
-```
+</code></pre>
 
 This creates a place for us to join data into the device, and allows us to look it up as an association.
 
@@ -108,7 +108,7 @@ This creates a place for us to join data into the device, and allows us to look 
 
 Now, we can change our query to load this data. For Absinthe, we do this in the resolver:
 
-```
+<pre><code class="language-elixir">
 defp with_pending_request(query \\ MyApp.Device) do
   from(
     d in query,
@@ -118,7 +118,7 @@ defp with_pending_request(query \\ MyApp.Device) do
     select: %{d | requested_firmware_version_id: r.firmware_version_id}
   )
 end
-```
+</code></pre>
 
 Let’s break this down. First, is the `query` argument. This is an `Ecto.Query` for records from `MyApp.Device`. Next, we `left_join` our `firmware_update_request` record on the matching `device_id` and we restrict it to `pending` requests so that we only join, at most, a single record for each device.
 
