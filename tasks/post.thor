@@ -24,11 +24,11 @@ class Post < Thor
 
   no_tasks {
     def full_date
-      DateTime.now.strftime('%F %T.%6N %:z')
+      Time.now.strftime('%F %T.%6N %:z')
     end
 
     def short_date
-      DateTime.now.strftime('%F')
+      Time.now.strftime('%F')
     end
   }
 end
