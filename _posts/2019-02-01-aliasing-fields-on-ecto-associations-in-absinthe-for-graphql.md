@@ -80,7 +80,7 @@ CREATE TABLE firmware_update_requests (
   pending boolean DEFAULT true,
   device_id integer REFERENCES devices(id),
   firmware_version_id integer REFERENCES firmware_versions(id)
-)
+);
 
 CREATE UNIQUE INDEX pending_request_index ON firmware_update_requests(device_id, pending);
 </code></pre>
@@ -96,7 +96,7 @@ We’ll use a combination of two Ecto features: we’ll make space for the `firm
 <pre><code class="language-elixir">
 # in MyApp.Device module
 schema :devices do
-  …
+  # snip …
   field(:requested_firmware_version_id, :integer, virtual: true)
   belongs_to(:requested_firmware_version, MyApp.FirmwareVersion, define_field: false)
 end
