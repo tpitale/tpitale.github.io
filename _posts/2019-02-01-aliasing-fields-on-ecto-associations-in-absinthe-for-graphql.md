@@ -129,3 +129,5 @@ Lastly, my favorite bit, is the `select`. It merges the `firmware_version_id` in
 With all of these changes: using the resolver to load the firmware version from the `firmware_update_request` association into an Ecto virtual field and aliasing the field in Absinthe we have successfully mapped a column from an associated table into place on the original field in our GraphQL API. Thus, we have retained the external structure and data of our API while modifying the underlying data store.
 
 While this is how I solved this particular problem it is, of course, not the only way to solve this problem. Other solutions might involve resolver callbacks (coming in the next version of Absinthe) or simply a custom resolver that returns a properly formed map. Whatever path you choose, I hope this provides you some new info on both Absinthe and Ecto and their function.
+
+This post was original published on the [Power the People](https://tech.offgrid-electric.com/aliasing-fields-on-ecto-associations-in-absinthe-for-graphql-abcaad92b9b4) blog.
