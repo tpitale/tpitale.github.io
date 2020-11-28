@@ -1,6 +1,6 @@
 markdown: kramdown
 permalink: none
-pygments: false
+highlighter: false
 lsi: false
 safe: true
 exclude: ['zones']
